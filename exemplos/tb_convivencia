@@ -1,0 +1,97 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "is_ativo",
+        "dbType": "boolean",
+        "htmlType": "checkbox:1",
+    	"fillable": true,
+    	"inForm": true,
+    	"searchable": true
+    },
+    {
+        "name": "no_nome",
+        "dbType": "string,50",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "no_local",
+        "dbType": "string,50",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "nu_telefone",
+        "dbType": "string,16",
+        "htmlType": "number",
+        "searchable": true     
+    },
+    {
+        "name": "no_observacoes",
+        "dbType": "text",
+        "htmlType": "textarea",
+        "searchable": true
+    },
+    {
+        "name": "dt_inicio",
+        "dbType": "date",
+        "htmlType": "date",
+	"validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "dt_fim",
+        "dbType": "date",
+        "htmlType": "date",
+	"validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "dt_inicio_inscricao",
+        "dbType": "date",
+        "htmlType": "date",
+	"validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "dt_fim_inscricao",
+        "dbType": "date",
+        "htmlType": "date",
+	"validations": "required",
+        "searchable": true
+    },
+    {
+       "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

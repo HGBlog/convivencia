@@ -1,0 +1,71 @@
+[
+    {
+        "name": "id_usuario",
+        "dbType": "integer:unsigned:foreign,users,id",
+        "htmlType": "text",
+        "relation": "1t1,Usuario,id_usuario,id",
+        "fillable": true,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+	{
+        "name": "no_usuario",
+        "dbType": "string,100",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "no_pais",
+        "dbType": "string,50",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "no_email",
+        "dbType": "string,100",
+        "htmlType": "email",
+        "searchable": true
+    },
+    {
+        "name": "no_sexo",
+        "dbType": "string",
+        "htmlType": "select,Masculino:M,Feminino:F"
+    },
+    {
+        "name": "co_telefone_pais",
+        "dbType": "string,5",
+        "htmlType": "number",
+        "searchable": true        
+    },
+    {
+        "name": "nu_telefone",
+        "dbType": "string,16",
+        "htmlType": "number",
+        "searchable": true     
+    },
+	{
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

@@ -1,0 +1,10 @@
+rm database/migrations/2017_12_*
+mysqladmin drop conv -u root -p
+mysqladmin create conv -u root -p
+php artisan infyom:scaffold Etapa --fieldsFile=exemplos/tb_etapa --datatables=false
+php artisan infyom:scaffold Membro --fieldsFile=exemplos/tb_membros --datatables=false
+php artisan infyom:scaffold Convivencia --fieldsFile=exemplos/tb_convivencia --datatables=false
+php artisan infyom:scaffold ConvivenciaMembro --fieldsFile=exemplos/tb_convivencia_membro --datatables=false
+
+#php artisan infyom:scaffold PerfilUsuario --fieldsFile=exemplos/tb_perfil_usuario --datatables=false
+#php artisan infyom:scaffold DadosCaminho --fieldsFile=exemplos/tb_dados_caminho --datatables=false

@@ -1,0 +1,44 @@
+[
+    {
+        "name": "convivencia_id",
+        "dbType": "integer:unsigned:foreign,convivencias,id",
+        "htmlType": "text",
+        "relation": "mtm,Convivencia,convivencia_membro,convivencia_id,membro_id",
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "membro_id",
+        "dbType": "integer:unsigned:foreign,membros,id",
+        "htmlType": "text",
+        "relation": "mtm,Membro,convivencia_membro,convivencia_id,membro_id",
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+       "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

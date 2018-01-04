@@ -1,0 +1,79 @@
+[
+    {
+        "name": "id_dados",
+        "dbType": "integer:unsigned:foreign,users,id",
+        "htmlType": "text",
+        "relation": "1t1,Usuario,id_dados,id",
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "no_diocese",
+        "dbType": "string,100",
+        "htmlType": "text",
+        "searchable": true
+    },
+    {
+        "name": "no_cidade",
+        "dbType": "string,50",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "no_paroquia",
+        "dbType": "string,50",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "nu_comunidade",
+        "dbType": "string,3",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "nu_ano_inicio_caminho",
+        "dbType": "string,4",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "etapa_id",
+        "dbType": "integer:unsigned:foreign,etapas,id",
+        "htmlType": "text",
+        "relation": "1t1,Etapa,etapa_id,id",
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+       "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+
+]
