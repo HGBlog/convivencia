@@ -16,6 +16,7 @@ class CreateConvivenciaMembrosTable extends Migration
         Schema::create('convivencia_membros', function (Blueprint $table) {
             $table->integer('convivencia_id')->unsigned();
             $table->integer('membro_id')->unsigned();
+	    $table->boolean('is_ativo');
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('convivencia_id')->references('id')->on('convivencias');

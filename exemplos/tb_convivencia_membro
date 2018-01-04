@@ -20,6 +20,14 @@
         "inIndex": false
     },
     {
+        "name": "is_ativo",
+        "dbType": "boolean",
+        "htmlType": "checkbox:0",
+        "fillable": false,
+        "inForm": false,
+        "searchable": true
+    },
+    {
        "name": "created_at",
         "dbType": "timestamp",
         "htmlType": "",

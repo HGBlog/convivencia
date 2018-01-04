@@ -25,7 +25,8 @@ class ConvivenciaMembro extends Model
 
     public $fillable = [
         'convivencia_id',
-        'membro_id'
+        'membro_id',
+        'is_ativo'
         
     ];
 
@@ -36,7 +37,8 @@ class ConvivenciaMembro extends Model
      */
     protected $casts = [
         'convivencia_id' => 'integer',
-        'membro_id' => 'integer'
+        'membro_id' => 'integer',
+        'is_ativo' => 'boolean'
     ];
 
     /**

@@ -15,7 +15,7 @@ $(document).ready(function()
 function vai_or_naovai(id,action)
 {
     if ( action == "indo" ){ // I'm not sure for the condition, it depends of its meaning.
-        myUrl = "{{ action('ConvivenciaController@show', 'id') }}" ;
+        myUrl = "{{ action('ConvivenciaController@inscricao', 'id') }}" ;
         myMethod = "GET";
     } else {
         myUrl = "{{ action('ConvivenciaController@destroy', 'id') }}" ;
@@ -72,7 +72,8 @@ function vai_or_naovai(id,action)
 <script>
     function doSomething()
         {
-            $convivencias->membros()->syncWithoutDetaching([$membros->id]);
+            //$convivencia->membros()->syncWithoutDetaching([$membros->id]);
+            $convivencia->membros()->attach($membro->id, array('is_ativo' => 1));
         }
 </script>
 
@@ -108,6 +109,7 @@ function vai_or_naovai(id,action)
                 <td>{!! $membro->no_usuario !!}</td>
                 <td>{!! $membro->no_diocese !!}</td>
                 <td>{!! $membro->no_cidade !!}</td>
+                <td>{!! $status_convivencia !!}</td>
                 <td>
 
                 
@@ -119,24 +121,8 @@ function vai_or_naovai(id,action)
                               .quick .toggle-group { transition: none; -webkit-transition: none; }
                         </style>
 
-                        @if(0)
-
-                        <span id="loading {{ $convivencia->id }}"></span>
-                        <button class="btn btn-lg btn-danger button indo" id="indo {{ $convivencia->id }}" onClick="vai_or_naovai({{ $convivencia->id }},'indo');">Indo</button>
-
-                        <span style="display:none;" class="btn btn-lg button vai" id="vai {{ $convivencia->id }} ?>" onClick="vai_or_naovai({{ $convivencia->id }},'vai');">Vai</span>
-
-                        @else
-
-                        <span id="loading{{ $convivencia->id }}"></span>
-                        <button class="btn btn-info button vai" id="vai{{ $convivencia->id }}" onClick="vai_or_naovai({{ $convivencia->id }},'vai');">Vai</button>
-
-                        <span style="display:none;" class="button indo" id="indovai{{ $convivencia->id }}" onClick="vai_or_naovai(vai{{ $convivencia->id }},'indo');">Indo</span>
-
-                        @endif
                         
-
-                        <input type="checkbox" name="vai_convivencia" unchecked data-toggle="toggle" data-onstyle="success" data-offstyle="danger" data-size="small" data-on="Sim" data-off="Não" onclick="doSomething('$convivencia->id');">
+                        {{ Form::checkbox('$status_convivencia', 1, null, ['data-toggle' => 'toggle', 'data-onstyle' =>'success', 'data-offstyle'=>'danger', 'data-size'=>'small', 'data-on'=>'Sim', 'data-off'=>'Não' ]) }}
                         
                     </div>
                     {!! Form::close() !!}
@@ -146,25 +132,3 @@ function vai_or_naovai(id,action)
 
 </tbody>
 </table>
-
-
-
-
-
-
-
-            @if(0)
-
-            <span id="loading {{ $convivencias->id }}"></span>
-            <button class="btn btn-lg btn-danger button indo" id="indo {{ $convivencias->id }}" onClick="vai_or_naovai({{ $convivencias->id }},'indo');">Indo</button>
-
-            <span style="display:none;" class="btn btn-lg button vai" id="vai {{ $convivencias->id }} ?>" onClick="vai_or_naovai({{ $convivencias->id }},'vai');">Vai</span>
-
-            @else
-
-            <span id="loading{{ $convivencias->id }}"></span>
-            <button class="btn btn-info button vai" id="vai{{ $convivencias->id }}" onClick="vai_or_naovai({{ $convivencias->id }},'vai');">Vai</button>
-
-            <span style="display:none;" class="button indo" id="indovai{{ $convivencias->id }}" onClick="vai_or_naovai(vai{{ $convivencias->id }},'indo');">Indo</span>
-
-            @endif

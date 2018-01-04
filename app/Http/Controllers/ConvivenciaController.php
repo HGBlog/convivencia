@@ -7,10 +7,14 @@ use App\Http\Requests\UpdateConvivenciaRequest;
 use App\Repositories\ConvivenciaRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
+use Prettus\Repository\Contracts;
+use Prettus\Repository\Eloquent;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use App\Models\Membro;
+use App\Models\Convivencia;
+use App\Models\ConvivenciaMembro;
 
 
 class ConvivenciaController extends AppBaseController
@@ -158,9 +162,23 @@ class ConvivenciaController extends AppBaseController
     
     public function inscricao($id)
     {
-        $membros = Membro::where('owner_id', auth()->user()->id)->get();
-        $convivencias = new \App\Models\Convivencia;
         $convivencia = $this->convivenciaRepository->findWithoutFail($id);
+        $lista_membros = Membro::where('owner_id', auth()->user()->id)->get();
+            foreach($lista_membros as $membro){
+                    /* Comentei e coloquei esta chamada acima */
+                    //$convivencia = $this->convivenciaRepository->findWithoutFail($id);
+                    
+                    /* Extraindo ao campo is_ativo do membro em analis para plotar na view */
+                    $status_convivencia = ConvivenciaMembro::where('membro_id', $membro->id)->where('convivencia_id', $id)->pluck('is_ativo');
+
+
+                    /* Verifico se existe a entrada do mebro na convivencia */
+                    if (!count($convivencia->membros()->where('membro_id', $membro->id)->where('convivencia_id', $id)->first()))
+                    /* Se não existe, faço a inclusao no primeiro acesso */    
+                    $convivencia->membros()->attach($membro->id, array('is_ativo' => 0));
+            }           
+        
+        
 
         if (empty($convivencia)) {
             Flash::error('Convivencia not found');
@@ -168,7 +186,7 @@ class ConvivenciaController extends AppBaseController
             return redirect(route('convivencias.index'));
         }
 
-        return view('convivencias.inscricao')->with('convivencia', $convivencia)->with('membros', $membros)->with('convivencias', $convivencias);
+        return view('convivencias.inscricao')->with('convivencia', $convivencia)->with('membros', $lista_membros)->with('status_convivencia', $status_convivencia);
     }
 
 }

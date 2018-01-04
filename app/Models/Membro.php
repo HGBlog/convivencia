@@ -144,4 +144,16 @@ class Membro extends Model
             $membro->save();
             return 1;
     }
+
+
+    protected $hidden = ['pivot'];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     **/
+    public function convivencias()
+    {
+        return $this->belongsToMany(\App\Models\Convivencia::class, 'convivencia_membros', 'convivencia_id', 'membro_id');
+    }
+
 }
