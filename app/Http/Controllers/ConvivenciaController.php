@@ -170,7 +170,8 @@ class ConvivenciaController extends AppBaseController
             foreach($lista_membros as $membro) {
                     
                     //print_r($membro);
-                    //$status_convivencia = ConvivenciaMembro::where([['convivencia_id','=', $id],['membro_id','=',$membro->id]])->get();
+                    $membro['is_ativo'] = ConvivenciaMembro::select('is_ativo')->where(['convivencia_id' => $id, 'membro_id' => $membro->id])->get();
+
                     //$membros_id = new ConvivenciaMembro();
                     //$membros_id = $membro->id;
                     //print_r($membros_id);
@@ -190,9 +191,9 @@ class ConvivenciaController extends AppBaseController
                     /* Extraindo ao campo is_ativo do membro em analis para plotar na view */
                     //$status_convivencia = ConvivenciaMembro::where('membro_id', $membro->id)->andWhere('convivencia_id', $id)->pluck('is_ativo');
                     
-                    $membro = ConvivenciaMembro::where('convivencia_id', $id)->firstOrFail();
-                    $membro->convivencias()->get();
-                    print_r($membro->is_ativo);
+                    //$status_convivencia = ConvivenciaMembro::select('is_ativo')->where(['convivencia_id' => $id, 'membro_id' => $membro->id]);
+                    
+                    //print_r($status_convivencia);
                     
                     /* Verifico se existe a entrada do mebro na convivencia */
                     if (!count($convivencia->membros()->where('membro_id', $membro->id)->where('convivencia_id', $id)->first())){

@@ -23,6 +23,15 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $request->user()->authorizeRoles(['admin', 'responsavel', 'usuario']);
         return view('home');
     }
+
+    /*
+    public function someAdminStuff(Request $request)
+      {
+        $request->user()->authorizeRoles('manager');
+        return view(‘some.view’);
+      }
+  */
 }

@@ -110,7 +110,7 @@ function vai_or_naovai(id,action)
                 <td>{!! $membro->no_diocese !!}</td>
                 <td>{!! $membro->no_cidade !!}</td>
                 <td>
-                      {{!! print_r($membro->is_ativo) !!}}  
+                      {{!! print_r ($membro->is_ativo) !!}}
 
                 </td>
                 <td>
@@ -122,7 +122,7 @@ function vai_or_naovai(id,action)
                               .quick .toggle-group { transition: none; -webkit-transition: none; }
                         </style>
                    {{!! Form::hidden('is_ativo', 0) !!}}
-                   {{!! Form::checkbox('$membro->is_ativo', $membro->is_ativo, 0,['data-toggle' => 'toggle', 'data-onstyle' =>'success', 'data-offstyle'=>'danger', 'data-size'=>'small', 'data-on'=>'Sim', 'data-off'=>'Não' ]) !!}}
+                   {{!! Form::checkbox('status_convivencia', $membro->is_ativo, true,['data-toggle' => 'toggle', 'data-onstyle' =>'success', 'data-offstyle'=>'danger', 'data-size'=>'small', 'data-on'=>'Sim', 'data-off'=>'Não' ]) !!}}
                         
                         
                     </div>
