@@ -27,7 +27,8 @@ Route::resource('etapas', 'EtapaController');
 
 Route::resource('convivencias', 'ConvivenciaController');
 
-Route::get('/convivencias/{convivencia}/inscricao ','ConvivenciaController@inscricao');
+Route::patch('/convivencias/{convivencia}/inscricao',['as' => 'convivencia_inscricao', 'uses' => 'ConvivenciaController@inscricao']);
+Route::get('/convivencias/{convivencia}/inscricao','ConvivenciaController@inscricao');
 
 Route::get('/create/ticket','TicketController@create');
 
@@ -41,8 +42,28 @@ Route::post('/edit/ticket/{id}','TicketController@update');
 
 Route::delete('/delete/ticket/{id}','TicketController@destroy');
 
-Auth::routes();
-
 Route::resource('convivencias', 'ConvivenciaController');
 
 Route::resource('convivenciaMembros', 'ConvivenciaMembroController');
+
+Route::resource('tipoQuartos', 'TipoQuartoController');
+
+Route::resource('acolhidaExtras', 'AcolhidaExtraController');
+
+Route::get ('/create/acolhidas/convivencia/{convivencia}/membro/{membro}','AcolhidaController@create');
+Route::get ('/acolhidas/convivencia/{convivencia}/membro/{membro}/create','AcolhidaController@create');
+Route::get('/acolhidas/convivencia/{convivencia}/membro/{membro}/create',['as' => 'create_inscricao', 'uses' => 'AcolhidaController@create']);
+
+Route::post ('/create/acolhidas/convivencia/{convivencia}/membro/{membro}','AcolhidaController@store');
+Route::post ('/acolhidas/convivencia/{convivencia}/membro/{membro}/create','AcolhidaController@store');
+
+Route::get ('/edit/acolhidas/convivencia/{convivencia}/membro/{membro}','AcolhidaController@edit');
+Route::get ('/acolhidas/convivencia/{convivencia}/membro/{membro}/edit','AcolhidaController@edit');
+
+Route::patch ('/acolhidas/convivencia/{convivencia}/membro/{membro}','AcolhidaController@update');
+Route::put ('/acolhidas/convivencia/{convivencia}/membro/{membro}','AcolhidaController@update');
+
+Route::resource('acolhidas', 'AcolhidaController');
+
+
+Route::resource('acolhidas', 'AcolhidaController');

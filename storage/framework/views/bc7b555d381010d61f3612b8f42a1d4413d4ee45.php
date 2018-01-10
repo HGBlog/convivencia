@@ -95,7 +95,8 @@ function vai_or_naovai(id,action)
         <th>Comunidade</th>
         <th>Início Caminho</th>
         -->
-        <th colspan="3">Vai para Convivência?</th>
+        <th>Vai?</th>
+        <th>Acolhimento</th>
     </thead>
     <tbody>
      
@@ -104,32 +105,33 @@ function vai_or_naovai(id,action)
 
     
     <?php $__currentLoopData = $membros; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $membro): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            
             <tr>
                 <td><?php echo $membro->no_usuario; ?></td>
                 <td><?php echo $membro->no_diocese; ?></td>
                 <td><?php echo $membro->no_cidade; ?></td>
-                <td><?php echo $status_convivencia; ?></td>
+                <td>
+                      {<?php echo print_r($membro->is_ativo); ?>}  
+
+                </td>
                 <td>
 
-                
-           
                     <div class='btn-group'>
                         <style>
                               .slow .toggle-group { transition: left 0.7s; -webkit-transition: left 0.7s; }
                               .fast .toggle-group { transition: left 0.1s; -webkit-transition: left 0.1s; }
                               .quick .toggle-group { transition: none; -webkit-transition: none; }
                         </style>
-
+                   {<?php echo Form::hidden('is_ativo', 0); ?>}
+                   {<?php echo Form::checkbox('$membro->is_ativo', $membro->is_ativo, 0,['data-toggle' => 'toggle', 'data-onstyle' =>'success', 'data-offstyle'=>'danger', 'data-size'=>'small', 'data-on'=>'Sim', 'data-off'=>'Não' ]); ?>}
                         
-                        <?php echo e(Form::checkbox('$status_convivencia', 1, null, ['data-toggle' => 'toggle', 'data-onstyle' =>'success', 'data-offstyle'=>'danger', 'data-size'=>'small', 'data-on'=>'Sim', 'data-off'=>'Não' ])); ?>
-
                         
                     </div>
-                    <?php echo Form::close(); ?>
-
+                </td>
+                <td>
+                    <a href="<?php echo route('acolhidas.edit', ['convivencia/'.$convivencia->id.'/membro/'.$membro->id ]); ?>" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
                 </td>
             </tr>
+        
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 </tbody>

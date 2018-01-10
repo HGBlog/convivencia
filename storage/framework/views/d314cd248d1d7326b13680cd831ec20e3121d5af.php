@@ -19,3 +19,19 @@
     <a href="<?php echo route('convivenciaMembros.index'); ?>">ConvivenciaMembros</a>
 </li>
 
+<li class="<?php echo e(Request::is('tipoQuartos*') ? 'active' : ''); ?>">
+    <a href="<?php echo route('tipoQuartos.index'); ?>">TipoQuartos</a>
+</li>
+
+<li class="<?php echo e(Request::is('acolhidaExtras*') ? 'active' : ''); ?>">
+    <a href="<?php echo route('acolhidaExtras.index'); ?>">AcolhidaExtras</a>
+</li>
+
+<li class="<?php echo e(Request::is('acolhidas*') ? 'active' : ''); ?>">
+    <a href="<?php echo route('acolhidas.index'); ?>">Acolhidas</a>
+</li>
+
+<li class="<?php echo e(Request::is('acolhidas*') ? 'active' : ''); ?>">
+    <a href="<?php echo route('acolhidas.index'); ?>">Acolhidas</a>
+</li>
+

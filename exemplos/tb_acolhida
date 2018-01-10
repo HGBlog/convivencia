@@ -1,0 +1,111 @@
+[
+    {
+        "name": "membro_id",
+        "dbType": "integer:unsigned:foreign,membros,id",
+        "htmlType": "text",
+        "relation": "1t1,Membro,membro_id,id",
+        "fillable": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "convivencia_id",
+        "dbType": "integer:unsigned:foreign,convivencias,id",
+        "htmlType": "text",
+        "relation": "1t1,Convivencia,convivencia_id,id",
+        "fillable": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "tipo_quarto_id",
+        "dbType": "integer:unsigned:foreign,tipo_quartos,id",
+        "htmlType": "text",
+        "relation": "1t1,Quarto,tipo_quarto_id,id",
+        "fillable": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "acolhida_extra_id",
+        "dbType": "integer:unsigned:foreign,acolhida_extras,id",
+        "htmlType": "text",
+        "relation": "mt1,Extras,acolhida_extra_id,id",
+        "fillable": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "no_casa_convivencia",
+        "dbType": "string,50",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "dt_chegada",
+        "dbType": "date",
+        "htmlType": "date",
+        "searchable": true
+    },
+    {
+        "name": "nu_hora_chegada",
+        "dbType": "string,16",
+        "htmlType": "number",
+        "searchable": true     
+    },
+    {
+        "name": "nu_voo_chegada",
+        "dbType": "string,10",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "dt_saida",
+        "dbType": "date",
+        "htmlType": "date",
+        "searchable": true
+    },
+    {
+        "name": "nu_hora_saida",
+        "dbType": "string,16",
+        "htmlType": "number",
+        "searchable": true     
+    },
+    {
+        "name": "nu_voo_saida",
+        "dbType": "string,10",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "no_observacoes",
+        "dbType": "text",
+        "htmlType": "textarea",
+        "searchable": true
+    },
+    {
+       "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

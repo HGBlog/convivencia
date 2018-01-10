@@ -146,14 +146,14 @@ class Membro extends Model
     }
 
 
-    protected $hidden = ['pivot'];
+    protected $hidden = ['convivencia_membros'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      **/
     public function convivencias()
     {
-        return $this->belongsToMany(\App\Models\Convivencia::class, 'convivencia_membros', 'convivencia_id', 'membro_id');
+        return $this->belongsToMany(\App\Models\Convivencia::class, 'convivencia_membros', 'membro_id', 'convivencia_id')->withTimestamps();
     }
 
 }

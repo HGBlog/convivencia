@@ -19,3 +19,19 @@
     <a href="{!! route('convivenciaMembros.index') !!}">ConvivenciaMembros</a>
 </li>
 
+<li class="{{ Request::is('tipoQuartos*') ? 'active' : '' }}">
+    <a href="{!! route('tipoQuartos.index') !!}">TipoQuartos</a>
+</li>
+
+<li class="{{ Request::is('acolhidaExtras*') ? 'active' : '' }}">
+    <a href="{!! route('acolhidaExtras.index') !!}">AcolhidaExtras</a>
+</li>
+
+<li class="{{ Request::is('acolhidas*') ? 'active' : '' }}">
+    <a href="{!! route('acolhidas.index') !!}">Acolhidas</a>
+</li>
+
+<li class="{{ Request::is('acolhidas*') ? 'active' : '' }}">
+    <a href="{!! route('acolhidas.index') !!}">Acolhidas</a>
+</li>
+

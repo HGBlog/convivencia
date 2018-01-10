@@ -55,14 +55,13 @@ class ConvivenciaMembro extends Model
      **/
     public function convivencias()
     {
-        return $this->belongsToMany(\App\Models\Convivencia::class, 'convivencia_membro', 'convivencia_id', 'membro_id');
+        return $this->belongsToMany(\App\Models\Convivencia::class, 'convivencia_membros', 'convivencia_id', 'membro_id');
     }
-
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      **/
     public function membros()
     {
-        return $this->belongsToMany(\App\Models\Membro::class, 'convivencia_membro', 'convivencia_id', 'membro_id');
+        return $this->belongsToMany(\App\Models\Membro::class, 'convivencia_membros', 'convivencia_id', 'membro_id');
     }
 }
