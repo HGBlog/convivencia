@@ -13,12 +13,6 @@
     <a href="{!! route('convivencias.index') !!}">Convivencias</a>
 </li>
 
-
-
-<li class="{{ Request::is('convivenciaMembros*') ? 'active' : '' }}">
-    <a href="{!! route('convivenciaMembros.index') !!}">ConvivenciaMembros</a>
-</li>
-
 <li class="{{ Request::is('tipoQuartos*') ? 'active' : '' }}">
     <a href="{!! route('tipoQuartos.index') !!}">TipoQuartos</a>
 </li>

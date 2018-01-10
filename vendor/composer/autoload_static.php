@@ -399,6 +399,7 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
     );
 
     public static $classMap = array (
+        'AcolhidaExtraTableSeeder' => __DIR__ . '/../..' . '/database/seeds/AcolhidaExtraTableSeeder.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\DataTables\\ConvivenciaDataTable' => __DIR__ . '/../..' . '/app/DataTables/ConvivenciaDataTable.php',
         'App\\DataTables\\MembroDataTable' => __DIR__ . '/../..' . '/app/DataTables/_MembroDataTable.php',
@@ -4392,6 +4393,7 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Property' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Property.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
+        'TipoQuartoTableSeeder' => __DIR__ . '/../..' . '/database/seeds/TipoQuartoTableSeeder.php',
         'TypeError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/TypeError.php',
         'UserTableSeeder' => __DIR__ . '/../..' . '/database/seeds/UserTableSeeder.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',

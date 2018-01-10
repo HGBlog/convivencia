@@ -18,5 +18,9 @@ class DatabaseSeeder extends Seeder
 		  $this->call(UserTableSeeder::class);
           // Etapas seeder will use the roles above created.
           $this->call(EtapasTableSeeder::class);
+          // Tipo Quarto seeder will use the roles above created.
+          $this->call(TipoQuartoTableSeeder::class);
+          // Acolhida Extra seeder will use the roles above created.
+          $this->call(AcolhidaExtraTableSeeder::class);
     }
 }

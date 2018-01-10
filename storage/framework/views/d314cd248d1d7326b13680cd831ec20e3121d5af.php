@@ -13,12 +13,6 @@
     <a href="<?php echo route('convivencias.index'); ?>">Convivencias</a>
 </li>
 
-
-
-<li class="<?php echo e(Request::is('convivenciaMembros*') ? 'active' : ''); ?>">
-    <a href="<?php echo route('convivenciaMembros.index'); ?>">ConvivenciaMembros</a>
-</li>
-
 <li class="<?php echo e(Request::is('tipoQuartos*') ? 'active' : ''); ?>">
     <a href="<?php echo route('tipoQuartos.index'); ?>">TipoQuartos</a>
 </li>
