@@ -12,6 +12,7 @@
         <div class="row">
             {!! Form::model($convivencia, ['route' => ['convivencias.update', $convivencia->id], 'method' => 'patch']) !!}
 
+            {{ Form::hidden('is_ativo', 0) }}
             @include('convivencias.fields')
 
             {!! Form::close() !!}

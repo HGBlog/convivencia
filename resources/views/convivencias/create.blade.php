@@ -12,6 +12,7 @@
     <div class="row">
         {!! Form::open(['route' => 'convivencias.store']) !!}
 
+            {{ Form::hidden('is_ativo', 0) }}
             @include('convivencias.fields')
 
         {!! Form::close() !!}

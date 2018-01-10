@@ -28,7 +28,12 @@ Route::resource('etapas', 'EtapaController');
 Route::resource('convivencias', 'ConvivenciaController');
 
 Route::patch('/convivencias/{convivencia}/inscricao',['as' => 'convivencia_inscricao', 'uses' => 'ConvivenciaController@inscricao']);
+Route::get('/convivencias/{convivencia}/inscricao',['as' => 'convivencia_inscricao', 'uses' => 'ConvivenciaController@inscricao']);
 Route::get('/convivencias/{convivencia}/inscricao','ConvivenciaController@inscricao');
+
+Route::post('/convivencias/{convivencia}/seleciona_convivencia',['as' => 'seleciona_convivencia', 'uses' => 'ConvivenciaController@seleciona_convivencia']);
+
+Route::get('/lista_ativas', ['as' => 'convivencias.lista_ativas', 'uses' => 'ConvivenciaController@lista_ativas']);
 
 Route::get('/create/ticket','TicketController@create');
 

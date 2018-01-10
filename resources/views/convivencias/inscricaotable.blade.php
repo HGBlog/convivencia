@@ -96,7 +96,7 @@ function vai_or_naovai(id,action)
         <th>Início Caminho</th>
         -->
         <th>Vai?</th>
-        <th>Acolhimento</th>
+        <th>Dados do Acolhimento</th>
     </thead>
     <tbody>
      
@@ -110,22 +110,8 @@ function vai_or_naovai(id,action)
                 <td>{!! $membro->no_diocese !!}</td>
                 <td>{!! $membro->no_cidade !!}</td>
                 <td>
-                      {{!! print_r ($membro->is_ativo) !!}}
-
-                </td>
-                <td>
-
-                    <div class='btn-group'>
-                        <style>
-                              .slow .toggle-group { transition: left 0.7s; -webkit-transition: left 0.7s; }
-                              .fast .toggle-group { transition: left 0.1s; -webkit-transition: left 0.1s; }
-                              .quick .toggle-group { transition: none; -webkit-transition: none; }
-                        </style>
                    {{!! Form::hidden('is_ativo', 0) !!}}
                    {{!! Form::checkbox('status_convivencia', $membro->is_ativo, true,['data-toggle' => 'toggle', 'data-onstyle' =>'success', 'data-offstyle'=>'danger', 'data-size'=>'small', 'data-on'=>'Sim', 'data-off'=>'Não' ]) !!}}
-                        
-                        
-                    </div>
                 </td>
                 <td>
                     <a href="{!! route('acolhidas.edit', ['convivencia/'.$convivencia->id.'/membro/'.$membro->id ]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>

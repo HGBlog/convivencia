@@ -218,4 +218,30 @@ class ConvivenciaController extends AppBaseController
         return view('convivencias.inscricao')->with('convivencia', $convivencia)->with('membros', $lista_membros);
     }
 
+    public function lista_ativas(Request $request)
+    {
+        //$this->convivenciaRepository->pushCriteria(new RequestCriteria($request));
+        //$convivencias = $this->convivenciaRepository->all();
+
+        //return view('convivencias.lista_ativas')
+        //    ->with('convivencias', $convivencias);
+
+        $convivencias = Convivencia::where('is_ativo', true)->get();
+        $convivencias->prepend('None');
+        
+        return view('convivencias.lista_ativas',compact('convivencias'));    
+    }
+
+    public function seleciona_convivencia(Request $request)
+    {
+        //$this->convivenciaRepository->pushCriteria(new RequestCriteria($request));
+        //$convivencias = $this->convivenciaRepository->all();
+
+        //return view('convivencias.lista_ativas')
+        //    ->with('convivencias', $convivencias);
+        //$convivencia_id = $request->input('convivencia_id');
+        $convivencia_id = $request->convivencia_id;
+     
+        return redirect(route('convivencia_inscricao', $convivencia_id));    
+    }
 }
