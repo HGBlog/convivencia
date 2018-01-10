@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-        <h1 class="pull-left">Convivencias</h1>
+        <h1 class="pull-left">Lista de Convivencias</h1>
         <a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('convivencias.create') !!}">Add New</a>
 
         <div class="clearfix"></div>

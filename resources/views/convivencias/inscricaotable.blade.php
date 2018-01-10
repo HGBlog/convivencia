@@ -95,8 +95,8 @@ function vai_or_naovai(id,action)
         <th>Comunidade</th>
         <th>Início Caminho</th>
         -->
-        <th>Vai?</th>
-        <th>Dados do Acolhimento</th>
+        <th>Vai à Convivência</th>
+        <th>Dados Acolhimento</th>
     </thead>
     <tbody>
      

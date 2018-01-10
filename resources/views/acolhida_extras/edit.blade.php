@@ -3,7 +3,7 @@
 @section('content')
         <div class="row">
             <div class="col-sm-12">
-                <h1 class="pull-left">Edit Acolhida Extra</h1>
+                <h1 class="pull-left">Acolhimento Extra</h1>
             </div>
         </div>
 

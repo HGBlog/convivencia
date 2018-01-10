@@ -1,13 +1,13 @@
 <table class="table table-responsive" id="acolhidas-table">
     <thead>
-        <th>No Casa Convivencia</th>
-        <th>Dt Chegada</th>
-        <th>Nu Hora Chegada</th>
-        <th>Nu Voo Chegada</th>
-        <th>Dt Saida</th>
-        <th>Nu Hora Saida</th>
-        <th>Nu Voo Saida</th>
-        <th>No Observacoes</th>
+        <th>Nome Casa Convivência</th>
+        <th>Data Chegada</th>
+        <th>Hora Chegada</th>
+        <th>Número do vôo</th>
+        <th>Data de Saída</th>
+        <th>Hora saída</th>
+        <th>Número do vôo</th>
+        <th>Observações</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>

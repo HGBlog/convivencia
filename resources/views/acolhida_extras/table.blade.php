@@ -1,6 +1,6 @@
 <table class="table table-responsive" id="acolhidaExtras-table">
     <thead>
-        <th>No Acolhida Extra</th>
+        <th>Nome Acolhida Extra</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>

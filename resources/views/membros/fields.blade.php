@@ -1,5 +1,5 @@
 <div class="form-group col-sm-6">
-    {!! Form::label('no_usuario', 'Nome do membro:') !!}
+    {!! Form::label('no_usuario', 'Nome do irmão:') !!}
     {!! Form::text('no_usuario', null, ['class' => 'form-control']) !!}
 </div>
 
@@ -73,6 +73,6 @@
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
-    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+    {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
     <a href="{!! route('membros.index') !!}" class="btn btn-default">Cancel</a>
 </div>

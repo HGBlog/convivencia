@@ -1,7 +1,7 @@
 <table class="table table-responsive" id="convivencias_ativas-table">
     <thead>
         <th>Is Ativo</th>
-        <th>Convivênvcia</th>
+        <th>Convivência</th>
 
         <th colspan="3">Action</th>
     </thead>

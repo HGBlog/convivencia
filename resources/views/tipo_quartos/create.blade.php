@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-sm-12">
-            <h1 class="pull-left">Create New Tipo Quarto</h1>
+            <h1 class="pull-left">Criar novo Tipo de Quarto</h1>
         </div>
     </div>
 

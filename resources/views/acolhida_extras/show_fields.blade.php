@@ -6,7 +6,7 @@
 
 <!-- No Acolhida Extra Field -->
 <div class="form-group">
-    {!! Form::label('no_acolhida_extra', 'No Acolhida Extra:') !!}
+    {!! Form::label('no_acolhida_extra', 'Nome Acolhimento Extra:') !!}
     <p>{!! $acolhidaExtra->no_acolhida_extra !!}</p>
 </div>
 

@@ -1,6 +1,6 @@
 <table class="table table-responsive" id="membros-table">
     <thead>
-        <th>Membro</th>
+        <th>Nome</th>
         <th>Pais</th>
         <th>Email</th>
         <th>Sexo</th>
