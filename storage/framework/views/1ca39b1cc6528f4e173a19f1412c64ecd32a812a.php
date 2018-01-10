@@ -1,7 +1,7 @@
 <?php $__env->startSection('content'); ?>
     <div class="row">
         <div class="col-sm-12">
-            <h1 class="pull-left">Criar novo Membro</h1>
+            <h1 class="pull-left">Criar novo Membro da Equipe</h1>
         </div>
     </div>
 

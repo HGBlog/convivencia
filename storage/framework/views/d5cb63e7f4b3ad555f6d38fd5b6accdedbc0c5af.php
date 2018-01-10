@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Caminho Neocatecumenal no Brasil</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -71,23 +71,22 @@
                     <?php if(auth()->guard()->check()): ?>
                         <a href="<?php echo e(url('/home')); ?>">Home</a>
                     <?php else: ?>
-                        <a href="<?php echo e(route('login')); ?>">Login</a>
-                        <a href="<?php echo e(route('register')); ?>">Register</a>
+                        <a href="<?php echo e(route('login')); ?>">Entrar</a>
+                        <a href="<?php echo e(route('register')); ?>">Registrar (Primeiro acesso)</a>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Caminho Neocatecumenal<br>
+                    no Brasil
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
+                    <a href="http://www.camminoneocatecumenale.it/new/default.asp?lang=pt">Portal Oficial</a>
+                    <a href="http://192.168.201.3/login">Sistema Convivências</a>
                     <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
         </div>

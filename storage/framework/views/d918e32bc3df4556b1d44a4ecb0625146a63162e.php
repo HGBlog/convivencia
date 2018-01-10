@@ -1,5 +1,5 @@
 <div class="form-group col-sm-6">
-    <?php echo Form::label('no_usuario', 'Nome do membro:'); ?>
+    <?php echo Form::label('no_usuario', 'Nome do irmão:'); ?>
 
     <?php echo Form::text('no_usuario', null, ['class' => 'form-control']); ?>
 
@@ -82,7 +82,7 @@
 
     <?php echo Form::label('etapa_id', 'Etapa'); ?>
 
-    <?php echo Form::select('etapa_id', $etapas, $membro->pluck('etapa_id'), ['id' => 'etapa_id', 'class' => 'form-control', 'dropdown-menu']); ?>
+    <?php echo Form::select('etapa_id', $etapas, $membro->etapa_id, ['id' => 'etapa_id', 'class' => 'form-control', 'dropdown-menu']); ?>
 
 
 </div>
@@ -97,7 +97,7 @@
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
-    <?php echo Form::submit('Save', ['class' => 'btn btn-primary']); ?>
+    <?php echo Form::submit('Salvar', ['class' => 'btn btn-primary']); ?>
 
     <a href="<?php echo route('membros.index'); ?>" class="btn btn-default">Cancel</a>
 </div>

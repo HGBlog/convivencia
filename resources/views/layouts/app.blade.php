@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Caminho Neocatecumenal no Brasil</title>
 
     <!-- Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet'
@@ -56,7 +56,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    InfyOm Generator
+                    Sistema de Convivências
                 </a>
             </div>
 
@@ -68,8 +68,8 @@
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{ url('/login') }}">Login</a></li>
-                    <li><a href="{{ url('/register') }}">Register</a></li>
+                    <li><a href="{{ url('/login') }}">Entrar</a></li>
+                    <li><a href="{{ url('/register') }}">Registrar (Primeiro acesso)</a></li>
                 </ul>
             </div>
         </div>
@@ -86,7 +86,7 @@
 
         <span class="pull-right" style="margin-right: 10px;margin-top: 15px">
             <a href="{{ url('/logout') }}"
-               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout
+               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sair
             </a>
             <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                 {{ csrf_field() }}

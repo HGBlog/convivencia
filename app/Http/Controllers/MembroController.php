@@ -165,6 +165,7 @@ class MembroController extends AppBaseController
     {
         $membro = $this->membroRepository->findWithoutFail($id);
         $etapas = Etapa::pluck('no_etapa', 'id');
+
         //$etapa_marcada = Etapa::where('active', true)->orderBy('name')->lists('name', 'id');
 
         if (empty($membro)) {

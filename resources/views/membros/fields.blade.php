@@ -61,7 +61,7 @@
 <div class="form-group col-sm-6">
 
     {!! Form::label('etapa_id', 'Etapa') !!}
-    {!! Form::select('etapa_id', $etapas, $membro->pluck('etapa_id'), ['id' => 'etapa_id', 'class' => 'form-control', 'dropdown-menu'])!!}
+    {!! Form::select('etapa_id', $etapas, $membro->etapa_id, ['id' => 'etapa_id', 'class' => 'form-control', 'dropdown-menu'])!!}
 
 </div>
 

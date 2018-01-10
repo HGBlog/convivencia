@@ -5,8 +5,13 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
 
+
                 <div class="panel-body">
-                    You are logged in!
+                    Você está autenticado!!!<br>
+                    
+                    Aqui colocaremos informações sobre as convivências que estão com as inscrições abertas e um link para inscrição em cada uma.
+
+                    Por enquanto, acesse o MENU ao lado para mais opções...
                 </div>
             </div>
         </div>

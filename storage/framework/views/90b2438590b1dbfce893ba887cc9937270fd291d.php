@@ -1,6 +1,6 @@
 <!-- No Casa Convivencia Field -->
 <div class="form-group col-sm-6">
-    <?php echo Form::label('no_casa_convivencia', 'No Casa Convivencia:'); ?>
+    <?php echo Form::label('no_casa_convivencia', 'Nome da Casa de Convivência:'); ?>
 
     <?php echo Form::text('no_casa_convivencia', null, ['class' => 'form-control']); ?>
 
@@ -16,7 +16,7 @@
 
 <!-- Dt Chegada Field -->
 <div class="form-group col-sm-6">
-    <?php echo Form::label('dt_chegada', 'Dt Chegada:'); ?>
+    <?php echo Form::label('dt_chegada', 'Data de chegada:'); ?>
 
     <?php echo Form::date('dt_chegada', Carbon\Carbon::parse($acolhida->dt_chegada)->format('Y-m-d'), ['class' => 'form-control']); ?>
 
@@ -24,7 +24,7 @@
 
 <!-- Nu Hora Chegada Field -->
 <div class="form-group col-sm-6">
-    <?php echo Form::label('nu_hora_chegada', 'Nu Hora Chegada:'); ?>
+    <?php echo Form::label('nu_hora_chegada', 'Hora de chegada:'); ?>
 
     <?php echo Form::number('nu_hora_chegada', null, ['class' => 'form-control']); ?>
 
@@ -32,7 +32,7 @@
 
 <!-- Nu Voo Chegada Field -->
 <div class="form-group col-sm-6">
-    <?php echo Form::label('nu_voo_chegada', 'Nu Voo Chegada:'); ?>
+    <?php echo Form::label('nu_voo_chegada', 'Número vôo:'); ?>
 
     <?php echo Form::text('nu_voo_chegada', null, ['class' => 'form-control']); ?>
 
@@ -40,7 +40,7 @@
 
 <!-- Dt Saida Field -->
 <div class="form-group col-sm-6">
-    <?php echo Form::label('dt_saida', 'Dt Saida:'); ?>
+    <?php echo Form::label('dt_saida', 'Data de saída:'); ?>
 
     <?php echo Form::date('dt_saida', Carbon\Carbon::parse($acolhida->dt_saida)->format('Y-m-d'), ['class' => 'form-control']); ?>
 
@@ -48,7 +48,7 @@
 
 <!-- Nu Hora Saida Field -->
 <div class="form-group col-sm-6">
-    <?php echo Form::label('nu_hora_saida', 'Nu Hora Saida:'); ?>
+    <?php echo Form::label('nu_hora_saida', 'Hora de saída:'); ?>
 
     <?php echo Form::number('nu_hora_saida', null, ['class' => 'form-control']); ?>
 
@@ -56,7 +56,7 @@
 
 <!-- Nu Voo Saida Field -->
 <div class="form-group col-sm-6">
-    <?php echo Form::label('nu_voo_saida', 'Nu Voo Saida:'); ?>
+    <?php echo Form::label('nu_voo_saida', 'Número vôo:'); ?>
 
     <?php echo Form::text('nu_voo_saida', null, ['class' => 'form-control']); ?>
 
@@ -72,7 +72,7 @@
 
 <!-- No Observacoes Field -->
 <div class="form-group col-sm-12 col-lg-12">
-    <?php echo Form::label('no_observacoes', 'No Observacoes:'); ?>
+    <?php echo Form::label('no_observacoes', 'Observações:'); ?>
 
     <?php echo Form::textarea('no_observacoes', null, ['class' => 'form-control', 'rows' => '5']); ?>
 
