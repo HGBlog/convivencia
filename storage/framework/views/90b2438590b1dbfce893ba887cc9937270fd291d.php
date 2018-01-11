@@ -51,7 +51,7 @@
 <div class="form-group col-sm-6">
     <?php echo Form::label('nu_hora_saida', 'Hora de saída:'); ?>
 
-    <?php echo Form::number('nu_hora_saida', null, ['class' => 'form-control']); ?>
+    <?php echo Form::text('nu_hora_saida', null, ['class' => 'form-control']); ?>
 
 </div>
 

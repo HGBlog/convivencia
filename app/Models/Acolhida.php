@@ -79,8 +79,8 @@ class Acolhida extends Model
      */
     public static $rules = [
         'no_casa_convivencia' => 'required',
-        'nu_voo_chegada' => 'required',
-        'nu_voo_saida' => 'required'
+        //'nu_voo_chegada' => 'required',
+        //'nu_voo_saida' => 'required'
     ];
 
     /**

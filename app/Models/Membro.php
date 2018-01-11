@@ -80,11 +80,11 @@ class Membro extends Model
      */
     public static $rules = [
         'no_usuario' => 'required',
-        'no_pais' => 'required',
+        //'no_pais' => 'required',
         'no_cidade' => 'required',
         'no_paroquia' => 'required',
-        'nu_comunidade' => 'required',
-        'nu_ano_inicio_caminho' => 'required'
+        //'nu_comunidade' => 'required',
+        //'nu_ano_inicio_caminho' => 'required'
     ];
 
     /**

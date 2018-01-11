@@ -12,7 +12,7 @@
 <!-- No Email Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('no_email', 'Email:') !!}
-    {!! Form::email('no_email', null, ['class' => 'form-control', 'placeholder'=>'Email']) !!}
+    {!! Form::email('no_email', null, ['class' => 'form-control', 'placeholder'=>'Email válido']) !!}
 </div>
 
 <!-- No Sexo Field -->
@@ -24,13 +24,13 @@
 <!-- Co Telefone Pais Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('co_telefone_pais', 'Código Telefone:') !!}
-    {!! Form::text('co_telefone_pais', null, ['class' => 'form-control', 'placeholder'=>'Código DDD']) !!}
+    {!! Form::text('co_telefone_pais', null, ['class' => 'form-control', 'placeholder'=>'Código DDD', 'maxlength' => '3']) !!}
 </div>
 
 <!-- Nu Telefone Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('nu_telefone', 'Número Telefone:') !!}
-    {!! Form::number('nu_telefone', null, ['class' => 'form-control', 'placeholder'=>'Telefone - Apenas números']) !!}
+    {!! Form::number('nu_telefone', null, ['class' => 'form-control', 'placeholder'=>'Telefone - Apenas números', 'maxlength' => '10']) !!}
 </div>
 
 <!-- No Diocese Field -->
@@ -54,7 +54,7 @@
 <!-- Nu Comunidade Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('nu_comunidade', 'Número Comunidade:') !!}
-    {!! Form::text('nu_comunidade', null, ['class' => 'form-control', 'placeholder'=>'Apenas número']) !!}
+    {!! Form::text('nu_comunidade', null, ['class' => 'form-control', 'maxlength' => '2']) !!}
 </div>
 
 <!-- Etapa Caminho Field -->
@@ -68,7 +68,7 @@
 <!-- Nu Ano Inicio Caminho Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('nu_ano_inicio_caminho', 'Ano Início do Caminho:') !!}
-    {!! Form::text('nu_ano_inicio_caminho', null, ['class' => 'form-control', 'placeholder'=>'Apenas número']) !!}
+    {!! Form::text('nu_ano_inicio_caminho', null, ['class' => 'form-control', 'placeholder'=>'Inserir o ano', 'maxlength' => '4']) !!}
 </div>
 
 <!-- Submit Field -->
