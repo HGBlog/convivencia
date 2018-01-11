@@ -72,15 +72,15 @@
                         <a href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Entrar</a>
-                        <a href="{{ route('register') }}">Registrar (Primeiro acesso)</a>
+                        <a href="{{ route('register') }}">Primeiro acesso</a>
                     @endauth
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Caminho Neocatecumenal<br>
-                    no Brasil
+                    Caminho<br>
+                    Neocatecumenal
                 </div>
 
                 <div class="links">
