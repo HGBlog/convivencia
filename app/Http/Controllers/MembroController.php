@@ -216,14 +216,14 @@ class MembroController extends AppBaseController
         $membro = $this->membroRepository->findWithoutFail($id);
 
         if (empty($membro)) {
-            Flash::error('Membro not found');
+            Flash::error('Membro não encontrado.');
 
             return redirect(route('membros.index'));
         }
 
         $this->membroRepository->delete($id);
 
-        Flash::success('Membro deleted successfully.');
+        Flash::success('Membro d Equipe excluído com sucesso!');
 
         return redirect(route('membros.index'));
     }
