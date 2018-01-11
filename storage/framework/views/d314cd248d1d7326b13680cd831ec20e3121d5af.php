@@ -10,7 +10,7 @@
 <li class="<?php echo e(Request::is('convivencias*') ? 'active' : ''); ?>">
     <a href="<?php echo route('convivencias.lista_ativas'); ?>">Inscrição Convivência</a>
 </li>
-
+<?php if(Auth::user()->hasRole('admin')): ?>
 <li>
 	ADMINISTRAÇÃO
 </li>
@@ -38,4 +38,4 @@
 <li class="<?php echo e(Request::is('roles*') ? 'active' : ''); ?>">
     <a href="<?php echo route('roles.index'); ?>">Roles</a>
 </li>
-
+<?php endif; ?>;

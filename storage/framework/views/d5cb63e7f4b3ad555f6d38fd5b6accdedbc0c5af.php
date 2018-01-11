@@ -72,15 +72,15 @@
                         <a href="<?php echo e(url('/home')); ?>">Home</a>
                     <?php else: ?>
                         <a href="<?php echo e(route('login')); ?>">Entrar</a>
-                        <a href="<?php echo e(route('register')); ?>">Registrar (Primeiro acesso)</a>
+                        <a href="<?php echo e(route('register')); ?>">Primeiro acesso</a>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
 
             <div class="content">
                 <div class="title m-b-md">
-                    Caminho Neocatecumenal<br>
-                    no Brasil
+                    Caminho<br>
+                    Neocatecumenal
                 </div>
 
                 <div class="links">

@@ -4,14 +4,15 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+            <div class="panel panel-default" >
+                <div class="panel-heading">Seja bem vindo <b>{{Auth::user()->name}}</b>!!!</div>
 
 
                 <div class="panel-body">
-                    Você está autenticado!!!<br>
-                    
-                    Aqui colocaremos informações sobre as convivências que estão com as inscrições abertas e um link para inscrição em cada uma.<br><br>
+                    <br>
+                    Aqui colocaremos um quadro de avisos gerais e informações sobre as convivências que estão com as inscrições abertas e um link para inscrição em cada uma.
+
+                    <br><br>
 
                     Por enquanto, acesse o MENU ao lado para mais opções...<br><br>
 

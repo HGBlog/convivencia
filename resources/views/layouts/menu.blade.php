@@ -10,7 +10,7 @@
 <li class="{{ Request::is('convivencias*') ? 'active' : '' }}">
     <a href="{!! route('convivencias.lista_ativas') !!}">Inscrição Convivência</a>
 </li>
-
+@if(Auth::user()->hasRole('admin'))
 <li>
 	ADMINISTRAÇÃO
 </li>
@@ -38,4 +38,4 @@
 <li class="{{ Request::is('roles*') ? 'active' : '' }}">
     <a href="{!! route('roles.index') !!}">Roles</a>
 </li>
-
+@endif;
