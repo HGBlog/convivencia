@@ -66,7 +66,7 @@ class ConvivenciaController extends AppBaseController
 
         $convivencia = $this->convivenciaRepository->create($input);
 
-        Flash::success('Convivencia saved successfully.');
+        Flash::success('Convivência criada com sucesso!.');
 
         return redirect(route('convivencias.index'));
     }
@@ -103,7 +103,7 @@ class ConvivenciaController extends AppBaseController
         $convivencia = $this->convivenciaRepository->findWithoutFail($id);
 
         if (empty($convivencia)) {
-            Flash::error('Convivencia not found');
+            Flash::error('Convivência não encontrada!');
 
             return redirect(route('convivencias.index'));
         }
@@ -124,14 +124,14 @@ class ConvivenciaController extends AppBaseController
         $convivencia = $this->convivenciaRepository->findWithoutFail($id);
 
         if (empty($convivencia)) {
-            Flash::error('Convivencia not found');
+            Flash::error('Convivência não encontrada!');
 
             return redirect(route('convivencias.index'));
         }
 
         $convivencia = $this->convivenciaRepository->update($request->all(), $id);
 
-        Flash::success('Convivencia updated successfully.');
+        Flash::success('Conviveência atualizada com sucesso!');
 
         return redirect(route('convivencias.index'));
     }
@@ -148,14 +148,14 @@ class ConvivenciaController extends AppBaseController
         $convivencia = $this->convivenciaRepository->findWithoutFail($id);
 
         if (empty($convivencia)) {
-            Flash::error('Convivencia not found');
+            Flash::error('Convivência não encontrada.');
 
             return redirect(route('convivencias.index'));
         }
 
         $this->convivenciaRepository->delete($id);
 
-        Flash::success('Convivencia deleted successfully.');
+        Flash::success('Convivência excluída com sucesso!');
 
         return redirect(route('convivencias.index'));
     }

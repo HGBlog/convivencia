@@ -172,7 +172,7 @@ class MembroController extends AppBaseController
         //$etapa_marcada = Etapa::where('active', true)->orderBy('name')->lists('name', 'id');
 
         if (empty($membro)) {
-            Flash::error('Membro not found');
+            Flash::error('Membro não encontrado.');
 
             return redirect(route('membros.index'));
         }
@@ -199,7 +199,7 @@ class MembroController extends AppBaseController
 
         $membro = $this->membroRepository->update($request->all(), $id);
 
-        Flash::success('Membro updated successfully.');
+        Flash::success('Membro da Equipe atualizado com sucesso!');
 
         return redirect(route('membros.index'));
     }

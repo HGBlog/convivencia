@@ -10,6 +10,10 @@
 
                 <div class="panel-body">
                     <br>
+                    Próxima Convivência:<br>
+                    { $convivencia->no_nome }
+
+                    <br>
                     Aqui colocaremos um quadro de avisos gerais e informações sobre as convivências que estão com as inscrições abertas e um link para inscrição em cada uma.
 
                     <br><br>

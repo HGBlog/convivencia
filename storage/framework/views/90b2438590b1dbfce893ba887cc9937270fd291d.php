@@ -2,7 +2,7 @@
 <div class="form-group col-sm-6">
     <?php echo Form::label('no_casa_convivencia', 'Nome da Casa de Convivência:'); ?>
 
-    <?php echo Form::text('no_casa_convivencia', null, ['class' => 'form-control', 'placeholder'=>'Nome']); ?>
+    <?php echo Form::text('no_casa_convivencia', null, ['class' => 'form-control', 'placeholder'=>'Este campo estava reservado para informar Hotel']); ?>
 
 </div>
 
