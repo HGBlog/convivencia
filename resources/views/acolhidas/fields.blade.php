@@ -1,7 +1,7 @@
 <!-- No Casa Convivencia Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('no_casa_convivencia', 'Nome da Casa de Convivência:') !!}
-    {!! Form::text('no_casa_convivencia', null, ['class' => 'form-control', 'placeholder'=>'Nome']) !!}
+    {!! Form::text('no_casa_convivencia', null, ['class' => 'form-control', 'placeholder'=>'Este campo estava reservado para informar Hotel']) !!}
 </div>
 
 <!-- Tipo Quarto Field -->

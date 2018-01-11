@@ -2,7 +2,7 @@
 
 <?php $__env->startSection('content'); ?>
 
-        <h1 class="pull-left">Inscrição de Membros na Convivência</h1>
+        <h1 class="pull-left"><b><?php echo $convivencia->no_nome; ?> em <?php echo Carbon\Carbon::parse($convivencia->dt_inicio)->format('d/m/Y'); ?></b> </h1>
         <a class="btn btn-primary pull-right" style="margin-top: 25px" href="<?php echo route('membros.create'); ?>">Novo membro</a>
         <!--
         <a class="btn btn-primary pull-right" style="margin-top: 25px" href="<?php echo route('convivenciaMembros.create'); ?>">Add New</a>

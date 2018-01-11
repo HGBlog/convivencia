@@ -223,7 +223,7 @@ class MembroController extends AppBaseController
 
         $this->membroRepository->delete($id);
 
-        Flash::success('Membro d Equipe excluído com sucesso!');
+        Flash::success('Membro da Equipe excluído com sucesso!');
 
         return redirect(route('membros.index'));
     }
