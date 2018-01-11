@@ -31,3 +31,11 @@
 </li>
 
 
+<li class="<?php echo e(Request::is('usuarios*') ? 'active' : ''); ?>">
+    <a href="<?php echo route('usuarios.index'); ?>">Usuarios</a>
+</li>
+
+<li class="<?php echo e(Request::is('roles*') ? 'active' : ''); ?>">
+    <a href="<?php echo route('roles.index'); ?>">Roles</a>
+</li>
+

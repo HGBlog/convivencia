@@ -27,6 +27,8 @@ Route::resource('etapas', 'EtapaController');
 
 Route::resource('convivencias', 'ConvivenciaController');
 
+Route::resource('usuarios', 'UsuarioController');
+
 Route::patch('/convivencias/{convivencia}/inscricao',['as' => 'convivencia_inscricao', 'uses' => 'ConvivenciaController@inscricao']);
 Route::get('/convivencias/{convivencia}/inscricao',['as' => 'convivencia_inscricao', 'uses' => 'ConvivenciaController@inscricao']);
 Route::get('/convivencias/{convivencia}/inscricao','ConvivenciaController@inscricao');
@@ -72,3 +74,7 @@ Route::resource('acolhidas', 'AcolhidaController');
 
 
 Route::resource('acolhidas', 'AcolhidaController');
+
+Route::resource('usuarios', 'UsuarioController');
+
+Route::resource('roles', 'RoleController');

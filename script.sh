@@ -8,6 +8,7 @@ php artisan infyom:scaffold Convivencia --fieldsFile=exemplos/tb_convivencia --d
 php artisan infyom:scaffold Acolhida --fieldsFile=exemplos/tb_acolhida --datatables=false
 php artisan infyom:scaffold TipoQuarto --fieldsFile=exemplos/tb_tipo_quarto --datatables=false
 php artisan infyom:scaffold AcolhidaExtra --fieldsFile=exemplos/tb_acolhida_extra --datatables=false
-
+php artisan infyom:scaffold Usuario --tableName=users --fromTable --datatables=false
+php artisan infyom:scaffold Role --tableName=roles --fromTable --datatables=false
 #php artisan infyom:scaffold PerfilUsuario --fieldsFile=exemplos/tb_perfil_usuario --datatables=false
 #php artisan infyom:scaffold DadosCaminho --fieldsFile=exemplos/tb_dados_caminho --datatables=false

@@ -1,6 +1,6 @@
 <?php $__env->startSection('content'); ?>
-        <h1 class="pull-left">Convivencias</h1>
-        <a class="btn btn-primary pull-right" style="margin-top: 25px" href="<?php echo route('convivencias.create'); ?>">Add New</a>
+        <h1 class="pull-left">Lista de Convivencias</h1>
+        <a class="btn btn-primary pull-right" style="margin-top: 25px" href="<?php echo route('convivencias.create'); ?>">Criar nova Convivência</a>
 
         <div class="clearfix"></div>
 

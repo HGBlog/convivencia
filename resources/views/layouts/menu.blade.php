@@ -31,3 +31,11 @@
 </li>
 
 
+<li class="{{ Request::is('usuarios*') ? 'active' : '' }}">
+    <a href="{!! route('usuarios.index') !!}">Usuarios</a>
+</li>
+
+<li class="{{ Request::is('roles*') ? 'active' : '' }}">
+    <a href="{!! route('roles.index') !!}">Roles</a>
+</li>
+

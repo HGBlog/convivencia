@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Usuario
  * @package App\Models
- * @version December 26, 2017, 9:47 pm UTC
+ * @version January 11, 2018, 7:27 am UTC
  *
- * @property \Illuminate\Database\Eloquent\Collection PerfilUsuario
+ * @property \Illuminate\Database\Eloquent\Collection convivenciaMembros
+ * @property \Illuminate\Database\Eloquent\Collection Membro
  * @property string name
  * @property string email
  * @property string password
@@ -18,7 +19,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Usuario extends Model
 {
-    use SoftDeletes;
+    //use SoftDeletes;
 
     public $table = 'users';
     
@@ -28,7 +29,6 @@ class Usuario extends Model
 
     protected $dates = ['deleted_at'];
 
-    protected $primaryKey = 'id';
 
     public $fillable = [
         'name',
@@ -56,14 +56,19 @@ class Usuario extends Model
      * @var array
      */
     public static $rules = [
-        
+        //'name' => 'required|string|max:255',
+        //'email' => 'required|string|email|max:255|unique:users',
+        //'password' => 'required|string|min:6|confirmed',
+        'name' => 'required|string|max:255',
+        'email' => 'required|string|email|max:255',
+        'password' => 'required|string|min:6',
     ];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      **/
-    public function perfilUsuarios()
+    public function membros()
     {
-        return $this->hasMany(\App\Models\PerfilUsuario::class);
+        return $this->hasMany(\App\Models\Membro::class);
     }
 }

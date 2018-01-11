@@ -1,14 +1,13 @@
 <table class="table table-responsive" id="convivencias-table">
     <thead>
-        <th>Is Ativo</th>
-        <th>No Nome</th>
-        <th>No Local</th>
-        <th>Nu Telefone</th>
-        <th>No Observacoes</th>
-        <th>Dt Inicio</th>
-        <th>Dt Fim</th>
-        <th>Dt Inicio Inscricao</th>
-        <th>Dt Fim Inscricao</th>
+        <th>Habilitada</th>
+        <th>Nome</th>
+        <th>Local</th>
+        <th>Telefone</th>
+        <th>Data Início</th>
+        <th>Data Término</th>
+        <th>Início Inscrição</th>
+        <th>Término Inscrição</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>
@@ -18,7 +17,6 @@
             <td><?php echo $convivencia->no_nome; ?></td>
             <td><?php echo $convivencia->no_local; ?></td>
             <td><?php echo $convivencia->nu_telefone; ?></td>
-            <td><?php echo $convivencia->no_observacoes; ?></td>
             <td><?php echo $convivencia->dt_inicio; ?></td>
             <td><?php echo $convivencia->dt_fim; ?></td>
             <td><?php echo $convivencia->dt_inicio_inscricao; ?></td>

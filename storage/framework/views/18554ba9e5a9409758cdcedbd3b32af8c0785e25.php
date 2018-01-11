@@ -1,12 +1,27 @@
-<?php $__env->startSection('css'); ?>
-    <?php echo $__env->make('layouts.datatables_css', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-<?php $__env->stopSection(); ?>
+<table class="table table-responsive" id="usuarios-table">
+    <thead>
+        <th>Name</th>
+        <th>Email</th>
+        <th colspan="3">Action</th>
+    </thead>
+    <tbody>
+    <?php $__currentLoopData = $usuarios; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $usuario): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <tr>
+            <td><?php echo $usuario->name; ?></td>
+            <td><?php echo $usuario->email; ?></td>
+            <td>
+                <?php echo Form::open(['route' => ['usuarios.destroy', $usuario->id], 'method' => 'delete']); ?>
 
-<?php echo $dataTable->table(['width' => '100%']); ?>
+                <div class='btn-group'>
+                    <a href="<?php echo route('usuarios.show', [$usuario->id]); ?>" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
+                    <a href="<?php echo route('usuarios.edit', [$usuario->id]); ?>" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
+                    <?php echo Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]); ?>
 
+                </div>
+                <?php echo Form::close(); ?>
 
-<?php $__env->startSection('scripts'); ?>
-    <?php echo $__env->make('layouts.datatables_js', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-    <?php echo $dataTable->scripts(); ?>
-
-<?php $__env->stopSection(); ?>
+            </td>
+        </tr>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    </tbody>
+</table>
