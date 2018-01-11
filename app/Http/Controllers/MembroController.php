@@ -17,6 +17,9 @@ use Response;
 use View;
 use App\Models\Membro;
 use App\Models\Etapa;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
 
 
 class MembroController extends AppBaseController
@@ -99,14 +102,14 @@ class MembroController extends AppBaseController
             'no_usuario'       => 'required',
             'no_email'      => 'required|email'
         );
-       //$validator = Validator::make(Input::all(), $rules);
+       $validator = Validator::make(Input::all(), $rules);
 
         // process the login
-        //if ($validator->fails()) {
-        //    return Redirect::to('membros/create')
-        //        ->withErrors($validator);
+        if ($validator->fails()) {
+            return Redirect::to('membros/create')
+                ->withErrors($validator);
         //        ->withInput(Input::except('password'));
-        //} else {
+        } else {
             // store
             $membro = new Membro;
             $membro->no_usuario = $request->input('no_usuario');
@@ -128,7 +131,7 @@ class MembroController extends AppBaseController
             // redirect
             Flash::success('Membro criado com sucesso!');
             return redirect(route('membros.index'));
-        //};
+        };
     }
 
 
