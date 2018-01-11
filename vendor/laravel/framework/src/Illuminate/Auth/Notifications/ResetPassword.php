@@ -45,8 +45,8 @@ class ResetPassword extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->line('You are receiving this email because we received a password reset request for your account.')
-            ->action('Reset Password', url(config('app.url').route('password.reset', $this->token, false)))
-            ->line('If you did not request a password reset, no further action is required.');
+            ->line('Você está recebendo este email porque nós recebemos um pedido de troca de senha do Sistema de Convivências do Caminho Neocatecumenal no Brasil para a sua conta.')
+            ->action('Trocar Senha', url(config('app.url').route('password.reset', $this->token, false)))
+            ->line('Se você não solicitou esta troca de senha, não se preocupe. Nenhuma ação é necessária. Apenas ignore esta mensagem.');
     }
 }
