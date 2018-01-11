@@ -107,8 +107,8 @@ class MembroController extends AppBaseController
         // process the login
         if ($validator->fails()) {
             return Redirect::to('membros/create')
-                ->withErrors($validator);
-        //        ->withInput(Input::except('password'));
+                ->withErrors($validator)
+                ->withInput(Input::except('password'));
         } else {
             // store
             $membro = new Membro;
