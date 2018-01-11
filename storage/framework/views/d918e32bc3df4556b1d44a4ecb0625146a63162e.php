@@ -1,7 +1,7 @@
 <div class="form-group col-sm-6">
-    <?php echo Form::label('no_usuario', 'Nome do irmão:'); ?>
+    <?php echo Form::label('no_usuario', 'Nome do membro:'); ?>
 
-    <?php echo Form::text('no_usuario', null, ['class' => 'form-control']); ?>
+    <?php echo Form::text('no_usuario', null, ['class' => 'form-control', 'placeholder'=>'Nome completo']); ?>
 
 </div>
 
@@ -9,7 +9,7 @@
 <div class="form-group col-sm-6">
     <?php echo Form::label('no_pais', 'País:'); ?>
 
-    <?php echo Form::text('no_pais', null, ['class' => 'form-control']); ?>
+    <?php echo Form::text('no_pais', null, ['class' => 'form-control', 'placeholder'=>'País']); ?>
 
 </div>
 
@@ -17,7 +17,7 @@
 <div class="form-group col-sm-6">
     <?php echo Form::label('no_email', 'Email:'); ?>
 
-    <?php echo Form::email('no_email', null, ['class' => 'form-control']); ?>
+    <?php echo Form::email('no_email', null, ['class' => 'form-control', 'placeholder'=>'Email']); ?>
 
 </div>
 
@@ -33,7 +33,7 @@
 <div class="form-group col-sm-6">
     <?php echo Form::label('co_telefone_pais', 'Código Telefone:'); ?>
 
-    <?php echo Form::number('co_telefone_pais', null, ['class' => 'form-control']); ?>
+    <?php echo Form::text('co_telefone_pais', null, ['class' => 'form-control', 'placeholder'=>'Código DDD']); ?>
 
 </div>
 
@@ -41,7 +41,7 @@
 <div class="form-group col-sm-6">
     <?php echo Form::label('nu_telefone', 'Número Telefone:'); ?>
 
-    <?php echo Form::number('nu_telefone', null, ['class' => 'form-control']); ?>
+    <?php echo Form::number('nu_telefone', null, ['class' => 'form-control', 'placeholder'=>'Telefone - Apenas números']); ?>
 
 </div>
 
@@ -49,7 +49,7 @@
 <div class="form-group col-sm-6">
     <?php echo Form::label('no_diocese', 'Diocese:'); ?>
 
-    <?php echo Form::text('no_diocese', null, ['class' => 'form-control']); ?>
+    <?php echo Form::text('no_diocese', null, ['class' => 'form-control', 'placeholder'=>'Diocese']); ?>
 
 </div>
 
@@ -57,7 +57,7 @@
 <div class="form-group col-sm-6">
     <?php echo Form::label('no_cidade', 'Cidade:'); ?>
 
-    <?php echo Form::text('no_cidade', null, ['class' => 'form-control']); ?>
+    <?php echo Form::text('no_cidade', null, ['class' => 'form-control', 'placeholder'=>'Cidade de origem']); ?>
 
 </div>
 
@@ -65,7 +65,7 @@
 <div class="form-group col-sm-6">
     <?php echo Form::label('no_paroquia', 'Paróquia:'); ?>
 
-    <?php echo Form::text('no_paroquia', null, ['class' => 'form-control']); ?>
+    <?php echo Form::text('no_paroquia', null, ['class' => 'form-control', 'placeholder'=>'Paróquia de origem']); ?>
 
 </div>
 
@@ -73,7 +73,7 @@
 <div class="form-group col-sm-6">
     <?php echo Form::label('nu_comunidade', 'Número Comunidade:'); ?>
 
-    <?php echo Form::text('nu_comunidade', null, ['class' => 'form-control']); ?>
+    <?php echo Form::text('nu_comunidade', null, ['class' => 'form-control', 'placeholder'=>'Apenas número']); ?>
 
 </div>
 
@@ -91,7 +91,7 @@
 <div class="form-group col-sm-6">
     <?php echo Form::label('nu_ano_inicio_caminho', 'Ano Início do Caminho:'); ?>
 
-    <?php echo Form::text('nu_ano_inicio_caminho', null, ['class' => 'form-control']); ?>
+    <?php echo Form::text('nu_ano_inicio_caminho', null, ['class' => 'form-control', 'placeholder'=>'Apenas número']); ?>
 
 </div>
 
