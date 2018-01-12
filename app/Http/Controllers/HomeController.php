@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Convivencia;
 
 class HomeController extends Controller
 {
@@ -24,7 +25,10 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         //$request->user()->authorizeRoles(['admin', 'responsavel', 'usuario']);
-        return view('home');
+        $convivencia = Convivencia::where('is_ativo', '1')->first();
+        //print_r($convivencia);
+        //echo $convivencia->no_nome;
+        return view('home')->with('convivencia', $convivencia);
     }
 
     /*

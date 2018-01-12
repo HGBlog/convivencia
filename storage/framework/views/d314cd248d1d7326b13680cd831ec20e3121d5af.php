@@ -42,9 +42,14 @@
 <li class="<?php echo e(Request::is('tipoCarismas*') ? 'active' : ''); ?>">
     <a href="<?php echo route('tipoCarismas.index'); ?>">TipoCarismas</a>
 </li>
-<?php endif; ?>;
 
 <li class="<?php echo e(Request::is('tipoTranslados*') ? 'active' : ''); ?>">
     <a href="<?php echo route('tipoTranslados.index'); ?>">TipoTranslados</a>
 </li>
+
+<li class="<?php echo e(Request::is('tipoEquipes*') ? 'active' : ''); ?>">
+    <a href="<?php echo route('tipoEquipes.index'); ?>">TipoEquipes</a>
+</li>
+<?php endif; ?>;
+
 

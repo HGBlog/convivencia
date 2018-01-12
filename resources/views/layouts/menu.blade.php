@@ -42,7 +42,6 @@
 <li class="{{ Request::is('tipoCarismas*') ? 'active' : '' }}">
     <a href="{!! route('tipoCarismas.index') !!}">TipoCarismas</a>
 </li>
-@endif;
 
 <li class="{{ Request::is('tipoTranslados*') ? 'active' : '' }}">
     <a href="{!! route('tipoTranslados.index') !!}">TipoTranslados</a>
@@ -51,4 +50,6 @@
 <li class="{{ Request::is('tipoEquipes*') ? 'active' : '' }}">
     <a href="{!! route('tipoEquipes.index') !!}">TipoEquipes</a>
 </li>
+@endif;
+
 

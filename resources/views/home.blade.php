@@ -10,9 +10,10 @@
 
                 <div class="panel-body">
                     <br>
-                    Próxima Convivência:<br>
-                    { $convivencia->no_nome }
-
+                    <b>Próxima Convivência: {!! $convivencia->no_nome!!}</b><br>
+                    <b>Data: {!! Carbon\Carbon::parse($convivencia->dt_inicio)->format('d/m/Y') !!} a {!! Carbon\Carbon::parse($convivencia->dt_inicio)->format('d/m/Y') !!}<br></b>
+                    <b>Fim das inscrições: {!! Carbon\Carbon::parse($convivencia->dt_fim_inscricao)->format('d/m/Y') !!}</b>
+                    <br>
                     <br>
                     Aqui colocaremos um quadro de avisos gerais e informações sobre as convivências que estão com as inscrições abertas e um link para inscrição em cada uma.
 
