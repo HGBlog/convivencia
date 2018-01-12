@@ -2,7 +2,7 @@
 <div class="form-group col-sm-6">
     <?php echo Form::label('is_ativo', 'Habilitada:'); ?>
 
-    <?php echo Form::checkbox('is_ativo', 1, true, ['class' => 'form-control']); ?>
+    <?php echo Form::checkbox('is_ativo', true, $convivencia->is_ativo,  ['class' => 'form-control']); ?>
 
 </div>
 <!-- No Nome Field -->

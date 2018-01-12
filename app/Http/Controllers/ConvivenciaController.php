@@ -83,7 +83,7 @@ class ConvivenciaController extends AppBaseController
         $convivencia = $this->convivenciaRepository->findWithoutFail($id);
 
         if (empty($convivencia)) {
-            Flash::error('Convivencia not found');
+            Flash::error('Convivência não encontrada!');
 
             return redirect(route('convivencias.index'));
         }
@@ -131,7 +131,7 @@ class ConvivenciaController extends AppBaseController
 
         $convivencia = $this->convivenciaRepository->update($request->all(), $id);
 
-        Flash::success('Conviveência atualizada com sucesso!');
+        Flash::success('Convivência atualizada com sucesso!');
 
         return redirect(route('convivencias.index'));
     }
