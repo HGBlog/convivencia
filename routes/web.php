@@ -84,3 +84,5 @@ Route::resource('tipoCarismas', 'TipoCarismaController');
 Route::resource('tipoCarismas', 'TipoCarismaController');
 
 Route::resource('tipoTranslados', 'TipoTransladoController');
+
+Route::resource('tipoEquipes', 'TipoEquipeController');
