@@ -18,6 +18,7 @@ class CreateAcolhidasTable extends Migration
             $table->integer('convivencia_id')->unsigned();
             $table->integer('tipo_quarto_id')->unsigned();
             $table->integer('acolhida_extra_id')->unsigned();
+            $table->integer('tipo_translado_id')->unsigned();
             $table->string('no_casa_convivencia', 50);
             $table->date('dt_chegada');
             $table->string('nu_hora_chegada', 16);
@@ -32,6 +33,7 @@ class CreateAcolhidasTable extends Migration
             $table->foreign('convivencia_id')->references('id')->on('convivencias');
             $table->foreign('tipo_quarto_id')->references('id')->on('tipo_quartos');
             $table->foreign('acolhida_extra_id')->references('id')->on('acolhida_extras');
+            $table->foreign('tipo_translado_id')->references('id')->on('tipo_translados');
         });
     }
 

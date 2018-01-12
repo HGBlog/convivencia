@@ -24,5 +24,7 @@ class DatabaseSeeder extends Seeder
           $this->call(AcolhidaExtraTableSeeder::class);
           // Tipo Carisma seeder will use the roles above created.
           $this->call(TipoCarismaTableSeeder::class);
+          // Tipo Translado seeder will use the roles above created.
+          $this->call(TipoTransladoTableSeeder::class);
     }
 }

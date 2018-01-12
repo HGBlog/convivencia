@@ -63,7 +63,16 @@
 
 </div>
 
-<!-- Tipo Quarto Field -->
+<!-- Translado Field -->
+<div class="form-group col-sm-6">
+
+    <?php echo Form::label('tipo_translado_id', 'Translado:'); ?>
+
+    <?php echo Form::select('tipo_translado_id', $translado, $acolhida->tipo_translado_id, ['id' => 'tipo_translado_id', 'class' => 'form-control', 'dropdown-menu']); ?>
+
+</div>
+
+<!-- Acolhimento Extra Field -->
 <div class="form-group col-sm-6">
     <?php echo Form::label('acolhida_extra_id', 'Acolhimento Extra'); ?>
 

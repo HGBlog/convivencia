@@ -12,14 +12,17 @@ class AcolhidaExtraTableSeeder extends Seeder
      */
     public function run()
     {
+        $acolhida = new AcolhidaExtra();
+        $acolhida->no_acolhida_extra = 'Nenhum acolhimento';
+        $acolhida->save();
       	$acolhida = new AcolhidaExtra();
-	    $acolhida->no_acolhida_extra = 'Translado Aeroporto->Casa de Convivência';
+	    $acolhida->no_acolhida_extra = 'Antes da Convivência';
 	    $acolhida->save();
 	    $acolhida = new AcolhidaExtra();
-	    $acolhida->no_acolhida_extra = 'Acolhida dias antes da Convivência';
+	    $acolhida->no_acolhida_extra = 'Depois da Convivência';
 	    $acolhida->save();
 	    $acolhida = new AcolhidaExtra();
-	    $acolhida->no_acolhida_extra = 'Translado Casa de Convivência -> Aeroporto';
+	    $acolhida->no_acolhida_extra = 'Antes e depois da Convivência';
 	    $acolhida->save();
     }
 }

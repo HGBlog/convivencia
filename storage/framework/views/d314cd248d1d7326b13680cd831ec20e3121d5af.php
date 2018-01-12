@@ -44,3 +44,7 @@
 </li>
 <?php endif; ?>;
 
+<li class="<?php echo e(Request::is('tipoTranslados*') ? 'active' : ''); ?>">
+    <a href="<?php echo route('tipoTranslados.index'); ?>">TipoTranslados</a>
+</li>
+

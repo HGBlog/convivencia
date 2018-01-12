@@ -82,3 +82,5 @@ Route::resource('roles', 'RoleController');
 Route::resource('tipoCarismas', 'TipoCarismaController');
 
 Route::resource('tipoCarismas', 'TipoCarismaController');
+
+Route::resource('tipoTranslados', 'TipoTransladoController');

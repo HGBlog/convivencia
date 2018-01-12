@@ -15,6 +15,7 @@ use App\Models\Acolhida;
 use App\Models\Convivencia;
 use App\Models\AcolhidaExtra;
 use App\Models\Membro;
+use App\Models\TipoTranslado;
 
 class AcolhidaController extends AppBaseController
 {
@@ -51,8 +52,9 @@ class AcolhidaController extends AppBaseController
         $acolhida = new Acolhida;
         $quartos = TipoQuarto::pluck('no_quarto', 'id')->all();
         $acolhida_extra = AcolhidaExtra::pluck('no_acolhida_extra', 'id')->all();
+        $translado = TipoTranslado::pluck('no_translado', 'id')->all();
 
-        return view('acolhidas.create')->with('convivencia_id',$convivencia_id)->with('membro_id',$membro_id)->with('quartos',$quartos)->with('acolhida', $acolhida)->with('acolhida_extra', $acolhida_extra);
+        return view('acolhidas.create')->with('convivencia_id',$convivencia_id)->with('membro_id',$membro_id)->with('quartos',$quartos)->with('acolhida', $acolhida)->with('acolhida_extra', $acolhida_extra)->with('translado', $translado);
     }
 
     /**
@@ -110,6 +112,7 @@ class AcolhidaController extends AppBaseController
         $acolhida_extra = AcolhidaExtra::pluck('no_acolhida_extra', 'id')->all();
         //$acolhida = Membro::where('owner_id', auth()->user()->id)->get();
         $acolhida = Acolhida::where('convivencia_id', $convivencia_id)->where('membro_id', $membro_id)->first();
+        $translado = TipoTranslado::pluck('no_translado', 'id')->all();
 
         if (empty($acolhida)) {
             Flash::error('Nenhum dado de acolhimento encontrado. Criando dados novos...');
@@ -119,7 +122,7 @@ class AcolhidaController extends AppBaseController
             return redirect(route('create_inscricao',[$convivencia_id, $membro_id]));
         }
 
-        return view('acolhidas.edit')->with('acolhida', $acolhida)->with('convivencia_id', $convivencia_id)->with('membro_id', $membro_id)->with('quartos', $quartos)->with('acolhida_extra', $acolhida_extra);
+        return view('acolhidas.edit')->with('acolhida', $acolhida)->with('convivencia_id', $convivencia_id)->with('membro_id', $membro_id)->with('quartos', $quartos)->with('acolhida_extra', $acolhida_extra)->with('translado', $translado);
     }
 
     /**

@@ -44,3 +44,7 @@
 </li>
 @endif;
 
+<li class="{{ Request::is('tipoTranslados*') ? 'active' : '' }}">
+    <a href="{!! route('tipoTranslados.index') !!}">TipoTranslados</a>
+</li>
+

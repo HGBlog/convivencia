@@ -106,6 +106,11 @@ class Membro extends Model
         return $this->hasOne(\App\Models\Etapa::class, 'etapa_id', 'id');
     }
 
+        public function carisma()
+    {
+        return $this->hasOne(\App\Models\TipoCarisma::class, 'tipo_carisma_id', 'id');
+    }
+
         public function saveMembro($data)
     {
             print_r($data);
