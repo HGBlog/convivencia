@@ -48,3 +48,7 @@
     <a href="{!! route('tipoTranslados.index') !!}">TipoTranslados</a>
 </li>
 
+<li class="{{ Request::is('tipoEquipes*') ? 'active' : '' }}">
+    <a href="{!! route('tipoEquipes.index') !!}">TipoEquipes</a>
+</li>
+
