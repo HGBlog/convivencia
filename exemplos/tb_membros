@@ -102,6 +102,15 @@
         "inIndex": false
     },
     {
+        "name": "tipo_carisma_id",
+        "dbType": "integer:unsigned:foreign,tipo_carismas,id",
+        "htmlType": "text",
+        "relation": "1t1,Carisma,tipo_carisma_id,id",
+        "fillable": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
        "name": "created_at",
         "dbType": "timestamp",
         "htmlType": "",

@@ -48,7 +48,8 @@ class Membro extends Model
         'no_paroquia',
         'nu_comunidade',
         'nu_ano_inicio_caminho',
-        'etapa_id'
+        'etapa_id',
+        'tipo_carisma_id'
     ];
 
 
@@ -70,7 +71,8 @@ class Membro extends Model
         'no_paroquia' => 'string',
         'nu_comunidade' => 'string',
         'nu_ano_inicio_caminho' => 'string',
-        'etapa_id' => 'integer'
+        'etapa_id' => 'integer',
+        'tipo_carisma_id' => 'integer'
     ];
 
     /**
@@ -122,6 +124,7 @@ class Membro extends Model
             $this->nu_comunidade = $data['nu_comunidade'];
             $this->nu_ano_inicio_caminho = $data['nu_ano_inicio_caminho'];
             $this->etapa_id = $data['etapa_id'];
+            $this->tipo_carisma_id = $data['tipo_carisma_id'];
             $this->save();
             return 1;
     }
@@ -142,6 +145,7 @@ class Membro extends Model
             $membro->nu_comunidade = $data['nu_comunidade'];
             $membro->nu_ano_inicio_caminho = $data['nu_ano_inicio_caminho'];
             $membro->etapa_id = $data['etapa_id'];
+            $membro->tipo_carisma_id = $data['tipo_carisma'];
             $membro->save();
             return 1;
     }

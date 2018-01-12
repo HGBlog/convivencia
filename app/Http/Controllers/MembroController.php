@@ -17,6 +17,7 @@ use Response;
 use View;
 use App\Models\Membro;
 use App\Models\Etapa;
+use App\Models\TipoCarisma;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
@@ -62,11 +63,12 @@ class MembroController extends AppBaseController
         //$etapas = Etapa::all(['id', 'no_etapa'])->pluck('no_etapa', 'id');
         $membro = new Membro;
         $etapas = Etapa::pluck('no_etapa', 'id')->all();
+        $carismas = TipoCarisma::pluck('no_carisma', 'id')->all();
         
         ///$thing = Etapa::pluck('id');
         //return view('membros.create');
         //return View::make('membros.create', $etapas);
-        return view('membros.create')->with('etapas',$etapas)->with('membro',$membro);
+        return view('membros.create')->with('etapas',$etapas)->with('membro',$membro)->with('carismas', $carismas);
 
 
 
@@ -126,6 +128,7 @@ class MembroController extends AppBaseController
             $membro->nu_comunidade = $request->input('nu_comunidade');
             $membro->nu_ano_inicio_caminho = $request->input('nu_ano_inicio_caminho');
             $membro->etapa_id = $request->input('etapa_id');
+            $membro->tipo_carisma_id = $request->input('tipo_carisma_id');
             $membro->save();
             //$membro->etapas()->sync($request->get('etapas'));
             // redirect
@@ -168,6 +171,7 @@ class MembroController extends AppBaseController
     {
         $membro = $this->membroRepository->findWithoutFail($id);
         $etapas = Etapa::pluck('no_etapa', 'id');
+        $carismas = TipoCarisma::pluck('no_carisma', 'id')->all();
 
         //$etapa_marcada = Etapa::where('active', true)->orderBy('name')->lists('name', 'id');
 
@@ -176,7 +180,7 @@ class MembroController extends AppBaseController
 
             return redirect(route('membros.index'));
         }
-        return view('membros.edit')->with('membro', $membro)->with('etapas',$etapas);
+        return view('membros.edit')->with('membro', $membro)->with('etapas',$etapas)->with('carismas', $carismas);
     }
 
     /**

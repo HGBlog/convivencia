@@ -3,6 +3,12 @@
     {!! Form::text('no_usuario', null, ['class' => 'form-control', 'placeholder'=>'Nome completo']) !!}
 </div>
 
+<div class="form-group col-sm-6">
+
+    {!! Form::label('tipo_carisma_id', 'Carisma:') !!}
+    {!! Form::select('tipo_carisma_id', $carismas, $membro->tipo_carisma_id, ['id' => 'tipo_carisma_id', 'class' => 'form-control', 'dropdown-menu'])!!}
+</div>
+
 <!-- No Pais Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('no_pais', 'País:') !!}

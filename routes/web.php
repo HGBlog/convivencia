@@ -78,3 +78,7 @@ Route::resource('acolhidas', 'AcolhidaController');
 Route::resource('usuarios', 'UsuarioController');
 
 Route::resource('roles', 'RoleController');
+
+Route::resource('tipoCarismas', 'TipoCarismaController');
+
+Route::resource('tipoCarismas', 'TipoCarismaController');

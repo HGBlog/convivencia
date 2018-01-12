@@ -28,10 +28,12 @@ class CreateMembrosTable extends Migration
             $table->string('nu_comunidade', 3);
             $table->string('nu_ano_inicio_caminho', 4);
             $table->integer('etapa_id')->unsigned();
+            $table->integer('tipo_carisma_id')->unsigned();
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('owner_id')->references('id')->on('users');
             $table->foreign('etapa_id')->references('id')->on('etapas');
+            $table->foreign('tipo_carisma_id')->references('id')->on('tipo_carismas');
         });
     }
 

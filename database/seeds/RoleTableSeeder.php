@@ -16,13 +16,17 @@ class RoleTableSeeder extends Seeder
 	    $role_admin->name = 'admin';
 	    $role_admin->description = 'Usuários Administradores do Sistema';
 	    $role_admin->save();
-	    $role_usuario = new Role();
-	    $role_usuario->name = 'usuario';
-	    $role_usuario->description = 'Usuário comum';
-	    $role_usuario->save();
 	   	$role_responsavel = new Role();
 	    $role_responsavel->name = 'responsavel';
 	    $role_responsavel->description = 'Usuário responsável de Equipe';
 	    $role_responsavel->save();
+	    $role_usuario = new Role();
+	    $role_usuario->name = 'gestor_convivencia';
+	    $role_usuario->description = 'Gestor de Convivências';
+	    $role_usuario->save();
+	   	$role_usuario = new Role();
+	    $role_usuario->name = 'usuario';
+	    $role_usuario->description = 'Usuário comum';
+	    $role_usuario->save();
 	  }
 }

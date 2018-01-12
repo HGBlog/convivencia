@@ -6,9 +6,9 @@
         <th>Sexo</th>
         <th>Cod. Pais</th>
         <th>Telefone</th>
+        <!--
         <th>Diocese</th>
         <th>Cidade</th>
-        <!--
         <th>Paroquia</th>
         <th>Comunidade</th>
         <th>Início Caminho</th>
@@ -24,9 +24,9 @@
             <td><?php echo $membro->no_sexo; ?></td>
             <td><?php echo $membro->co_telefone_pais; ?></td>
             <td><?php echo $membro->nu_telefone; ?></td>
+            <!--
             <td><?php echo $membro->no_diocese; ?></td>
             <td><?php echo $membro->no_cidade; ?></td>
-            <!--
             <td><?php echo $membro->no_paroquia; ?></td>
             <td><?php echo $membro->nu_comunidade; ?></td>
             <td><?php echo $membro->nu_ano_inicio_caminho; ?></td>
