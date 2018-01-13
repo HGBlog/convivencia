@@ -11,7 +11,7 @@
                     <font color="red">
                     <br>
                     <b>Próxima Convivência: <?php echo $convivencia->no_nome; ?></b><br>
-                    <b>Data: <?php echo Carbon\Carbon::parse($convivencia->dt_inicio)->format('d/m/Y'); ?> a <?php echo Carbon\Carbon::parse($convivencia->dt_inicio)->format('d/m/Y'); ?><br></b>
+                    <b>Data: <?php echo Carbon\Carbon::parse($convivencia->dt_inicio)->format('d/m/Y'); ?> a <?php echo Carbon\Carbon::parse($convivencia->dt_fim)->format('d/m/Y'); ?><br></b>
                     <b>Fim das inscrições: <?php echo Carbon\Carbon::parse($convivencia->dt_fim_inscricao)->format('d/m/Y'); ?></b><br>
                     <b>Local: <?php echo $convivencia->no_local; ?></b><br>                    
                     <a class="btn btn-primary pull-left" style="margin-top: 25px" href="<?php echo route('convivencias.lista_ativas'); ?>">Inscrição para Convivência</a>
