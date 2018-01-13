@@ -11,80 +11,83 @@
 |
 */
 
-Route::get('/', function () {
-    return redirect('login');
-});
-
-Route::get('/home', 'HomeController@index')->name('home');
-
 Auth::routes();
 
-Route::resource('membros', 'MembroController');
+Route::group(['middleware' => 'auth'], function() {
 
-Route::get('/home', 'HomeController@index');
+	Route::get('/', function () {
+    	return redirect('login');
+	});
+    
+    Route::resource('membros', 'MembroController');
 
-Route::resource('etapas', 'EtapaController');
+	Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('convivencias', 'ConvivenciaController');
+	Route::resource('convivencias', 'ConvivenciaController');
 
-Route::resource('usuarios', 'UsuarioController');
+	Route::resource('convivenciaMembros', 'ConvivenciaMembroController');
 
-Route::patch('/convivencias/{convivencia}/inscricao',['as' => 'convivencia_inscricao', 'uses' => 'ConvivenciaController@inscricao']);
-Route::get('/convivencias/{convivencia}/inscricao',['as' => 'convivencia_inscricao', 'uses' => 'ConvivenciaController@inscricao']);
-Route::get('/convivencias/{convivencia}/inscricao','ConvivenciaController@inscricao');
+	Route::resource('tipoQuartos', 'TipoQuartoController');
 
-Route::post('/convivencias/{convivencia}/seleciona_convivencia',['as' => 'seleciona_convivencia', 'uses' => 'ConvivenciaController@seleciona_convivencia']);
+	Route::resource('acolhidaExtras', 'AcolhidaExtraController');
 
-Route::get('/lista_ativas', ['as' => 'convivencias.lista_ativas', 'uses' => 'ConvivenciaController@lista_ativas']);
+	Route::resource('acolhidas', 'AcolhidaController');
 
-Route::get('/create/ticket','TicketController@create');
+	Route::resource('usuarios', 'UsuarioController');
 
-Route::post('/create/ticket','TicketController@store');
+	Route::resource('roles', 'RoleController');
 
-Route::get('/tickets', 'TicketController@index');
+	Route::resource('tipoCarismas', 'TipoCarismaController');
 
-Route::get('/edit/ticket/{id}','TicketController@edit');
+	Route::resource('tipoCarismas', 'TipoCarismaController');
 
-Route::post('/edit/ticket/{id}','TicketController@update');
+	Route::resource('tipoTranslados', 'TipoTransladoController');
 
-Route::delete('/delete/ticket/{id}','TicketController@destroy');
+	Route::resource('equipes', 'EquipeController');
 
-Route::resource('convivencias', 'ConvivenciaController');
+	Route::resource('convivencias', 'ConvivenciaController');
 
-Route::resource('convivenciaMembros', 'ConvivenciaMembroController');
+	Route::resource('usuarios', 'UsuarioController');
 
-Route::resource('tipoQuartos', 'TipoQuartoController');
+	Route::patch('/convivencias/{convivencia}/inscricao',['as' => 'convivencia_inscricao', 'uses' => 'ConvivenciaController@inscricao']);
+	Route::get('/convivencias/{convivencia}/inscricao',['as' => 'convivencia_inscricao', 'uses' => 'ConvivenciaController@inscricao']);
+	Route::get('/convivencias/{convivencia}/inscricao','ConvivenciaController@inscricao');
 
-Route::resource('acolhidaExtras', 'AcolhidaExtraController');
+	Route::post('/convivencias/{convivencia}/seleciona_convivencia',['as' => 'seleciona_convivencia', 'uses' => 'ConvivenciaController@seleciona_convivencia']);
 
-Route::get ('/create/acolhidas/convivencia/{convivencia}/membro/{membro}','AcolhidaController@create');
-Route::get ('/acolhidas/convivencia/{convivencia}/membro/{membro}/create','AcolhidaController@create');
-Route::get('/acolhidas/convivencia/{convivencia}/membro/{membro}/create',['as' => 'create_inscricao', 'uses' => 'AcolhidaController@create']);
+	Route::get('/lista_ativas', ['as' => 'convivencias.lista_ativas', 'uses' => 'ConvivenciaController@lista_ativas']);
 
-Route::post ('/create/acolhidas/convivencia/{convivencia}/membro/{membro}','AcolhidaController@store');
-Route::post ('/acolhidas/convivencia/{convivencia}/membro/{membro}/create','AcolhidaController@store');
+	Route::get ('/create/acolhidas/convivencia/{convivencia}/membro/{membro}','AcolhidaController@create');
+	Route::get ('/acolhidas/convivencia/{convivencia}/membro/{membro}/create','AcolhidaController@create');
+	Route::get('/acolhidas/convivencia/{convivencia}/membro/{membro}/create',['as' => 'create_inscricao', 'uses' => 'AcolhidaController@create']);
 
-Route::get ('/edit/acolhidas/convivencia/{convivencia}/membro/{membro}','AcolhidaController@edit');
-Route::get ('/acolhidas/convivencia/{convivencia}/membro/{membro}/edit','AcolhidaController@edit');
+	Route::post ('/create/acolhidas/convivencia/{convivencia}/membro/{membro}','AcolhidaController@store');
+	Route::post ('/acolhidas/convivencia/{convivencia}/membro/{membro}/create','AcolhidaController@store');
 
-Route::patch ('/acolhidas/convivencia/{convivencia}/membro/{membro}','AcolhidaController@update');
-Route::put ('/acolhidas/convivencia/{convivencia}/membro/{membro}','AcolhidaController@update');
+	Route::get ('/edit/acolhidas/convivencia/{convivencia}/membro/{membro}','AcolhidaController@edit');
+	Route::get ('/acolhidas/convivencia/{convivencia}/membro/{membro}/edit','AcolhidaController@edit');
 
-Route::resource('acolhidas', 'AcolhidaController');
+	Route::patch ('/acolhidas/convivencia/{convivencia}/membro/{membro}','AcolhidaController@update');
+	Route::put ('/acolhidas/convivencia/{convivencia}/membro/{membro}','AcolhidaController@update');
+
+	Route::resource('acolhidas', 'AcolhidaController');
+
+    Route::resource('etapas', 'EtapaController');
 
 
-Route::resource('acolhidas', 'AcolhidaController');
 
-Route::resource('usuarios', 'UsuarioController');
+});
 
-Route::resource('roles', 'RoleController');
+//Route::get('/home', 'HomeController@index');
+//Route::get('/create/ticket','TicketController@create');
+//Route::post('/create/ticket','TicketController@store');
+//Route::get('/tickets', 'TicketController@index');
+//Route::get('/edit/ticket/{id}','TicketController@edit');
+//Route::post('/edit/ticket/{id}','TicketController@update');
+//Route::delete('/delete/ticket/{id}','TicketController@destroy');
 
-Route::resource('tipoCarismas', 'TipoCarismaController');
 
-Route::resource('tipoCarismas', 'TipoCarismaController');
 
-Route::resource('tipoTranslados', 'TipoTransladoController');
 
-Route::resource('tipoEquipes', 'TipoEquipeController');
 
-Route::resource('equipes', 'EquipeController');
+

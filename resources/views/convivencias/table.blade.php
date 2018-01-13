@@ -17,10 +17,10 @@
             <td>{!! $convivencia->no_nome !!}</td>
             <td>{!! $convivencia->no_local !!}</td>
             <td>{!! $convivencia->nu_telefone !!}</td>
-            <td>{!! $convivencia->dt_inicio !!}</td>
-            <td>{!! $convivencia->dt_fim !!}</td>
-            <td>{!! $convivencia->dt_inicio_inscricao !!}</td>
-            <td>{!! $convivencia->dt_fim_inscricao !!}</td>
+            <td>{!! Carbon\Carbon::parse($convivencia->dt_inicio)->format('d/m/Y') !!}</td>
+            <td>{!! Carbon\Carbon::parse($convivencia->dt_fim)->format('d/m/Y') !!}</td>
+            <td>{!! Carbon\Carbon::parse($convivencia->dt_inicio_inscricao)->format('d/m/Y') !!}</td>
+            <td>{!! Carbon\Carbon::parse($convivencia->dt_fim_inscricao)->format('d/m/Y') !!}</td>
             <td>
                 {!! Form::open(['route' => ['convivencias.destroy', $convivencia->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

@@ -1,19 +1,3 @@
-<!-- No Casa Convivencia Field -->
-<div class="form-group col-sm-6">
-    <?php echo Form::label('no_casa_convivencia', 'Nome da Casa de Convivência:'); ?>
-
-    <?php echo Form::text('no_casa_convivencia', null, ['class' => 'form-control', 'placeholder'=>'Este campo estava reservado para informar Hotel']); ?>
-
-</div>
-
-<!-- Tipo Quarto Field -->
-<div class="form-group col-sm-6">
-    <?php echo Form::label('tipo_quarto_id', 'Tipo de Quarto'); ?>
-
-    <?php echo Form::select('tipo_quarto_id', $quartos, $acolhida->pluck('tipo_quarto_id'), ['id' => 'tipo_quarto_id', 'class' => 'form-control', 'dropdown-menu']); ?>
-
-</div>
-
 <!-- Dt Chegada Field -->
 <div class="form-group col-sm-6">
     <?php echo Form::label('dt_chegada', 'Data de chegada:'); ?>

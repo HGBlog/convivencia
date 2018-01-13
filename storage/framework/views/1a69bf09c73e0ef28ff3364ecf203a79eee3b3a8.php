@@ -1,5 +1,5 @@
 <?php $__env->startSection('content'); ?>
-        <h1 class="pull-left">Acolhida Extras</h1>
+        <h1 class="pull-left">Acolhimento Extra</h1>
         <a class="btn btn-primary pull-right" style="margin-top: 25px" href="<?php echo route('acolhidaExtras.create'); ?>">Add New</a>
 
         <div class="clearfix"></div>

@@ -40,10 +40,8 @@ class Acolhida extends Model
     public $fillable = [
         'membro_id',
         'convivencia_id',
-        'tipo_quarto_id',
         'tipo_translado_id',
         'acolhida_extra_id',
-        'no_casa_convivencia',
         'dt_chegada',
         'nu_hora_chegada',
         'nu_voo_chegada',
@@ -61,10 +59,8 @@ class Acolhida extends Model
     protected $casts = [
         'membro_id' => 'integer',
         'convivencia_id' => 'integer',
-        'tipo_quarto_id' => 'integer',
         'tipo_translado_id' => 'integer',
         'acolhida_extra_id' => 'integer',
-        'no_casa_convivencia' => 'string',
         'dt_chegada' => 'date',
         'nu_hora_chegada' => 'string',
         'nu_voo_chegada' => 'string',
@@ -80,7 +76,7 @@ class Acolhida extends Model
      * @var array
      */
     public static $rules = [
-        'no_casa_convivencia' => 'required',
+        //'no_casa_convivencia' => 'required',
         //'nu_voo_chegada' => 'required',
         //'nu_voo_saida' => 'required'
     ];
@@ -99,14 +95,6 @@ class Acolhida extends Model
     public function convivencia()
     {
         return $this->hasOne(\App\Models\Convivencia::class, 'convivencia_id', 'id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     **/
-    public function quarto()
-    {
-        return $this->hasOne(\App\Models\Quarto::class, 'tipo_quarto_id', 'id');
     }
 
     /**

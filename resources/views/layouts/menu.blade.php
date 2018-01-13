@@ -18,7 +18,13 @@
 <li class="{{ Request::is('convivencias*') ? 'active' : '' }}">
     <a href="{!! route('convivencias.index') !!}">Convivências</a>
 </li>
-
+<li class="{{ Request::is('usuarios*') ? 'active' : '' }}">
+    <a href="{!! route('usuarios.index') !!}">Usuarios</a>
+</li>
+<li class="{{ Request::is('roles*') ? 'active' : '' }}">
+    <a href="{!! route('roles.index') !!}">Roles</a>
+</li>
+<br>
 <li class="{{ Request::is('tipoQuartos*') ? 'active' : '' }}">
     <a href="{!! route('tipoQuartos.index') !!}">Tipo de Quartos</a>
 </li>
@@ -30,30 +36,13 @@
 <li class="{{ Request::is('etapas*') ? 'active' : '' }}">
     <a href="{!! route('etapas.index') !!}">Etapas</a>
 </li>
-
-
-<li class="{{ Request::is('usuarios*') ? 'active' : '' }}">
-    <a href="{!! route('usuarios.index') !!}">Usuarios</a>
-</li>
-
-<li class="{{ Request::is('roles*') ? 'active' : '' }}">
-    <a href="{!! route('roles.index') !!}">Roles</a>
-</li>
 <li class="{{ Request::is('tipoCarismas*') ? 'active' : '' }}">
-    <a href="{!! route('tipoCarismas.index') !!}">TipoCarismas</a>
+    <a href="{!! route('tipoCarismas.index') !!}">Tipos de Carismas</a>
 </li>
-
 <li class="{{ Request::is('tipoTranslados*') ? 'active' : '' }}">
-    <a href="{!! route('tipoTranslados.index') !!}">TipoTranslados</a>
+    <a href="{!! route('tipoTranslados.index') !!}">Tipos de Translados</a>
 </li>
-
-<li class="{{ Request::is('tipoEquipes*') ? 'active' : '' }}">
-    <a href="{!! route('tipoEquipes.index') !!}">TipoEquipes</a>
-</li>
-@endif;
-
-
 <li class="{{ Request::is('equipes*') ? 'active' : '' }}">
     <a href="{!! route('equipes.index') !!}">Equipes</a>
 </li>
-
+@endif

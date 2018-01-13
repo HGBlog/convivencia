@@ -1,6 +1,6 @@
 <?php $__env->startSection('content'); ?>
-        <h1 class="pull-left">Tipo Quartos</h1>
-        <a class="btn btn-primary pull-right" style="margin-top: 25px" href="<?php echo route('tipoQuartos.create'); ?>">Add New</a>
+        <h1 class="pull-left">Tipos de Quartos</h1>
+        <a class="btn btn-primary pull-right" style="margin-top: 25px" href="<?php echo route('tipoQuartos.create'); ?>">Adicionar novo</a>
 
         <div class="clearfix"></div>
 

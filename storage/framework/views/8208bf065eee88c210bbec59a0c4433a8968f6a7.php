@@ -7,13 +7,15 @@
 
 
                 <div class="panel-body">
+                    <?php if(!empty ( $convivencia )): ?>
                     <br>
                     <b>Próxima Convivência: <?php echo $convivencia->no_nome; ?></b><br>
                     <b>Data: <?php echo Carbon\Carbon::parse($convivencia->dt_inicio)->format('d/m/Y'); ?> a <?php echo Carbon\Carbon::parse($convivencia->dt_inicio)->format('d/m/Y'); ?><br></b>
                     <b>Fim das inscrições: <?php echo Carbon\Carbon::parse($convivencia->dt_fim_inscricao)->format('d/m/Y'); ?></b><br>
-                    <b>Local: <?php echo $convivencia->no_local; ?></b><br>
+                    <b>Local: <?php echo $convivencia->no_local; ?></b><br>                    
                     <a class="btn btn-primary pull-left" style="margin-top: 25px" href="<?php echo route('convivencias.lista_ativas'); ?>">Inscrição para Convivência</a>
                     <br><br><br><br>
+                    <?php endif; ?>
 
                     Aqui colocaremos um quadro de avisos gerais e informações sobre as convivências que estão com as inscrições abertas e um link para inscrição em cada uma.
 

@@ -18,7 +18,13 @@
 <li class="<?php echo e(Request::is('convivencias*') ? 'active' : ''); ?>">
     <a href="<?php echo route('convivencias.index'); ?>">Convivências</a>
 </li>
-
+<li class="<?php echo e(Request::is('usuarios*') ? 'active' : ''); ?>">
+    <a href="<?php echo route('usuarios.index'); ?>">Usuarios</a>
+</li>
+<li class="<?php echo e(Request::is('roles*') ? 'active' : ''); ?>">
+    <a href="<?php echo route('roles.index'); ?>">Roles</a>
+</li>
+<br>
 <li class="<?php echo e(Request::is('tipoQuartos*') ? 'active' : ''); ?>">
     <a href="<?php echo route('tipoQuartos.index'); ?>">Tipo de Quartos</a>
 </li>
@@ -30,30 +36,13 @@
 <li class="<?php echo e(Request::is('etapas*') ? 'active' : ''); ?>">
     <a href="<?php echo route('etapas.index'); ?>">Etapas</a>
 </li>
-
-
-<li class="<?php echo e(Request::is('usuarios*') ? 'active' : ''); ?>">
-    <a href="<?php echo route('usuarios.index'); ?>">Usuarios</a>
-</li>
-
-<li class="<?php echo e(Request::is('roles*') ? 'active' : ''); ?>">
-    <a href="<?php echo route('roles.index'); ?>">Roles</a>
-</li>
 <li class="<?php echo e(Request::is('tipoCarismas*') ? 'active' : ''); ?>">
-    <a href="<?php echo route('tipoCarismas.index'); ?>">TipoCarismas</a>
+    <a href="<?php echo route('tipoCarismas.index'); ?>">Tipos de Carismas</a>
 </li>
-
 <li class="<?php echo e(Request::is('tipoTranslados*') ? 'active' : ''); ?>">
-    <a href="<?php echo route('tipoTranslados.index'); ?>">TipoTranslados</a>
+    <a href="<?php echo route('tipoTranslados.index'); ?>">Tipos de Translados</a>
 </li>
-
-<li class="<?php echo e(Request::is('tipoEquipes*') ? 'active' : ''); ?>">
-    <a href="<?php echo route('tipoEquipes.index'); ?>">TipoEquipes</a>
-</li>
-<?php endif; ?>;
-
-
 <li class="<?php echo e(Request::is('equipes*') ? 'active' : ''); ?>">
     <a href="<?php echo route('equipes.index'); ?>">Equipes</a>
 </li>
-
+<?php endif; ?>

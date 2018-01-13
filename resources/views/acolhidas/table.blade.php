@@ -1,6 +1,5 @@
 <table class="table table-responsive" id="acolhidas-table">
     <thead>
-        <th>Nome Casa Convivência</th>
         <th>Data Chegada</th>
         <th>Hora Chegada</th>
         <th>Número do vôo</th>
@@ -13,7 +12,6 @@
     <tbody>
     @foreach($acolhidas as $acolhida)
         <tr>
-            <td>{!! $acolhida->no_casa_convivencia !!}</td>
             <td>{!! $acolhida->dt_chegada !!}</td>
             <td>{!! $acolhida->nu_hora_chegada !!}</td>
             <td>{!! $acolhida->nu_voo_chegada !!}</td>
