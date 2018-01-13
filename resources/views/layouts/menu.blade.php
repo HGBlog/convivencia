@@ -53,3 +53,7 @@
 @endif;
 
 
+<li class="{{ Request::is('equipes*') ? 'active' : '' }}">
+    <a href="{!! route('equipes.index') !!}">Equipes</a>
+</li>
+

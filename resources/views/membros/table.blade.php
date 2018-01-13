@@ -1,36 +1,18 @@
 <table class="table table-responsive" id="membros-table">
     <thead>
         <th>Nome</th>
-        <th>Pais</th>
-        <th>Email</th>
-        <th>Sexo</th>
-        <th>Cod. Pais</th>
+        <th>Equipe</th>
         <th>Telefone</th>
-        <!--
-        <th>Diocese</th>
         <th>Cidade</th>
-        <th>Paroquia</th>
-        <th>Comunidade</th>
-        <th>Início Caminho</th>
-        -->
-        <th colspan="3">Action</th>
+        <th colspan="3">Ações</th>
     </thead>
     <tbody>
     @foreach($membros as $membro)
         <tr>
             <td>{!! $membro->no_usuario !!}</td>
-            <td>{!! $membro->no_pais !!}</td>
-            <td>{!! $membro->no_email !!}</td>
-            <td>{!! $membro->no_sexo !!}</td>
-            <td>{!! $membro->co_telefone_pais !!}</td>
+            <td>{!! $equipe->where('id', $membro->equipe_id)->pluck('no_equipe')->first() !!}</td>
             <td>{!! $membro->nu_telefone !!}</td>
-            <!--
-            <td>{!! $membro->no_diocese !!}</td>
             <td>{!! $membro->no_cidade !!}</td>
-            <td>{!! $membro->no_paroquia !!}</td>
-            <td>{!! $membro->nu_comunidade !!}</td>
-            <td>{!! $membro->nu_ano_inicio_caminho !!}</td>
-            -->
             <td>
                 {!! Form::open(['route' => ['membros.destroy', $membro->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

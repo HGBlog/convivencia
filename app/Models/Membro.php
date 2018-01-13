@@ -47,8 +47,8 @@ class Membro extends Model
         'no_cidade',
         'no_paroquia',
         'nu_comunidade',
-        'nu_ano_inicio_caminho',
         'etapa_id',
+        'equipe_id',
         'tipo_carisma_id'
     ];
 
@@ -70,8 +70,8 @@ class Membro extends Model
         'no_cidade' => 'string',
         'no_paroquia' => 'string',
         'nu_comunidade' => 'string',
-        'nu_ano_inicio_caminho' => 'string',
         'etapa_id' => 'integer',
+        'equipe_id' => 'integer',
         'tipo_carisma_id' => 'integer'
     ];
 
@@ -111,6 +111,11 @@ class Membro extends Model
         return $this->hasOne(\App\Models\TipoCarisma::class, 'tipo_carisma_id', 'id');
     }
 
+    public function equipe()
+    {
+        return $this->hasOne(\App\Models\Equipe::class, 'equipe_id', 'id');
+    }
+
         public function saveMembro($data)
     {
             print_r($data);
@@ -127,8 +132,8 @@ class Membro extends Model
             $this->no_cidade = $data['no_cidade'];
             $this->no_paroquia = $data['no_paroquia'];
             $this->nu_comunidade = $data['nu_comunidade'];
-            $this->nu_ano_inicio_caminho = $data['nu_ano_inicio_caminho'];
             $this->etapa_id = $data['etapa_id'];
+            $this->equipe_id = $data['equipe_id'];
             $this->tipo_carisma_id = $data['tipo_carisma_id'];
             $this->save();
             return 1;
@@ -148,8 +153,8 @@ class Membro extends Model
             $membro->no_cidade = $data['no_cidade'];
             $membro->no_paroquia = $data['no_paroquia'];
             $membro->nu_comunidade = $data['nu_comunidade'];
-            $membro->nu_ano_inicio_caminho = $data['nu_ano_inicio_caminho'];
             $membro->etapa_id = $data['etapa_id'];
+            $membro->equipe_id = $data['equipe_id'];
             $membro->tipo_carisma_id = $data['tipo_carisma'];
             $membro->save();
             return 1;

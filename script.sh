@@ -11,6 +11,6 @@ php artisan infyom:scaffold AcolhidaExtra --fieldsFile=exemplos/tb_acolhida_extr
 php artisan infyom:scaffold Usuario --tableName=users --fromTable --datatables=false
 php artisan infyom:scaffold Role --tableName=roles --fromTable --datatables=false
 php artisan infyom:scaffold TipoCarisma --fieldsFile=exemplos/tb_tipo_carisma --datatables=false
-php artisan infyom:scaffold TipoEquipe --fieldsFile=exemplos/tb_tipo_equipe --datatables=false
+php artisan infyom:scaffold Equipe --fieldsFile=exemplos/tb_equipe --datatables=false
 #php artisan infyom:scaffold PerfilUsuario --fieldsFile=exemplos/tb_perfil_usuario --datatables=false
 #php artisan infyom:scaffold DadosCaminho --fieldsFile=exemplos/tb_dados_caminho --datatables=false

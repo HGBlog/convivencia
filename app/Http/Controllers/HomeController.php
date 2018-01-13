@@ -25,6 +25,7 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         //$request->user()->authorizeRoles(['admin', 'responsavel', 'usuario']);
+        $convivencia = new Convivencia;
         $convivencia = Convivencia::where('is_ativo', '1')->first();
         //print_r($convivencia);
         //echo $convivencia->no_nome;

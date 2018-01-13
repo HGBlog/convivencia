@@ -1,36 +1,18 @@
 <table class="table table-responsive" id="membros-table">
     <thead>
         <th>Nome</th>
-        <th>Pais</th>
-        <th>Email</th>
-        <th>Sexo</th>
-        <th>Cod. Pais</th>
+        <th>Equipe</th>
         <th>Telefone</th>
-        <!--
-        <th>Diocese</th>
         <th>Cidade</th>
-        <th>Paroquia</th>
-        <th>Comunidade</th>
-        <th>Início Caminho</th>
-        -->
-        <th colspan="3">Action</th>
+        <th colspan="3">Ações</th>
     </thead>
     <tbody>
     <?php $__currentLoopData = $membros; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $membro): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <tr>
             <td><?php echo $membro->no_usuario; ?></td>
-            <td><?php echo $membro->no_pais; ?></td>
-            <td><?php echo $membro->no_email; ?></td>
-            <td><?php echo $membro->no_sexo; ?></td>
-            <td><?php echo $membro->co_telefone_pais; ?></td>
+            <td><?php echo $equipe->where('id', $membro->equipe_id)->pluck('no_equipe')->first(); ?></td>
             <td><?php echo $membro->nu_telefone; ?></td>
-            <!--
-            <td><?php echo $membro->no_diocese; ?></td>
             <td><?php echo $membro->no_cidade; ?></td>
-            <td><?php echo $membro->no_paroquia; ?></td>
-            <td><?php echo $membro->nu_comunidade; ?></td>
-            <td><?php echo $membro->nu_ano_inicio_caminho; ?></td>
-            -->
             <td>
                 <?php echo Form::open(['route' => ['membros.destroy', $membro->id], 'method' => 'delete']); ?>
 

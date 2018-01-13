@@ -27,6 +27,6 @@ class DatabaseSeeder extends Seeder
           // Tipo Translado seeder will use the roles above created.
           $this->call(TipoTransladoTableSeeder::class);
           // Tipo Equipe seeder will use the roles above created.
-          $this->call(TipoEquipeTableSeeder::class);
+          $this->call(EquipeTableSeeder::class);
     }
 }

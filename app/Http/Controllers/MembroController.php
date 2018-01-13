@@ -17,6 +17,7 @@ use Response;
 use View;
 use App\Models\Membro;
 use App\Models\Etapa;
+use App\Models\Equipe;
 use App\Models\TipoCarisma;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
@@ -48,8 +49,9 @@ class MembroController extends AppBaseController
         //    ->with('membros', $membros);
 
         $membros = Membro::where('owner_id', auth()->user()->id)->get();
-        
-        return view('membros.index',compact('membros'));
+        $equipe = new Equipe;
+                
+        return view('membros.index',compact('membros'))->with('equipe', $equipe);
     }
 
     /**
@@ -63,12 +65,13 @@ class MembroController extends AppBaseController
         //$etapas = Etapa::all(['id', 'no_etapa'])->pluck('no_etapa', 'id');
         $membro = new Membro;
         $etapas = Etapa::pluck('no_etapa', 'id')->all();
+        $equipes = Equipe::pluck('no_equipe', 'id')->all();
         $carismas = TipoCarisma::pluck('no_carisma', 'id')->all();
         
         ///$thing = Etapa::pluck('id');
         //return view('membros.create');
         //return View::make('membros.create', $etapas);
-        return view('membros.create')->with('etapas',$etapas)->with('membro',$membro)->with('carismas', $carismas);
+        return view('membros.create')->with('etapas',$etapas)->with('membro',$membro)->with('carismas', $carismas)->with('equipes', $equipes);
 
 
 
@@ -115,7 +118,7 @@ class MembroController extends AppBaseController
             // store
             $membro = new Membro;
             $membro->no_usuario = $request->input('no_usuario');
-            
+            $membro->equipe_id = $request->input('equipe_id');
             $membro->owner_id = auth()->user()->id;
             $membro->no_pais = $request->input('no_pais');
             $membro->no_email = $request->input('no_email');
@@ -126,7 +129,6 @@ class MembroController extends AppBaseController
             $membro->no_cidade = $request->input('no_cidade');
             $membro->no_paroquia = $request->input('no_paroquia');
             $membro->nu_comunidade = $request->input('nu_comunidade');
-            $membro->nu_ano_inicio_caminho = $request->input('nu_ano_inicio_caminho');
             $membro->etapa_id = $request->input('etapa_id');
             $membro->tipo_carisma_id = $request->input('tipo_carisma_id');
             $membro->save();
@@ -171,6 +173,7 @@ class MembroController extends AppBaseController
     {
         $membro = $this->membroRepository->findWithoutFail($id);
         $etapas = Etapa::pluck('no_etapa', 'id');
+        $equipes = Equipe::pluck('no_equipe', 'id');
         $carismas = TipoCarisma::pluck('no_carisma', 'id')->all();
 
         //$etapa_marcada = Etapa::where('active', true)->orderBy('name')->lists('name', 'id');
@@ -180,7 +183,7 @@ class MembroController extends AppBaseController
 
             return redirect(route('membros.index'));
         }
-        return view('membros.edit')->with('membro', $membro)->with('etapas',$etapas)->with('carismas', $carismas);
+        return view('membros.edit')->with('membro', $membro)->with('etapas',$etapas)->with('carismas', $carismas)->with('equipes', $equipes);
     }
 
     /**
