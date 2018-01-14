@@ -13,18 +13,25 @@
 
 @if(Auth::user()->hasRole('admin'))
 <li>
-	<b>ADMINISTRAÇÃO</b>
+    <b>ADMINISTRAÇÃO</b>
 </li>
 <li class="{{ Request::is('convivencias*') ? 'active' : '' }}">
     <a href="{!! route('convivencias.index') !!}">Convivências</a>
 </li>
 <li class="{{ Request::is('usuarios*') ? 'active' : '' }}">
-    <a href="{!! route('usuarios.index') !!}">Usuarios</a>
+    <a href="{!! route('usuarios.index') !!}">Usuários</a>
 </li>
 <li class="{{ Request::is('roles*') ? 'active' : '' }}">
     <a href="{!! route('roles.index') !!}">Roles</a>
 </li>
 <br>
+    <b>TABELAS APOIO</b>
+<li class="{{ Request::is('equipes*') ? 'active' : '' }}">
+    <a href="{!! route('equipes.index') !!}">Equipes</a>
+</li>
+<li class="{{ Request::is('localConvivencias*') ? 'active' : '' }}">
+    <a href="{!! route('localConvivencias.index') !!}">Local Convivência</a>
+</li>
 <li class="{{ Request::is('tipoQuartos*') ? 'active' : '' }}">
     <a href="{!! route('tipoQuartos.index') !!}">Tipo de Quartos</a>
 </li>
@@ -42,10 +49,8 @@
 <li class="{{ Request::is('tipoTranslados*') ? 'active' : '' }}">
     <a href="{!! route('tipoTranslados.index') !!}">Tipos de Translados</a>
 </li>
-<li class="{{ Request::is('equipes*') ? 'active' : '' }}">
-    <a href="{!! route('equipes.index') !!}">Equipes</a>
-</li>
-@endif<li class="{{ Request::is('localConvivencias*') ? 'active' : '' }}">
-    <a href="{!! route('localConvivencias.index') !!}">LocalConvivencias</a>
-</li>
+@endif
+
+
+
 

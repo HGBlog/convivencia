@@ -13,18 +13,25 @@
 
 <?php if(Auth::user()->hasRole('admin')): ?>
 <li>
-	<b>ADMINISTRAÇÃO</b>
+    <b>ADMINISTRAÇÃO</b>
 </li>
 <li class="<?php echo e(Request::is('convivencias*') ? 'active' : ''); ?>">
     <a href="<?php echo route('convivencias.index'); ?>">Convivências</a>
 </li>
 <li class="<?php echo e(Request::is('usuarios*') ? 'active' : ''); ?>">
-    <a href="<?php echo route('usuarios.index'); ?>">Usuarios</a>
+    <a href="<?php echo route('usuarios.index'); ?>">Usuários</a>
 </li>
 <li class="<?php echo e(Request::is('roles*') ? 'active' : ''); ?>">
     <a href="<?php echo route('roles.index'); ?>">Roles</a>
 </li>
 <br>
+    <b>TABELAS APOIO</b>
+<li class="<?php echo e(Request::is('equipes*') ? 'active' : ''); ?>">
+    <a href="<?php echo route('equipes.index'); ?>">Equipes</a>
+</li>
+<li class="<?php echo e(Request::is('localConvivencias*') ? 'active' : ''); ?>">
+    <a href="<?php echo route('localConvivencias.index'); ?>">Local Convivência</a>
+</li>
 <li class="<?php echo e(Request::is('tipoQuartos*') ? 'active' : ''); ?>">
     <a href="<?php echo route('tipoQuartos.index'); ?>">Tipo de Quartos</a>
 </li>
@@ -42,10 +49,8 @@
 <li class="<?php echo e(Request::is('tipoTranslados*') ? 'active' : ''); ?>">
     <a href="<?php echo route('tipoTranslados.index'); ?>">Tipos de Translados</a>
 </li>
-<li class="<?php echo e(Request::is('equipes*') ? 'active' : ''); ?>">
-    <a href="<?php echo route('equipes.index'); ?>">Equipes</a>
-</li>
-<?php endif; ?><li class="<?php echo e(Request::is('localConvivencias*') ? 'active' : ''); ?>">
-    <a href="<?php echo route('localConvivencias.index'); ?>">LocalConvivencias</a>
-</li>
+<?php endif; ?>
+
+
+
 
