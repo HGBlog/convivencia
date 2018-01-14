@@ -3,11 +3,9 @@
         <th>Habilitada</th>
         <th>Nome</th>
         <th>Local</th>
-        <th>Telefone</th>
-        <th>Data Início</th>
-        <th>Data Término</th>
-        <th>Início Inscrição</th>
-        <th>Término Inscrição</th>
+        <th>Início</th>
+        <th>Fim</th>
+        <th>Fim Inscrições</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>
@@ -15,11 +13,9 @@
         <tr>
             <td>{!! $convivencia->is_ativo !!}</td>
             <td>{!! $convivencia->no_nome !!}</td>
-            <td>{!! $convivencia->no_local !!}</td>
-            <td>{!! $convivencia->nu_telefone !!}</td>
+            <td>{!! $local->where('id', $convivencia->local_convivencia_id)->pluck('no_local')->first() !!}</td>
             <td>{!! Carbon\Carbon::parse($convivencia->dt_inicio)->format('d/m/Y') !!}</td>
             <td>{!! Carbon\Carbon::parse($convivencia->dt_fim)->format('d/m/Y') !!}</td>
-            <td>{!! Carbon\Carbon::parse($convivencia->dt_inicio_inscricao)->format('d/m/Y') !!}</td>
             <td>{!! Carbon\Carbon::parse($convivencia->dt_fim_inscricao)->format('d/m/Y') !!}</td>
             <td>
                 {!! Form::open(['route' => ['convivencias.destroy', $convivencia->id], 'method' => 'delete']) !!}

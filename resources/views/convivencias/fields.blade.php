@@ -8,24 +8,16 @@
     {!! Form::label('no_nome', 'Nome:') !!}
     {!! Form::text('no_nome', null, ['class' => 'form-control']) !!}
 </div>
-<!-- No Local Field -->
+<!-- Local Convivencia id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('no_local', 'Local:') !!}
-    {!! Form::text('no_local', null, ['class' => 'form-control']) !!}
+    {!! Form::label('local_convivencia_id', 'Equipe') !!}
+    {!! Form::select('local_convivencia_id', $locais, $convivencia->local_convivencia_id, ['id' => 'local_convivencia_id', 'class' => 'form-control', 'dropdown-menu'])!!}
 </div>
-
-<!-- Nu Telefone Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('nu_telefone', 'Telefone:') !!}
-    {!! Form::number('nu_telefone', null, ['class' => 'form-control']) !!}
-</div>
-
 <!-- No Observacoes Field -->
 <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('no_observacoes', 'Observações:') !!}
     {!! Form::textarea('no_observacoes', null, ['class' => 'form-control', 'rows' => '5']) !!}
 </div>
-
 
 <!-- Dt Inicio Field -->
 <div class="form-group col-sm-6">

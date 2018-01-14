@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Convivencia;
+use App\Models\LocalConvivencia;
 
 class HomeController extends Controller
 {
@@ -27,9 +28,10 @@ class HomeController extends Controller
         //$request->user()->authorizeRoles(['admin', 'responsavel', 'usuario']);
         $convivencia = new Convivencia;
         $convivencia = Convivencia::where('is_ativo', '1')->first();
+        $local = new LocalConvivencia;
         //print_r($convivencia);
         //echo $convivencia->no_nome;
-        return view('home')->with('convivencia', $convivencia);
+        return view('home')->with('convivencia', $convivencia)->with('local', $local);
     }
 
     /*

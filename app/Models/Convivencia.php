@@ -33,13 +33,12 @@ class Convivencia extends Model
     public $fillable = [
         'is_ativo',
         'no_nome',
-        'no_local',
-        'nu_telefone',
         'no_observacoes',
         'dt_inicio',
         'dt_fim',
         'dt_inicio_inscricao',
-        'dt_fim_inscricao'
+        'dt_fim_inscricao',
+        'local_convivencia_id'
     ];
 
     /**
@@ -50,13 +49,12 @@ class Convivencia extends Model
     protected $casts = [
         'is_ativo' => 'boolean',
         'no_nome' => 'string',
-        'no_local' => 'string',
-        'nu_telefone' => 'string',
         'no_observacoes' => 'string',
         'dt_inicio' => 'date',
         'dt_fim' => 'date',
         'dt_inicio_inscricao' => 'date',
-        'dt_fim_inscricao' => 'date'
+        'dt_fim_inscricao' => 'date',
+        'local_convivencia_id' => 'integer'
     ];
 
     /**
@@ -66,7 +64,6 @@ class Convivencia extends Model
      */
     public static $rules = [
         'no_nome' => 'required',
-        'no_local' => 'required',
         'dt_inicio' => 'required|date',
         'dt_fim' => 'required|date',
         'dt_inicio_inscricao' => 'required|date',
@@ -81,5 +78,10 @@ class Convivencia extends Model
     public function membros()
     {
         return $this->belongsToMany(\App\Models\Membro::class, 'convivencia_membros', 'convivencia_id', 'membro_id')->withTimestamps();
+    }
+
+    public function local_convivencia()
+    {
+        return $this->hasOne(\App\Models\LocalConvivencia::class, 'local_convivencia_id', 'id');
     }
 }

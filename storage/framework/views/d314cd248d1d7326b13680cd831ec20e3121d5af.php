@@ -45,4 +45,7 @@
 <li class="<?php echo e(Request::is('equipes*') ? 'active' : ''); ?>">
     <a href="<?php echo route('equipes.index'); ?>">Equipes</a>
 </li>
-<?php endif; ?>
+<?php endif; ?><li class="<?php echo e(Request::is('localConvivencias*') ? 'active' : ''); ?>">
+    <a href="<?php echo route('localConvivencias.index'); ?>">LocalConvivencias</a>
+</li>
+

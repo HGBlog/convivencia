@@ -15,6 +15,7 @@ use Response;
 use App\Models\Membro;
 use App\Models\Convivencia;
 use App\Models\ConvivenciaMembro;
+use App\Models\LocalConvivencia;
 
 
 class ConvivenciaController extends AppBaseController
@@ -38,8 +39,11 @@ class ConvivenciaController extends AppBaseController
         $this->convivenciaRepository->pushCriteria(new RequestCriteria($request));
         $convivencias = $this->convivenciaRepository->all();
 
+        $local = new LocalConvivencia;
+
         return view('convivencias.index')
-            ->with('convivencias', $convivencias);
+            ->with('convivencias', $convivencias)
+            ->with('local', $local);
     }
 
     /**
@@ -50,7 +54,8 @@ class ConvivenciaController extends AppBaseController
     public function create()
     {
         $convivencia = new CreateConvivenciaRequest;
-        return view('convivencias.create')->with('convivencia', $convivencia);
+        $locais = LocalConvivencia::pluck('no_local', 'id')->all();
+        return view('convivencias.create')->with('convivencia', $convivencia)->with('locais', $locais);
     }
 
     /**
@@ -101,6 +106,7 @@ class ConvivenciaController extends AppBaseController
     public function edit($id)
     {
         $convivencia = $this->convivenciaRepository->findWithoutFail($id);
+        $locais = LocalConvivencia::pluck('no_local', 'id')->all();
 
         if (empty($convivencia)) {
             Flash::error('Convivência não encontrada!');
@@ -108,7 +114,7 @@ class ConvivenciaController extends AppBaseController
             return redirect(route('convivencias.index'));
         }
 
-        return view('convivencias.edit')->with('convivencia', $convivencia);
+        return view('convivencias.edit')->with('convivencia', $convivencia)->with('locais', $locais);
     }
 
     /**

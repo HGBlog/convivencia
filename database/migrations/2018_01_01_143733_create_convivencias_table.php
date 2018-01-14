@@ -16,9 +16,8 @@ class CreateConvivenciasTable extends Migration
         Schema::create('convivencias', function (Blueprint $table) {
             $table->increments('id');
             $table->boolean('is_ativo');
+            $table->integer('local_convivencia_id')->unsigned();
             $table->string('no_nome', 50);
-            $table->string('no_local', 50);
-            $table->string('nu_telefone', 16);
             $table->text('no_observacoes');
             $table->date('dt_inicio');
             $table->date('dt_fim');
@@ -26,6 +25,7 @@ class CreateConvivenciasTable extends Migration
             $table->date('dt_fim_inscricao');
             $table->timestamps();
             $table->softDeletes();
+            $table->foreign('local_convivencia_id')->references('id')->on('local_convivencias');
         });
     }
 

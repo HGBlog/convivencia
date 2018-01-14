@@ -45,4 +45,7 @@
 <li class="{{ Request::is('equipes*') ? 'active' : '' }}">
     <a href="{!! route('equipes.index') !!}">Equipes</a>
 </li>
-@endif
+@endif<li class="{{ Request::is('localConvivencias*') ? 'active' : '' }}">
+    <a href="{!! route('localConvivencias.index') !!}">LocalConvivencias</a>
+</li>
+

@@ -1,0 +1,66 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "no_local",
+        "dbType": "string,50",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "nu_telefone",
+        "dbType": "string,16",
+        "htmlType": "number",
+        "searchable": true     
+    },
+    {
+        "name": "no_cidade",
+        "dbType": "string,50",
+        "htmlType": "text",
+        "searchable": true
+    },
+    {
+        "name": "no_endereco",
+        "dbType": "string,50",
+        "htmlType": "text",
+        "searchable": true
+    },
+    {
+        "name": "no_observacoes",
+        "dbType": "text",
+        "htmlType": "textarea",
+        "searchable": true
+    },
+    {
+       "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

@@ -91,3 +91,6 @@ Route::group(['middleware' => 'auth'], function() {
 
 
 
+
+
+Route::resource('localConvivencias', 'LocalConvivenciaController');

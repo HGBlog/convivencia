@@ -10,10 +10,10 @@
                     <?php if(!empty ( $convivencia )): ?>
                     <font color="red">
                     <br>
-                    <b>Próxima Convivência: <?php echo $convivencia->no_nome; ?></b><br>
-                    <b>Data: <?php echo Carbon\Carbon::parse($convivencia->dt_inicio)->format('d/m/Y'); ?> a <?php echo Carbon\Carbon::parse($convivencia->dt_fim)->format('d/m/Y'); ?><br></b>
-                    <b>Fim das inscrições: <?php echo Carbon\Carbon::parse($convivencia->dt_fim_inscricao)->format('d/m/Y'); ?></b><br>
-                    <b>Local: <?php echo $convivencia->no_local; ?></b><br>                    
+                    <b>* <u>Próxima Convivência:</u> <?php echo $convivencia->no_nome; ?></b><br>
+                    <b>* <u>Data:</u> <?php echo Carbon\Carbon::parse($convivencia->dt_inicio)->format('d/m/Y'); ?> a <?php echo Carbon\Carbon::parse($convivencia->dt_fim)->format('d/m/Y'); ?><br></b>
+                    <b>* <u>Fim das inscrições:</u> <?php echo Carbon\Carbon::parse($convivencia->dt_fim_inscricao)->format('d/m/Y'); ?></b><br>
+                    <b>* <u>Local:</u> <?php echo $local->where('id', $convivencia->local_convivencia_id)->pluck('no_local')->first(); ?></b><br>                    
                     <a class="btn btn-primary pull-left" style="margin-top: 25px" href="<?php echo route('convivencias.lista_ativas'); ?>">Inscrição para Convivência</a>
                     <br><br><br><br>
                     </font>
