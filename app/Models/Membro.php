@@ -82,7 +82,7 @@ class Membro extends Model
      */
     public static $rules = [
         'no_usuario' => 'required',
-        'no_email'      => 'required|email'
+        //'no_email'      => 'required|email'
         //'no_pais' => 'required',
         //'no_cidade' => 'required',
         //'no_paroquia' => 'required',

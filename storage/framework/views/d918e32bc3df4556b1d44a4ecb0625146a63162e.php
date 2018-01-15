@@ -1,105 +1,120 @@
-<div class="form-group col-sm-6">
-    <?php echo Form::label('no_usuario', 'Nome do membro:'); ?>
 
-    <?php echo Form::text('no_usuario', null, ['class' => 'form-control', 'placeholder'=>'Nome completo']); ?>
+<div class="simple-tab" >
+  <ul>
+    <li class="active">Dados Pessoais</li>
+    <li>Dados do Caminho</li>
+    <li>Dados da missão</li>
+    <li>Contatos</li>
+  </ul>
+  <div class="form-group col-sm-7">
+    <div class="active">
+      <p>
+            <?php echo Form::label('no_usuario', 'Nome do membro:'); ?>
 
-</div>
+            <?php echo Form::text('no_usuario', null, ['class' => 'form-control', 'placeholder'=>'Nome completo']); ?>
 
-<div class="form-group col-sm-6">
 
-    <?php echo Form::label('equipe_id', 'Equipe'); ?>
+            <?php echo Form::label('no_sexo', 'Sexo:'); ?>
 
-    <?php echo Form::select('equipe_id', $equipes, $membro->equipe_id, ['id' => 'equipe_id', 'class' => 'form-control', 'dropdown-menu']); ?>
+            <?php echo Form::select('no_sexo', ['M' => 'Masculino', 'F' => 'Feminino'], null, ['class' => 'form-control']); ?>
 
-</div>
+        
+            <?php echo Form::label('no_pais', 'País:'); ?>
 
-<div class="form-group col-sm-6">
+            <?php echo Form::text('no_pais', null, ['class' => 'form-control', 'placeholder'=>'País']); ?>
 
-    <?php echo Form::label('tipo_carisma_id', 'Carisma:'); ?>
+      </p>        
+    </div>
+    <div>
+      <p>
 
-    <?php echo Form::select('tipo_carisma_id', $carismas, $membro->tipo_carisma_id, ['id' => 'tipo_carisma_id', 'class' => 'form-control', 'dropdown-menu']); ?>
 
-</div>
+            <?php echo Form::label('equipe_id', 'Equipe'); ?>
 
-<!-- No Pais Field -->
-<div class="form-group col-sm-6">
-    <?php echo Form::label('no_pais', 'País:'); ?>
+            <?php echo Form::select('equipe_id', $equipes, $membro->equipe_id, ['id' => 'equipe_id', 'class' => 'form-control', 'dropdown-menu']); ?>
 
-    <?php echo Form::text('no_pais', null, ['class' => 'form-control', 'placeholder'=>'País']); ?>
 
-</div>
+                    <!-- No Diocese Field -->
 
-<!-- No Email Field -->
-<div class="form-group col-sm-6">
-    <?php echo Form::label('no_email', 'Email:'); ?>
+            <?php echo Form::label('no_diocese', 'Diocese:'); ?>
 
-    <?php echo Form::email('no_email', null, ['class' => 'form-control', 'placeholder'=>'Email válido']); ?>
+            <?php echo Form::text('no_diocese', null, ['class' => 'form-control', 'placeholder'=>'Diocese']); ?>
 
-</div>
 
-<!-- No Sexo Field -->
-<div class="form-group col-sm-6">
-    <?php echo Form::label('no_sexo', 'Sexo:'); ?>
 
-    <?php echo Form::select('no_sexo', ['M' => 'Masculino', 'F' => 'Feminino'], null, ['class' => 'form-control']); ?>
+        <!-- No Cidade Field -->
 
-</div>
+            <?php echo Form::label('no_cidade', 'Cidade:'); ?>
 
-<!-- Co Telefone Pais Field -->
-<div class="form-group col-sm-6">
-    <?php echo Form::label('co_telefone_pais', 'Código Telefone:'); ?>
+            <?php echo Form::text('no_cidade', null, ['class' => 'form-control', 'placeholder'=>'Cidade de origem']); ?>
 
-    <?php echo Form::text('co_telefone_pais', null, ['class' => 'form-control', 'placeholder'=>'Código DDD', 'maxlength' => '3']); ?>
 
-</div>
 
-<!-- Nu Telefone Field -->
-<div class="form-group col-sm-6">
-    <?php echo Form::label('nu_telefone', 'Número Telefone:'); ?>
+        <!-- No Paroquia Field -->
 
-    <?php echo Form::number('nu_telefone', null, ['class' => 'form-control', 'placeholder'=>'Telefone - Apenas números', 'maxlength' => '10']); ?>
+            <?php echo Form::label('no_paroquia', 'Paróquia:'); ?>
 
-</div>
+            <?php echo Form::text('no_paroquia', null, ['class' => 'form-control', 'placeholder'=>'Paróquia de origem']); ?>
 
-<!-- No Diocese Field -->
-<div class="form-group col-sm-6">
-    <?php echo Form::label('no_diocese', 'Diocese:'); ?>
 
-    <?php echo Form::text('no_diocese', null, ['class' => 'form-control', 'placeholder'=>'Diocese']); ?>
 
-</div>
+        <!-- Nu Comunidade Field -->
 
-<!-- No Cidade Field -->
-<div class="form-group col-sm-6">
-    <?php echo Form::label('no_cidade', 'Cidade:'); ?>
+            <?php echo Form::label('nu_comunidade', 'Número Comunidade:'); ?>
 
-    <?php echo Form::text('no_cidade', null, ['class' => 'form-control', 'placeholder'=>'Cidade de origem']); ?>
+            <?php echo Form::text('nu_comunidade', null, ['class' => 'form-control', 'maxlength' => '2']); ?>
 
-</div>
 
-<!-- No Paroquia Field -->
-<div class="form-group col-sm-6">
-    <?php echo Form::label('no_paroquia', 'Paróquia:'); ?>
 
-    <?php echo Form::text('no_paroquia', null, ['class' => 'form-control', 'placeholder'=>'Paróquia de origem']); ?>
+        <!-- Etapa Caminho Field -->
+        
+            <?php echo Form::label('etapa_id', 'Etapa'); ?>
 
-</div>
+            <?php echo Form::select('etapa_id', $etapas, $membro->etapa_id, ['id' => 'etapa_id', 'class' => 'form-control', 'dropdown-menu']); ?>
 
-<!-- Nu Comunidade Field -->
-<div class="form-group col-sm-6">
-    <?php echo Form::label('nu_comunidade', 'Número Comunidade:'); ?>
+      </p>               
+    </div>
+    <div>
+      <p>
 
-    <?php echo Form::text('nu_comunidade', null, ['class' => 'form-control', 'maxlength' => '2']); ?>
+            <?php echo Form::label('tipo_carisma_id', 'Carisma:'); ?>
 
-</div>
+            <?php echo Form::select('tipo_carisma_id', $carismas, $membro->tipo_carisma_id, ['id' => 'tipo_carisma_id', 'class' => 'form-control', 'dropdown-menu']); ?>
 
-<!-- Etapa Caminho Field -->
-<div class="form-group col-sm-6">
+      </p>   
+    </div>
+    <div>
+      <p>
 
-    <?php echo Form::label('etapa_id', 'Etapa'); ?>
+         <!-- No Email Field -->
+        
+            <?php echo Form::label('no_email', 'Email:'); ?>
 
-    <?php echo Form::select('etapa_id', $etapas, $membro->etapa_id, ['id' => 'etapa_id', 'class' => 'form-control', 'dropdown-menu']); ?>
+            <?php echo Form::email('no_email', null, ['class' => 'form-control', 'placeholder'=>'Email válido']); ?>
 
+        <!-- Co Telefone Pais Field -->
+
+            <?php echo Form::label('co_telefone_pais', 'Código Telefone:'); ?>
+
+            <?php echo Form::text('co_telefone_pais', null, ['class' => 'form-control', 'placeholder'=>'Código DDD', 'maxlength' => '3']); ?>
+
+
+
+        <!-- Nu Telefone Field -->
+
+            <?php echo Form::label('nu_telefone', 'Número Telefone:'); ?>
+
+            <?php echo Form::number('nu_telefone', null, ['class' => 'form-control', 'placeholder'=>'Telefone - Apenas números', 'maxlength' => '10']); ?>
+
+
+
+        
+
+
+      </p>            
+    </div>
+  </div>
+    </div>
 </div>
 
 <!-- Submit Field -->

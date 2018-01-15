@@ -19,6 +19,14 @@
     <link href="http://blackrockdigital.github.io/startbootstrap-simple-sidebar/css/simple-sidebar.css"
           rel="stylesheet">
 
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="<?php echo e(URL::to('css/jQuery.easyTabs.css')); ?>">
+    <script  src="<?php echo e(URL::to('js/jQuery.easyTabs.js')); ?>"></script>      
+
+
     <?php echo $__env->yieldContent('css'); ?>
 
     <style type="text/css">
@@ -118,11 +126,6 @@
 <!-- /#page-content-wrapper -->
 
 
-<!-- JavaScripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-toggle/2.2.1/js/bootstrap-toggle.min.js"></script>
-
 
 <!-- Adicionado my-checkbox - ToogleSwitch do Bootstrap  -->
 
@@ -135,6 +138,22 @@
 
     $("[name='my-checkbox']").bootstrapSwitch();
 </script>
+
+
+<script type="text/javascript">
+    //Scripy das abas para a blade
+    $(".simple-tab").tabs(
+        {
+          type: "click", // onmouseover or 'click'
+          // animation speed in milliseconds
+          speed: 800, 
+
+          // "toogle", "slide", "fade"
+          animation: "slide"
+        }
+    );
+</script> 
+
 
 <?php echo $__env->yieldContent('scripts'); ?>
 

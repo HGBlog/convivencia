@@ -105,7 +105,7 @@ class MembroController extends AppBaseController
         // read more on validation at http://laravel.com/docs/validation
         $rules = array(
             'no_usuario'       => 'required',
-            'no_email'      => 'required|email'
+            //'no_email'      => 'required|email'
         );
        $validator = Validator::make(Input::all(), $rules);
 
