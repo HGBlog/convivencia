@@ -149,8 +149,16 @@
 
           // "toogle", "slide", "fade"
           animation: "slide"
+
         }
+
     );
+    $(".nexttab").click(function() {
+        var active = $(".simple-tab").tabs( "option", "active" );
+        var proxima = active +1;
+        $(".simple-tab").tabs( "option", "active", proxima );
+
+    });
 </script> 
 
 

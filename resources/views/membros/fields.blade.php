@@ -19,7 +19,7 @@
             {!! Form::text('no_pais', null, ['class' => 'form-control', 'placeholder'=>'País']) !!}
       </p>        
     </div>
-    <div>
+    <div id="caminho">
       <p>
 
 
@@ -56,14 +56,14 @@
             {!! Form::select('etapa_id', $etapas, $membro->etapa_id, ['id' => 'etapa_id', 'class' => 'form-control', 'dropdown-menu'])!!}
       </p>               
     </div>
-    <div>
+    <div id="missao">
       <p>
 
             {!! Form::label('tipo_carisma_id', 'Carisma:') !!}
             {!! Form::select('tipo_carisma_id', $carismas, $membro->tipo_carisma_id, ['id' => 'tipo_carisma_id', 'class' => 'form-control', 'dropdown-menu'])!!}
       </p>   
     </div>
-    <div>
+    <div id="contato">
       <p>
 
          <!-- No Email Field -->

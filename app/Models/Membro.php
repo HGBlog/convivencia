@@ -27,7 +27,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Membro extends Model
 {
-    //use SoftDeletes;
+    use SoftDeletes;
 
     public $table = 'membros';
     

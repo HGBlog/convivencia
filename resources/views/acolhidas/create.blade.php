@@ -14,6 +14,7 @@
             
             {{ Form::hidden('convivencia_id', $convivencia_id) }}
             {{ Form::hidden('membro_id', $membro_id) }}
+            {{ Form::hidden('is_ativo', 0) }}
             
             @include('acolhidas.fields')
 

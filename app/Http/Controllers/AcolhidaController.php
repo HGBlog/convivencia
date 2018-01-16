@@ -8,14 +8,23 @@ use App\Repositories\AcolhidaRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
+use Prettus\Repository\Contracts;
+use Prettus\Repository\Eloquent;
+use Illuminate\Contracts\Session;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use View;
 use App\Models\TipoQuarto;
 use App\Models\Acolhida;
 use App\Models\Convivencia;
 use App\Models\AcolhidaExtra;
 use App\Models\Membro;
 use App\Models\TipoTranslado;
+use App\Models\ConvivenciaMembro;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
+
 
 class AcolhidaController extends AppBaseController
 {
@@ -52,8 +61,9 @@ class AcolhidaController extends AppBaseController
         $acolhida = new Acolhida;
         $acolhida_extra = AcolhidaExtra::pluck('no_acolhida_extra', 'id')->all();
         $translado = TipoTranslado::pluck('no_translado', 'id')->all();
+        $status_convivencia = ConvivenciaMembro::where('membro_id', $membro_id)->where('convivencia_id', $convivencia_id)->first();
 
-        return view('acolhidas.create')->with('convivencia_id',$convivencia_id)->with('membro_id',$membro_id)->with('acolhida', $acolhida)->with('acolhida_extra', $acolhida_extra)->with('translado', $translado);
+        return view('acolhidas.create')->with('convivencia_id',$convivencia_id)->with('membro_id',$membro_id)->with('acolhida', $acolhida)->with('acolhida_extra', $acolhida_extra)->with('translado', $translado)->with('status_convivencia', $status_convivencia);
     }
 
     /**
@@ -70,6 +80,8 @@ class AcolhidaController extends AppBaseController
         $convivencia = $request->convivencia_id;
 
         $acolhida = $this->acolhidaRepository->create($input);
+
+
 
         Flash::success('Dados de Acolhimento salvos com sucesso!!!');
 
@@ -112,6 +124,8 @@ class AcolhidaController extends AppBaseController
         $acolhida = Acolhida::where('convivencia_id', $convivencia_id)->where('membro_id', $membro_id)->first();
         $translado = TipoTranslado::pluck('no_translado', 'id')->all();
 
+        //$status_convivencia = ConvivenciaMembro::where('membro_id', $membro_id)->where('convivencia_id', $convivencia_id)->first();
+
         if (empty($acolhida)) {
             Flash::error('Nenhum dado de acolhimento encontrado. Criando dados novos...');
 
@@ -151,8 +165,29 @@ class AcolhidaController extends AppBaseController
         //$id = Acolhida::where('convivencia_id', $convivencia_id)->where('membro_id', $membro_id)->first();
         
         //$acolhida = $this->acolhidaRepository->update($request->all(), null);
+
+        //$status_convivencia = new ConvivenciaMembro;                
+        //$status_convivencia = ConvivenciaMembro::where('membro_id', $membro_id)->where('convivencia_id', $convivencia_id)->first();
+
+
+        //print_r($status_convivencia);
+        //$status_convivencia->membros()->select('*')->where('membro_id', $membro_id)->where('convivencia_id', $convivencia_id)->first();
+        //$status_convivencia->is_ativo = $request->input('is_ativo');
+        //$status_convivencia->convivencia_id = $convivencia_id;
+        //$status_convivencia->membro_id = $membro_id;
+        //$status_convivencia->membros()->sync($membro_id, array($convivencia_id, $membro_id));
+        //, array(
+        //$status_convivencia->membros()->attach($membro_id, array(
+        //        'is_ativo' => $status_convivencia->is_ativo,
+        //        'convivencia_id' => $convivencia_id
+        //    ));
+
+        //$status_convivencia->update($status_convivencia->toArray());
+
+
         $request->offsetUnset('_method');
         $request->offsetUnset('_token');
+        //$request->offsetUnset('is_ativo');
         //print_r($acolhida);
         //return $request;
         $acolhida = Acolhida::where(['convivencia_id' => $convivencia_id, 'membro_id' => $membro_id])->update($request->all());

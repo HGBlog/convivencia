@@ -38,6 +38,7 @@ class Acolhida extends Model
 
 
     public $fillable = [
+        'is_ativo',
         'membro_id',
         'convivencia_id',
         'tipo_translado_id',
@@ -57,6 +58,7 @@ class Acolhida extends Model
      * @var array
      */
     protected $casts = [
+        'is_ativo' => 'boolean',
         'membro_id' => 'integer',
         'convivencia_id' => 'integer',
         'tipo_translado_id' => 'integer',

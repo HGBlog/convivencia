@@ -25,7 +25,7 @@
 
       </p>        
     </div>
-    <div>
+    <div id="caminho">
       <p>
 
 
@@ -74,7 +74,7 @@
 
       </p>               
     </div>
-    <div>
+    <div id="missao">
       <p>
 
             <?php echo Form::label('tipo_carisma_id', 'Carisma:'); ?>
@@ -83,7 +83,7 @@
 
       </p>   
     </div>
-    <div>
+    <div id="contato">
       <p>
 
          <!-- No Email Field -->

@@ -18,6 +18,8 @@
 
                 <?php echo e(Form::hidden('membro_id', $membro_id)); ?>
 
+                <?php echo e(Form::hidden('is_ativo', 0)); ?>
+
                                 
                 <?php echo $__env->make('acolhidas.fields', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
