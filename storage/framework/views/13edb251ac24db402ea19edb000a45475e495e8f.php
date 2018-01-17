@@ -1,3 +1,5 @@
+
+
 <!-- Ativo Field -->
 <div class="form-group col-sm-6">
     <?php echo Form::label('is_ativo', 'Habilitada:'); ?>
@@ -13,6 +15,7 @@
 
 </div>
 <!-- Local Convivencia id Field -->
+
 <div class="form-group col-sm-6">
     <?php echo Form::label('local_convivencia_id', 'Equipe'); ?>
 
@@ -28,6 +31,8 @@
 </div>
 
 <!-- Dt Inicio Field -->
+
+<!-- Dt Fim Field -->
 <div class="form-group col-sm-6">
     <?php echo Form::label('dt_inicio', 'Data Início:'); ?>
 

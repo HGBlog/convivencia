@@ -11,7 +11,17 @@
     <tbody>
     @foreach($convivencias as $convivencia)
         <tr>
-            <td>{!! $convivencia->is_ativo !!}</td>
+            <td>
+
+                    @if (!$convivencia->is_ativo)
+                        <font color="red"><b>NÃO</b></font>
+                    @else
+                        <font color="green"><b>SIM</b></font>
+                    @endif
+
+
+
+</td>
             <td>{!! $convivencia->no_nome !!}</td>
             <td>{!! $local->where('id', $convivencia->local_convivencia_id)->pluck('no_local')->first() !!}</td>
             <td>{!! Carbon\Carbon::parse($convivencia->dt_inicio)->format('d/m/Y') !!}</td>

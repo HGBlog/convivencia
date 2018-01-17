@@ -14,17 +14,50 @@
 
     <!-- Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-toggle/2.2.1/css/bootstrap-toggle.min.css">
 
     <link href="http://blackrockdigital.github.io/startbootstrap-simple-sidebar/css/simple-sidebar.css"
           rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script> -->
 
     <link rel="stylesheet" type="text/css" href="<?php echo e(URL::to('css/jQuery.easyTabs.css')); ?>">
     <script  src="<?php echo e(URL::to('js/jQuery.easyTabs.js')); ?>"></script>      
+    <script  src="<?php echo e(URL::to('js/bootstrap-datepicker.js')); ?>"></script>  
+    <script  src="<?php echo e(URL::to('js/prettify.js')); ?>"></script>  
+    <!--//Datepicker-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="<?php echo e(URL::to('css/bootstrap-datetimepicker.css')); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(URL::to('css/datepicker.css')); ?>">
+
+<link rel="stylesheet" type="text/css" href="<?php echo e(URL::to('css/prettify.css')); ?>">
+
+<!-------
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+                    
+
+------!-->
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+
+
+
+
 
 
     <?php echo $__env->yieldContent('css'); ?>
@@ -161,6 +194,12 @@
 
     });
 </script> 
+
+<script>$('#dt_inicio___').datetimepicker();</script>
+<script>$('#example___').datetimepicker();</script>
+
+<script>$('#dt_inicio___').datepicker();</script>
+
 
 
 <?php echo $__env->yieldContent('scripts'); ?>

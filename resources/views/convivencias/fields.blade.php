@@ -1,3 +1,5 @@
+
+
 <!-- Ativo Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('is_ativo', 'Habilitada:') !!}
@@ -9,6 +11,7 @@
     {!! Form::text('no_nome', null, ['class' => 'form-control']) !!}
 </div>
 <!-- Local Convivencia id Field -->
+
 <div class="form-group col-sm-6">
     {!! Form::label('local_convivencia_id', 'Equipe') !!}
     {!! Form::select('local_convivencia_id', $locais, $convivencia->local_convivencia_id, ['id' => 'local_convivencia_id', 'class' => 'form-control', 'dropdown-menu'])!!}
@@ -20,6 +23,8 @@
 </div>
 
 <!-- Dt Inicio Field -->
+
+<!-- Dt Fim Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('dt_inicio', 'Data Início:') !!}
     {!! Form::date('dt_inicio', Carbon\Carbon::parse($convivencia->dt_inicio)->format('Y-m-d'), ['class' => 'form-control col-md-7 col-xs-12'])!!}
