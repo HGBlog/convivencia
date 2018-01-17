@@ -37,7 +37,7 @@
                         )
                         <font color="red"><b>NÃO</b></font>
                     @else
-                        <font color="blue"><b>SIM</b></font>
+                        <font color="green"><b>SIM</b></font>
                     @endif
 
                     

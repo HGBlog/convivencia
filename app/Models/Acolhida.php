@@ -49,6 +49,8 @@ class Acolhida extends Model
         'dt_saida',
         'nu_hora_saida',
         'nu_voo_saida',
+        'no_local_chegada',
+        'no_local_saida',
         'no_observacoes'
     ];
 
@@ -69,6 +71,8 @@ class Acolhida extends Model
         'dt_saida' => 'date',
         'nu_hora_saida' => 'string',
         'nu_voo_saida' => 'string',
+        'no_local_chegada' => 'string',
+        'no_local_saida' => 'string',
         'no_observacoes' => 'string'
     ];
 
@@ -78,7 +82,6 @@ class Acolhida extends Model
      * @var array
      */
     public static $rules = [
-        //'no_casa_convivencia' => 'required',
         //'nu_voo_chegada' => 'required',
         //'nu_voo_saida' => 'required'
     ];

@@ -30,6 +30,11 @@
         <?php echo Form::text('nu_voo_chegada', null, ['class' => 'form-control', 'placeholder'=>'Número do vôo se for o caso']); ?>
 
 
+        <?php echo Form::label('no_local_chegada', 'Local de desembarque:'); ?>
+
+        <?php echo Form::text('no_local_chegada', null, ['class' => 'form-control', 'placeholder'=>'Informar o Aeroporto, Rodoviária ou Local de desembarque']); ?>
+
+
       </p>        
     </div>
     <div id="saida">
@@ -49,6 +54,11 @@
     <?php echo Form::label('nu_voo_saida', 'Número vôo:'); ?>
 
     <?php echo Form::text('nu_voo_saida', null, ['class' => 'form-control', 'placeholder'=>'Número do vôo se for o caso']); ?>
+
+
+    <?php echo Form::label('no_local_saida', 'Local de embarque:'); ?>
+
+    <?php echo Form::text('no_local_saida', null, ['class' => 'form-control', 'placeholder'=>'Informar o Aeroporto, Rodoviária ou Local de embarque']); ?>
 
 
       </p>        

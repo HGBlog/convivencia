@@ -25,6 +25,8 @@ class CreateAcolhidasTable extends Migration
             $table->date('dt_saida');
             $table->string('nu_hora_saida', 16);
             $table->string('nu_voo_saida', 10);
+            $table->string('no_local_chegada', 50);
+            $table->string('no_local_saida', 50);
             $table->text('no_observacoes');
             $table->timestamps();
             $table->softDeletes();

@@ -22,6 +22,9 @@
         {!! Form::label('nu_voo_chegada', 'Número vôo:') !!}
         {!! Form::text('nu_voo_chegada', null, ['class' => 'form-control', 'placeholder'=>'Número do vôo se for o caso']) !!}
 
+        {!! Form::label('no_local_chegada', 'Local de desembarque:') !!}
+        {!! Form::text('no_local_chegada', null, ['class' => 'form-control', 'placeholder'=>'Informar o Aeroporto, Rodoviária ou Local de desembarque']) !!}
+
       </p>        
     </div>
     <div id="saida">
@@ -36,6 +39,9 @@
 
     {!! Form::label('nu_voo_saida', 'Número vôo:') !!}
     {!! Form::text('nu_voo_saida', null, ['class' => 'form-control', 'placeholder'=>'Número do vôo se for o caso']) !!}
+
+    {!! Form::label('no_local_saida', 'Local de embarque:') !!}
+    {!! Form::text('no_local_saida', null, ['class' => 'form-control', 'placeholder'=>'Informar o Aeroporto, Rodoviária ou Local de embarque']) !!}
 
       </p>        
     </div>
