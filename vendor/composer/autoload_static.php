@@ -372,6 +372,10 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         ),
         'J' => 
         array (
+            'JasperPHP' => 
+            array (
+                0 => __DIR__ . '/..' . '/lavela/phpjasper/src',
+            ),
             'JakubOnderka\\PhpConsoleHighlighter' => 
             array (
                 0 => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src',
@@ -2306,6 +2310,9 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
+        'JasperPHP\\Facades\\JasperPHP' => __DIR__ . '/..' . '/lavela/phpjasper/src/JasperPHP/Facades/JasperPHP.php',
+        'JasperPHP\\JasperPHP' => __DIR__ . '/..' . '/lavela/phpjasper/src/JasperPHP/JasperPHP.php',
+        'JasperPHP\\JasperPHPServiceProvider' => __DIR__ . '/..' . '/lavela/phpjasper/src/JasperPHP/JasperPHPServiceProvider.php',
         'Laracasts\\Flash\\Flash' => __DIR__ . '/..' . '/laracasts/flash/src/Laracasts/Flash/Flash.php',
         'Laracasts\\Flash\\FlashNotifier' => __DIR__ . '/..' . '/laracasts/flash/src/Laracasts/Flash/FlashNotifier.php',
         'Laracasts\\Flash\\FlashServiceProvider' => __DIR__ . '/..' . '/laracasts/flash/src/Laracasts/Flash/FlashServiceProvider.php',

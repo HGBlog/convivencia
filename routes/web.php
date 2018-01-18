@@ -74,6 +74,8 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::resource('etapas', 'EtapaController');
 
+    Route::get ('/relatorios','ReportController@index');
+
 
 
 });
