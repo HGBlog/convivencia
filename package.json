@@ -18,4 +18,11 @@
         "lodash": "^4.17.4",
         "vue": "^2.5.7"
     }
+    "require": {
+	"infyomlabs/laravel-generator": "5.5.x-dev",
+    	"laravelcollective/html": "^5.5.0",
+	"infyomlabs/core-templates": "5.5.x-dev",
+	"doctrine/dbal": "~2.3",
+        "lavela/phpjasper": "2.*",
+    }
 }

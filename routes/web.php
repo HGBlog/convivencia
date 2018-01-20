@@ -1,5 +1,7 @@
 <?php
 
+use JasperPHP\JasperPHP;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -79,6 +81,22 @@ Route::group(['middleware' => 'auth'], function() {
 
 
 });
+
+
+/*
+Route::get('/relatorios', function () {
+
+  $output = public_path() . '/reports'.time().'_hello_world';
+    $report = new JasperPHP;
+    $report->process(
+    	public_path() . '/reports/Customers.jrxml',
+        $output,
+        array('pdf', 'rtf', 'xml'),
+        array(),
+        array()  
+        )->execute();
+});
+*/
 
 //Route::get('/home', 'HomeController@index');
 //Route::get('/create/ticket','TicketController@create');

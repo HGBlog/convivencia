@@ -168,8 +168,15 @@ return [
 	Prettus\Repository\Providers\RepositoryServiceProvider::class,
 	InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
 	InfyOm\CoreTemplates\CoreTemplatesServiceProvider::class,
+	//\InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class,
 	Yajra\DataTables\DataTablesServiceProvider::class,
 	Yajra\DataTables\ButtonsServiceProvider::class,
+	//JasperPHP\JasperPHPServiceProvider::class,
+	Spatie\Permission\PermissionServiceProvider::class,
+
+
+
+
         /*
          * Package Service Providers...
          */

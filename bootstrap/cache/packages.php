@@ -24,13 +24,6 @@
       'Flash' => 'Laracasts\\Flash\\Flash',
     ),
   ),
-  'prettus/l5-repository' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Prettus\\Repository\\Providers\\RepositoryServiceProvider',
-    ),
-  ),
   'infyomlabs/laravel-generator' => 
   array (
     'providers' => 
@@ -50,15 +43,18 @@
       'Html' => 'Collective\\Html\\HtmlFacade',
     ),
   ),
-  'yajra/laravel-datatables-oracle' => 
+  'yajra/laravel-datatables-buttons' => 
   array (
     'providers' => 
     array (
-      0 => 'Yajra\\DataTables\\DataTablesServiceProvider',
+      0 => 'Yajra\\DataTables\\ButtonsServiceProvider',
     ),
-    'aliases' => 
+  ),
+  'prettus/l5-repository' => 
+  array (
+    'providers' => 
     array (
-      'DataTables' => 'Yajra\\DataTables\\Facades\\DataTables',
+      0 => 'Prettus\\Repository\\Providers\\RepositoryServiceProvider',
     ),
   ),
   'maatwebsite/excel' => 
@@ -72,6 +68,17 @@
       'Excel' => 'Maatwebsite\\Excel\\Facades\\Excel',
     ),
   ),
+  'yajra/laravel-datatables-oracle' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Yajra\\DataTables\\DataTablesServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'DataTables' => 'Yajra\\DataTables\\Facades\\DataTables',
+    ),
+  ),
   'yajra/laravel-datatables-html' => 
   array (
     'providers' => 
@@ -79,11 +86,11 @@
       0 => 'Yajra\\DataTables\\HtmlServiceProvider',
     ),
   ),
-  'yajra/laravel-datatables-buttons' => 
+  'spatie/laravel-permission' => 
   array (
     'providers' => 
     array (
-      0 => 'Yajra\\DataTables\\ButtonsServiceProvider',
+      0 => 'Spatie\\Permission\\PermissionServiceProvider',
     ),
   ),
 );

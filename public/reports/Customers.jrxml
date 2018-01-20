@@ -1,132 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Customers" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="75636323-a83e-403f-b9be-1910d3c26a34">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Customers3" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0198a70a-0ba9-418b-a357-d9ef824d5cc2">
 	<property name="com.jaspersoft.studio.data.sql.tables">
-		<![CDATA[Y29udi5tZW1icm9zIEFTICwxNSwxNSwwNmFjOTkyZC0xYzg4LTQ4ZWYtYjdkNC0wMjU1ZjQ2OWIy
-N2E7]]>
+		<![CDATA[Y29udi5tZW1icm9zIEFTICw3MCw3MixlN2EyOWE3OC00ZDM4LTQ5MzMtODhkYy00ZjdmNWZjNDZj
+NmU7
+]]>
 	</property>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL Local"/>
-	<queryString language="SQL">
+	<queryString>
 		<![CDATA[SELECT conv.membros.no_usuario,
-	conv.membros.no_pais,
-	conv.membros.no_email,
-	conv.membros.no_sexo,
-	conv.membros.co_telefone_pais,
-	conv.membros.nu_telefone,
-	conv.membros.no_diocese,
-	conv.membros.no_cidade,
-	conv.membros.no_paroquia,
-	conv.membros.nu_comunidade
+	conv.membros.id
 FROM conv.membros]]>
 	</queryString>
+	<field name="id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="membros"/>
+	</field>
 	<field name="no_usuario" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="no_usuario"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="membros"/>
 	</field>
-	<field name="no_pais" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="no_pais"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="membros"/>
-	</field>
-	<field name="no_email" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="no_email"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="membros"/>
-	</field>
-	<field name="no_sexo" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="no_sexo"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="membros"/>
-	</field>
-	<field name="co_telefone_pais" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="co_telefone_pais"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="membros"/>
-	</field>
-	<field name="nu_telefone" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="nu_telefone"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="membros"/>
-	</field>
-	<field name="no_diocese" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="no_diocese"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="membros"/>
-	</field>
-	<field name="no_cidade" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="no_cidade"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="membros"/>
-	</field>
-	<field name="no_paroquia" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="no_paroquia"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="membros"/>
-	</field>
-	<field name="nu_comunidade" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="nu_comunidade"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="membros"/>
-	</field>
-	<group name="no_usuario">
-		<groupExpression><![CDATA[$F{no_usuario}]]></groupExpression>
-	</group>
-	<group name="no_pais">
-		<groupExpression><![CDATA[$F{no_pais}]]></groupExpression>
-	</group>
-	<group name="no_email">
-		<groupExpression><![CDATA[$F{no_email}]]></groupExpression>
-	</group>
-	<group name="no_sexo">
-		<groupExpression><![CDATA[$F{no_sexo}]]></groupExpression>
-	</group>
-	<group name="co_telefone_pais">
-		<groupExpression><![CDATA[$F{co_telefone_pais}]]></groupExpression>
-	</group>
-	<group name="nu_telefone">
-		<groupExpression><![CDATA[$F{nu_telefone}]]></groupExpression>
-	</group>
-	<group name="no_diocese">
-		<groupExpression><![CDATA[$F{no_diocese}]]></groupExpression>
-	</group>
-	<group name="no_cidade">
-		<groupExpression><![CDATA[$F{no_cidade}]]></groupExpression>
-	</group>
-	<group name="no_paroquia">
-		<groupExpression><![CDATA[$F{no_paroquia}]]></groupExpression>
-	</group>
-	<group name="nu_comunidade">
-		<groupExpression><![CDATA[$F{nu_comunidade}]]></groupExpression>
-	</group>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="81" splitType="Stretch">
-			<textField>
-				<reportElement x="100" y="10" width="380" height="51" uuid="5beb7e1e-8db9-47f8-9553-790474ed4498"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="26"/>
-				</textElement>
-				<textFieldExpression><![CDATA["Relatório de Membros"]]></textFieldExpression>
-			</textField>
-		</band>
+		<band height="79" splitType="Stretch"/>
 	</title>
 	<pageHeader>
-		<band height="17" splitType="Stretch"/>
+		<band height="35" splitType="Stretch"/>
 	</pageHeader>
 	<detail>
-		<band height="56" splitType="Stretch">
-			<staticText>
-				<reportElement x="-100" y="0" width="100" height="30" uuid="774220af-a69f-4818-bdf7-face43e395f8"/>
-				<text><![CDATA[no_usuario]]></text>
-			</staticText>
+		<band height="125" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="23" width="141" height="30" uuid="d59d2985-846d-4fb1-9a0c-2514676e0b21"/>
+				<reportElement x="0" y="0" width="278" height="30" uuid="f7e3febd-49e7-4ec2-98a8-2cb0228814cc"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="278" y="0" width="277" height="30" uuid="faca96d3-7c4f-451d-8bdc-aba8281aacfa"/>
 				<textFieldExpression><![CDATA[$F{no_usuario}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="141" y="23" width="138" height="30" uuid="43fdc5ab-707b-482a-bdd0-5c2cbd59c32e"/>
-				<textFieldExpression><![CDATA[$F{no_pais}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="279" y="23" width="138" height="30" uuid="b8353ce0-3779-4a9b-b7ef-fd03a44799d0"/>
-				<textFieldExpression><![CDATA[$F{no_email}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="417" y="23" width="138" height="30" uuid="a5e4aee3-14fa-4231-a9df-0680aa0aea54"/>
-				<textFieldExpression><![CDATA[$F{no_sexo}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

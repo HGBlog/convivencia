@@ -1,18 +1,33 @@
-<div class="simple-tab" >
+<div id="smartwizard" class="col-sm-9">
   <ul>
-    <li class="active">Dados da chegada</li>
-    <li>Dados da saída</li>
-    <li>Outras informações</li>
+    <li><a href="#step-1">Passo 1<br /><small>Faça aqui a inscrição</small></a></li>
+    <li><a href="#step-2">Passo 2<br /><small>Informe aqui os dados de chegada</small></a></li>
+    <li><a href="#step-3">Passo 3<br /><small>Informe aqui os dados de partida</small></a></li>
+    <li><a href="#step-4">Passo 4<br /><small>Informações adicionais</small></a></li>
   </ul>
-  <div class="form-group col-sm-7">
-    <div class="active">
-      <p>
+  
+  <div>
+      <div id="step-1" class="">
+          <?php echo Form::label('is_ativo', 'Vai para a convivência?'); ?>
+
+          <?php echo Form::checkbox('is_ativo', true, $acolhida->is_ativo,  ['class' => 'form-control']); ?>
+
+
+          <?php echo Form::label('tipo_translado_id', 'Translado:'); ?>
+
+          <?php echo Form::select('tipo_translado_id', $translado, $acolhida->tipo_translado_id, ['id' => 'tipo_translado_id', 'class' => 'form-control', 'dropdown-menu']); ?>
 
 
 
-        <?php echo Form::label('is_ativo', 'Vai para a convivência?'); ?>
+          <?php echo Form::label('acolhida_extra_id', 'Acolhimento Extra'); ?>
 
-        <?php echo Form::checkbox('is_ativo', true, $acolhida->is_ativo,  ['class' => 'form-control']); ?>
+          <?php echo Form::select('acolhida_extra_id', $acolhida_extra, $acolhida->pluck('acolhida_extra_id'), ['id' => 'acolhida_extra_id', 'class' => 'form-control', 'dropdown-menu']); ?>
+
+
+      </div>
+      <div id="step-2" class="">
+
+
 
 
         <?php echo Form::label('dt_chegada', 'Data de chegada:'); ?>
@@ -35,10 +50,9 @@
         <?php echo Form::text('no_local_chegada', null, ['class' => 'form-control', 'placeholder'=>'Informar o Aeroporto, Rodoviária ou Local de desembarque']); ?>
 
 
-      </p>        
-    </div>
-    <div id="saida">
-      <p>
+
+      </div>
+      <div id="step-3" class="">
 
     <?php echo Form::label('dt_saida', 'Data de saída:'); ?>
 
@@ -61,37 +75,18 @@
     <?php echo Form::text('no_local_saida', null, ['class' => 'form-control', 'placeholder'=>'Informar o Aeroporto, Rodoviária ou Local de embarque']); ?>
 
 
-      </p>        
-    </div>
-    <div id="outros">
-      <p>
-
-    <?php echo Form::label('tipo_translado_id', 'Translado:'); ?>
-
-    <?php echo Form::select('tipo_translado_id', $translado, $acolhida->tipo_translado_id, ['id' => 'tipo_translado_id', 'class' => 'form-control', 'dropdown-menu']); ?>
-
-
-
-    <?php echo Form::label('acolhida_extra_id', 'Acolhimento Extra'); ?>
-
-    <?php echo Form::select('acolhida_extra_id', $acolhida_extra, $acolhida->pluck('acolhida_extra_id'), ['id' => 'acolhida_extra_id', 'class' => 'form-control', 'dropdown-menu']); ?>
-
+      </div>
+      <div id="step-4" class="">
 
     <?php echo Form::label('no_observacoes', 'Observações:'); ?>
 
     <?php echo Form::textarea('no_observacoes', null, ['class' => 'form-control', 'rows' => '5']); ?>
 
 
-      </p>            
-    </div>
+      </div>
+
   </div>
-    </div>
-</div>
+        <?php echo Form::submit('Salvar', ['class' => 'btn btn-primary']); ?>
 
-<!-- Submit Field -->
-<div class="form-group col-sm-12">
-
-    <?php echo Form::submit('Salvar', ['class' => 'btn btn-primary']); ?>
-
-    <a href="<?php echo route('membros.index'); ?>" class="btn btn-default">Cancel</a>
+    <a href="<?php echo route('membros.index'); ?>" class="btn btn-default" >Cancel</a>
 </div>

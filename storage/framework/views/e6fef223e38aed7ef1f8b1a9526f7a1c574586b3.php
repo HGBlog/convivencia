@@ -11,7 +11,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet'
           type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
-
     <!-- Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
@@ -41,6 +40,15 @@
     <link rel="stylesheet" type="text/css" href="<?php echo e(URL::to('css/datepicker.css')); ?>">
 
 <link rel="stylesheet" type="text/css" href="<?php echo e(URL::to('css/prettify.css')); ?>">
+
+    <!-- SmartWizard -->
+    <script  src="<?php echo e(URL::to('js/jquery.smartWizard.min.js')); ?>"></script>
+
+    
+
+    <link rel="stylesheet" type="text/css" href="<?php echo e(URL::to('css/smart_wizard.min.css')); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(URL::to('css/smart_wizard_theme_arrows.min.css')); ?>">
+    
 
 <!-------
 
@@ -199,6 +207,78 @@
 <script>$('#example___').datetimepicker();</script>
 
 <script>$('#dt_inicio___').datepicker();</script>
+
+<script type="text/javascript">
+    $('#smartwizard').smartWizard(
+{
+    // Initial selected step, 0 = first step 
+  selected: 0,  
+
+  // Automatically adjust content height
+  autoAdjustHeight:true, 
+
+  // Allows to cycle the navigation of steps
+  cycleSteps: false, 
+
+  // Enable the back button support
+  backButtonSupport: true, 
+
+  // Enable selection of the step based on url hash
+  useURLhash: true, 
+
+  // Show url hash based on step 
+  showStepURLhash: true, 
+
+  // Language variables
+  lang: {  
+      next: 'Avançar', 
+      previous: 'Voltar'
+  },
+
+  // step bar options
+  toolbarSettings: {
+    toolbarPosition: 'bottom', // none, top, bottom, both
+    toolbarButtonPosition: 'right', // left, right
+    showNextButton: true, // show/hide a Next button
+    showPreviousButton: true, // show/hide a Previous button
+    toolbarExtraButtons: []
+  }, 
+
+
+  // anchor options
+  anchorSettings: {
+    anchorClickable: true, // Enable/Disable anchor navigation
+    enableAllAnchors: false, // Activates all anchors clickable all times
+    markDoneStep: true, // add done css
+    markAllPreviousStepsAsDone: true, // When a step selected by url hash, all previous steps are marked done
+    removeDoneStepOnNavigateBack: false, // While navigate back done step after active step will be cleared
+    enableAnchorOnDoneStep: true // Enable/Disable the done steps navigation
+  },     
+
+  // content url, Enables Ajax content loading. can set as data data-content-url on anchor
+  contentURL: null, 
+
+  // Array of disabled Steps
+  disabledSteps: [],    
+
+  // Highlight step with errors
+  errorSteps: [],    
+
+  // Hidden steps
+  hiddenSteps: [], 
+
+  // theme
+  theme: 'arrows',
+
+  // Effect on navigation, none/slide/fade
+  transitionEffect: 'fade', 
+
+  // transition speed in ms
+  transitionSpeed: '400'
+  
+});
+</script>
+
 
 
 
