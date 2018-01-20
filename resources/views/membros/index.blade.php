@@ -2,10 +2,48 @@
 @extends('layouts.app')
 
 @section('content')
-        <h1 class="pull-left">Membros da Equipe</h1>
+        <h1 class="pull-left">Membros da Equipe - <font color="red"><b>{{ $qtde_membros }}</b> cadastrados</font></h1>
         <a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('membros.create') !!}">Criar Novo membro</a>
-
         <div class="clearfix"></div>
+        <ul class="pagination">
+        	<div align="center">Página {{ $membros->currentPage() }} de {{ $membros->lastPage() }}</div>
+		    <!-- Previous Page Link -->
+
+		    @if ($membros->onFirstPage())
+		        <li class="disabled"><span>&laquo;</span></li>
+		    @else
+		        <li><a href="{{ $membros->previousPageUrl() }}" rel="prev">&laquo;</a></li>
+		    @endif
+		    	
+		    <!-- Pagination Elements -->
+		    @foreach ($membros as $membro)
+		        <!-- "Three Dots" Separator -->
+		        @if (is_string($membro))
+		            <li class="disabled"><span>{{ $membro }}</span></li>
+		        @endif
+
+		        <!-- Array Of Links -->
+		        @if (is_array($membro))
+		            @foreach ($membro as $page => $url)
+		                @if ($page == $paginator->currentPage())
+		                    <li class="active"><span>{{ $page }}</span></li>
+		                @else
+		                    <li><a href="{{ $url }}">{{ $page }}</a></li>
+		                @endif
+		            @endforeach
+		        @endif
+		    @endforeach
+
+		    <!-- Next Page Link -->
+		    @if ($membros->hasMorePages())
+		        <li><a href="{{ $membros->nextPageUrl() }}" rel="next">&raquo;</a></li>
+		    @else
+		        <li class="disabled"><span>&raquo;</span></li>
+		    @endif
+
+		</ul>
+
+
 
         @include('flash::message')
 
