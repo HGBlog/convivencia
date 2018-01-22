@@ -30,6 +30,13 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
+   
+    <!-- SmartWizard -->
+    <link rel="stylesheet" type="text/css" href="{{ URL::to('css/smart_wizard.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::to('css/smart_wizard_theme_arrows.min.css') }}">
+
+
+
     @yield('css')
 </head>
 
@@ -168,6 +175,9 @@
 
     <script  src="{{ URL::to('js/jQuery.easyTabs.js') }}"></script> 
 
+    <!-- SmartWizard -->
+    <script  src="{{ URL::to('js/jquery.smartWizard.min.js') }}"></script>
+
     <!-- Tabs para os forms -->
     <script type="text/javascript">
         //Scripy das abas para a blade
@@ -190,6 +200,78 @@
 
         });
     </script>
+
+    <!-- SmartWizard - Wizard em formulario -->
+    <script type="text/javascript">
+        $('#smartwizard').smartWizard(
+    {
+        // Initial selected step, 0 = first step 
+      selected: 0,  
+
+      // Automatically adjust content height
+      autoAdjustHeight:true, 
+
+      // Allows to cycle the navigation of steps
+      cycleSteps: false, 
+
+      // Enable the back button support
+      backButtonSupport: true, 
+
+      // Enable selection of the step based on url hash
+      useURLhash: true, 
+
+      // Show url hash based on step 
+      showStepURLhash: true, 
+
+      // Language variables
+      lang: {  
+          next: 'Avançar', 
+          previous: 'Voltar'
+      },
+
+      // step bar options
+      toolbarSettings: {
+        toolbarPosition: 'bottom', // none, top, bottom, both
+        toolbarButtonPosition: 'right', // left, right
+        showNextButton: true, // show/hide a Next button
+        showPreviousButton: true, // show/hide a Previous button
+        toolbarExtraButtons: []
+      }, 
+
+
+      // anchor options
+      anchorSettings: {
+        anchorClickable: true, // Enable/Disable anchor navigation
+        enableAllAnchors: false, // Activates all anchors clickable all times
+        markDoneStep: true, // add done css
+        markAllPreviousStepsAsDone: true, // When a step selected by url hash, all previous steps are marked done
+        removeDoneStepOnNavigateBack: false, // While navigate back done step after active step will be cleared
+        enableAnchorOnDoneStep: true // Enable/Disable the done steps navigation
+      },     
+
+      // content url, Enables Ajax content loading. can set as data data-content-url on anchor
+      contentURL: null, 
+
+      // Array of disabled Steps
+      disabledSteps: [],    
+
+      // Highlight step with errors
+      errorSteps: [],    
+
+      // Hidden steps
+      hiddenSteps: [], 
+
+      // theme
+      theme: 'arrows',
+
+      // Effect on navigation, none/slide/fade
+      transitionEffect: 'fade', 
+
+      // transition speed in ms
+      transitionSpeed: '400'
+      
+    });
+    </script>    
 
 
     @yield('scripts')

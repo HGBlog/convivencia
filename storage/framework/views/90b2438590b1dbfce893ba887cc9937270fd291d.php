@@ -11,7 +11,7 @@
           <?php echo Form::label('is_ativo', 'Vai para a convivência?'); ?>
 
           <label class="checkbox-inline">
-            <?php echo Form::checkbox('is_ativo', true, $acolhida->is_ativo,  ['class' => 'form-control']); ?>
+            <?php echo Form::checkbox('is_ativo', true, $acolhida->is_ativo); ?>
 
           </label>
 

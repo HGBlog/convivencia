@@ -2,9 +2,11 @@
 <div class="form-group col-sm-6">
     {!! Form::label('is_ativo', 'Habilitada:') !!}
     <label class="checkbox-inline">
-        {!! Form::checkbox('is_ativo', true, $convivencia->is_ativo,  ['class' => 'form-control']) !!}
+        {!! Form::checkbox('is_ativo', true, $convivencia->is_ativo,  ['class' => 'minimal']) !!}
     </label>
 </div>
+
+
 <!-- No Nome Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('no_nome', 'Nome:') !!}
