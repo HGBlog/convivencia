@@ -14,7 +14,7 @@
 @if(Auth::user()->hasRole('admin'))
 <li class="treeview">
   <a href="#">
-    <i class="fa fa-list-alt"></i> <span>ADMINISTRAÇÃO</span>
+    <i class="fa fa-lock"></i> <span>ADMINISTRAÇÃO</span>
     <span class="pull-right-container">
       <i class="fa fa-angle-left pull-right"></i>
     </span>
@@ -34,7 +34,7 @@
 
 <li class="treeview">
   <a href="#">
-    <i class="fa fa-list-alt"></i> <span>TABELAS APOIO</span>
+    <i class="fa fa-lock"></i> <span>TABELAS APOIO</span>
     <span class="pull-right-container">
       <i class="fa fa-angle-left pull-right"></i>
     </span>
