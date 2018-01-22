@@ -2,10 +2,19 @@
 @extends('layouts.app')
 
 @section('content')
+ 	<section class="content-header">
         <h1 class="pull-left">Membros da Equipe - <font color="red"><b>{{ $qtde_membros }}</b> cadastrados</font></h1>
-        <a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('membros.create') !!}">Criar Novo membro</a>
+        <h1 class="pull-right">
+           <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('membros.create') !!}">Adicionar Novo Membro</a>
+        </h1>
+    </section>        
+<div class="content">
         <div class="clearfix"></div>
-        <ul class="pagination">
+
+        @include('flash::message')
+
+        <div class="clearfix"></div>
+                <ul class="pagination">
         	<div align="center">Página {{ $membros->currentPage() }} de {{ $membros->lastPage() }}</div>
 		    <!-- Previous Page Link -->
 
@@ -42,13 +51,21 @@
 		    @endif
 
 		</ul>
-
-
-
-        @include('flash::message')
-
-        <div class="clearfix"></div>
-
-        @include('membros.table')
+        <div class="box box-primary">
+            <div class="box-body">
+                    @include('membros.table')
+            </div>
+        </div>
+        <div class="text-center">
         
+        </div>
+    </div>
+         
 @endsection
+
+
+
+
+
+
+    

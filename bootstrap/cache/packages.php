@@ -86,11 +86,11 @@
       0 => 'Yajra\\DataTables\\HtmlServiceProvider',
     ),
   ),
-  'spatie/laravel-permission' => 
+  'infyomlabs/adminlte-templates' => 
   array (
     'providers' => 
     array (
-      0 => 'Spatie\\Permission\\PermissionServiceProvider',
+      0 => '\\InfyOm\\AdminLTETemplates\\AdminLTETemplatesServiceProvider',
     ),
   ),
 );

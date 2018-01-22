@@ -114,3 +114,23 @@ Route::get('/relatorios', function () {
 
 
 Route::resource('localConvivencias', 'LocalConvivenciaController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Route::resource('removerLocalConvivencias', 'RemoverLocalConvivenciaController');
+
+Route::resource('removerLocalConvivencias', 'RemoverLocalConvivenciaController');
+
+Route::resource('removerConvivencias', 'RemoverConvivenciaController');
+
+Route::resource('removerConvivencias', 'RemoverConvivenciaController');

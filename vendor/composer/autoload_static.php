@@ -21,7 +21,6 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'a28599dc506da421718fad75955a4b9d' => __DIR__ . '/..' . '/infyomlabs/laravel-generator/src/helpers.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
-        '377b22b161c09ed6e5152de788ca020a' => __DIR__ . '/..' . '/spatie/laravel-permission/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -65,7 +64,6 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
             'SuperClosure\\' => 13,
-            'Spatie\\Permission\\' => 18,
         ),
         'R' => 
         array (
@@ -93,7 +91,7 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'I' => 
         array (
             'InfyOm\\Generator\\' => 17,
-            'InfyOm\\CoreTemplates\\' => 21,
+            'InfyOm\\AdminLTETemplates\\' => 25,
             'Illuminate\\' => 11,
         ),
         'F' => 
@@ -224,10 +222,6 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         array (
             0 => __DIR__ . '/..' . '/jeremeamia/SuperClosure/src',
         ),
-        'Spatie\\Permission\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/spatie/laravel-permission/src',
-        ),
         'Ramsey\\Uuid\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
@@ -276,9 +270,9 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         array (
             0 => __DIR__ . '/..' . '/infyomlabs/laravel-generator/src',
         ),
-        'InfyOm\\CoreTemplates\\' => 
+        'InfyOm\\AdminLTETemplates\\' => 
         array (
-            0 => __DIR__ . '/..' . '/infyomlabs/core-templates/src',
+            0 => __DIR__ . '/..' . '/infyomlabs/adminlte-templates/src',
         ),
         'Illuminate\\' => 
         array (
@@ -432,6 +426,8 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'App\\Http\\Controllers\\LocalConvivenciaController' => __DIR__ . '/../..' . '/app/Http/Controllers/LocalConvivenciaController.php',
         'App\\Http\\Controllers\\MembroController' => __DIR__ . '/../..' . '/app/Http/Controllers/MembroController.php',
         'App\\Http\\Controllers\\PerfilUsuarioController' => __DIR__ . '/../..' . '/app/Http/Controllers/PerfilUsuarioController.php',
+        'App\\Http\\Controllers\\RemoverConvivenciaController' => __DIR__ . '/../..' . '/app/Http/Controllers/RemoverConvivenciaController.php',
+        'App\\Http\\Controllers\\RemoverLocalConvivenciaController' => __DIR__ . '/../..' . '/app/Http/Controllers/RemoverLocalConvivenciaController.php',
         'App\\Http\\Controllers\\ReportController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReportController.php',
         'App\\Http\\Controllers\\RoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/RoleController.php',
         'App\\Http\\Controllers\\TicketController' => __DIR__ . '/../..' . '/app/Http/Controllers/_TicketController.php',
@@ -455,6 +451,8 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'App\\Http\\Requests\\CreateLocalConvivenciaRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CreateLocalConvivenciaRequest.php',
         'App\\Http\\Requests\\CreateMembroRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CreateMembroRequest.php',
         'App\\Http\\Requests\\CreatePerfilUsuarioRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CreatePerfilUsuarioRequest.php',
+        'App\\Http\\Requests\\CreateRemoverConvivenciaRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CreateRemoverConvivenciaRequest.php',
+        'App\\Http\\Requests\\CreateRemoverLocalConvivenciaRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CreateRemoverLocalConvivenciaRequest.php',
         'App\\Http\\Requests\\CreateRoleRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CreateRoleRequest.php',
         'App\\Http\\Requests\\CreateTipoCarismaRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CreateTipoCarismaRequest.php',
         'App\\Http\\Requests\\CreateTipoQuartoRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CreateTipoQuartoRequest.php',
@@ -470,6 +468,8 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'App\\Http\\Requests\\UpdateLocalConvivenciaRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateLocalConvivenciaRequest.php',
         'App\\Http\\Requests\\UpdateMembroRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateMembroRequest.php',
         'App\\Http\\Requests\\UpdatePerfilUsuarioRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdatePerfilUsuarioRequest.php',
+        'App\\Http\\Requests\\UpdateRemoverConvivenciaRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateRemoverConvivenciaRequest.php',
+        'App\\Http\\Requests\\UpdateRemoverLocalConvivenciaRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateRemoverLocalConvivenciaRequest.php',
         'App\\Http\\Requests\\UpdateRoleRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateRoleRequest.php',
         'App\\Http\\Requests\\UpdateTipoCarismaRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateTipoCarismaRequest.php',
         'App\\Http\\Requests\\UpdateTipoQuartoRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateTipoQuartoRequest.php',
@@ -484,6 +484,8 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'App\\Models\\LocalConvivencia' => __DIR__ . '/../..' . '/app/Models/LocalConvivencia.php',
         'App\\Models\\Membro' => __DIR__ . '/../..' . '/app/Models/Membro.php',
         'App\\Models\\PerfilUsuario' => __DIR__ . '/../..' . '/app/Models/PerfilUsuario.php',
+        'App\\Models\\RemoverConvivencia' => __DIR__ . '/../..' . '/app/Models/RemoverConvivencia.php',
+        'App\\Models\\RemoverLocalConvivencia' => __DIR__ . '/../..' . '/app/Models/RemoverLocalConvivencia.php',
         'App\\Models\\Role' => __DIR__ . '/../..' . '/app/Models/Role.php',
         'App\\Models\\TipoCarisma' => __DIR__ . '/../..' . '/app/Models/TipoCarisma.php',
         'App\\Models\\TipoQuarto' => __DIR__ . '/../..' . '/app/Models/TipoQuarto.php',
@@ -503,6 +505,8 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'App\\Repositories\\LocalConvivenciaRepository' => __DIR__ . '/../..' . '/app/Repositories/LocalConvivenciaRepository.php',
         'App\\Repositories\\MembroRepository' => __DIR__ . '/../..' . '/app/Repositories/MembroRepository.php',
         'App\\Repositories\\PerfilUsuarioRepository' => __DIR__ . '/../..' . '/app/Repositories/PerfilUsuarioRepository.php',
+        'App\\Repositories\\RemoverConvivenciaRepository' => __DIR__ . '/../..' . '/app/Repositories/RemoverConvivenciaRepository.php',
+        'App\\Repositories\\RemoverLocalConvivenciaRepository' => __DIR__ . '/../..' . '/app/Repositories/RemoverLocalConvivenciaRepository.php',
         'App\\Repositories\\RoleRepository' => __DIR__ . '/../..' . '/app/Repositories/RoleRepository.php',
         'App\\Repositories\\TipoCarismaRepository' => __DIR__ . '/../..' . '/app/Repositories/TipoCarismaRepository.php',
         'App\\Repositories\\TipoQuartoRepository' => __DIR__ . '/../..' . '/app/Repositories/TipoQuartoRepository.php',
@@ -2253,7 +2257,7 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'Illuminate\\View\\ViewFinderInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewFinderInterface.php',
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
-        'InfyOm\\CoreTemplates\\CoreTemplatesServiceProvider' => __DIR__ . '/..' . '/infyomlabs/core-templates/src/CoreTemplatesServiceProvider.php',
+        'InfyOm\\AdminLTETemplates\\AdminLTETemplatesServiceProvider' => __DIR__ . '/..' . '/infyomlabs/adminlte-templates/src/AdminLTETemplatesServiceProvider.php',
         'InfyOm\\Generator\\Commands\\APIScaffoldGeneratorCommand' => __DIR__ . '/..' . '/infyomlabs/laravel-generator/src/Commands/APIScaffoldGeneratorCommand.php',
         'InfyOm\\Generator\\Commands\\API\\APIControllerGeneratorCommand' => __DIR__ . '/..' . '/infyomlabs/laravel-generator/src/Commands/API/APIControllerGeneratorCommand.php',
         'InfyOm\\Generator\\Commands\\API\\APIGeneratorCommand' => __DIR__ . '/..' . '/infyomlabs/laravel-generator/src/Commands/API/APIGeneratorCommand.php',
@@ -3840,25 +3844,6 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'SebastianBergmann\\ResourceOperations\\ResourceOperations' => __DIR__ . '/..' . '/sebastian/resource-operations/src/ResourceOperations.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'SessionUpdateTimestampHandlerInterface' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/SessionUpdateTimestampHandlerInterface.php',
-        'Spatie\\Permission\\Commands\\CreatePermission' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Commands/CreatePermission.php',
-        'Spatie\\Permission\\Commands\\CreateRole' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Commands/CreateRole.php',
-        'Spatie\\Permission\\Contracts\\Permission' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Contracts/Permission.php',
-        'Spatie\\Permission\\Contracts\\Role' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Contracts/Role.php',
-        'Spatie\\Permission\\Exceptions\\GuardDoesNotMatch' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/GuardDoesNotMatch.php',
-        'Spatie\\Permission\\Exceptions\\PermissionAlreadyExists' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/PermissionAlreadyExists.php',
-        'Spatie\\Permission\\Exceptions\\PermissionDoesNotExist' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/PermissionDoesNotExist.php',
-        'Spatie\\Permission\\Exceptions\\RoleAlreadyExists' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/RoleAlreadyExists.php',
-        'Spatie\\Permission\\Exceptions\\RoleDoesNotExist' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/RoleDoesNotExist.php',
-        'Spatie\\Permission\\Exceptions\\UnauthorizedException' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/UnauthorizedException.php',
-        'Spatie\\Permission\\Middlewares\\PermissionMiddleware' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Middlewares/PermissionMiddleware.php',
-        'Spatie\\Permission\\Middlewares\\RoleMiddleware' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Middlewares/RoleMiddleware.php',
-        'Spatie\\Permission\\Models\\Permission' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Models/Permission.php',
-        'Spatie\\Permission\\Models\\Role' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Models/Role.php',
-        'Spatie\\Permission\\PermissionRegistrar' => __DIR__ . '/..' . '/spatie/laravel-permission/src/PermissionRegistrar.php',
-        'Spatie\\Permission\\PermissionServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-permission/src/PermissionServiceProvider.php',
-        'Spatie\\Permission\\Traits\\HasPermissions' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Traits/HasPermissions.php',
-        'Spatie\\Permission\\Traits\\HasRoles' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Traits/HasRoles.php',
-        'Spatie\\Permission\\Traits\\RefreshesPermissionCache' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Traits/RefreshesPermissionCache.php',
         'SuperClosure\\Analyzer\\AstAnalyzer' => __DIR__ . '/..' . '/jeremeamia/SuperClosure/src/Analyzer/AstAnalyzer.php',
         'SuperClosure\\Analyzer\\ClosureAnalyzer' => __DIR__ . '/..' . '/jeremeamia/SuperClosure/src/Analyzer/ClosureAnalyzer.php',
         'SuperClosure\\Analyzer\\Token' => __DIR__ . '/..' . '/jeremeamia/SuperClosure/src/Analyzer/Token.php',

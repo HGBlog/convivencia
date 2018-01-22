@@ -1,11 +1,11 @@
-
-
 <!-- Ativo Field -->
 <div class="form-group col-sm-6">
     <?php echo Form::label('is_ativo', 'Habilitada:'); ?>
 
-    <?php echo Form::checkbox('is_ativo', true, $convivencia->is_ativo,  ['class' => 'form-control']); ?>
+    <label class="checkbox-inline">
+        <?php echo Form::checkbox('is_ativo', true, $convivencia->is_ativo,  ['class' => 'form-control']); ?>
 
+    </label>
 </div>
 <!-- No Nome Field -->
 <div class="form-group col-sm-6">

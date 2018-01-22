@@ -7,7 +7,7 @@
             </div>
         </div>
 
-        @include('core-templates::common.errors')
+        @include('adminlte-templates::common.errors')
 
         <div class="row">
             {!! Form::model($tipoQuarto, ['route' => ['tipoQuartos.update', $tipoQuarto->id], 'method' => 'patch']) !!}

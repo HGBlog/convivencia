@@ -9,7 +9,9 @@
   <div>
       <div id="step-1" class="">
           {!! Form::label('is_ativo', 'Vai para a convivência?') !!}
-          {!! Form::checkbox('is_ativo', true, $acolhida->is_ativo,  ['class' => 'form-control']) !!}
+          <label class="checkbox-inline">
+            {!! Form::checkbox('is_ativo', true, $acolhida->is_ativo,  ['class' => 'form-control']) !!}
+          </label>
 
           {!! Form::label('tipo_translado_id', 'Translado:') !!}
           {!! Form::select('tipo_translado_id', $translado, $acolhida->tipo_translado_id, ['id' => 'tipo_translado_id', 'class' => 'form-control', 'dropdown-menu'])!!}

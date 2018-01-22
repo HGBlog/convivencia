@@ -10,8 +10,10 @@
       <div id="step-1" class="">
           <?php echo Form::label('is_ativo', 'Vai para a convivência?'); ?>
 
-          <?php echo Form::checkbox('is_ativo', true, $acolhida->is_ativo,  ['class' => 'form-control']); ?>
+          <label class="checkbox-inline">
+            <?php echo Form::checkbox('is_ativo', true, $acolhida->is_ativo,  ['class' => 'form-control']); ?>
 
+          </label>
 
           <?php echo Form::label('tipo_translado_id', 'Translado:'); ?>
 
