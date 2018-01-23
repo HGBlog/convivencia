@@ -5,7 +5,7 @@
         </div>
     </div>
 
-    <?php echo $__env->make('core-templates::common.errors', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('adminlte-templates::common.errors', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
     <div class="row">
         <?php echo Form::open(['route' => 'acolhidaExtras.store']); ?>

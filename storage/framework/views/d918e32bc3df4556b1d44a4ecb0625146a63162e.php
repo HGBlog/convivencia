@@ -2,9 +2,8 @@
 <div class="simple-tab" >
   <ul>
     <li class="active">Dados Pessoais</li>
+    <li>Dados da Missão</li>
     <li>Dados do Caminho</li>
-    <li>Dados da missão</li>
-    <li>Contatos</li>
   </ul>
   <div class="form-group col-sm-7">
     <div class="active">
@@ -23,10 +22,37 @@
 
             <?php echo Form::text('no_pais', null, ['class' => 'form-control', 'placeholder'=>'País']); ?>
 
+
+
+         <!-- No Email Field -->
+        
+            <?php echo Form::label('no_email', 'Email:'); ?>
+
+            <?php echo Form::email('no_email', null, ['class' => 'form-control', 'placeholder'=>'Email válido']); ?>
+
+        <!-- Co Telefone Pais Field -->
+
+            <?php echo Form::label('co_telefone_pais', 'Código Telefone:'); ?>
+
+            <?php echo Form::text('co_telefone_pais', null, ['class' => 'form-control', 'placeholder'=>'Código DDD', 'maxlength' => '3']); ?>
+
+
+        <!-- Nu Telefone Field -->
+
+            <?php echo Form::label('nu_telefone', 'Número Telefone:'); ?>
+
+            <?php echo Form::number('nu_telefone', null, ['class' => 'form-control', 'placeholder'=>'Telefone - Apenas números', 'maxlength' => '10']); ?>
+
       </p>        
     </div>
-    <div id="caminho">
+    <div id="missao">
       <p>
+
+
+            <?php echo Form::label('tipo_carisma_id', 'Carisma:'); ?>
+
+            <?php echo Form::select('tipo_carisma_id', $carismas, $membro->tipo_carisma_id, ['id' => 'tipo_carisma_id', 'class' => 'form-control', 'dropdown-menu']); ?>
+
 
 
             <?php echo Form::label('equipe_id', 'Equipe'); ?>
@@ -35,6 +61,14 @@
 
 
                     <!-- No Diocese Field -->
+<!-- Colocar o nome do responsável quando implementado no CRUD Equipe -->
+
+
+
+      </p>               
+    </div>
+    <div id="caminho">
+      <p>
 
             <?php echo Form::label('no_diocese', 'Diocese:'); ?>
 
@@ -72,49 +106,12 @@
 
             <?php echo Form::select('etapa_id', $etapas, $membro->etapa_id, ['id' => 'etapa_id', 'class' => 'form-control', 'dropdown-menu']); ?>
 
-      </p>               
-    </div>
-    <div id="missao">
-      <p>
-
-            <?php echo Form::label('tipo_carisma_id', 'Carisma:'); ?>
-
-            <?php echo Form::select('tipo_carisma_id', $carismas, $membro->tipo_carisma_id, ['id' => 'tipo_carisma_id', 'class' => 'form-control', 'dropdown-menu']); ?>
-
-      </p>   
-    </div>
-    <div id="contato">
-      <p>
-
-         <!-- No Email Field -->
-        
-            <?php echo Form::label('no_email', 'Email:'); ?>
-
-            <?php echo Form::email('no_email', null, ['class' => 'form-control', 'placeholder'=>'Email válido']); ?>
-
-        <!-- Co Telefone Pais Field -->
-
-            <?php echo Form::label('co_telefone_pais', 'Código Telefone:'); ?>
-
-            <?php echo Form::text('co_telefone_pais', null, ['class' => 'form-control', 'placeholder'=>'Código DDD', 'maxlength' => '3']); ?>
 
 
-
-        <!-- Nu Telefone Field -->
-
-            <?php echo Form::label('nu_telefone', 'Número Telefone:'); ?>
-
-            <?php echo Form::number('nu_telefone', null, ['class' => 'form-control', 'placeholder'=>'Telefone - Apenas números', 'maxlength' => '10']); ?>
-
-
-
-        
-
-
-      </p>            
+        </p>   
+      </div>
     </div>
   </div>
-    </div>
 </div>
 
 <!-- Submit Field -->

@@ -14,7 +14,7 @@
                 <div class="row">
                     {!! Form::open(['route' => 'tipoTranslados.store']) !!}
 
-                        @include('tipoTranslados.fields')
+                        @include('tipo_translados.fields')
 
                     {!! Form::close() !!}
                 </div>
