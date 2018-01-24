@@ -16,6 +16,7 @@ class CreateEquipesTable extends Migration
         Schema::create('equipes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('no_equipe');
+            $table->string('no_responsavel', 100);
             $table->timestamps();
             $table->softDeletes();
         });

@@ -23,7 +23,8 @@ class Equipe extends Model
 
 
     public $fillable = [
-        'no_equipe'
+        'no_equipe',
+        'no_responsavel'
     ];
 
     /**
@@ -32,7 +33,8 @@ class Equipe extends Model
      * @var array
      */
     protected $casts = [
-        'no_equipe' => 'string'
+        'no_equipe' => 'string',
+        'no_responsavel' => 'string'
     ];
 
     /**

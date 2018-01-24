@@ -8,7 +8,7 @@
   
   <div>
       <div id="step-1" class="">
-
+          <div>
             <?php echo Form::label('is_ativo', 'Vai para a convivência?'); ?>
 
 
@@ -16,7 +16,7 @@
               <?php echo Form::checkbox('is_ativo', true, $acolhida->is_ativo); ?>
 
             </label>
-
+          </div>          
           <div class="form-group col-sm-6">
           <?php echo Form::label('tipo_translado_id', 'Translado:'); ?>
 

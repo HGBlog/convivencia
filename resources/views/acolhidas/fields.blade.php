@@ -8,7 +8,7 @@
   
   <div>
       <div id="step-1" class="">
-          <div class="form-group col-sm-6">
+          <div>
             {!! Form::label('is_ativo', 'Vai para a convivência?') !!}
 
             <label class="checkbox-inline">

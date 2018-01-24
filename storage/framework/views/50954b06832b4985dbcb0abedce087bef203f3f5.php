@@ -1,8 +1,16 @@
 <!-- No Equipe Field -->
 <div class="form-group col-sm-6">
-    <?php echo Form::label('no_equipe', 'No Equipe:'); ?>
+    <?php echo Form::label('no_equipe', 'Nome da Equipe:'); ?>
 
     <?php echo Form::text('no_equipe', null, ['class' => 'form-control']); ?>
+
+</div>
+
+<!-- No Responsavel Field -->
+<div class="form-group col-sm-6">
+    <?php echo Form::label('no_responsavel', 'Nome do Responsável:'); ?>
+
+    <?php echo Form::text('no_responsavel', null, ['class' => 'form-control']); ?>
 
 </div>
 
