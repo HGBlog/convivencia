@@ -134,3 +134,5 @@ Route::resource('removerLocalConvivencias', 'RemoverLocalConvivenciaController')
 Route::resource('removerConvivencias', 'RemoverConvivenciaController');
 
 Route::resource('removerConvivencias', 'RemoverConvivenciaController');
+
+Route::resource('dioceses', 'DioceseController');

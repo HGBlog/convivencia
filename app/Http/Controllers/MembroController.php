@@ -18,6 +18,7 @@ use View;
 use App\Models\Membro;
 use App\Models\Etapa;
 use App\Models\Equipe;
+use App\Models\Diocese;
 use App\Models\TipoCarisma;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
@@ -65,13 +66,14 @@ class MembroController extends AppBaseController
         //$etapas = Etapa::all(['id', 'no_etapa'])->pluck('no_etapa', 'id');
         $membro = new Membro;
         $etapas = Etapa::pluck('no_etapa', 'id')->all();
+        $dioceses = Diocese::pluck('no_diocese', 'id')->all();
         $equipes = Equipe::pluck('no_equipe', 'id')->all();
         $carismas = TipoCarisma::pluck('no_carisma', 'id')->all();
         
         ///$thing = Etapa::pluck('id');
         //return view('membros.create');
         //return View::make('membros.create', $etapas);
-        return view('membros.create')->with('etapas',$etapas)->with('membro',$membro)->with('carismas', $carismas)->with('equipes', $equipes);
+        return view('membros.create')->with('etapas',$etapas)->with('membro',$membro)->with('carismas', $carismas)->with('equipes', $equipes)->with('dioceses', $dioceses);
 
 
 
@@ -125,11 +127,11 @@ class MembroController extends AppBaseController
             $membro->no_sexo = $request->input('no_sexo');
             $membro->co_telefone_pais = $request->input('co_telefone_pais');
             $membro->nu_telefone = $request->input('nu_telefone');
-            $membro->no_diocese = $request->input('no_diocese');
             $membro->no_cidade = $request->input('no_cidade');
             $membro->no_paroquia = $request->input('no_paroquia');
             $membro->nu_comunidade = $request->input('nu_comunidade');
             $membro->etapa_id = $request->input('etapa_id');
+            $membro->diocese_id = $request->input('diocese_id');
             $membro->tipo_carisma_id = $request->input('tipo_carisma_id');
             $membro->save();
             //$membro->etapas()->sync($request->get('etapas'));
@@ -174,6 +176,7 @@ class MembroController extends AppBaseController
         $membro = $this->membroRepository->findWithoutFail($id);
         $etapas = Etapa::pluck('no_etapa', 'id');
         $equipes = Equipe::pluck('no_equipe', 'id');
+        $dioceses = Diocese::pluck('no_diocese', 'id')->all();
         $carismas = TipoCarisma::pluck('no_carisma', 'id')->all();
 
         //$etapa_marcada = Etapa::where('active', true)->orderBy('name')->lists('name', 'id');
@@ -183,7 +186,7 @@ class MembroController extends AppBaseController
 
             return redirect(route('membros.index'));
         }
-        return view('membros.edit')->with('membro', $membro)->with('etapas',$etapas)->with('carismas', $carismas)->with('equipes', $equipes);
+        return view('membros.edit')->with('membro', $membro)->with('etapas',$etapas)->with('carismas', $carismas)->with('equipes', $equipes)->with('dioceses', $dioceses);
     }
 
     /**

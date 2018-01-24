@@ -30,5 +30,7 @@ class DatabaseSeeder extends Seeder
           $this->call(EquipeTableSeeder::class);
           // LocalConvivencia seeder will use the roles above created.
           $this->call(LocalConvivenciaTableSeeder::class);
+          // Diocese seeder will use the roles above created.
+          $this->call(DioceseTableSeeder::class);
     }
 }

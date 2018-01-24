@@ -140,7 +140,7 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         ),
         'XdgBaseDir\\' => 
         array (
-            0 => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src',
+           0 => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src',
         ),
         'Whoops\\' => 
         array (
@@ -981,6 +981,7 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'EquipeTableSeeder' => __DIR__ . '/../..' . '/database/seeds/EquipeTableSeeder.php',
         'Error' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/Error.php',
         'EtapasTableSeeder' => __DIR__ . '/../..' . '/database/seeds/EtapasTableSeeder.php',
+        'DioceseTableSeeder' => __DIR__ . '/../..' . '/database/seeds/DioceseTableSeeder.php',
         'Faker\\Calculator\\Iban' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Calculator/Iban.php',
         'Faker\\Calculator\\Inn' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Calculator/Inn.php',
         'Faker\\Calculator\\Luhn' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Calculator/Luhn.php',

@@ -584,6 +584,7 @@ return array(
     'EquipeTableSeeder' => $baseDir . '/database/seeds/EquipeTableSeeder.php',
     'Error' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/Error.php',
     'EtapasTableSeeder' => $baseDir . '/database/seeds/EtapasTableSeeder.php',
+    'DioceseTableSeeder' => $baseDir . '/database/seeds/DioceseTableSeeder.php',
     'Faker\\Calculator\\Iban' => $vendorDir . '/fzaninotto/faker/src/Faker/Calculator/Iban.php',
     'Faker\\Calculator\\Inn' => $vendorDir . '/fzaninotto/faker/src/Faker/Calculator/Inn.php',
     'Faker\\Calculator\\Luhn' => $vendorDir . '/fzaninotto/faker/src/Faker/Calculator/Luhn.php',

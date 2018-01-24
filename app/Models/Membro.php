@@ -43,7 +43,7 @@ class Membro extends Model
         'no_sexo',
         'co_telefone_pais',
         'nu_telefone',
-        'no_diocese',
+        'diocese_id',
         'no_cidade',
         'no_paroquia',
         'nu_comunidade',
@@ -66,7 +66,7 @@ class Membro extends Model
         'no_sexo' => 'string',
         'co_telefone_pais' => 'string',
         'nu_telefone' => 'string',
-        'no_diocese' => 'string',
+        'diocese_id' => 'integer',
         'no_cidade' => 'string',
         'no_paroquia' => 'string',
         'nu_comunidade' => 'string',
@@ -115,6 +115,11 @@ class Membro extends Model
     {
         return $this->hasOne(\App\Models\Equipe::class, 'equipe_id', 'id');
     }
+    
+    public function diocese()
+    {
+        return $this->hasOne(\App\Models\Diocese::class, 'diocese_id', 'id');
+    }
 
         public function saveMembro($data)
     {
@@ -128,11 +133,11 @@ class Membro extends Model
             $this->no_sexo = $data['no_sexo'];
             $this->co_telefone_pais = $data['co_telefone_pais'];
             $this->nu_telefone = $data['nu_telefone'];
-            $this->no_diocese = $data['no_diocese'];
             $this->no_cidade = $data['no_cidade'];
             $this->no_paroquia = $data['no_paroquia'];
             $this->nu_comunidade = $data['nu_comunidade'];
             $this->etapa_id = $data['etapa_id'];
+            $this->diocese_id = $data['diocese_id'];
             $this->equipe_id = $data['equipe_id'];
             $this->tipo_carisma_id = $data['tipo_carisma_id'];
             $this->save();
@@ -149,11 +154,11 @@ class Membro extends Model
             $membro->no_sexo = $data['no_sexo'];
             $membro->co_telefone_pais = $data['co_telefone_pais'];
             $membro->nu_telefone = $data['nu_telefone'];
-            $membro->no_diocese = $data['no_diocese'];
             $membro->no_cidade = $data['no_cidade'];
             $membro->no_paroquia = $data['no_paroquia'];
             $membro->nu_comunidade = $data['nu_comunidade'];
             $membro->etapa_id = $data['etapa_id'];
+            $membro->diocese_id = $data['diocese_id'];
             $membro->equipe_id = $data['equipe_id'];
             $membro->tipo_carisma_id = $data['tipo_carisma'];
             $membro->save();

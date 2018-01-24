@@ -40,6 +40,9 @@
     </span>
   </a>
   <ul class="treeview-menu">
+        <li class="{{ Request::is('dioceses*') ? 'active' : '' }}">
+            <a href="{!! route('dioceses.index') !!}"><i class="fa fa-edit"></i><span>Dioceses</span></a>
+        </li>
         <li class="{{ Request::is('equipes*') ? 'active' : '' }}">
             <a href="{!! route('equipes.index') !!}"><i class="fa fa-users"></i><span>Equipes</span></a>
         </li>
@@ -66,3 +69,4 @@
   </ul>
 </li>
 @endif
+
