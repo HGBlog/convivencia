@@ -65,7 +65,7 @@
                             <!-- Menu Toggle Button -->
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <!-- The user image in the navbar-->
-                                <img src="http://paroquiadesantoandre.pt/img/grupos/caminho-neocatecumenal.png"
+                                <img src="http://www.cn.org.br/portal/wp-content/uploads/2014/02/cropped-Virgem2.jpg"
                                      class="user-image" alt="User Image"/>
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                 <span class="hidden-xs"><?php echo Auth::user()->name; ?></span>

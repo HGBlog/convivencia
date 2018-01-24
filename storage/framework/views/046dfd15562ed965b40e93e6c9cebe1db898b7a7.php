@@ -6,7 +6,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="http://paroquiadesantoandre.pt/img/grupos/caminho-neocatecumenal.png" class="img-circle"
+                <img src="http://www.cn.org.br/portal/wp-content/uploads/2014/02/cropped-Virgem2.jpg" class="img-circle"
                      alt="User Image"/>
             </div>
             <div class="pull-left info">
