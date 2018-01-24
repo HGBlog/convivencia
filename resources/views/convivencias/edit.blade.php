@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-@section('content')
     <section class="content-header">
         <h1>
             Alterar dados da Convivência

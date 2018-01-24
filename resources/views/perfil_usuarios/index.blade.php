@@ -1,15 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-        <h1 class="pull-left">Perfil Usuarios</h1>
-        <a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('perfilUsuarios.create') !!}">Add New</a>
-
+ 	<section class="content-header">
+        <h1 class="pull-left">Perfis de Usuário</h1>
+        <h1 class="pull-right">
+           <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('perfilUsuarios.create') !!}">Adicionar Novo Perfil</a>
+        </h1>
+    </section>
+    <div class="content">
         <div class="clearfix"></div>
 
         @include('flash::message')
 
         <div class="clearfix"></div>
-
-        @include('perfil_usuarios.table')
+        <div class="box box-primary">
+            <div class="box-body">
+                    @include('perfil_usuarios.table')
+            </div>
+        </div>
+        <div class="text-center">
         
+        </div>
+    </div>
 @endsection
