@@ -2,6 +2,12 @@
 <div class="content">
     <div class="row">
         <div class="content-header">
+        <div class="clearfix"></div>
+
+        <?php echo $__env->make('flash::message', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+        <div class="clearfix"></div>
+            
             <div class="panel panel-default" >
                 <div class="panel-heading">Seja bem vindo <b><?php echo e(Auth::user()->name); ?></b>!!!</div>
                     <div class="clearfix"></div>

@@ -4,6 +4,12 @@
 <div class="content">
     <div class="row">
         <div class="content-header">
+        <div class="clearfix"></div>
+
+        @include('flash::message')
+
+        <div class="clearfix"></div>
+            
             <div class="panel panel-default" >
                 <div class="panel-heading">Seja bem vindo <b>{{Auth::user()->name}}</b>!!!</div>
                     <div class="clearfix"></div>

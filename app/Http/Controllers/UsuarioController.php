@@ -9,7 +9,9 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
+use Illuminate\Support\Facades\Redirect;
 use Response;
+use Auth;
 
 class UsuarioController extends AppBaseController
 {
@@ -132,7 +134,7 @@ class UsuarioController extends AppBaseController
         //$usuario = $this->usuarioRepository->update($request->all(), $id);
 
 
-        Flash::success('Usuario atualizado com sucesso!');
+        Flash::success('Usuário atualizado com sucesso!');
 
         return redirect(route('usuarios.index'));
     }
@@ -159,5 +161,43 @@ class UsuarioController extends AppBaseController
         Flash::success('Usuario deleted successfully.');
 
         return redirect(route('usuarios.index'));
+    }
+
+    public function perfil($id, Request $request)
+    {
+        $usuario = $this->usuarioRepository->findWithoutFail($id);
+        //$usuario = Usuario::where('id', Auth::user());
+
+        if (($id != Auth::user()->id )) {
+            Flash::error('Você só pode editar o seu perfil!!');
+
+            //return redirect(route('home'));
+            return Redirect::to('home');
+        }
+
+        return view('usuarios.perfil')->with('usuario', $usuario);
+    }
+
+    public function perfil_update($id, UpdateUsuarioRequest $request)
+    {
+        $usuario = $this->usuarioRepository->findWithoutFail($id);
+
+        if (empty($usuario)) {
+            Flash::error('Usuário não encontrado!!');
+
+            return redirect(route('usuarios.index'));
+        }
+
+        $usuario->name = $request->input('name');
+        $usuario->email = $request->input('email');
+        $usuario->password = bcrypt($request->input('password'));
+        $usuario->save();
+        //$usuario = $this->usuarioRepository->update($request->all(), $id);
+
+
+        Flash::success('Perfil de Usuário atualizado com sucesso!');
+
+        //return redirect(route('usuarios.index'));
+        return Redirect::to('home');
     }
 }

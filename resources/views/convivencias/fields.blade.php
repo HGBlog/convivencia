@@ -15,7 +15,7 @@
 <!-- Local Convivencia id Field -->
 
 <div class="form-group col-sm-6">
-    {!! Form::label('local_convivencia_id', 'Equipe') !!}
+    {!! Form::label('local_convivencia_id', 'Local da Convivência:') !!}
     {!! Form::select('local_convivencia_id', $locais, $convivencia->local_convivencia_id, ['id' => 'local_convivencia_id', 'class' => 'form-control', 'dropdown-menu'])!!}
 </div>
 <!-- No Observacoes Field -->

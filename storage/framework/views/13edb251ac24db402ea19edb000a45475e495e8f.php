@@ -19,7 +19,7 @@
 <!-- Local Convivencia id Field -->
 
 <div class="form-group col-sm-6">
-    <?php echo Form::label('local_convivencia_id', 'Equipe'); ?>
+    <?php echo Form::label('local_convivencia_id', 'Local da Convivência:'); ?>
 
     <?php echo Form::select('local_convivencia_id', $locais, $convivencia->local_convivencia_id, ['id' => 'local_convivencia_id', 'class' => 'form-control', 'dropdown-menu']); ?>
 

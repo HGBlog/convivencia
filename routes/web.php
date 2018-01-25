@@ -51,6 +51,10 @@ Route::group(['middleware' => 'auth'], function() {
 
 	Route::resource('usuarios', 'UsuarioController');
 
+	//Atualizacao do Perfil de Usuario
+	Route::get ('/usuarios/{usuario}/perfil','UsuarioController@perfil');
+	Route::patch ('/usuarios/{usuario}',['as' => 'usuarios.perfil_update', 'uses' =>'UsuarioController@perfil_update']);
+
 	Route::patch('/convivencias/{convivencia}/inscricao',['as' => 'convivencia_inscricao', 'uses' => 'ConvivenciaController@inscricao']);
 	Route::get('/convivencias/{convivencia}/inscricao',['as' => 'convivencia_inscricao', 'uses' => 'ConvivenciaController@inscricao']);
 	Route::get('/convivencias/{convivencia}/inscricao','ConvivenciaController@inscricao');

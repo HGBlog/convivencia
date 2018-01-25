@@ -84,12 +84,13 @@
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                        <a href="/usuarios/<?php echo Auth::user()->id; ?>/perfil" class="btn btn-default btn-flat">Perfil</a>
                                     </div>
-                                    <div class="pull-right">
+
+                                     <div class="pull-right">
                                         <a href="<?php echo url('/logout'); ?>" class="btn btn-default btn-flat"
                                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                            Sign out
+                                            Sair
                                         </a>
                                         <form id="logout-form" action="<?php echo e(url('/logout')); ?>" method="POST" style="display: none;">
                                             <?php echo e(csrf_field()); ?>

@@ -1,3 +1,5 @@
+apt-get install wkhtmltopdf
+
 rm database/migrations/2017_12_*
 mysqladmin drop conv -u root -p
 mysqladmin create conv -u root -p

@@ -22,13 +22,14 @@
 
 </div>
 
-<!-- Remember Token Field -->
+<!-- Remember Token Field
 <div class="form-group col-sm-6">
     <?php echo Form::label('remember_token', 'Remember Token:'); ?>
 
     <?php echo Form::text('remember_token', null, ['class' => 'form-control']); ?>
 
 </div>
+-->
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
