@@ -78,6 +78,7 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
             'Prettus\\Validator\\' => 18,
             'Prettus\\Repository\\' => 19,
             'PhpParser\\' => 10,
+            'PHPJasper\\' => 10,
         ),
         'M' => 
         array (
@@ -140,7 +141,7 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         ),
         'XdgBaseDir\\' => 
         array (
-           0 => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src',
+            0 => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src',
         ),
         'Whoops\\' => 
         array (
@@ -253,6 +254,10 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
+        'PHPJasper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/geekcom/phpjasper/src',
         ),
         'Monolog\\' => 
         array (
@@ -372,10 +377,6 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         ),
         'J' => 
         array (
-            'JasperPHP' => 
-            array (
-                0 => __DIR__ . '/..' . '/lavela/phpjasper/src',
-            ),
             'JakubOnderka\\PhpConsoleHighlighter' => 
             array (
                 0 => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src',
@@ -406,6 +407,7 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'AcolhidaExtraTableSeeder' => __DIR__ . '/../..' . '/database/seeds/AcolhidaExtraTableSeeder.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\DataTables\\ConvivenciaDataTable' => __DIR__ . '/../..' . '/app/DataTables/ConvivenciaDataTable.php',
+        'App\\DataTables\\DioceseDataTable' => __DIR__ . '/../..' . '/app/DataTables/DioceseDataTable.php',
         'App\\DataTables\\MembroDataTable' => __DIR__ . '/../..' . '/app/DataTables/_MembroDataTable.php',
         'App\\DataTables\\PerfilUsuarioDataTable' => __DIR__ . '/../..' . '/app/DataTables/PerfilUsuarioDataTable.php',
         'App\\DataTables\\UsuarioDataTable' => __DIR__ . '/../..' . '/app/DataTables/UsuarioDataTable.php',
@@ -420,6 +422,7 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\ConvivenciaController' => __DIR__ . '/../..' . '/app/Http/Controllers/ConvivenciaController.php',
         'App\\Http\\Controllers\\ConvivenciaMembroController' => __DIR__ . '/../..' . '/app/Http/Controllers/ConvivenciaMembroController.php',
+        'App\\Http\\Controllers\\DioceseController' => __DIR__ . '/../..' . '/app/Http/Controllers/DioceseController.php',
         'App\\Http\\Controllers\\EquipeController' => __DIR__ . '/../..' . '/app/Http/Controllers/EquipeController.php',
         'App\\Http\\Controllers\\EtapaController' => __DIR__ . '/../..' . '/app/Http/Controllers/EtapaController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
@@ -446,6 +449,7 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'App\\Http\\Requests\\CreateConvivenciaMembroRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CreateConvivenciaMembroRequest.php',
         'App\\Http\\Requests\\CreateConvivenciaRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CreateConvivenciaRequest.php',
         'App\\Http\\Requests\\CreateDadosCaminhoRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CreateDadosCaminhoRequest.php',
+        'App\\Http\\Requests\\CreateDioceseRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CreateDioceseRequest.php',
         'App\\Http\\Requests\\CreateEquipeRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CreateEquipeRequest.php',
         'App\\Http\\Requests\\CreateEtapaRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CreateEtapaRequest.php',
         'App\\Http\\Requests\\CreateLocalConvivenciaRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CreateLocalConvivenciaRequest.php',
@@ -463,6 +467,7 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'App\\Http\\Requests\\UpdateConvivenciaMembroRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateConvivenciaMembroRequest.php',
         'App\\Http\\Requests\\UpdateConvivenciaRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateConvivenciaRequest.php',
         'App\\Http\\Requests\\UpdateDadosCaminhoRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateDadosCaminhoRequest.php',
+        'App\\Http\\Requests\\UpdateDioceseRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateDioceseRequest.php',
         'App\\Http\\Requests\\UpdateEquipeRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateEquipeRequest.php',
         'App\\Http\\Requests\\UpdateEtapaRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateEtapaRequest.php',
         'App\\Http\\Requests\\UpdateLocalConvivenciaRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateLocalConvivenciaRequest.php',
@@ -479,6 +484,7 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'App\\Models\\AcolhidaExtra' => __DIR__ . '/../..' . '/app/Models/AcolhidaExtra.php',
         'App\\Models\\Convivencia' => __DIR__ . '/../..' . '/app/Models/Convivencia.php',
         'App\\Models\\ConvivenciaMembro' => __DIR__ . '/../..' . '/app/Models/ConvivenciaMembro.php',
+        'App\\Models\\Diocese' => __DIR__ . '/../..' . '/app/Models/Diocese.php',
         'App\\Models\\Equipe' => __DIR__ . '/../..' . '/app/Models/Equipe.php',
         'App\\Models\\Etapa' => __DIR__ . '/../..' . '/app/Models/Etapa.php',
         'App\\Models\\LocalConvivencia' => __DIR__ . '/../..' . '/app/Models/LocalConvivencia.php',
@@ -500,6 +506,7 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'App\\Repositories\\AcolhidaRepository' => __DIR__ . '/../..' . '/app/Repositories/AcolhidaRepository.php',
         'App\\Repositories\\ConvivenciaMembroRepository' => __DIR__ . '/../..' . '/app/Repositories/ConvivenciaMembroRepository.php',
         'App\\Repositories\\ConvivenciaRepository' => __DIR__ . '/../..' . '/app/Repositories/ConvivenciaRepository.php',
+        'App\\Repositories\\DioceseRepository' => __DIR__ . '/../..' . '/app/Repositories/DioceseRepository.php',
         'App\\Repositories\\EquipeRepository' => __DIR__ . '/../..' . '/app/Repositories/EquipeRepository.php',
         'App\\Repositories\\EtapaRepository' => __DIR__ . '/../..' . '/app/Repositories/EtapaRepository.php',
         'App\\Repositories\\LocalConvivenciaRepository' => __DIR__ . '/../..' . '/app/Repositories/LocalConvivenciaRepository.php',
@@ -561,6 +568,7 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'DeepCopy\\TypeFilter\\Spl\\SplDoublyLinkedListFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/SplDoublyLinkedListFilter.php',
         'DeepCopy\\TypeFilter\\TypeFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/TypeFilter.php',
         'DeepCopy\\TypeMatcher\\TypeMatcher' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeMatcher/TypeMatcher.php',
+        'DioceseTableSeeder' => __DIR__ . '/../..' . '/database/seeds/DioceseTableSeeder.php',
         'DivisionByZeroError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/DivisionByZeroError.php',
         'Doctrine\\Common\\Annotations\\Annotation' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation.php',
         'Doctrine\\Common\\Annotations\\AnnotationException' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationException.php',
@@ -981,7 +989,6 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'EquipeTableSeeder' => __DIR__ . '/../..' . '/database/seeds/EquipeTableSeeder.php',
         'Error' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/Error.php',
         'EtapasTableSeeder' => __DIR__ . '/../..' . '/database/seeds/EtapasTableSeeder.php',
-        'DioceseTableSeeder' => __DIR__ . '/../..' . '/database/seeds/DioceseTableSeeder.php',
         'Faker\\Calculator\\Iban' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Calculator/Iban.php',
         'Faker\\Calculator\\Inn' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Calculator/Inn.php',
         'Faker\\Calculator\\Luhn' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Calculator/Luhn.php',
@@ -2322,9 +2329,6 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
-        'JasperPHP\\Facades\\JasperPHP' => __DIR__ . '/..' . '/lavela/phpjasper/src/JasperPHP/Facades/JasperPHP.php',
-        'JasperPHP\\JasperPHP' => __DIR__ . '/..' . '/lavela/phpjasper/src/JasperPHP/JasperPHP.php',
-        'JasperPHP\\JasperPHPServiceProvider' => __DIR__ . '/..' . '/lavela/phpjasper/src/JasperPHP/JasperPHPServiceProvider.php',
         'Laracasts\\Flash\\Flash' => __DIR__ . '/..' . '/laracasts/flash/src/Laracasts/Flash/Flash.php',
         'Laracasts\\Flash\\FlashNotifier' => __DIR__ . '/..' . '/laracasts/flash/src/Laracasts/Flash/FlashNotifier.php',
         'Laracasts\\Flash\\FlashServiceProvider' => __DIR__ . '/..' . '/laracasts/flash/src/Laracasts/Flash/FlashServiceProvider.php',
@@ -2776,6 +2780,12 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'PHPExcel_Writer_PDF_DomPDF' => __DIR__ . '/..' . '/phpoffice/phpexcel/Classes/PHPExcel/Writer/PDF/DomPDF.php',
         'PHPExcel_Writer_PDF_mPDF' => __DIR__ . '/..' . '/phpoffice/phpexcel/Classes/PHPExcel/Writer/PDF/mPDF.php',
         'PHPExcel_Writer_PDF_tcPDF' => __DIR__ . '/..' . '/phpoffice/phpexcel/Classes/PHPExcel/Writer/PDF/tcPDF.php',
+        'PHPJasper\\Exception\\ErrorCommandExecutable' => __DIR__ . '/..' . '/geekcom/phpjasper/src/Exception/ErrorCommandExecutable.php',
+        'PHPJasper\\Exception\\InvalidCommandExecutable' => __DIR__ . '/..' . '/geekcom/phpjasper/src/Exception/InvalidCommandExecutable.php',
+        'PHPJasper\\Exception\\InvalidFormat' => __DIR__ . '/..' . '/geekcom/phpjasper/src/Exception/InvalidFormat.php',
+        'PHPJasper\\Exception\\InvalidInputFile' => __DIR__ . '/..' . '/geekcom/phpjasper/src/Exception/InvalidInputFile.php',
+        'PHPJasper\\Exception\\InvalidResourceDirectory' => __DIR__ . '/..' . '/geekcom/phpjasper/src/Exception/InvalidResourceDirectory.php',
+        'PHPJasper\\PHPJasper' => __DIR__ . '/..' . '/geekcom/phpjasper/src/PHPJasper.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert.php',
         'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/AssertionFailedError.php',

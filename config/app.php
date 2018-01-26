@@ -171,7 +171,7 @@ return [
     	\InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class,
     	Yajra\DataTables\DataTablesServiceProvider::class,
     	Yajra\DataTables\ButtonsServiceProvider::class,
-    	//JasperPHP\JasperPHPServiceProvider::class,
+        //JasperPHP\JasperPHPServiceProvider::class,
 
 
 
