@@ -18,22 +18,7 @@ class ReportController extends Controller
      * Retorna um array com os parametros de conexão
      * @return Array
      */
- public function getDatabaseConfig()
-    {
-        return  [
-            'driver' => 'mysql', //mysql, ....
-            'username' => 'conv',
-            'password' => 'secret',
-            'host' => 'localhost',
-            'database' => 'conv',
-            'port' => '3306',
-            'jdbc_driver' => 'com.mysql.jdbc.Driver',
-            'jdbc_dir' => '/var/www/convivencia/vendor/geekcom/phpjasper/bin/jasperstarter/jdbc',
-            'jdbc_url' => 'jdbc:mysql://localhost/conv'
-        ];
-    }
-
- public function compilar()
+public function compilar()
     {
         $input = public_path() . '/reports/customers2.jrxml';   
         $jasper = new PHPJasper;
@@ -61,7 +46,7 @@ public function index()
 // instancia um novo objeto JasperPHP
          
         $report = new PHPJasper;
-        //$report->compile($input)->execute();
+        $report->compile($input)->execute();
         // chama o método que irá gerar o relatório
         // passamos por parametro:
         // o arquivo do relatório com seu caminho completo
