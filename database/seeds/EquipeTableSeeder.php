@@ -13,10 +13,6 @@ class EquipeTableSeeder extends Seeder
     public function run()
     {
         $equipe = new Equipe();
-	    $equipe->no_equipe = 'Equipe não selecionada';
-	    $equipe->no_responsavel = 'Nome do Responsavel';
-	    $equipe->save();
-        $equipe = new Equipe();
 	    $equipe->no_equipe = 'NORDESTE ALAGOAS/SERGIPE';
 	    $equipe->no_responsavel = 'Nome do Responsavel';
 	    $equipe->save();

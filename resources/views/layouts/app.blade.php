@@ -35,6 +35,9 @@
     <link rel="stylesheet" type="text/css" href="{{ URL::to('css/smart_wizard.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ URL::to('css/smart_wizard_theme_arrows.min.css') }}">
 
+    <!-- Bootstrap Combobox-->
+    <link rel="stylesheet" type="text/css" href="{{ URL::to('css/bootstrap-combobox.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::to('css/jquery-ui.combobox.css') }}">
 
 
     @yield('css')
@@ -168,6 +171,8 @@
 
     <!-- jQuery 3.1.1 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- AdminLTE App -->
@@ -181,6 +186,13 @@
     <!-- SmartWizard -->
     <script  src="{{ URL::to('js/jquery.smartWizard.min.js') }}"></script>
 
+    <!-- Bootstrap Combobox -->
+    <script  src="{{ URL::to('js/bootstrap-combobox.js') }}"></script>
+
+    <script  src="{{ URL::to('js/jquery-ui.combobox.js') }}"></script>
+
+    
+    
     <!-- Tabs para os forms -->
     <script type="text/javascript">
         //Scripy das abas para a blade
@@ -275,6 +287,41 @@
       
     });
     </script>    
+
+    <script type="text/javascript">
+      $('select').combobox();
+
+    </script>
+
+    <script type="text/javascript">
+      $('.combobox').combobox({
+
+      // Bootstrap version
+      bsVersion: '3', 
+
+      // default templates
+      //menu: '<ul class="typeahead typeahead-long dropdown-menu"></ul>', 
+      menu: '<ul class="form-control dropdown-menu"></ul>', 
+      item: '<li><a href="#" class="form-control dropdown-item"></a></li>',
+
+      // Custom function with one item argument that compares the item to the input.
+      matcher: null,
+
+      // Custom function that sorts a list items for display in the dropdown
+      sorter: null,
+
+      // Custom function for highlighting an item. 
+      highlighter: null,
+
+      // Custom function that returns markup for the combobox.
+      template: null,
+
+      // The desired id of the transformed combobox. 
+      appendId: null
+      
+    })
+    </script>
+
 
 
     @yield('scripts')
