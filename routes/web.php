@@ -55,6 +55,9 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get ('/usuarios/{usuario}/perfil','UsuarioController@perfil');
 	Route::patch ('/usuarios/{usuario}',['as' => 'usuarios.perfil_update', 'uses' =>'UsuarioController@perfil_update']);
 
+	Route::get('/changePassword','HomeController@showChangePasswordForm');
+	Route::post('/changePassword','HomeController@changePassword')->name('changePassword');
+
 	Route::patch('/convivencias/{convivencia}/inscricao',['as' => 'convivencia_inscricao', 'uses' => 'ConvivenciaController@inscricao']);
 	Route::get('/convivencias/{convivencia}/inscricao',['as' => 'convivencia_inscricao', 'uses' => 'ConvivenciaController@inscricao']);
 	Route::get('/convivencias/{convivencia}/inscricao','ConvivenciaController@inscricao');

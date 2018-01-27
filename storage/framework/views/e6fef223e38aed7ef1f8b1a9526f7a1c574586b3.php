@@ -83,10 +83,12 @@
                                 </li>
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
-                                    <div class="pull-left">
-                                        <a href="/usuarios/<?php echo Auth::user()->id; ?>/perfil" class="btn btn-default btn-flat">Perfil</a>
-                                    </div>
-
+                                      <div class="pull-left">
+                                          <a href="/usuarios/<?php echo Auth::user()->id; ?>/perfil" class="btn btn-default btn-flat">Perfil</a>
+                                      </div>
+                                      <div class="pull-left">
+                                          <a href="/changePassword" class="btn btn-default btn-flat">Senha</a>
+                                      </div>
                                      <div class="pull-right">
                                         <a href="<?php echo url('/logout'); ?>" class="btn btn-default btn-flat"
                                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

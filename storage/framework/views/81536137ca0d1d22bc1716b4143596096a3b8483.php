@@ -14,21 +14,7 @@
 
 </div>
 
-<!-- Password Field -->
-<div class="form-group col-sm-6">
-    <!--<?php echo Form::label('password', 'Senha:'); ?> -->
-    <?php echo Form::hidden('password',1 ); ?>
 
-</div>
-
-<!-- Remember Token Field
-<div class="form-group col-sm-6">
-    <?php echo Form::label('remember_token', 'Remember Token:'); ?>
-
-    <?php echo Form::text('remember_token', null, ['class' => 'form-control']); ?>
-
-</div>
--->
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">

@@ -190,7 +190,8 @@ class UsuarioController extends AppBaseController
 
         $usuario->name = $request->input('name');
         $usuario->email = $request->input('email');
-        $usuario->password = bcrypt($request->input('password'));
+        //$usuario->password = bcrypt($request->input('password'));
+        //$usuario = $request->except(['password']);
         $usuario->save();
         //$usuario = $this->usuarioRepository->update($request->all(), $id);
 
@@ -199,5 +200,20 @@ class UsuarioController extends AppBaseController
 
         //return redirect(route('usuarios.index'));
         return Redirect::to('home');
+
+
+        /**
+        if ($request->has('password')){
+            $this->validate($request, [
+                'password' => 'required|confirmed|min:6',
+            ]);
+            $request->request->set('password',bcrypt($request->password));
+            $request = $request->all();
+        }
+        else{
+            $request = $request->except(['password']);
+        }
+        $usuario->update($request);
+        **/
     }
 }

@@ -61,7 +61,11 @@ class Usuario extends Model
         //'password' => 'required|string|min:6|confirmed',
         'name' => 'required|string|max:255',
         'email' => 'required|string|email|max:255',
-        'password' => 'required|string|min:6',
+        //'password' => 'required|string|min:6',
+        'password' => 'allowEmpty|on:update|min:6',
+
+
+         //array('password','required','allowEmpty' => TRUE, 'on' => 'update'),
     ];
 
     /**

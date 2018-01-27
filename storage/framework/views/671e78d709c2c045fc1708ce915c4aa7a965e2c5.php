@@ -12,7 +12,7 @@
                     <?php echo Form::model($usuario, ['route' => ['usuarios.perfil_update', $usuario->id], 'method' => 'patch']); ?>
 
 
-                    <?php echo $__env->make('usuarios.fields', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                    <?php echo $__env->make('usuarios.perfil_fields', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
                     <?php echo Form::close(); ?>
 

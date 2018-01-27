@@ -12,7 +12,7 @@
 </li>
 
 <li class="<?php echo e(Request::is('convivencias*') ? 'active' : ''); ?>">
-    <a href="<?php echo route('convivencias.lista_ativas'); ?>"><i class="fa fa-edit"></i><span>Inscrição Convivência</span>
+    <a href="<?php echo route('convivencias.lista_ativas'); ?>"><i class="fa fa-edit"></i><span>Convivências</span>
         <span class="pull-right-container">
                 <small class="label pull-right bg-red"><?php echo e(Convivencia::where('is_ativo', true)->count()); ?></small>
         </span>

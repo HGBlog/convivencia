@@ -12,7 +12,7 @@
 </li>
 
 <li class="{{ Request::is('convivencias*') ? 'active' : '' }}">
-    <a href="{!! route('convivencias.lista_ativas') !!}"><i class="fa fa-edit"></i><span>Inscrição Convivência</span>
+    <a href="{!! route('convivencias.lista_ativas') !!}"><i class="fa fa-edit"></i><span>Convivências</span>
         <span class="pull-right-container">
                 <small class="label pull-right bg-red">{{Convivencia::where('is_ativo', true)->count()}}</small>
         </span>
