@@ -1,6 +1,6 @@
 <?php $__env->startSection('content'); ?>
  	<section class="content-header">
-        <h1 class="pull-left">Membros da Equipe - <font color="red"><b><?php echo e($qtde_membros); ?></b> cadastrados</font></h1>
+        <h1 class="pull-left">Membros da Equipe - <font color="red"><b><?php echo e(Membro::where('owner_id', auth()->user()->id)->count()); ?></b> cadastrados</font></h1>
         <h1 class="pull-right">
            <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="<?php echo route('membros.create'); ?>">Adicionar Novo Membro</a>
         </h1>

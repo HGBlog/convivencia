@@ -3,7 +3,7 @@
 
 @section('content')
  	<section class="content-header">
-        <h1 class="pull-left">Membros da Equipe - <font color="red"><b>{{ $qtde_membros }}</b> cadastrados</font></h1>
+        <h1 class="pull-left">Membros da Equipe - <font color="red"><b>{{Membro::where('owner_id', auth()->user()->id)->count()}}</b> cadastrados</font></h1>
         <h1 class="pull-right">
            <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('membros.create') !!}">Adicionar Novo Membro</a>
         </h1>

@@ -40,9 +40,9 @@ FROM
 	<title>
 		<band height="55" splitType="Stretch">
 			<staticText>
-				<reportElement x="38" y="0" width="481" height="51" uuid="00b99bcf-ec32-486c-8c4b-5ed6a8dc66f5"/>
+				<reportElement x="104" y="20" width="371" height="35" uuid="00b99bcf-ec32-486c-8c4b-5ed6a8dc66f5"/>
 				<textElement>
-					<font size="36" isBold="true"/>
+					<font size="24" isBold="true"/>
 				</textElement>
 				<text><![CDATA[RELATÓRIO DE USUÁRIOS]]></text>
 			</staticText>
@@ -58,15 +58,15 @@ FROM
 				<text><![CDATA[Nome]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="138" y="0" width="138" height="20" uuid="7b9a89ce-558d-4430-a985-ce36733fefe9"/>
+				<reportElement x="138" y="0" width="78" height="20" uuid="7b9a89ce-558d-4430-a985-ce36733fefe9"/>
 				<text><![CDATA[ID Responsável]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="276" y="0" width="138" height="20" uuid="53b962f3-357b-4c84-96e6-5e711e2b8caa"/>
+				<reportElement x="219" y="0" width="138" height="20" uuid="53b962f3-357b-4c84-96e6-5e711e2b8caa"/>
 				<text><![CDATA[País]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="414" y="0" width="138" height="20" uuid="88604d6e-479a-4db6-ac23-73ca6cb99b10"/>
+				<reportElement x="364" y="0" width="138" height="20" uuid="88604d6e-479a-4db6-ac23-73ca6cb99b10"/>
 				<text><![CDATA[Email]]></text>
 			</staticText>
 			<line>
@@ -81,15 +81,15 @@ FROM
 				<textFieldExpression><![CDATA[$F{membros_no_usuario}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="138" y="0" width="138" height="20" uuid="065c9857-9b27-4ccb-b7ac-0741356ef5bf"/>
+				<reportElement x="138" y="0" width="78" height="20" uuid="065c9857-9b27-4ccb-b7ac-0741356ef5bf"/>
 				<textFieldExpression><![CDATA[$F{membros_owner_id}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="276" y="0" width="138" height="20" uuid="8cfc1583-9303-47f7-b64d-68155d02e5a6"/>
+				<reportElement x="221" y="0" width="138" height="20" uuid="8cfc1583-9303-47f7-b64d-68155d02e5a6"/>
 				<textFieldExpression><![CDATA[$F{membros_no_pais}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="414" y="0" width="138" height="20" uuid="6521eaf1-dbf0-443c-a6d7-5f3060d40766"/>
+				<reportElement x="368" y="0" width="168" height="20" uuid="6521eaf1-dbf0-443c-a6d7-5f3060d40766"/>
 				<textFieldExpression><![CDATA[$F{membros_no_email}]]></textFieldExpression>
 			</textField>
 		</band>

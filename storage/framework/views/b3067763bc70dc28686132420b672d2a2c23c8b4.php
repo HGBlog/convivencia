@@ -1,5 +1,4 @@
 <?php $__env->startSection('content'); ?>
-<?php $__env->startSection('content'); ?>
     <section class="content-header">
         <h1>
             Alterar dados da Convivência

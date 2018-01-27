@@ -240,6 +240,8 @@ return [
     	'Html'      => Collective\Html\HtmlFacade::class,
     	'Flash'     => Laracasts\Flash\Flash::class,
     	'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+        'Membro' => App\Models\Membro::class,
+        'Convivencia' => App\Models\Convivencia::class,
 
     ],
 

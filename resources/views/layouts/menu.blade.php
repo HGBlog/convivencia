@@ -3,12 +3,20 @@
 </li>
 
 <li class="{{ Request::is('membros*') ? 'active' : '' }}">
-    <a href="{!! route('membros.index') !!}"><i class="fa fa-user"></i><span>Membros Equipe</span></a>
+    <a href="{!! route('membros.index') !!}"><i class="fa fa-user"></i><span>Membros Equipe</span>
+        <span class="pull-right-container">
+          <small class="label pull-right bg-blue">{{Membro::where('owner_id', auth()->user()->id)->count()}}</small>
+        </span>
+    </a>
 
 </li>
 
 <li class="{{ Request::is('convivencias*') ? 'active' : '' }}">
-    <a href="{!! route('convivencias.lista_ativas') !!}"><i class="fa fa-edit"></i><span>Inscrição Convivência</span></a>
+    <a href="{!! route('convivencias.lista_ativas') !!}"><i class="fa fa-edit"></i><span>Inscrição Convivência</span>
+        <span class="pull-right-container">
+                <small class="label pull-right bg-red">{{Convivencia::where('is_ativo', true)->count()}}</small>
+        </span>
+    </a>
 </li>
 <br>
 @if(Auth::user()->hasRole('admin'))

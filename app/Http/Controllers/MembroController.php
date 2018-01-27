@@ -50,9 +50,8 @@ class MembroController extends AppBaseController
         //    ->with('membros', $membros);
 
         $membros = Membro::where('owner_id', auth()->user()->id)->orderby('no_usuario')->paginate(5);
-        $qtde_membros = Membro::where('owner_id', auth()->user()->id)->count();
         $equipe = new Equipe;
-        return view('membros.index',compact('membros'))->with('equipe', $equipe)->with('qtde_membros', $qtde_membros);
+        return view('membros.index',compact('membros'))->with('equipe', $equipe);
     }
 
     /**

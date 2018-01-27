@@ -3,12 +3,20 @@
 </li>
 
 <li class="<?php echo e(Request::is('membros*') ? 'active' : ''); ?>">
-    <a href="<?php echo route('membros.index'); ?>"><i class="fa fa-user"></i><span>Membros Equipe</span></a>
+    <a href="<?php echo route('membros.index'); ?>"><i class="fa fa-user"></i><span>Membros Equipe</span>
+        <span class="pull-right-container">
+          <small class="label pull-right bg-blue"><?php echo e(Membro::where('owner_id', auth()->user()->id)->count()); ?></small>
+        </span>
+    </a>
 
 </li>
 
 <li class="<?php echo e(Request::is('convivencias*') ? 'active' : ''); ?>">
-    <a href="<?php echo route('convivencias.lista_ativas'); ?>"><i class="fa fa-edit"></i><span>Inscrição Convivência</span></a>
+    <a href="<?php echo route('convivencias.lista_ativas'); ?>"><i class="fa fa-edit"></i><span>Inscrição Convivência</span>
+        <span class="pull-right-container">
+                <small class="label pull-right bg-red"><?php echo e(Convivencia::where('is_ativo', true)->count()); ?></small>
+        </span>
+    </a>
 </li>
 <br>
 <?php if(Auth::user()->hasRole('admin')): ?>
