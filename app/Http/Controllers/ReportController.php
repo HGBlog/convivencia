@@ -35,12 +35,12 @@ public function index()
             'locale' => 'en',
             'params' => [],
             'db_connection' => [
-                'driver' => 'mysql', //mysql, postgres, oracle, generic (jdbc)
-                'username' => 'conv',
-                'password' => 'secret',
-                'host' => 'localhost',
-                'database' => 'conv',
-                'port' => '3306'
+		'driver'   => env('DB_CONNECTION'),
+            	'host'     => env('DB_HOST'),
+            	'port'     => env('DB_PORT'),
+            	'username' => env('DB_USERNAME'),
+            	'password' => env('DB_PASSWORD'),
+            	'database' => env('DB_DATABASE')
             ]
         ];
 // instancia um novo objeto JasperPHP
