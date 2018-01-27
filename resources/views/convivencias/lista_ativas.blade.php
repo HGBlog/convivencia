@@ -17,7 +17,6 @@
             {{ Form::hidden('is_ativo', 0) }}
 
             @include('convivencias.lista_ativasfields')
-        
 
             {!! Form::close() !!}
             </div>

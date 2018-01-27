@@ -17,7 +17,6 @@
 
 
             <?php echo $__env->make('convivencias.lista_ativasfields', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-        
 
             <?php echo Form::close(); ?>
 
