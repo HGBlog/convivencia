@@ -7,13 +7,12 @@
   </ul>
   
   <div>
-      <div id="step-1" class="">
+      <div id="step-1" class="form-group col-sm-12">
           <div>
             <?php echo Form::label('is_ativo', 'Vai para a convivência?'); ?>
 
-
-            <label class="checkbox-inline">
-              <?php echo Form::checkbox('is_ativo', true, $acolhida->is_ativo); ?>
+             <label class="checkbox-inline">
+              <?php echo Form::checkbox('is_ativo', true, $acolhida->is_ativo, ['class'=> 'checkbox-inline']); ?>
 
             </label>
           </div>          
@@ -26,11 +25,11 @@
           <div class="form-group col-sm-6">
           <?php echo Form::label('acolhida_extra_id', 'Acolhimento Extra'); ?>
 
-          <?php echo Form::select('acolhida_extra_id', $acolhida_extra, $acolhida->pluck('acolhida_extra_id'), ['id' => 'acolhida_extra_id', 'class' => 'form-control', 'dropdown-menu']); ?>
+          <?php echo Form::select('acolhida_extra_id', $acolhida_extra, $acolhida->acolhida_extra_id, ['id' => 'acolhida_extra_id', 'class' => 'form-control', 'dropdown-menu']); ?>
 
           </div>
       </div>
-      <div id="step-2" class="">
+      <div id="step-2" class="form-group col-sm-12">
          <div class="form-group col-sm-6">
         <?php echo Form::label('dt_chegada', 'Data de chegada:'); ?>
 
@@ -57,7 +56,7 @@
         </div>
 
       </div>
-      <div id="step-3" class="">
+      <div id="step-3" class="form-group col-sm-12">
            <div class="form-group col-sm-6">
           <?php echo Form::label('dt_saida', 'Data de saída:'); ?>
 
@@ -83,17 +82,17 @@
 
            </div>
       </div>
-      <div id="step-4" class="">
+      <div id="step-4" class="form-group col-sm-12">
 
-    <?php echo Form::label('no_observacoes', 'Observações:'); ?>
+          <?php echo Form::label('no_observacoes', 'Observações:'); ?>
 
-    <?php echo Form::textarea('no_observacoes', null, ['class' => 'form-control', 'rows' => '5']); ?>
+          <?php echo Form::textarea('no_observacoes', null, ['class' => 'form-control', 'rows' => '5']); ?>
 
 
       </div>
 
   </div>
-        <?php echo Form::submit('Salvar', ['class' => 'btn btn-primary']); ?>
+    <?php echo Form::submit('Salvar', ['class' => 'btn btn-primary']); ?>
 
     <a href="<?php echo route('membros.index'); ?>" class="btn btn-default" >Cancel</a>
 </div>

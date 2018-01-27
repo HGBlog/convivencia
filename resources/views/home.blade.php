@@ -15,18 +15,40 @@
                     <div class="clearfix"></div>
                         <div class="content">
                             <div class="panel-body">
+
+                                    <div class="col-lg-3 col-xs-6">
+                                              <!-- small box -->
+                                              <div class="small-box bg-yellow">
+                                                <div class="inner">
+                                                  <h3>{{Membro::where('owner_id', auth()->user()->id)->count()}}</h3>
+
+                                                  <p>Membros da Equipe</p>
+                                                </div>
+                                                <div class="icon">
+                                                  <ul >
+                                                    <i class="ion ion-person-add"></i>
+                                                  </ul>
+                                                </div>
+                                                <a href="./membros" class="small-box-footer">
+                                                  Lista de Membros <i class="fa fa-arrow-circle-right"></i>
+                                                </a>
+                                              </div>
+                                            </div>
+
                                 @if(!empty ( $convivencia ))
                                 <font color="red">
                                 <b>* <u>Próxima Convivência:</u> {!! $convivencia->no_nome !!}</b><br>
                                 <b>* <u>Data:</u> {!! Carbon\Carbon::parse($convivencia->dt_inicio)->format('d/m/Y') !!} a {!! Carbon\Carbon::parse($convivencia->dt_fim)->format('d/m/Y') !!}<br></b>
                                 <b>* <u>Fim das inscrições:</u> {!! Carbon\Carbon::parse($convivencia->dt_fim_inscricao)->format('d/m/Y') !!}</b><br>
                                 <b>* <u>Local:</u> {!! $local->where('id', $convivencia->local_convivencia_id)->pluck('no_local')->first() !!}</b><br>                    
-                                <a class="btn btn-primary pull-left" style="margin-top: 25px" href="{!! route('convivencias.lista_ativas') !!}">Inscrição para Convivência</a>
+                                <a class="btn btn-primary pull-left" style="margin-top: 25px" href="{!! route('convivencias.lista_ativas') !!}">Inscrições</a>
                                 <br><br><br><br>
                                 </font>
                                 @else
                                 <h2><font color="red">Não existem convivências com inscrições abertas</font></h2><br><br>
                                 @endif
+
+
 
                                 Aqui colocaremos um quadro de avisos gerais e informações sobre as convivências que estão com as inscrições abertas e um link para inscrição em cada uma.
 

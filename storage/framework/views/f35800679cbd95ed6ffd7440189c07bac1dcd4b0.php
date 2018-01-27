@@ -35,7 +35,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="<?php echo e(url('/home')); ?>"><b>Sistema </b>de Convivências</a>
+        <a href="<?php echo e(url('/home')); ?>">Sistema de <b>Convivências</b></a>
     </div>
 
     <!-- /.login-logo -->

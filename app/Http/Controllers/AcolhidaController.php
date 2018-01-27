@@ -220,4 +220,22 @@ class AcolhidaController extends AppBaseController
 
         return redirect(route('acolhidas.index'));
     }
+
+    public function activation(Request $request)
+    {
+
+        $user = User::findOrFail($request->user_id);
+
+        if($user->active == 1){
+            $user->active = 0;
+        } else {
+            $user->active = 1;
+        }
+
+        return response()->json([
+          'data' => [
+            'success' => $user->save(),
+          ]
+        ]);
+    }
 }
