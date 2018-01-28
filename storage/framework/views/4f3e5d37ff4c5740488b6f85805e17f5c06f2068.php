@@ -14,84 +14,84 @@
 
 <!-- No Usuario Field -->
 <div class="form-group">
-    <?php echo Form::label('no_usuario', 'No Usuario:'); ?>
+    <?php echo Form::label('no_usuario', 'Membro:'); ?>
 
     <p><?php echo $membro->no_usuario; ?></p>
 </div>
 
 <!-- No Pais Field -->
 <div class="form-group">
-    <?php echo Form::label('no_pais', 'No Pais:'); ?>
+    <?php echo Form::label('no_pais', 'País:'); ?>
 
     <p><?php echo $membro->no_pais; ?></p>
 </div>
 
 <!-- No Email Field -->
 <div class="form-group">
-    <?php echo Form::label('no_email', 'No Email:'); ?>
+    <?php echo Form::label('no_email', 'Email:'); ?>
 
     <p><?php echo $membro->no_email; ?></p>
 </div>
 
 <!-- No Sexo Field -->
 <div class="form-group">
-    <?php echo Form::label('no_sexo', 'No Sexo:'); ?>
+    <?php echo Form::label('no_sexo', 'Sexo'); ?>
 
     <p><?php echo $membro->no_sexo; ?></p>
 </div>
 
 <!-- Co Telefone Pais Field -->
 <div class="form-group">
-    <?php echo Form::label('co_telefone_pais', 'Co Telefone Pais:'); ?>
+    <?php echo Form::label('co_telefone_pais', 'Código Pais'); ?>
 
     <p><?php echo $membro->co_telefone_pais; ?></p>
 </div>
 
 <!-- Nu Telefone Field -->
 <div class="form-group">
-    <?php echo Form::label('nu_telefone', 'Nu Telefone:'); ?>
+    <?php echo Form::label('nu_telefone', 'Telefone'); ?>
 
     <p><?php echo $membro->nu_telefone; ?></p>
 </div>
 
 <!-- No Diocese Field -->
 <div class="form-group">
-    <?php echo Form::label('no_diocese', 'No Diocese:'); ?>
+    <?php echo Form::label('no_diocese', 'Diocese'); ?>
 
     <p><?php echo $membro->no_diocese; ?></p>
 </div>
 
 <!-- No Cidade Field -->
 <div class="form-group">
-    <?php echo Form::label('no_cidade', 'No Cidade:'); ?>
+    <?php echo Form::label('no_cidade', 'Cidade'); ?>
 
     <p><?php echo $membro->no_cidade; ?></p>
 </div>
 
 <!-- No Paroquia Field -->
 <div class="form-group">
-    <?php echo Form::label('no_paroquia', 'No Paroquia:'); ?>
+    <?php echo Form::label('no_paroquia', 'Paróquia'); ?>
 
     <p><?php echo $membro->no_paroquia; ?></p>
 </div>
 
 <!-- Nu Comunidade Field -->
 <div class="form-group">
-    <?php echo Form::label('nu_comunidade', 'Nu Comunidade:'); ?>
+    <?php echo Form::label('nu_comunidade', 'No Comunidade'); ?>
 
     <p><?php echo $membro->nu_comunidade; ?></p>
 </div>
 
 <!-- Nu Ano Inicio Caminho Field -->
 <div class="form-group">
-    <?php echo Form::label('nu_ano_inicio_caminho', 'Nu Ano Inicio Caminho:'); ?>
+    <?php echo Form::label('nu_ano_inicio_caminho', 'Ano Início Caminho'); ?>
 
     <p><?php echo $membro->nu_ano_inicio_caminho; ?></p>
 </div>
 
 <!-- Etapa Id Field -->
 <div class="form-group">
-    <?php echo Form::label('etapa_id', 'Etapa Id:'); ?>
+    <?php echo Form::label('etapa_id', 'Etapa'); ?>
 
     <p><?php echo $membro->etapa_id; ?></p>
 </div>

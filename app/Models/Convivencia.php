@@ -64,6 +64,7 @@ class Convivencia extends Model
      */
     public static $rules = [
         'no_nome' => 'required',
+        'local_convivencia_id' => 'required',
         'dt_inicio' => 'required|date',
         'dt_fim' => 'required|date',
         'dt_inicio_inscricao' => 'required|date',

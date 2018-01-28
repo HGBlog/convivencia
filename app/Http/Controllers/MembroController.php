@@ -119,7 +119,6 @@ class MembroController extends AppBaseController
             // store
             $membro = new Membro;
             $membro->no_usuario = $request->input('no_usuario');
-            $membro->equipe_id = $request->input('equipe_id');
             $membro->owner_id = auth()->user()->id;
             $membro->no_pais = $request->input('no_pais');
             $membro->no_email = $request->input('no_email');
@@ -129,9 +128,26 @@ class MembroController extends AppBaseController
             $membro->no_cidade = $request->input('no_cidade');
             $membro->no_paroquia = $request->input('no_paroquia');
             $membro->nu_comunidade = $request->input('nu_comunidade');
-            $membro->etapa_id = $request->input('etapa_id');
-            $membro->diocese_id = $request->input('diocese_id');
-            $membro->tipo_carisma_id = $request->input('tipo_carisma_id');
+            if (empty($membro->equipe_id)) {
+                $membro->equipe_id = null;
+                } else {
+                    $membro->equipe_id = $request->input('equipe_id');
+            }
+            if (empty($membro->etapa_id)) {
+                $membro->etapa_id = null;
+                } else {
+                    $membro->etapa_id = $request->input('etapa_id');
+            }
+            if (empty($membro->diocese_id)) {
+                $membro->diocese_id = null;
+                } else {
+                    $membro->diocese_id = $request->input('diocese_id');
+            }
+            if (empty($membro->tipo_carisma_id)) {
+                $membro->tipo_carisma_id = null;
+                } else {
+                    $membro->tipo_carisma_id = $request->input('tipo_carisma_id');
+            }
             $membro->save();
             //$membro->etapas()->sync($request->get('etapas'));
             // redirect
@@ -205,8 +221,43 @@ class MembroController extends AppBaseController
 
             return redirect(route('membros.index'));
         }
+        
+            $membro->owner_id = auth()->user()->id;
+            $membro->no_usuario = $request['no_usuario'];
+            $membro->no_pais = $request['no_pais'];
+            $membro->no_email = $request['no_email'];
+            $membro->no_sexo = $request['no_sexo'];
+            $membro->co_telefone_pais = $request['co_telefone_pais'];
+            $membro->nu_telefone = $request['nu_telefone'];
+            $membro->no_cidade = $request['no_cidade'];
+            $membro->no_paroquia = $request['no_paroquia'];
+            $membro->nu_comunidade = $request['nu_comunidade'];
+            if (empty($membro->etapa_id = $request['etapa_id'])){
+                $membro->etapa_id = NULL;
+            } else {
+                $membro->etapa_id = $request['etapa_id'];
+            }
 
-        $membro = $this->membroRepository->update($request->all(), $id);
+            if (empty($membro->diocese_id = $request['diocese_id'])){
+                $membro->diocese_id = NULL;
+            } else {
+                $membro->diocese_id = $request['diocese_id'];
+            }
+
+            if (empty($membro->equipe_id = $request['equipe_id'])){
+                $membro->equipe_id = NULL;
+            } else {
+                $membro->equipe_id = $request['equipe_id'];
+            }
+
+            if (empty($membro->tipo_carisma_id = $request['tipo_carisma_id'])){
+                $membro->tipo_carisma_id = NULL;
+            } else {
+                $membro->tipo_carisma_id = $request['tipo_carisma_id'];
+            }
+            $membro->save();
+            
+        //$membro = $this->membroRepository->update($request->all(), $id);
 
         Flash::success('Membro da Equipe atualizado com sucesso!');
 

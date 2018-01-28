@@ -25,10 +25,10 @@ class CreateMembrosTable extends Migration
             $table->string('no_cidade', 50);
             $table->string('no_paroquia', 50);
             $table->string('nu_comunidade', 3);
-            $table->integer('etapa_id')->unsigned();
-            $table->integer('equipe_id')->unsigned();
-            $table->integer('diocese_id')->unsigned();
-            $table->integer('tipo_carisma_id')->unsigned();
+            $table->integer('etapa_id')->unsigned()->nullable();
+            $table->integer('equipe_id')->unsigned()->nullable();
+            $table->integer('diocese_id')->unsigned()->nullable();
+            $table->integer('tipo_carisma_id')->unsigned()->nullable();
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('owner_id')->references('id')->on('users');

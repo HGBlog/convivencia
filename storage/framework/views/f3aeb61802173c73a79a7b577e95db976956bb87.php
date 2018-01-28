@@ -2,7 +2,7 @@
     <?php echo $__env->make('membros.show_fields', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
     <div class="form-group">
-           <a href="<?php echo route('membros.index'); ?>" class="btn btn-default">Back</a>
+           <a href="<?php echo route('membros.index'); ?>" class="btn btn-default">Voltar</a>
     </div>
 <?php $__env->stopSection(); ?>
 

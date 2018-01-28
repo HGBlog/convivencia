@@ -17,7 +17,7 @@
             <div class="form-group col-sm-6">
               <?php echo Form::label('no_sexo', 'Sexo:'); ?>
 
-              <?php echo Form::select('no_sexo', ['M' => 'Masculino', 'F' => 'Feminino'], null, ['class' => 'form-control']); ?>
+              <?php echo Form::select('no_sexo', ['M' => 'Masculino', 'F' => 'Feminino'], null, ['class' => 'form-control', 'placeholder'=>'Selecione']); ?>
 
             </div>
             <div class="form-group col-sm-6">
@@ -55,14 +55,14 @@
             <div class="form-group col-sm-6">
             <?php echo Form::label('tipo_carisma_id', 'Carisma:'); ?>
 
-            <?php echo Form::select('tipo_carisma_id', $carismas, $membro->tipo_carisma_id, ['id' => 'tipo_carisma_id', 'class' => 'form-control', 'dropdown-menu']); ?>
+            <?php echo Form::select('tipo_carisma_id', $carismas, $membro->tipo_carisma_id, ['id' => 'tipo_carisma_id', 'class' => 'form-control', 'dropdown-menu', 'placeholder'=>'Selecione o Carisma']); ?>
 
             </div>
 
             <div class="form-group col-sm-6">
             <?php echo Form::label('equipe_id', 'Equipe'); ?>
 
-            <?php echo Form::select('equipe_id', $equipes, $membro->equipe_id, ['id' => 'equipe_id', 'class' => 'form-control', 'dropdown-menu']); ?>
+            <?php echo Form::select('equipe_id', $equipes, $membro->equipe_id, ['id' => 'equipe_id', 'class' => 'form-control', 'dropdown-menu', 'placeholder'=>'Selecione a Equipe']); ?>
 
             </div>
 
@@ -80,7 +80,7 @@
             <div class="form-group col-sm-6">
             <?php echo Form::label('diocese_id', 'Diocese'); ?>
 
-            <?php echo Form::select('diocese_id', $dioceses, $membro->diocese_id, ['id' => 'diocese_id', 'class' => 'form-control', 'dropdown-menu']); ?>
+            <?php echo Form::select('diocese_id', $dioceses, $membro->diocese_id, ['id' => 'diocese_id', 'class' => 'form-control', 'dropdown-menu', 'placeholder'=>'Selecione a Diocese']); ?>
 
             </div>
 
@@ -116,7 +116,7 @@
             <div class="form-group col-sm-6">
             <?php echo Form::label('etapa_id', 'Etapa'); ?>
 
-            <?php echo Form::select('etapa_id', $etapas, $membro->etapa_id, ['id' => 'etapa_id', 'class' => 'form-control', 'dropdown-menu']); ?>
+            <?php echo Form::select('etapa_id', $etapas, $membro->etapa_id, ['id' => 'etapa_id', 'class' => 'form-control', 'dropdown-menu', 'placeholder'=>'Selecione a Etapa']); ?>
 
             </div>
 

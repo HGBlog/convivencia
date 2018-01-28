@@ -8,6 +8,7 @@
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -37,8 +38,7 @@
 
     <!-- Bootstrap Combobox-->
     <link rel="stylesheet" type="text/css" href="{{ URL::to('css/bootstrap-combobox.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ URL::to('css/jquery-ui.combobox.css') }}">
-
+    
 
     @yield('css')
 </head>
@@ -171,7 +171,7 @@
 
     <!-- jQuery 3.1.1 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    
     
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -189,7 +189,7 @@
     <!-- Bootstrap Combobox -->
     <script  src="{{ URL::to('js/bootstrap-combobox.js') }}"></script>
 
-    <script  src="{{ URL::to('js/jquery-ui.combobox.js') }}"></script>
+
 
     
     
@@ -288,21 +288,19 @@
     });
     </script>    
 
-    <script type="text/javascript">
-      $('select').combobox();
 
-    </script>
 
-    <script type="text/javascript">
-      $('.combobox').combobox({
+    <script>
+      //$('select').val('1').combobox({
+      $('select').combobox({
 
       // Bootstrap version
       bsVersion: '3', 
 
       // default templates
       //menu: '<ul class="typeahead typeahead-long dropdown-menu"></ul>', 
-      menu: '<ul class="form-control dropdown-menu"></ul>', 
-      item: '<li><a href="#" class="form-control dropdown-item"></a></li>',
+      //menu: '<ul class="form-control dropdown-menu"></ul>', 
+      //item: '<li><a href="#" class="form-control dropdown-item"></a></li>',
 
       // Custom function with one item argument that compares the item to the input.
       matcher: null,
@@ -320,6 +318,7 @@
       appendId: null
       
     })
+
     </script>
 
 

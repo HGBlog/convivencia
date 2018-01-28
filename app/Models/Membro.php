@@ -66,13 +66,13 @@ class Membro extends Model
         'no_sexo' => 'string',
         'co_telefone_pais' => 'string',
         'nu_telefone' => 'string',
-        'diocese_id' => 'integer',
+        'diocese_id' => 'nullable|integer',
         'no_cidade' => 'string',
         'no_paroquia' => 'string',
         'nu_comunidade' => 'string',
-        'etapa_id' => 'integer',
-        'equipe_id' => 'integer',
-        'tipo_carisma_id' => 'integer'
+        'etapa_id' => 'nullable|integer',
+        'equipe_id' => 'nullable|integer',
+        'tipo_carisma_id' => 'nullable|integer'
     ];
 
     /**
@@ -174,6 +174,30 @@ class Membro extends Model
     public function convivencias()
     {
         return $this->belongsToMany(\App\Models\Convivencia::class, 'convivencia_membros', 'membro_id', 'convivencia_id')->withTimestamps();
+    }
+
+    public function setEtapa($etapa_id)
+    {
+        $this->attributes['etapa_id'] = trim($etapa_id) !== '' ? $etapa_id : null;
+    }
+
+    public function setDiocese($diocese_id)
+    {
+        $this->attributes['diocese_id'] = trim($diocese_id) !== '' ? $diocese_id : null;
+    }
+    public function setEquipt($equipe_id)
+    {
+        $this->attributes['equipe_id'] = trim($equipe_id) !== '' ? $equipe_id : null;
+    }
+
+    public function setTipoCarisma($tipo_carisma_id)
+    {
+        $this->attributes['tipo_carisma_id'] = trim($tipo_carisma_id) !== '' ? $tipo_carisma_id : null;
+    }
+
+    public function emptyToNull($value)
+    {
+        return $value !== '' ? $value : null;
     }
 
 }
