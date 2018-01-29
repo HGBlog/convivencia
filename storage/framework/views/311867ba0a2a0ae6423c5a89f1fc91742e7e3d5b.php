@@ -1,3 +1,4 @@
+
 <!-- Name Field -->
 <div class="form-group col-sm-6">
     <?php echo Form::label('name', 'Nome:'); ?>
@@ -14,12 +15,13 @@
 
 </div>
 
-<!-- Password Field -->
-<div class="form-group col-sm-6">
-    <!--<?php echo Form::label('password', 'Senha:'); ?> -->
-    <?php echo Form::hidden('password',1 ); ?>
+<!-- Roles Field -->
+    <div class="form-group col-sm-6">
+        <?php echo Form::label('role_id', 'Role:'); ?>
 
-</div>
+        <?php echo Form::select('role_id', $roles, $usuario->role_id, ['id' => 'role_id', 'class' => 'form-control', 'dropdown-menu', 'placeholder'=>'Selecione a Role']); ?>
+
+    </div>
 
 <!-- Remember Token Field
 <div class="form-group col-sm-6">

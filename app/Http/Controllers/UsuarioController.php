@@ -12,6 +12,7 @@ use Prettus\Repository\Criteria\RequestCriteria;
 use Illuminate\Support\Facades\Redirect;
 use Response;
 use Auth;
+use App\User;
 
 class UsuarioController extends AppBaseController
 {
@@ -98,6 +99,8 @@ class UsuarioController extends AppBaseController
      */
     public function edit($id)
     {
+        $roles = new User;
+        $roles->roles()->where('user_id', $id)->first();
         $usuario = $this->usuarioRepository->findWithoutFail($id);
 
         if (empty($usuario)) {
@@ -106,7 +109,7 @@ class UsuarioController extends AppBaseController
             return redirect(route('usuarios.index'));
         }
 
-        return view('usuarios.edit')->with('usuario', $usuario);
+        return view('usuarios.edit')->with('usuario', $usuario)->with('roles', $roles);
     }
 
     /**
@@ -129,7 +132,7 @@ class UsuarioController extends AppBaseController
 
         $usuario->name = $request->input('name');
         $usuario->email = $request->input('email');
-        $usuario->password = bcrypt($request->input('password'));
+        //$usuario->password = bcrypt($request->input('password'));
         $usuario->save();
         //$usuario = $this->usuarioRepository->update($request->all(), $id);
 

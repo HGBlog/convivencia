@@ -1,3 +1,4 @@
+
 <!-- Name Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('name', 'Nome:') !!}
@@ -10,11 +11,11 @@
     {!! Form::email('email', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Password Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('password', 'Senha:') !!}
-    {!! Form::password('password', ['class' => 'form-control']) !!}
-</div>
+<!-- Roles Field -->
+    <div class="form-group col-sm-6">
+        {!! Form::label('role_id', 'Role:') !!}
+        {!! Form::select('role_id', $roles, $usuario->role_id, ['id' => 'role_id', 'class' => 'form-control', 'dropdown-menu', 'placeholder'=>'Selecione a Role'])!!}
+    </div>
 
 <!-- Remember Token Field
 <div class="form-group col-sm-6">

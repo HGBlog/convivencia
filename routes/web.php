@@ -49,11 +49,12 @@ Route::group(['middleware' => 'auth'], function() {
 
 	Route::resource('convivencias', 'ConvivenciaController');
 
-	Route::resource('usuarios', 'UsuarioController');
-
 	//Atualizacao do Perfil de Usuario
 	Route::get ('/usuarios/{usuario}/perfil','UsuarioController@perfil');
 	Route::patch ('/usuarios/{usuario}',['as' => 'usuarios.perfil_update', 'uses' =>'UsuarioController@perfil_update']);
+
+	Route::patch ('/usuarios/{usuario}',['as' => 'usuarios.update', 'uses' =>'UsuarioController@update']);
+	Route::put ('/usuarios/{usuario}',['as' => 'usuarios.update', 'uses' =>'UsuarioController@update']);
 
 	Route::get('/changePassword','HomeController@showChangePasswordForm');
 	Route::post('/changePassword','HomeController@changePassword')->name('changePassword');

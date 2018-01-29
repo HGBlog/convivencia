@@ -2,6 +2,7 @@
     <thead>
         <th>Name</th>
         <th>Email</th>
+        <th>Role</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>
@@ -9,6 +10,7 @@
         <tr>
             <td><?php echo $usuario->name; ?></td>
             <td><?php echo $usuario->email; ?></td>
+
             <td>
                 <?php echo Form::open(['route' => ['usuarios.destroy', $usuario->id], 'method' => 'delete']); ?>
 
