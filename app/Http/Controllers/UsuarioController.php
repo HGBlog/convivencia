@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Redirect;
 use Response;
 use Auth;
 use App\User;
+use App\Role;
 
 class UsuarioController extends AppBaseController
 {
@@ -99,8 +100,9 @@ class UsuarioController extends AppBaseController
      */
     public function edit($id)
     {
-        $roles = new User;
-        $roles->roles()->where('user_id', $id)->first();
+        $roles = Role::pluck('name', 'id')->all();
+        $role = new User;
+        $role->roles()->where('user_id', $id)->get();
         $usuario = $this->usuarioRepository->findWithoutFail($id);
 
         if (empty($usuario)) {
@@ -109,7 +111,7 @@ class UsuarioController extends AppBaseController
             return redirect(route('usuarios.index'));
         }
 
-        return view('usuarios.edit')->with('usuario', $usuario)->with('roles', $roles);
+        return view('usuarios.edit')->with('usuario', $usuario)->with('roles', $roles)->with('role', $role);
     }
 
     /**

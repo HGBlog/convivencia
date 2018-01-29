@@ -75,4 +75,9 @@ class Usuario extends Model
     {
         return $this->hasMany(\App\Models\Membro::class);
     }
+
+    public function roles() {
+    
+        return $this->belongsToMany(Role::class);
+    }
 }
