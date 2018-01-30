@@ -103,6 +103,8 @@ class UsuarioController extends AppBaseController
         $roles = Role::pluck('name', 'id')->all();
         $role = new User;
         $role->roles()->where('user_id', $id)->get();
+        
+
         $usuario = $this->usuarioRepository->findWithoutFail($id);
 
         if (empty($usuario)) {
@@ -113,6 +115,9 @@ class UsuarioController extends AppBaseController
 
         return view('usuarios.edit')->with('usuario', $usuario)->with('roles', $roles)->with('role', $role);
     }
+
+
+
 
     /**
      * Update the specified Usuario in storage.

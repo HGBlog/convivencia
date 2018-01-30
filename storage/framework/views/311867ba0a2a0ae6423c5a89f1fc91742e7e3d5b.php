@@ -16,13 +16,16 @@
 </div>
 
 <!-- Roles Field -->
+
     <div class="form-group col-sm-6">
         <?php echo Form::label('role_id', 'Role:'); ?>
 
         <?php echo Form::select('role_id', $roles, $role->role_id, ['id' => 'role_id', 'class' => 'form-control', 'dropdown-menu', 'placeholder'=>'Selecione a Role']); ?>
 
     </div>
-<?php echo print_r ($role->user_id); ?>
+<?php echo die("<pre>" . print_r($role, 1)); ?>
+
+
 
 
 
