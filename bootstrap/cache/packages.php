@@ -50,13 +50,6 @@
       0 => 'Yajra\\DataTables\\ButtonsServiceProvider',
     ),
   ),
-  'prettus/l5-repository' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Prettus\\Repository\\Providers\\RepositoryServiceProvider',
-    ),
-  ),
   'maatwebsite/excel' => 
   array (
     'providers' => 
@@ -118,13 +111,6 @@
       0 => 'Backpack\\Generators\\GeneratorsServiceProvider',
     ),
   ),
-  'laracasts/generators' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Laracasts\\Generators\\GeneratorsServiceProvider',
-    ),
-  ),
   'intervention/image' => 
   array (
     'providers' => 
@@ -166,6 +152,20 @@
     'providers' => 
     array (
       0 => 'Backpack\\LangFileManager\\LangFileManagerServiceProvider',
+    ),
+  ),
+  'prettus/l5-repository' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Prettus\\Repository\\Providers\\RepositoryServiceProvider',
+    ),
+  ),
+  'laracasts/generators' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laracasts\\Generators\\GeneratorsServiceProvider',
     ),
   ),
 );

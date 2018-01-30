@@ -13,7 +13,7 @@
 Route::group([
             'namespace'  => 'Backpack\PermissionManager\app\Http\Controllers',
             'prefix'     => config('backpack.base.route_prefix', 'admin'),
-            'middleware' => ['web', 'admin'],
+            'middleware' => ['web', 'admin','role:admin'],
     ], function () {
         CRUD::resource('permission', 'PermissionCrudController');
         CRUD::resource('role', 'RoleCrudController');
