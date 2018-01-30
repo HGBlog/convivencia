@@ -6499,5 +6499,71 @@
             "generators",
             "laravel"
         ]
+    },
+    {
+        "name": "backpack/settings",
+        "version": "2.0.27",
+        "version_normalized": "2.0.27.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Laravel-Backpack/Settings.git",
+            "reference": "b51d4a92305f03fba6d4221767b9c5b1cbeb2e66"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Laravel-Backpack/Settings/zipball/b51d4a92305f03fba6d4221767b9c5b1cbeb2e66",
+            "reference": "b51d4a92305f03fba6d4221767b9c5b1cbeb2e66",
+            "shasum": ""
+        },
+        "require": {
+            "backpack/crud": "^3.2"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.*",
+            "scrutinizer/ocular": "~1.1"
+        },
+        "time": "2017-12-14 23:20:32",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            },
+            "laravel": {
+                "providers": [
+                    "Backpack\\Settings\\SettingsServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Backpack\\Settings\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "authors": [
+            {
+                "name": "Cristian Tabacitu",
+                "email": "hello@tabacitu.ro",
+                "homepage": "http://www.tabacitu.ro",
+                "role": "Chief Architect & Lead Developer"
+            }
+        ],
+        "description": "Application settings interface for Laravel 5 using Backpack CRUD.",
+        "homepage": "https://github.com/laravel-backpack/settings",
+        "keywords": [
+            "backpack",
+            "backpack settings",
+            "dick",
+            "dick settings",
+            "laravel backpack",
+            "manage settings",
+            "settings admin",
+            "tabacitu",
+            "updivision"
+        ]
     }
 ]

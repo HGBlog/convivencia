@@ -10,6 +10,7 @@
         "backpack/crud": "^3.3",
         "backpack/langfilemanager": "^1.0",
         "backpack/permissionmanager": "^2.1",
+        "backpack/settings": "^2.0",
         "doctrine/dbal": "~2.3",
         "fideloper/proxy": "~3.3",
         "geekcom/phpjasper": "^2.6",

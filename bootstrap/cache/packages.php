@@ -168,4 +168,11 @@
       0 => 'Laracasts\\Generators\\GeneratorsServiceProvider',
     ),
   ),
+  'backpack/settings' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Backpack\\Settings\\SettingsServiceProvider',
+    ),
+  ),
 );

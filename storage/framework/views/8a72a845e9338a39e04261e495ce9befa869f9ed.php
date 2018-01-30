@@ -20,6 +20,7 @@
                 <li><a href="<?php echo e(url(config('backpack.base.route_prefix', 'admin') . '/user')); ?>"><i class="fa fa-user"></i> <span>Usuários</span></a></li>
                 <li><a href="<?php echo e(url(config('backpack.base.route_prefix', 'admin') . '/role')); ?>"><i class="fa fa-group"></i> <span>Roles</span></a></li>
                 <li><a href="<?php echo e(url(config('backpack.base.route_prefix', 'admin') . '/permission')); ?>"><i class="fa fa-key"></i> <span>Permissões</span></a></li>
+                <li><a href="<?php echo e(backpack_url('setting')); ?>"><i class="fa fa-cog"></i> <span>Settings</span></a></li>
               </ul>
             </li>
 
