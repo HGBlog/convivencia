@@ -93,4 +93,79 @@
       0 => '\\InfyOm\\AdminLTETemplates\\AdminLTETemplatesServiceProvider',
     ),
   ),
+  'jenssegers/date' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Jenssegers\\Date\\DateServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Date' => 'Jenssegers\\Date\\Date',
+    ),
+  ),
+  'backpack/base' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Backpack\\Base\\BaseServiceProvider',
+    ),
+  ),
+  'backpack/generators' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Backpack\\Generators\\GeneratorsServiceProvider',
+    ),
+  ),
+  'laracasts/generators' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laracasts\\Generators\\GeneratorsServiceProvider',
+    ),
+  ),
+  'intervention/image' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Intervention\\Image\\ImageServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Image' => 'Intervention\\Image\\Facades\\Image',
+    ),
+  ),
+  'backpack/crud' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Backpack\\CRUD\\CrudServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'CRUD' => 'Backpack\\CRUD\\CrudServiceProvider',
+    ),
+  ),
+  'spatie/laravel-permission' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Spatie\\Permission\\PermissionServiceProvider',
+    ),
+  ),
+  'backpack/permissionmanager' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Backpack\\PermissionManager\\PermissionManagerServiceProvider',
+    ),
+  ),
+  'backpack/langfilemanager' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Backpack\\LangFileManager\\LangFileManagerServiceProvider',
+    ),
+  ),
 );
