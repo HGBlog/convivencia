@@ -49,10 +49,13 @@
         <!-- Main Header -->
         <header class="main-header">
 
-            <!-- Logo -->
-            <a href="#" class="logo">
-                <b>Convivências</b>
-            </a>
+ <a href="<?php echo e(url('')); ?>" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><?php echo config('backpack.base.logo_mini'); ?></span>
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg"><?php echo config('backpack.base.logo_lg'); ?></span>
+        </a>
+
 
             <!-- Header Navbar -->
             <nav class="navbar navbar-static-top" role="navigation">
@@ -76,7 +79,7 @@
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
                                 <li class="user-header">
-                                    <img src="http://paroquiadesantoandre.pt/img/grupos/caminho-neocatecumenal.png"
+                                    <img src="http://www.cn.org.br/portal/wp-content/uploads/2014/02/cropped-Virgem2.jpg"
                                          class="img-circle" alt="User Image"/>
                                     <p>
                                         <?php echo Auth::user()->name; ?>

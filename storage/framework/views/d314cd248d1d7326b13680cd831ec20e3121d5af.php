@@ -32,10 +32,7 @@
             <a href="<?php echo route('convivencias.index'); ?>"><i class="fa fa-edit"></i><span>Convivências</span></a>
         </li>
         <li class="<?php echo e(Request::is('usuarios*') ? 'active' : ''); ?>">
-            <a href="<?php echo route('usuarios.index'); ?>"><i class="fa fa-users"></i><span>Usuários</span></a>
-        </li>
-        <li class="<?php echo e(Request::is('roles*') ? 'active' : ''); ?>">
-            <a href="<?php echo route('roles.index'); ?>"><i class="fa fa-eye"></i><span>Roles</span></a>
+            <a href="<?php echo url(config('backpack.base.route_prefix', 'admin') . '/user'); ?>"><i class="fa fa-users"></i><span>Usuários, Permissões</span></a>
         </li>
   </ul>
 </li>
