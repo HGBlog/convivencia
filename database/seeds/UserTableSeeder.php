@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Backpack\PermissionManager\app\Models\Role;
 use App\User;
-use App\Role;
 
 class UserTableSeeder extends Seeder
 {
@@ -21,6 +21,7 @@ class UserTableSeeder extends Seeder
 		    $admin->email = 'admin@ig.com.br';
 		    $admin->password = bcrypt('123@abc');
 		    $admin->save();
+		    $admin->roles()->attach($role_admin);
 		   	$fabiano = new User();
 		    $fabiano->name = 'Fabiano Galvao';
 		    $fabiano->email = 'euo@ig.com.br';
@@ -44,24 +45,24 @@ class UserTableSeeder extends Seeder
 		    $responsavel->email = 'fabiojacomini@hotmail.com';
 		    $responsavel->password = '$2y$10$tdTLaPKqozKzG.eEgKAN6.8zqFq5JlUwSSFMIvCcr0AsQ6./rgYDa';
 		    $responsavel->save();
-		    $responsavel->roles()->attach($admin);
+		    $responsavel->roles()->attach($role_admin);
 		   	$responsavel = new User();
 		    $responsavel->name = 'Raul';
 		    $responsavel->email = 'rvianag@gmail.com';
 		    $responsavel->password = '$2y$10$o/V5rmyOx2nz50x.Bi7nfuwoLHXCpTqq3xHPY4dozrlrJfV9dycgy';
 		    $responsavel->save();
-		    $responsavel->roles()->attach($admin);
+		    $responsavel->roles()->attach($role_admin);
 		    $responsavel = new User();
 		    $responsavel->name = 'Osmar Azevedo Costa';
 		    $responsavel->email = 'cncbrasilia.osmarac@gmail.com';
 		    $responsavel->password = '$2y$10$zM.EycWdcI3SDgCgocCBCeWh9VivnRfrrJS7a6ATIhlpO6t4yK.7.';
 		    $responsavel->save();
-		    $responsavel->roles()->attach($admin);
+		    $responsavel->roles()->attach($role_admin);
 		    $responsavel = new User();
 		    $responsavel->name = 'Hegberto Nunes da Silva Otávio';
 		    $responsavel->email = 'hgbm88@hotmail.com';
 		    $responsavel->password = '$2y$10$o619uoDEAKlj.CBG/mSzYeD9pNFCg6bZlWU8hcQTfFdJaykG7d6zW';
 		    $responsavel->save();
-		    $responsavel->roles()->attach($admin);		    
+		    $responsavel->roles()->attach($role_admin);		    
     }
 }

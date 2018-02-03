@@ -124,3 +124,6 @@ Route::get('/relatorios', function () {
 
 
 
+
+
+Route::resource('estados', 'EstadoController');

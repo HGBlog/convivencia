@@ -17,6 +17,7 @@ use Response;
 use View;
 use App\Models\Membro;
 use App\Models\Etapa;
+use App\Models\Estado;
 use App\Models\Equipe;
 use App\Models\Diocese;
 use App\Models\TipoCarisma;
@@ -65,6 +66,7 @@ class MembroController extends AppBaseController
         //$etapas = Etapa::all(['id', 'no_etapa'])->pluck('no_etapa', 'id');
         $membro = new Membro;
         $etapas = Etapa::pluck('no_etapa', 'id')->all();
+        $estados = Estado::pluck('no_estado', 'id')->all();
         $dioceses = Diocese::pluck('no_diocese', 'id')->all();
         $equipes = Equipe::pluck('no_equipe', 'id')->all();
         $carismas = TipoCarisma::pluck('no_carisma', 'id')->all();
@@ -72,7 +74,7 @@ class MembroController extends AppBaseController
         ///$thing = Etapa::pluck('id');
         //return view('membros.create');
         //return View::make('membros.create', $etapas);
-        return view('membros.create')->with('etapas',$etapas)->with('membro',$membro)->with('carismas', $carismas)->with('equipes', $equipes)->with('dioceses', $dioceses);
+        return view('membros.create')->with('etapas',$etapas)->with('membro',$membro)->with('carismas', $carismas)->with('equipes', $equipes)->with('dioceses', $dioceses)->with('estados', $estados);
 
 
 
@@ -120,7 +122,6 @@ class MembroController extends AppBaseController
             $membro = new Membro;
             $membro->no_usuario = $request->input('no_usuario');
             $membro->owner_id = auth()->user()->id;
-            $membro->no_pais = $request->input('no_pais');
             $membro->no_email = $request->input('no_email');
             $membro->no_sexo = $request->input('no_sexo');
             $membro->co_telefone_pais = $request->input('co_telefone_pais');
@@ -137,6 +138,11 @@ class MembroController extends AppBaseController
                 $membro->etapa_id = null;
                 } else {
                     $membro->etapa_id = $request->input('etapa_id');
+            }
+            if (empty($membro->estado_id)) {
+                $membro->estado_id = null;
+                } else {
+                    $membro->estado_id = $request->input('estado_id');
             }
             if (empty($membro->diocese_id)) {
                 $membro->diocese_id = null;
@@ -190,6 +196,7 @@ class MembroController extends AppBaseController
     {
         $membro = $this->membroRepository->findWithoutFail($id);
         $etapas = Etapa::pluck('no_etapa', 'id');
+        $estados = Estado::pluck('no_estado', 'id');
         $equipes = Equipe::pluck('no_equipe', 'id');
         $dioceses = Diocese::pluck('no_diocese', 'id')->all();
         $carismas = TipoCarisma::pluck('no_carisma', 'id')->all();
@@ -201,7 +208,7 @@ class MembroController extends AppBaseController
 
             return redirect(route('membros.index'));
         }
-        return view('membros.edit')->with('membro', $membro)->with('etapas',$etapas)->with('carismas', $carismas)->with('equipes', $equipes)->with('dioceses', $dioceses);
+        return view('membros.edit')->with('membro', $membro)->with('etapas',$etapas)->with('carismas', $carismas)->with('equipes', $equipes)->with('dioceses', $dioceses)->with('estados', $estados);
     }
 
     /**
@@ -224,7 +231,6 @@ class MembroController extends AppBaseController
         
             $membro->owner_id = auth()->user()->id;
             $membro->no_usuario = $request['no_usuario'];
-            $membro->no_pais = $request['no_pais'];
             $membro->no_email = $request['no_email'];
             $membro->no_sexo = $request['no_sexo'];
             $membro->co_telefone_pais = $request['co_telefone_pais'];
@@ -249,7 +255,11 @@ class MembroController extends AppBaseController
             } else {
                 $membro->equipe_id = $request['equipe_id'];
             }
-
+            if (empty($membro->estado_id = $request['estado_id'])){
+                $membro->estado_id = NULL;
+            } else {
+                $membro->estado_id = $request['estado_id'];
+            }
             if (empty($membro->tipo_carisma_id = $request['tipo_carisma_id'])){
                 $membro->tipo_carisma_id = NULL;
             } else {

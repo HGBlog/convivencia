@@ -71,6 +71,10 @@
         <li class="{{ Request::is('tipoTranslados*') ? 'active' : '' }}">
             <a href="{!! route('tipoTranslados.index') !!}"><i class="fa fa-car"></i><span>Tipos de Translados</span></a>
         </li>
+        
+        <li class="{{ Request::is('estados*') ? 'active' : '' }}">
+            <a href="{!! route('estados.index') !!}"><i class="fa fa-edit"></i><span>Estados</span></a>
+        </li>
   </ul>
 </li>
 @endif
