@@ -1,14 +1,15 @@
 <?php
-
 namespace App;
-
-use Illuminate\Notifications\Notifiable;
+use Backpack\Base\app\Notifications\ResetPasswordNotification as ResetPasswordNotification;
+use Backpack\CRUD\CrudTrait;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
+use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
 class User extends Authenticatable
 {
     use Notifiable;
-
+    use CrudTrait;
+    use HasRoles;
     /**
      * The attributes that are mass assignable.
      *
@@ -17,7 +18,6 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password',
     ];
-
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -26,40 +26,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    public function roles() {
-    
-        return $this->belongsToMany(Role::class);
-    }
-
-        /**
-    * @param string|array $roles
-    */
-    public function authorizeRoles($roles)
-    {
-      if (is_array($roles)) {
-          return $this->hasAnyRole($roles) || 
-                 abort(401, 'Acesso negado!! Esta ação não é autorizada.');
-      }
-      return $this->hasRole($roles) || 
-             abort(401, 'Acesso negado!! Esta ação não é autorizada.');
-    }
-    
     /**
-    * Check multiple roles
-    * @param array $roles
-    */
-    public function hasAnyRole($roles)
+     * Send the password reset notification.
+     *
+     * @param string $token
+     *
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
     {
-      return null !== $this->roles()->whereIn('name', $roles)->first();
-    }
-
-    /**
-    * Check one role
-    * @param string $role
-    */
-    public function hasRole($role)
-    {
-      return null !== $this->roles()->where('name', $role)->first();
+        $this->notify(new ResetPasswordNotification($token));
     }
 }
