@@ -129,27 +129,27 @@ class MembroController extends AppBaseController
             $membro->no_cidade = $request->input('no_cidade');
             $membro->no_paroquia = $request->input('no_paroquia');
             $membro->nu_comunidade = $request->input('nu_comunidade');
-            if (empty($membro->equipe_id)) {
+            if (empty($request['equipe_id'])) {
                 $membro->equipe_id = null;
                 } else {
                     $membro->equipe_id = $request->input('equipe_id');
             }
-            if (empty($membro->etapa_id)) {
+            if (empty($request['etapa_id'])) {
                 $membro->etapa_id = null;
                 } else {
                     $membro->etapa_id = $request->input('etapa_id');
             }
-            if (empty($membro->estado_id)) {
+            if (empty($request['estado_id'])) {
                 $membro->estado_id = null;
                 } else {
                     $membro->estado_id = $request->input('estado_id');
             }
-            if (empty($membro->diocese_id)) {
+            if (empty($request['diocese_id'])) {
                 $membro->diocese_id = null;
                 } else {
                     $membro->diocese_id = $request->input('diocese_id');
             }
-            if (empty($membro->tipo_carisma_id)) {
+            if (empty($request['tipo_carisma_id'])) {
                 $membro->tipo_carisma_id = null;
                 } else {
                     $membro->tipo_carisma_id = $request->input('tipo_carisma_id');

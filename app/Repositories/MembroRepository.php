@@ -21,16 +21,17 @@ class MembroRepository extends BaseRepository
      */
     protected $fieldSearchable = [
         'no_usuario',
-        'no_pais',
         'no_email',
         'co_telefone_pais',
         'nu_telefone',
-        'no_diocese',
         'no_cidade',
         'no_paroquia',
         'nu_comunidade',
-        'nu_ano_inicio_caminho',
-        'etapa_id'
+        'etapa_id',
+        'estado_id',
+        'diocese_id',
+        'equipe_id',
+        'tipo_carisma_id',
     ];
 
     /**
