@@ -37,8 +37,6 @@ Route::group(['middleware' => 'auth'], function() {
 
 	Route::resource('usuarios', 'UsuarioController');
 
-	Route::resource('roles', 'RoleController');
-
 	Route::resource('tipoCarismas', 'TipoCarismaController');
 
 	Route::resource('tipoCarismas', 'TipoCarismaController');
@@ -85,6 +83,11 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::get ('/relatorios','ReportController@index');
 
+    Route::resource('localConvivencias', 'LocalConvivenciaController');
+
+
+	Route::resource('dioceses', 'DioceseController');
+
 
 
 });
@@ -120,26 +123,4 @@ Route::get('/relatorios', function () {
 
 
 
-Route::resource('localConvivencias', 'LocalConvivenciaController');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
-
-Route::resource('removerLocalConvivencias', 'RemoverLocalConvivenciaController');
-
-Route::resource('removerLocalConvivencias', 'RemoverLocalConvivenciaController');
-
-Route::resource('removerConvivencias', 'RemoverConvivenciaController');
-
-Route::resource('removerConvivencias', 'RemoverConvivenciaController');
-
-Route::resource('dioceses', 'DioceseController');

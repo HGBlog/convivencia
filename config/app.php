@@ -172,6 +172,8 @@ return [
     	Yajra\DataTables\DataTablesServiceProvider::class,
     	Yajra\DataTables\ButtonsServiceProvider::class,
         //JasperPHP\JasperPHPServiceProvider::class,
+        //Backpack\LangFileManager\LangFileManagerServiceProvider::class,
+
 
 
 
