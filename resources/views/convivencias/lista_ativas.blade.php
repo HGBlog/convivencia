@@ -7,24 +7,22 @@
     <div class="content">
         <div class="clearfix"></div>
 
-        @include('flash::message')
+            @include('flash::message')
 
-        <div class="clearfix"></div>
-        <div class="box box-primary">
-            <div class="box-body">
-            {!! Form::model(null, ['route' => ['seleciona_convivencia', 'convivencia_id'], 'method' => 'post']) !!}
-            
-            {{ Form::hidden('is_ativo', 0) }}
+            <div class="clearfix"></div>
+                <div class="box box-primary">
+                    <div class="box-body">
+                        {!! Form::model(null, ['route' => ['seleciona_convivencia', 'convivencia_id'], 'method' => 'post']) !!}
+                        
+                        {{ Form::hidden('is_ativo', 0) }}
 
-            @include('convivencias.lista_ativasfields')
+                        @include('convivencias.lista_ativasfields')
 
-            {!! Form::close() !!}
-            </div>
-        </div>
-        <div class="text-center">
+                        {!! Form::close() !!}
+                    </div>
+                </div>
+            <div class="text-center">
         
         </div>
     </div>
-
-
 @endsection

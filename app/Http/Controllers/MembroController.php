@@ -66,10 +66,10 @@ class MembroController extends AppBaseController
         //$etapas = Etapa::all(['id', 'no_etapa'])->pluck('no_etapa', 'id');
         $membro = new Membro;
         $etapas = Etapa::pluck('no_etapa', 'id')->all();
-        $estados = Estado::pluck('no_estado', 'id')->all();
-        $dioceses = Diocese::pluck('no_diocese', 'id')->all();
-        $equipes = Equipe::pluck('no_equipe', 'id')->all();
-        $carismas = TipoCarisma::pluck('no_carisma', 'id')->all();
+        $estados = Estado::orderBy('no_estado')->pluck('no_estado', 'id')->all();
+        $dioceses = Diocese::orderBy('no_diocese')->pluck('no_diocese', 'id')->all();
+        $equipes = Equipe::orderBy('no_equipe')->pluck('no_equipe', 'id')->all();
+        $carismas = TipoCarisma::orderBy('no_carisma')->pluck('no_carisma', 'id')->all();
         
         ///$thing = Etapa::pluck('id');
         //return view('membros.create');
@@ -196,10 +196,10 @@ class MembroController extends AppBaseController
     {
         $membro = $this->membroRepository->findWithoutFail($id);
         $etapas = Etapa::pluck('no_etapa', 'id');
-        $estados = Estado::pluck('no_estado', 'id');
-        $equipes = Equipe::pluck('no_equipe', 'id');
-        $dioceses = Diocese::pluck('no_diocese', 'id')->all();
-        $carismas = TipoCarisma::pluck('no_carisma', 'id')->all();
+        $estados = Estado::orderBy('no_estado')->pluck('no_estado', 'id');
+        $equipes = Equipe::orderBy('no_equipe')->pluck('no_equipe', 'id');
+        $dioceses = Diocese::orderBy('no_diocese')->pluck('no_diocese', 'id')->all();
+        $carismas = TipoCarisma::orderBy('no_carisma')->pluck('no_carisma', 'id')->all();
 
         //$etapa_marcada = Etapa::where('active', true)->orderBy('name')->lists('name', 'id');
 
