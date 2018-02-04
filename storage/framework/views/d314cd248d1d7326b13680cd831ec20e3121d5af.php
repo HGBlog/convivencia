@@ -71,6 +71,10 @@
         <li class="<?php echo e(Request::is('tipoTranslados*') ? 'active' : ''); ?>">
             <a href="<?php echo route('tipoTranslados.index'); ?>"><i class="fa fa-car"></i><span>Tipos de Translados</span></a>
         </li>
+        
+        <li class="<?php echo e(Request::is('estados*') ? 'active' : ''); ?>">
+            <a href="<?php echo route('estados.index'); ?>"><i class="fa fa-edit"></i><span>Estados</span></a>
+        </li>
   </ul>
 </li>
 <?php endif; ?>

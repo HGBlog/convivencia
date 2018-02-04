@@ -38,7 +38,6 @@ class Membro extends Model
     public $fillable = [
         'owner_id',
         'no_usuario',
-        'no_pais',
         'no_email',
         'no_sexo',
         'co_telefone_pais',
@@ -49,7 +48,8 @@ class Membro extends Model
         'nu_comunidade',
         'etapa_id',
         'equipe_id',
-        'tipo_carisma_id'
+        'tipo_carisma_id',
+        'estado_id',
     ];
 
 
@@ -72,7 +72,8 @@ class Membro extends Model
         'nu_comunidade' => 'string',
         'etapa_id' => 'nullable|integer',
         'equipe_id' => 'nullable|integer',
-        'tipo_carisma_id' => 'nullable|integer'
+        'tipo_carisma_id' => 'nullable|integer',
+        'estado_id' => 'nullable|integer',
     ];
 
     /**
@@ -128,7 +129,6 @@ class Membro extends Model
             
             $this->owner_id = auth()->user()->id;
             $this->no_usuario = $data['no_usuario'];
-            $this->no_pais = $data['no_pais'];
             $this->no_email = $data['no_email'];
             $this->no_sexo = $data['no_sexo'];
             $this->co_telefone_pais = $data['co_telefone_pais'];
@@ -140,6 +140,7 @@ class Membro extends Model
             $this->diocese_id = $data['diocese_id'];
             $this->equipe_id = $data['equipe_id'];
             $this->tipo_carisma_id = $data['tipo_carisma_id'];
+            $this->estado_id = $data['estado_id'];
             $this->save();
             return 1;
     }
@@ -149,7 +150,6 @@ class Membro extends Model
             $membro = $this->find($data['id']);
             $membro->owner_id = auth()->user()->id;
             $membro->no_usuario = $data['no_usuario'];
-            $membro->no_pais = $data['no_pais'];
             $membro->no_email = $data['no_email'];
             $membro->no_sexo = $data['no_sexo'];
             $membro->co_telefone_pais = $data['co_telefone_pais'];
@@ -161,6 +161,7 @@ class Membro extends Model
             $membro->diocese_id = $data['diocese_id'];
             $membro->equipe_id = $data['equipe_id'];
             $membro->tipo_carisma_id = $data['tipo_carisma'];
+            $membro->estado_id = $data['estado_id'];
             $membro->save();
             return 1;
     }

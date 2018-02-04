@@ -16,9 +16,10 @@
               {!! Form::label('no_sexo', 'Sexo:') !!}
               {!! Form::select('no_sexo', ['M' => 'Masculino', 'F' => 'Feminino'], null, ['class' => 'form-control', 'placeholder'=>'Selecione']) !!}
             </div>
+        <!-- Estado Field -->
             <div class="form-group col-sm-6">
-              {!! Form::label('no_pais', 'País:') !!}
-              {!! Form::text('no_pais', null, ['class' => 'form-control', 'placeholder'=>'País']) !!}
+            {!! Form::label('estado_id', 'Estado') !!}
+            {!! Form::select('estado_id', $estados, $membro->estado_id, ['id' => 'estado_id', 'class' => 'form-control', 'dropdown-menu', 'placeholder'=>'Selecione o Estado'])!!}
             </div>
 
          <!-- No Email Field -->
