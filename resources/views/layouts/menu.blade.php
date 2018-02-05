@@ -73,7 +73,7 @@
         </li>
         
         <li class="{{ Request::is('estados*') ? 'active' : '' }}">
-            <a href="{!! route('estados.index') !!}"><i class="fa fa-edit"></i><span>Estados</span></a>
+            <a href="{!! route('estados.index') !!}"><i class="fa fa-map"></i><span>Estados</span></a>
         </li>
   </ul>
 </li>

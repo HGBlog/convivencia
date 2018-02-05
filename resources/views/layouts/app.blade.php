@@ -120,7 +120,7 @@
 
         <!-- Main Footer -->
         <footer class="main-footer" style="max-height: 100px;text-align: center">
-            <strong>Copyright © 2018 <a href="#">Caminho Neocatecumenal no Brasil</a>.</strong>
+            <strong>Copyright © 2018 <a href="#">Caminho Neocatecumenal no Brasil</a></strong>
         </footer>
 
     </div>
@@ -140,7 +140,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{!! url('/') !!}">
-                    InfyOm Generator
+                    Caminho Neocatecumenal
                 </a>
             </div>
 
@@ -203,7 +203,7 @@
             {
               type: "click", // onmouseover or 'click'
               // animation speed in milliseconds
-              speed: 800, 
+              speed: 500, 
 
               // "toogle", "slide", "fade"
               animation: "slide"
