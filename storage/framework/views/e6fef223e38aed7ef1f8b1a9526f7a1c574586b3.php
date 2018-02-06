@@ -38,6 +38,10 @@
 
     <!-- Bootstrap Combobox-->
     <link rel="stylesheet" type="text/css" href="<?php echo e(URL::to('css/bootstrap-combobox.css')); ?>">
+
+    <!-- Bootstrap botão on/off -->
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
     
 
     <?php echo $__env->yieldContent('css'); ?>
@@ -193,6 +197,9 @@
 
     <!-- Bootstrap Combobox -->
     <script  src="<?php echo e(URL::to('js/bootstrap-combobox.js')); ?>"></script>
+
+    <!-- Bootstrap botão on-off-->
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
 
 

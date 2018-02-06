@@ -38,6 +38,10 @@
 
     <!-- Bootstrap Combobox-->
     <link rel="stylesheet" type="text/css" href="{{ URL::to('css/bootstrap-combobox.css') }}">
+
+    <!-- Bootstrap botão on/off -->
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
     
 
     @yield('css')
@@ -191,6 +195,9 @@
 
     <!-- Bootstrap Combobox -->
     <script  src="{{ URL::to('js/bootstrap-combobox.js') }}"></script>
+
+    <!-- Bootstrap botão on-off-->
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
 
 

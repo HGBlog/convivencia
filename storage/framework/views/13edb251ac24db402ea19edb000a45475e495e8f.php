@@ -3,11 +3,10 @@
     <?php echo Form::label('is_ativo', 'Habilitada:'); ?>
 
     <label class="checkbox-inline">
-        <?php echo Form::checkbox('is_ativo', true, $convivencia->is_ativo,  ['class' => 'minimal']); ?>
+        <?php echo Form::checkbox('is_ativo', true, $convivencia->is_ativo,  ['data-toggle' => 'toggle', 'data-on' => 'Sim',  'data-off' => 'Não',  'data-onstyle' => 'success',  'data-offstyle' => 'danger', 'data-size' => 'small']); ?>
 
     </label>
 </div>
-
 
 <!-- No Nome Field -->
 <div class="form-group col-sm-6">
@@ -38,7 +37,7 @@
 <div class="form-group col-sm-6">
     <?php echo Form::label('dt_inicio', 'Data Início:'); ?>
 
-    <?php echo Form::date('dt_inicio', Carbon\Carbon::parse($convivencia->dt_inicio)->format('Y-m-d'), ['class' => 'form-control col-md-7 col-xs-12  date-picker']); ?>
+    <?php echo Form::date('dt_inicio', Carbon\Carbon::parse($convivencia->dt_inicio)->format('Y-m-d'), ['class' => 'form-control col-md-7 col-xs-12']); ?>
 
 </div>
 

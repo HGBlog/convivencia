@@ -8,14 +8,15 @@
   
   <div>
       <div id="step-1" class="form-group col-sm-12">
+          <br>
           <div>
-            <?php echo Form::label('is_ativo', 'Vai para a convivência?'); ?>
+              <?php echo Form::label('is_ativo', 'Vai para a convivência?'); ?>
 
-             <label class="checkbox-inline">
-              <?php echo Form::checkbox('is_ativo', true, $acolhida->is_ativo, ['class'=> 'checkbox-inline']); ?>
+               <label class="checkbox-inline">
+                <?php echo Form::checkbox('is_ativo', true, $acolhida->is_ativo, ['data-toggle' => 'toggle', 'data-on' => 'Sim',  'data-off' => 'Não',  'data-onstyle' => 'success',  'data-offstyle' => 'danger', 'data-size' => 'small']); ?>
 
-            </label>
-          </div>          
+              </label>
+          </div> <br>
           <div class="form-group col-sm-6">
           <?php echo Form::label('tipo_translado_id', 'Translado:'); ?>
 
@@ -30,7 +31,8 @@
           </div>
       </div>
       <div id="step-2" class="form-group col-sm-12">
-         <div class="form-group col-sm-6">
+        <br>
+        <div class="form-group col-sm-6">
         <?php echo Form::label('dt_chegada', 'Data de chegada:'); ?>
 
         <?php echo Form::date('dt_chegada', Carbon\Carbon::parse($acolhida->dt_chegada)->format('Y-m-d'), ['class' => 'form-control', 'placeholder'=>'dd-mm-AAAA']); ?>
@@ -57,6 +59,7 @@
 
       </div>
       <div id="step-3" class="form-group col-sm-12">
+      <br>
            <div class="form-group col-sm-6">
           <?php echo Form::label('dt_saida', 'Data de saída:'); ?>
 
@@ -83,7 +86,7 @@
            </div>
       </div>
       <div id="step-4" class="form-group col-sm-12">
-
+      <br>
           <?php echo Form::label('no_observacoes', 'Observações:'); ?>
 
           <?php echo Form::textarea('no_observacoes', null, ['class' => 'form-control', 'rows' => '5']); ?>

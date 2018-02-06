@@ -8,12 +8,13 @@
   
   <div>
       <div id="step-1" class="form-group col-sm-12">
+          <br>
           <div>
-            {!! Form::label('is_ativo', 'Vai para a convivência?') !!}
-             <label class="checkbox-inline">
-              {!! Form::checkbox('is_ativo', true, $acolhida->is_ativo, ['class'=> 'checkbox-inline']) !!}
-            </label>
-          </div>          
+              {!! Form::label('is_ativo', 'Vai para a convivência?') !!}
+               <label class="checkbox-inline">
+                {!! Form::checkbox('is_ativo', true, $acolhida->is_ativo, ['data-toggle' => 'toggle', 'data-on' => 'Sim',  'data-off' => 'Não',  'data-onstyle' => 'success',  'data-offstyle' => 'danger', 'data-size' => 'small']) !!}
+              </label>
+          </div> <br>
           <div class="form-group col-sm-6">
           {!! Form::label('tipo_translado_id', 'Translado:') !!}
           {!! Form::select('tipo_translado_id', $translado, $acolhida->tipo_translado_id, ['id' => 'tipo_translado_id', 'class' => 'form-control', 'dropdown-menu'])!!}
@@ -24,7 +25,8 @@
           </div>
       </div>
       <div id="step-2" class="form-group col-sm-12">
-         <div class="form-group col-sm-6">
+        <br>
+        <div class="form-group col-sm-6">
         {!! Form::label('dt_chegada', 'Data de chegada:') !!}
         {!! Form::date('dt_chegada', Carbon\Carbon::parse($acolhida->dt_chegada)->format('Y-m-d'), ['class' => 'form-control', 'placeholder'=>'dd-mm-AAAA']) !!}
         </div>
@@ -43,6 +45,7 @@
 
       </div>
       <div id="step-3" class="form-group col-sm-12">
+      <br>
            <div class="form-group col-sm-6">
           {!! Form::label('dt_saida', 'Data de saída:') !!}
           {!! Form::date('dt_saida', Carbon\Carbon::parse($acolhida->dt_saida)->format('Y-m-d'), ['class' => 'form-control','placeholder'=>'Formato dd-mm-AAAA']) !!}
@@ -61,7 +64,7 @@
            </div>
       </div>
       <div id="step-4" class="form-group col-sm-12">
-
+      <br>
           {!! Form::label('no_observacoes', 'Observações:') !!}
           {!! Form::textarea('no_observacoes', null, ['class' => 'form-control', 'rows' => '5']) !!}
 
