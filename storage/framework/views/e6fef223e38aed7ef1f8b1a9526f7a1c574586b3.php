@@ -122,7 +122,7 @@
 
         <!-- Main Footer -->
         <footer class="main-footer" style="max-height: 100px;text-align: center">
-            <strong>Copyright © 2018 <a href="#">Caminho Neocatecumenal no Brasil</a>.</strong>
+            <strong>Copyright © 2018 <a href="#">Caminho Neocatecumenal no Brasil</a></strong>
         </footer>
 
     </div>
@@ -142,7 +142,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="<?php echo url('/'); ?>">
-                    InfyOm Generator
+                    Caminho Neocatecumenal
                 </a>
             </div>
 
@@ -205,7 +205,7 @@
             {
               type: "click", // onmouseover or 'click'
               // animation speed in milliseconds
-              speed: 800, 
+              speed: 500, 
 
               // "toogle", "slide", "fade"
               animation: "slide"
@@ -238,10 +238,10 @@
       backButtonSupport: true, 
 
       // Enable selection of the step based on url hash
-      useURLhash: true, 
+      useURLhash: false, 
 
       // Show url hash based on step 
-      showStepURLhash: true, 
+      showStepURLhash: false, 
 
       // Language variables
       lang: {  
@@ -261,8 +261,8 @@
 
       // anchor options
       anchorSettings: {
-        anchorClickable: true, // Enable/Disable anchor navigation
-        enableAllAnchors: true, // Activates all anchors clickable all times
+        anchorClickable: false, // Enable/Disable anchor navigation
+        enableAllAnchors: false, // Activates all anchors clickable all times
         markDoneStep: true, // add done css
         markAllPreviousStepsAsDone: true, // When a step selected by url hash, all previous steps are marked done
         removeDoneStepOnNavigateBack: false, // While navigate back done step after active step will be cleared

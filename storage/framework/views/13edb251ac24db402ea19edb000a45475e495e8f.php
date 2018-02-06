@@ -38,7 +38,7 @@
 <div class="form-group col-sm-6">
     <?php echo Form::label('dt_inicio', 'Data Início:'); ?>
 
-    <?php echo Form::date('dt_inicio', Carbon\Carbon::parse($convivencia->dt_inicio)->format('Y-m-d'), ['class' => 'form-control col-md-7 col-xs-12']); ?>
+    <?php echo Form::date('dt_inicio', Carbon\Carbon::parse($convivencia->dt_inicio)->format('Y-m-d'), ['class' => 'form-control col-md-7 col-xs-12  date-picker']); ?>
 
 </div>
 
