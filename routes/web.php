@@ -25,6 +25,8 @@ Route::group(['middleware' => 'auth'], function() {
 
 	Route::get('/home', 'HomeController@index')->name('home');
 
+	Route::get('/convivencias/lista_ativas', ['as' => 'convivencias.lista_ativas', 'uses' => 'ConvivenciaController@lista_ativas']);
+
 	Route::resource('convivencias', 'ConvivenciaController');
 
 	Route::resource('convivenciaMembros', 'ConvivenciaMembroController');
@@ -61,8 +63,6 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('/convivencias/{convivencia}/inscricao','ConvivenciaController@inscricao');
 
 	Route::post('/convivencias/{convivencia}/seleciona_convivencia',['as' => 'seleciona_convivencia', 'uses' => 'ConvivenciaController@seleciona_convivencia']);
-
-	Route::get('/lista_ativas', ['as' => 'convivencias.lista_ativas', 'uses' => 'ConvivenciaController@lista_ativas']);
 
 	Route::get ('/create/acolhidas/convivencia/{convivencia}/membro/{membro}','AcolhidaController@create');
 	Route::get ('/acolhidas/convivencia/{convivencia}/membro/{membro}/create','AcolhidaController@create');
