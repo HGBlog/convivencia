@@ -2,6 +2,7 @@
    <a href="{!! url('/home') !!}"><i class="fa fa-home"></i><span>Home</span></a>
 </li>
 
+@if(Auth::user()->hasRole('admin') | Auth::user()->hasRole('responsavel'))
 <li class="{{ Request::is('membros*') ? 'active' : '' }}">
     <a href="{!! route('membros.index') !!}"><i class="fa fa-user"></i><span>Membros Equipe</span>
         <span class="pull-right-container">
@@ -10,7 +11,6 @@
     </a>
 
 </li>
-
 <li class="{{ Request::is('convivencias*') ? 'active' : '' }}">
     <a href="{!! route('convivencias.lista_ativas') !!}"><i class="fa fa-edit"></i><span>Convivências</span>
         <span class="pull-right-container">
@@ -18,6 +18,7 @@
         </span>
     </a>
 </li>
+@endif
 <br>
 @if(Auth::user()->hasRole('admin'))
 <li class="treeview">

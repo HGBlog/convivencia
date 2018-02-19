@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use Auth;
 
 class EtapaController extends AppBaseController
 {
@@ -29,6 +30,13 @@ class EtapaController extends AppBaseController
      */
     public function index(Request $request)
     {
+
+        if (!Auth::user()->hasRole('admin')) {
+            Flash::error('Você não tem permissão para acessar este recurso.');
+
+            return redirect(route('home'));
+        }
+
         $this->etapaRepository->pushCriteria(new RequestCriteria($request));
         $etapas = $this->etapaRepository->all();
 
@@ -43,6 +51,12 @@ class EtapaController extends AppBaseController
      */
     public function create()
     {
+        if (!Auth::user()->hasRole('admin')) {
+            Flash::error('Você não tem permissão para acessar este recurso.');
+
+            return redirect(route('home'));
+        }
+
         return view('etapas.create');
     }
 
@@ -55,6 +69,13 @@ class EtapaController extends AppBaseController
      */
     public function store(CreateEtapaRequest $request)
     {
+        
+        if (!Auth::user()->hasRole('admin')) {
+            Flash::error('Você não tem permissão para acessar este recurso.');
+
+            return redirect(route('home'));
+        }
+
         $input = $request->all();
 
         $etapa = $this->etapaRepository->create($input);
@@ -95,6 +116,12 @@ class EtapaController extends AppBaseController
     {
         $etapa = $this->etapaRepository->findWithoutFail($id);
 
+        if (!Auth::user()->hasRole('admin')) {
+            Flash::error('Você não tem permissão para acessar este recurso.');
+
+            return redirect(route('home'));
+        }
+
         if (empty($etapa)) {
             Flash::error('Etapa not found');
 
@@ -115,6 +142,12 @@ class EtapaController extends AppBaseController
     public function update($id, UpdateEtapaRequest $request)
     {
         $etapa = $this->etapaRepository->findWithoutFail($id);
+
+        if (!Auth::user()->hasRole('admin')) {
+            Flash::error('Você não tem permissão para acessar este recurso.');
+
+            return redirect(route('home'));
+        }
 
         if (empty($etapa)) {
             Flash::error('Etapa not found');
@@ -138,6 +171,13 @@ class EtapaController extends AppBaseController
      */
     public function destroy($id)
     {
+        
+        if (!Auth::user()->hasRole('admin')) {
+            Flash::error('Você não tem permissão para acessar este recurso.');
+
+            return redirect(route('home'));
+        }
+        
         $etapa = $this->etapaRepository->findWithoutFail($id);
 
         if (empty($etapa)) {

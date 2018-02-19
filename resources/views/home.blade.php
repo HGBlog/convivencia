@@ -15,7 +15,11 @@
                     <div class="clearfix"></div>
                         <div class="content">
                             <div class="panel-body">
-
+                                @if(Auth::user()->hasRole('usuario'))
+                                    Você acessou o Sistema como um usuário sem permissão para criação de Equipe e inscrição em Convivência. Aguarde a autorização do Centro Neocatecumenal de Brasília para em breve você receber o privilégio necessário no Sistema para realização das Inscrições em Convivência.
+                                    Qualquer dúvida, mande um email para cncbrasilia@gmail.com informando esta mensagem de erro e solicitando autorização.
+                                @endif
+                                @if(Auth::user()->hasRole('admin') | Auth::user()->hasRole('responsavel') )
                                     <div class="col-lg-3 col-xs-6">
                                               <!-- small box -->
                                               <div class="small-box bg-yellow">
@@ -59,6 +63,8 @@
                                 O responsável começa cadastrando os membros da sua Equipe e depois deve inscrevê-los ou não na Convivência.<br><br>
                                 
                                 Os MENUS de ADMINISTRAÇÃO e TABELAS DE APOIO serão acessados somente pelos Administradores do Sistema para criação de NOVAS CONVIVÊNCIAS, MANUTENÇÃO DE USUÁRIOS, PERMISSÕES e inclusão de novos Tipos de Quarto, translados, etc.
+
+                                @endif 
                             </div>
                 </div>
             </div>

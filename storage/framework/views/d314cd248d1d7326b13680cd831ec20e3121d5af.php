@@ -2,6 +2,7 @@
    <a href="<?php echo url('/home'); ?>"><i class="fa fa-home"></i><span>Home</span></a>
 </li>
 
+<?php if(Auth::user()->hasRole('admin') | Auth::user()->hasRole('responsavel')): ?>
 <li class="<?php echo e(Request::is('membros*') ? 'active' : ''); ?>">
     <a href="<?php echo route('membros.index'); ?>"><i class="fa fa-user"></i><span>Membros Equipe</span>
         <span class="pull-right-container">
@@ -10,7 +11,6 @@
     </a>
 
 </li>
-
 <li class="<?php echo e(Request::is('convivencias*') ? 'active' : ''); ?>">
     <a href="<?php echo route('convivencias.lista_ativas'); ?>"><i class="fa fa-edit"></i><span>Convivências</span>
         <span class="pull-right-container">
@@ -18,6 +18,7 @@
         </span>
     </a>
 </li>
+<?php endif; ?>
 <br>
 <?php if(Auth::user()->hasRole('admin')): ?>
 <li class="treeview">

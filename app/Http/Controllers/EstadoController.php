@@ -10,6 +10,7 @@ use App\Repositories\EstadoRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
+use Auth;
 
 class EstadoController extends AppBaseController
 {
@@ -29,6 +30,12 @@ class EstadoController extends AppBaseController
      */
     public function index(EstadoDataTable $estadoDataTable)
     {
+        if (!Auth::user()->hasRole('admin')) {
+            Flash::error('Você não tem permissão para acessar este recurso.');
+
+            return redirect(route('home'));
+        }
+
         return $estadoDataTable->render('estados.index');
     }
 
@@ -39,6 +46,12 @@ class EstadoController extends AppBaseController
      */
     public function create()
     {
+        if (!Auth::user()->hasRole('admin')) {
+            Flash::error('Você não tem permissão para acessar este recurso.');
+
+            return redirect(route('home'));
+        }
+
         return view('estados.create');
     }
 
@@ -51,6 +64,13 @@ class EstadoController extends AppBaseController
      */
     public function store(CreateEstadoRequest $request)
     {
+        
+        if (!Auth::user()->hasRole('admin')) {
+            Flash::error('Você não tem permissão para acessar este recurso.');
+
+            return redirect(route('home'));
+        }
+
         $input = $request->all();
 
         $estado = $this->estadoRepository->create($input);
@@ -69,6 +89,13 @@ class EstadoController extends AppBaseController
      */
     public function show($id)
     {
+
+        if (!Auth::user()->hasRole('admin')) {
+            Flash::error('Você não tem permissão para acessar este recurso.');
+
+            return redirect(route('home'));
+        }
+
         $estado = $this->estadoRepository->findWithoutFail($id);
 
         if (empty($estado)) {
@@ -89,6 +116,13 @@ class EstadoController extends AppBaseController
      */
     public function edit($id)
     {
+        
+        if (!Auth::user()->hasRole('admin')) {
+            Flash::error('Você não tem permissão para acessar este recurso.');
+
+            return redirect(route('home'));
+        }
+
         $estado = $this->estadoRepository->findWithoutFail($id);
 
         if (empty($estado)) {
@@ -110,6 +144,12 @@ class EstadoController extends AppBaseController
      */
     public function update($id, UpdateEstadoRequest $request)
     {
+        if (!Auth::user()->hasRole('admin')) {
+            Flash::error('Você não tem permissão para acessar este recurso.');
+
+            return redirect(route('home'));
+        }
+
         $estado = $this->estadoRepository->findWithoutFail($id);
 
         if (empty($estado)) {
@@ -134,6 +174,13 @@ class EstadoController extends AppBaseController
      */
     public function destroy($id)
     {
+
+        if (!Auth::user()->hasRole('admin')) {
+            Flash::error('Você não tem permissão para acessar este recurso.');
+
+            return redirect(route('home'));
+        }
+
         $estado = $this->estadoRepository->findWithoutFail($id);
 
         if (empty($estado)) {
