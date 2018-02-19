@@ -69,7 +69,7 @@ class RegisterController extends Controller
         ]);
         $user
            ->roles()
-           ->attach(Role::where('name', 'responsavel')->first());
+           ->attach(Role::where('name', 'usuario')->first());
         return $user;
     }
 }
