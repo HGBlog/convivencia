@@ -141,6 +141,7 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         array (
             'Barryvdh\\elFinderFlysystemDriver\\' => 33,
             'Barryvdh\\Elfinder\\' => 18,
+            'Backpack\\Settings\\' => 18,
             'Backpack\\PermissionManager\\' => 27,
             'Backpack\\LangFileManager\\' => 25,
             'Backpack\\Generators\\' => 20,
@@ -410,6 +411,10 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         array (
             0 => __DIR__ . '/..' . '/barryvdh/laravel-elfinder/src',
         ),
+        'Backpack\\Settings\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/backpack/settings/src',
+        ),
         'Backpack\\PermissionManager\\' => 
         array (
             0 => __DIR__ . '/..' . '/backpack/permissionmanager/src',
@@ -612,6 +617,7 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'App\\Repositories\\TipoQuartoRepository' => __DIR__ . '/../..' . '/app/Repositories/TipoQuartoRepository.php',
         'App\\Repositories\\TipoTransladoRepository' => __DIR__ . '/../..' . '/app/Repositories/TipoTransladoRepository.php',
         'App\\Repositories\\UsuarioRepository' => __DIR__ . '/../..' . '/app/Repositories/UsuarioRepository.php',
+        'App\\Role' => __DIR__ . '/../..' . '/app/___Role.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
@@ -693,6 +699,11 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'Backpack\\PermissionManager\\app\\Http\\Requests\\UserUpdateCrudRequest' => __DIR__ . '/..' . '/backpack/permissionmanager/src/app/Http/Requests/UserUpdateCrudRequest.php',
         'Backpack\\PermissionManager\\app\\Models\\Permission' => __DIR__ . '/..' . '/backpack/permissionmanager/src/app/Models/Permission.php',
         'Backpack\\PermissionManager\\app\\Models\\Role' => __DIR__ . '/..' . '/backpack/permissionmanager/src/app/Models/Role.php',
+        'Backpack\\Settings\\SettingsServiceProvider' => __DIR__ . '/..' . '/backpack/settings/src/SettingsServiceProvider.php',
+        'Backpack\\Settings\\app\\Http\\Controllers\\SettingCrudController' => __DIR__ . '/..' . '/backpack/settings/src/app/Http/Controllers/SettingCrudController.php',
+        'Backpack\\Settings\\app\\Http\\Requests\\SettingRequest' => __DIR__ . '/..' . '/backpack/settings/src/app/Http/Requests/SettingRequest.php',
+        'Backpack\\Settings\\app\\Models\\Setting' => __DIR__ . '/..' . '/backpack/settings/src/app/Models/Setting.php',
+        'Backpack\\Settings\\database\\seeds\\SettingsTableSeeder' => __DIR__ . '/..' . '/backpack/settings/src/database/seeds/SettingsTableSeeder.php',
         'Barryvdh\\Elfinder\\Connector' => __DIR__ . '/..' . '/barryvdh/laravel-elfinder/src/Connector.php',
         'Barryvdh\\Elfinder\\Console\\PublishCommand' => __DIR__ . '/..' . '/barryvdh/laravel-elfinder/src/Console/PublishCommand.php',
         'Barryvdh\\Elfinder\\Elfinder' => __DIR__ . '/..' . '/barryvdh/laravel-elfinder/src/Elfinder.php',
@@ -3829,6 +3840,7 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'Prettus\\Repository\\Providers\\LumenRepositoryServiceProvider' => __DIR__ . '/..' . '/prettus/l5-repository/src/Prettus/Repository/Providers/LumenRepositoryServiceProvider.php',
         'Prettus\\Repository\\Providers\\RepositoryServiceProvider' => __DIR__ . '/..' . '/prettus/l5-repository/src/Prettus/Repository/Providers/RepositoryServiceProvider.php',
         'Prettus\\Repository\\Traits\\CacheableRepository' => __DIR__ . '/..' . '/prettus/l5-repository/src/Prettus/Repository/Traits/CacheableRepository.php',
+        'Prettus\\Repository\\Traits\\ComparesVersionsTrait' => __DIR__ . '/..' . '/prettus/l5-repository/src/Prettus/Repository/Traits/ComparesVersionsTrait.php',
         'Prettus\\Repository\\Traits\\PresentableTrait' => __DIR__ . '/..' . '/prettus/l5-repository/src/Prettus/Repository/Traits/PresentableTrait.php',
         'Prettus\\Repository\\Traits\\TransformableTrait' => __DIR__ . '/..' . '/prettus/l5-repository/src/Prettus/Repository/Traits/TransformableTrait.php',
         'Prettus\\Repository\\Transformer\\ModelTransformer' => __DIR__ . '/..' . '/prettus/l5-repository/src/Prettus/Repository/Transformer/ModelTransformer.php',
@@ -3880,6 +3892,7 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'Prophecy\\Doubler\\Generator\\Node\\ClassNode' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Doubler/Generator/Node/ClassNode.php',
         'Prophecy\\Doubler\\Generator\\Node\\MethodNode' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Doubler/Generator/Node/MethodNode.php',
         'Prophecy\\Doubler\\Generator\\ReflectionInterface' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Doubler/Generator/ReflectionInterface.php',
+        'Prophecy\\Doubler\\Generator\\TypeHintReference' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Doubler/Generator/TypeHintReference.php',
         'Prophecy\\Doubler\\LazyDouble' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Doubler/LazyDouble.php',
         'Prophecy\\Doubler\\NameGenerator' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Doubler/NameGenerator.php',
         'Prophecy\\Exception\\Call\\UnexpectedCallException' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Exception/Call/UnexpectedCallException.php',
@@ -4810,7 +4823,9 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'Symfony\\Polyfill\\Util\\Binary' => __DIR__ . '/..' . '/symfony/polyfill-util/Binary.php',
         'Symfony\\Polyfill\\Util\\BinaryNoFuncOverload' => __DIR__ . '/..' . '/symfony/polyfill-util/BinaryNoFuncOverload.php',
         'Symfony\\Polyfill\\Util\\BinaryOnFuncOverload' => __DIR__ . '/..' . '/symfony/polyfill-util/BinaryOnFuncOverload.php',
+        'Symfony\\Polyfill\\Util\\LegacyTestListener' => __DIR__ . '/..' . '/symfony/polyfill-util/LegacyTestListener.php',
         'Symfony\\Polyfill\\Util\\TestListener' => __DIR__ . '/..' . '/symfony/polyfill-util/TestListener.php',
+        'Symfony\\Polyfill\\Util\\TestListenerTrait' => __DIR__ . '/..' . '/symfony/polyfill-util/TestListenerTrait.php',
         'Tests\\CreatesApplication' => __DIR__ . '/../..' . '/tests/CreatesApplication.php',
         'Tests\\Feature\\ExampleTest' => __DIR__ . '/../..' . '/tests/Feature/ExampleTest.php',
         'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
@@ -4912,6 +4927,7 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'elFinderVolumeMySQL' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderVolumeMySQL.class.php',
         'elFinderVolumeOneDrive' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderVolumeOneDrive.class.php',
         'elFinderVolumeTrash' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderVolumeTrash.class.php',
+        'elFinderVolumeTrashMySQL' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderVolumeTrashMySQL.class.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
         'phpDocumentor\\Reflection\\DocBlockFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
         'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',

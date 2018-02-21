@@ -161,18 +161,18 @@
       0 => 'Prettus\\Repository\\Providers\\RepositoryServiceProvider',
     ),
   ),
-  'laracasts/generators' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Laracasts\\Generators\\GeneratorsServiceProvider',
-    ),
-  ),
   'backpack/settings' => 
   array (
     'providers' => 
     array (
       0 => 'Backpack\\Settings\\SettingsServiceProvider',
+    ),
+  ),
+  'laracasts/generators' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laracasts\\Generators\\GeneratorsServiceProvider',
     ),
   ),
 );
