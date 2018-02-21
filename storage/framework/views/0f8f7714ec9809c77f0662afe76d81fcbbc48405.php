@@ -1,49 +1,89 @@
-<!-- Main Content -->
-<?php $__env->startSection('content'); ?>
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Troca de Senha</div>
-                <div class="panel-body">
-                    <?php if(session('status')): ?>
-                        <div class="alert alert-success">
-                            <?php echo e(session('status')); ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sistema de Convivências</title>
 
-                        </div>
-                    <?php endif; ?>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-                    <form class="form-horizontal" role="form" method="POST" action="<?php echo e(url('/password/email')); ?>">
-                        <?php echo csrf_field(); ?>
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.2/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.2/css/skins/_all-skins.min.css">
+
+    <!-- iCheck -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/skins/square/_all.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+    <div class="login-logo">
+        <a href="<?php echo e(url('/home')); ?>">Sistema de <b>Convivências</b></a>
+    </div>
+
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+        <p class="login-box-msg">Informe o Email para envio de uma nova senha</p>
+
+        <?php if(session('status')): ?>
+            <div class="alert alert-success">
+                <?php echo e(session('status')); ?>
+
+            </div>
+        <?php endif; ?>
+
+        <form method="post" action="<?php echo e(url('/password/email')); ?>">
+            <?php echo csrf_field(); ?>
 
 
-                        <div class="form-group<?php echo e($errors->has('email') ? ' has-error' : ''); ?>">
-                            <label class="col-md-4 control-label">Endereço de Email</label>
+            <div class="form-group has-feedback <?php echo e($errors->has('email') ? ' has-error' : ''); ?>">
+                <input type="email" class="form-control" name="email" value="<?php echo e(old('email')); ?>" placeholder="Email">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                <?php if($errors->has('email')): ?>
+                    <span class="help-block">
+                    <strong><?php echo e($errors->first('email')); ?></strong>
+                </span>
+                <?php endif; ?>
+            </div>
 
-                            <div class="col-md-6">
-                                <input type="email" class="form-control" name="email" value="<?php echo e(old('email')); ?>">
-
-                                <?php if($errors->has('email')): ?>
-                                    <span class="help-block">
-                                        <strong><?php echo e($errors->first('email')); ?></strong>
-                                    </span>
-                                <?php endif; ?>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-envelope"></i>Envio o link para troca de senha
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary pull-right">
+                        <i class="fa fa-btn fa-envelope"></i> Envie o Email para troca de senha
+                    </button>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-<?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </form>
+
+    </div>
+    <!-- /.login-box-body -->
+</div>
+<!-- /.login-box -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- AdminLTE App -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.2/js/adminlte.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/icheck.min.js"></script>
+</body>
+</html>
