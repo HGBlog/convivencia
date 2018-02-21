@@ -60,6 +60,7 @@ return [
     // You can make sure all your URLs use this prefix by using the backpack_url() helper instead of url()
     //'route_prefix' => 'admin',
     'route_prefix' => 'admin',
+    'route_prefix_reset_password' => '',
 
     // Set this to false if you would like to use your own AuthController and PasswordController
     // (you then need to setup your auth routes manually in your routes.php file)
