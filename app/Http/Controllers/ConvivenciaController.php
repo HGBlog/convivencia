@@ -171,9 +171,9 @@ class ConvivenciaController extends AppBaseController
     {
         $convivencia = $this->convivenciaRepository->findWithoutFail($id);
 
+        $lista_casados = Membro::where('owner_id', auth()->user()->id)->get()->where('no_conjuge','<>', '');
 
-
-        $lista_membros = Membro::where('owner_id', auth()->user()->id)->get();
+        $lista_membros = Membro::where('owner_id', auth()->user()->id)->get()->where('no_conjuge', 'IS NULL', null);
             //print_r($lista_membros);
 
             foreach($lista_membros as $membro) {
@@ -193,7 +193,7 @@ class ConvivenciaController extends AppBaseController
             return redirect(route('convivencias.index'));
         }
 
-        return view('convivencias.inscricao')->with('convivencia', $convivencia)->with('membros', $lista_membros)->with('acolhida', $acolhida);
+        return view('convivencias.inscricao')->with('convivencia', $convivencia)->with('membros', $lista_membros)->with('acolhida', $acolhida)->with('casados', $lista_casados);
     }
 
     public function lista_ativas(Request $request)

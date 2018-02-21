@@ -19,9 +19,29 @@
         <th>Dados Acolhimento</th>
     </thead>
     <tbody>
-     
-   
-   
+    @foreach($casados as $casado)   
+               <tr>
+                <td>{!! $casado->no_usuario !!} e {!! $casado->no_conjuge !!}</td>
+                <td>{!! $casado->no_cidade !!}</td>
+                <td> 
+                    @if (!$acolhida
+                            ->where('convivencia_id', $convivencia->id)
+                            ->where('membro_id', $casado->id)
+                            ->pluck('is_ativo')
+                            ->first()
+                        )
+                        <font color="red"><b>NÃO</b></font>
+                    @else
+                        <font color="green"><b>SIM</b></font>
+                    @endif
+
+                    
+                </td>
+                <td>
+                    <a href="{!! route('acolhidas.edit', ['convivencia/'.$convivencia->id.'/membro/'.$casado->id ]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-home"></i> Acolhimento</a>
+                </td>
+            </tr>
+    @endforeach  
 
     
     @foreach($membros as $membro)
@@ -45,8 +65,7 @@
                 <td>
                     <a href="{!! route('acolhidas.edit', ['convivencia/'.$convivencia->id.'/membro/'.$membro->id ]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-home"></i> Acolhimento</a>
                 </td>
-            </tr>
-        
+            </tr>        
     @endforeach
 
 </tbody>

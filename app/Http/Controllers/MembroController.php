@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateMembroRequest;
@@ -65,6 +64,7 @@ class MembroController extends AppBaseController
         //$etapas = Etapa::pluck('no_etapa', 'id');
         //$etapas = Etapa::all(['id', 'no_etapa'])->pluck('no_etapa', 'id');
         $membro = new Membro;
+        $membros = Membro::where('owner_id', auth()->user()->id)->orderBy('no_usuario')->pluck('no_usuario', 'id')->all();
         $etapas = Etapa::pluck('no_etapa', 'id')->all();
         $estados = Estado::orderBy('no_estado')->pluck('no_estado', 'id')->all();
         $dioceses = Diocese::orderBy('no_diocese')->pluck('no_diocese', 'id')->all();
@@ -74,10 +74,7 @@ class MembroController extends AppBaseController
         ///$thing = Etapa::pluck('id');
         //return view('membros.create');
         //return View::make('membros.create', $etapas);
-        return view('membros.create')->with('etapas',$etapas)->with('membro',$membro)->with('carismas', $carismas)->with('equipes', $equipes)->with('dioceses', $dioceses)->with('estados', $estados);
-
-
-
+        return view('membros.create')->with('etapas',$etapas)->with('membro',$membro)->with('membros',$membros)->with('carismas', $carismas)->with('equipes', $equipes)->with('dioceses', $dioceses)->with('estados', $estados);
     }
 
     /**
@@ -121,9 +118,11 @@ class MembroController extends AppBaseController
             // store
             $membro = new Membro;
             $membro->no_usuario = $request->input('no_usuario');
+            $membro->no_conjuge = $request->input('no_conjuge');
             $membro->owner_id = auth()->user()->id;
             $membro->no_email = $request->input('no_email');
             $membro->no_sexo = $request->input('no_sexo');
+            $membro->no_estado_civil = $request->input('no_estado_civil');
             $membro->co_telefone_pais = $request->input('co_telefone_pais');
             $membro->nu_telefone = $request->input('nu_telefone');
             $membro->no_cidade = $request->input('no_cidade');
@@ -154,7 +153,56 @@ class MembroController extends AppBaseController
                 } else {
                     $membro->tipo_carisma_id = $request->input('tipo_carisma_id');
             }
+            /**
+            if (!empty($request['no_usuario_conjuge'])) {
+            $membro_conjuge = new Membro;
+            $membro_conjuge->no_usuario = $request->input('no_usuario_conjuge');
+            $membro_conjuge->owner_id = auth()->user()->id;
+            $membro_conjuge->no_email = $request->input('no_email_conjuge');
+            $membro_conjuge->no_sexo = $request->input('no_sexo_conjuge');
+            $membro_conjuge->co_telefone_pais = $request->input('co_telefone_pais_conjuge');
+            $membro_conjuge->nu_telefone = $request->input('nu_telefone_conjuge');
+            $membro_conjuge->no_cidade = $request->input('no_cidade');
+            $membro_conjuge->no_paroquia = $request->input('no_paroquia');
+            $membro_conjuge->nu_comunidade = $request->input('nu_comunidade');
+            if (empty($request['equipe_id'])) {
+                $membro_conjuge->equipe_id = null;
+                } else {
+                    $membro_conjuge->equipe_id = $request->input('equipe_id');
+            }
+            if (empty($request['etapa_id'])) {
+                $membro_conjuge->etapa_id = null;
+                } else {
+                    $membro_conjuge->etapa_id = $request->input('etapa_id');
+            }
+            if (empty($request['estado_id'])) {
+                $membro_conjuge->estado_id = null;
+                } else {
+                    $membro_conjuge->estado_id = $request->input('estado_id');
+            }
+            if (empty($request['diocese_id'])) {
+                $membro_conjuge->diocese_id = null;
+                } else {
+                    $membro_conjuge->diocese_id = $request->input('diocese_id');
+            }
+            if (empty($request['tipo_carisma_id'])) {
+                $membro_conjuge->tipo_carisma_id = null;
+                } else {
+                    $membro_conjuge->tipo_carisma_id = $request->input('tipo_carisma_id');
+            }
+            $membro_conjuge->save();  //Gravo membro e conjuge se ele existir
+            $conjuge_id = $membro_conjuge->id;
+            $membro->conjuge_id = $conjuge_id;
             $membro->save();
+            
+            //$matrimonio = Membro::find($conjuge1_id);
+            //$matrimonio->matrimonio()->attach($conjuge2_id);
+
+        } else {
+
+        **/
+            $membro->save();   //Gravo apenas membro sem conjuge
+            
             //$membro->etapas()->sync($request->get('etapas'));
             // redirect
             Flash::success('Membro criado com sucesso!');
@@ -200,6 +248,7 @@ class MembroController extends AppBaseController
         $equipes = Equipe::orderBy('no_equipe')->pluck('no_equipe', 'id');
         $dioceses = Diocese::orderBy('no_diocese')->pluck('no_diocese', 'id')->all();
         $carismas = TipoCarisma::orderBy('no_carisma')->pluck('no_carisma', 'id')->all();
+        $membros = Membro::where('owner_id', auth()->user()->id)->orderBy('no_usuario')->pluck('no_usuario', 'id')->all();
 
         //$etapa_marcada = Etapa::where('active', true)->orderBy('name')->lists('name', 'id');
 
@@ -208,7 +257,15 @@ class MembroController extends AppBaseController
 
             return redirect(route('membros.index'));
         }
-        return view('membros.edit')->with('membro', $membro)->with('etapas',$etapas)->with('carismas', $carismas)->with('equipes', $equipes)->with('dioceses', $dioceses)->with('estados', $estados);
+
+        
+        //$matrimonio = new Membro();
+        //$conjuge_id = new Membro();
+        //if (!empty($membro->conjuge_id)) {
+        
+        return view('membros.edit')->with('membro', $membro)->with('membros', $membros)->with('etapas',$etapas)->with('carismas', $carismas)->with('equipes', $equipes)->with('dioceses', $dioceses)->with('estados', $estados);
+
+        //    }
     }
 
     /**
@@ -231,37 +288,39 @@ class MembroController extends AppBaseController
         
             $membro->owner_id = auth()->user()->id;
             $membro->no_usuario = $request['no_usuario'];
+            $membro->no_conjuge = $request['no_conjuge'];
             $membro->no_email = $request['no_email'];
             $membro->no_sexo = $request['no_sexo'];
+            $membro->no_estado_civil = $request['no_estado_civil'];
             $membro->co_telefone_pais = $request['co_telefone_pais'];
             $membro->nu_telefone = $request['nu_telefone'];
             $membro->no_cidade = $request['no_cidade'];
             $membro->no_paroquia = $request['no_paroquia'];
             $membro->nu_comunidade = $request['nu_comunidade'];
             if (empty($membro->etapa_id = $request['etapa_id'])){
-                $membro->etapa_id = NULL;
+                $membro->etapa_id = null;
             } else {
                 $membro->etapa_id = $request['etapa_id'];
             }
 
             if (empty($membro->diocese_id = $request['diocese_id'])){
-                $membro->diocese_id = NULL;
+                $membro->diocese_id = null;
             } else {
                 $membro->diocese_id = $request['diocese_id'];
             }
 
             if (empty($membro->equipe_id = $request['equipe_id'])){
-                $membro->equipe_id = NULL;
+                $membro->equipe_id = null;
             } else {
                 $membro->equipe_id = $request['equipe_id'];
             }
             if (empty($membro->estado_id = $request['estado_id'])){
-                $membro->estado_id = NULL;
+                $membro->estado_id = null;
             } else {
                 $membro->estado_id = $request['estado_id'];
             }
             if (empty($membro->tipo_carisma_id = $request['tipo_carisma_id'])){
-                $membro->tipo_carisma_id = NULL;
+                $membro->tipo_carisma_id = null;
             } else {
                 $membro->tipo_carisma_id = $request['tipo_carisma_id'];
             }

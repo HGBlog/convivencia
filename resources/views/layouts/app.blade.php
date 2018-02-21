@@ -331,8 +331,19 @@
 
     </script>
 
-
-
+    <script>
+        $(document).ready(function (){
+                $("#no_estado_civil").change(function() {
+                // foo is the id of the other select box 
+                $("#no_conjuge").hide();
+                if ($(this).val() == "Casado") {
+                    $("#no_conjuge").show();
+                }else {
+                    $("#no_conjuge").hide();
+                }
+            });
+        });
+    </script>
     @yield('scripts')
 </body>
 </html>

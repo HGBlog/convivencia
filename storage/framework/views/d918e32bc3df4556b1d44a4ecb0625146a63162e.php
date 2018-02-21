@@ -19,7 +19,21 @@
 
               <?php echo Form::select('no_sexo', ['M' => 'Masculino', 'F' => 'Feminino'], null, ['class' => 'form-control', 'placeholder'=>'Selecione']); ?>
 
+            </div>            
+            <div class="form-group col-sm-6">
+              <?php echo Form::label('no_estado_civil', 'Estado Civil:'); ?>
+
+              <?php echo Form::select('no_estado_civil', ['Solteiro' => 'Solteiro', 'Casado' => 'Casado','Viúvo' => 'Viúvo', 'Separado' => 'Separado'], null, ['class' => 'form-control', 'placeholder'=>'Selecione']); ?>
+
             </div>
+
+                <div class="form-group col-sm-12">
+                  <?php echo Form::label('no_conjuge', ' '); ?>
+
+                  <?php echo Form::text('no_conjuge', null, ['class' => 'form-control', 'placeholder'=>'Nome completo do Cônjuge']); ?>
+
+                </div>
+
         <!-- Estado Field -->
             <div class="form-group col-sm-6">
             <?php echo Form::label('estado_id', 'Estado'); ?>

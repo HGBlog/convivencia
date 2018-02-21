@@ -50,6 +50,8 @@ class Membro extends Model
         'equipe_id',
         'tipo_carisma_id',
         'estado_id',
+        'no_conjuge',
+        'no_estado_civil'
     ];
 
 
@@ -74,6 +76,8 @@ class Membro extends Model
         'equipe_id' => 'nullable|integer',
         'tipo_carisma_id' => 'nullable|integer',
         'estado_id' => 'nullable|integer',
+        'no_conjuge' => 'string',
+        'no_estado_civil' => 'string'
     ];
 
     /**
@@ -98,6 +102,11 @@ class Membro extends Model
     {
         return $this->hasOne(\App\Models\Responsavel::class, 'owner_id', 'id');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     **/
+    
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
