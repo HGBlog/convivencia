@@ -332,18 +332,28 @@
     </script>
 
     <script>
-        $(document).ready(function (){
-                $("#no_estado_civil").change(function() {
-                // foo is the id of the other select box 
-                $("#no_conjuge").hide();
-                if ($(this).val() == "Casado") {
-                    $("#no_conjuge").show();
-                }else {
-                    $("#no_conjuge").hide();
-                }
+        /**
+         * File: js/showhide.js
+         * Author: design1online.com, LLC
+         * Purpose: toggle the visibility of fields depending on the value of another field
+         **/
+        $(document).ready(function () {
+            toggleFields(); //call this first so we start out with the correct visibility depending on the selected form values
+            //this will call our toggleFields function every time the selection value of our underAge field changes
+            $("#no_estado_civil").change(function () {
+                toggleFields();
             });
+
         });
+        //this toggles the visibility of our parent permission fields depending on the current selected value of the underAge field
+        function toggleFields() {
+            if ($("#no_estado_civil").val() == "Casado")
+                $("#no_conjuge").show();
+            else
+                $("#no_conjuge").hide();
+        }
     </script>
+    
     @yield('scripts')
 </body>
 </html>
