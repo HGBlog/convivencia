@@ -15,11 +15,11 @@
                     <div class="clearfix"></div>
                         <div class="content">
                             <div class="panel-body">
-                                @if(Auth::user()->hasRole('usuario'))
+                                @if(Auth::user()->hasRole('usuario') | empty(Auth::user()->hasRole('admin')|Auth::user()->hasRole('responsavel')))
                                     Você acessou o Sistema como um usuário sem permissão para criação de Equipe e inscrição em Convivência. Aguarde a autorização do Centro Neocatecumenal de Brasília para em breve você receber o privilégio necessário no Sistema para realização das Inscrições em Convivência.
                                     Qualquer dúvida, mande um email para cncbrasilia@gmail.com informando esta mensagem de erro e solicitando autorização.
                                 @endif
-                                @if(Auth::user()->hasRole('admin') | Auth::user()->hasRole('responsavel') )
+                                @if(Auth::user()->hasRole('admin') | Auth::user()->hasAnyRole('responsavel'))
                                     <div class="col-lg-3 col-xs-6">
                                               <!-- small box -->
                                               <div class="small-box bg-yellow">

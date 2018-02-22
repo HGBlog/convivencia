@@ -25,31 +25,7 @@ Route::group(['middleware' => 'auth'], function() {
 
 	Route::get('/home', 'HomeController@index')->name('home');
 
-	Route::get('/convivencias/lista_ativas', ['as' => 'convivencias.lista_ativas', 'uses' => 'ConvivenciaController@lista_ativas']);
-
-	Route::resource('convivencias', 'ConvivenciaController');
-
-	Route::resource('convivenciaMembros', 'ConvivenciaMembroController');
-
-	Route::resource('tipoQuartos', 'TipoQuartoController');
-
-	Route::resource('acolhidaExtras', 'AcolhidaExtraController');
-
-	Route::resource('acolhidas', 'AcolhidaController');
-
-	Route::resource('usuarios', 'UsuarioController');
-
-	Route::resource('tipoCarismas', 'TipoCarismaController');
-
-	Route::resource('tipoCarismas', 'TipoCarismaController');
-
-	Route::resource('tipoTranslados', 'TipoTransladoController');
-
-	Route::resource('equipes', 'EquipeController');
-
-	Route::resource('convivencias', 'ConvivenciaController');
-
-	Route::resource('usuarios', 'UsuarioController');
+	Route::get('/convivencias/lista_ativas', ['as' => 'convivencias.lista_ativas', 'uses' => 'ConvivenciaController@lista_ativas']);	
 
 	//Atualizacao do Perfil de Usuario
 	Route::get ('/usuarios/{usuario}/perfil','UsuarioController@perfil');
@@ -77,53 +53,28 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::patch ('/acolhidas/convivencia/{convivencia}/membro/{membro}','AcolhidaController@update');
 	Route::put ('/acolhidas/convivencia/{convivencia}/membro/{membro}','AcolhidaController@update');
 
+	
+
 	Route::resource('acolhidas', 'AcolhidaController');
 
-    Route::resource('etapas', 'EtapaController');
-
     Route::get ('/relatorios','ReportController@index');
+    Route::resource('usuarios', 'UsuarioController');
 
-    Route::resource('localConvivencias', 'LocalConvivenciaController');
-
-
-	Route::resource('dioceses', 'DioceseController');
-
-
-
+	Route::group([
+            //'namespace'  => 'Backpack\PermissionManager\app\Http\Controllers',
+            //'prefix'     => config('backpack.base.route_prefix', 'admin'),
+            'middleware' => ['web', 'admin','role:admin'],
+    ], function () {
+			Route::resource('dioceses', 'DioceseController');
+			Route::resource('localConvivencias', 'LocalConvivenciaController');
+			Route::resource('estados', 'EstadoController');
+			Route::resource('tipoCarismas', 'TipoCarismaController');
+			Route::resource('tipoTranslados', 'TipoTransladoController');
+			Route::resource('etapas', 'EtapaController');
+			Route::resource('convivencias', 'ConvivenciaController');
+			Route::resource('equipes', 'EquipeController');
+			Route::resource('tipoQuartos', 'TipoQuartoController');
+			Route::resource('acolhidaExtras', 'AcolhidaExtraController');
+			//Route::resource('convivenciaMembros', 'ConvivenciaMembroController');
+    });
 });
-
-
-/*
-Route::get('/relatorios', function () {
-
-  $output = public_path() . '/reports'.time().'_hello_world';
-    $report = new JasperPHP;
-    $report->process(
-    	public_path() . '/reports/Customers.jrxml',
-        $output,
-        array('pdf', 'rtf', 'xml'),
-        array(),
-        array()  
-        )->execute();
-});
-*/
-
-//Route::get('/home', 'HomeController@index');
-//Route::get('/create/ticket','TicketController@create');
-//Route::post('/create/ticket','TicketController@store');
-//Route::get('/tickets', 'TicketController@index');
-//Route::get('/edit/ticket/{id}','TicketController@edit');
-//Route::post('/edit/ticket/{id}','TicketController@update');
-//Route::delete('/delete/ticket/{id}','TicketController@destroy');
-
-
-
-
-
-
-
-
-
-
-
-Route::resource('estados', 'EstadoController');
