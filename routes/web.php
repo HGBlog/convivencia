@@ -27,6 +27,7 @@ Route::group(['middleware' => 'auth'], function() {
 
 	Route::get('/convivencias/lista_ativas', ['as' => 'convivencias.lista_ativas', 'uses' => 'ConvivenciaController@lista_ativas']);	
 
+	Route::resource('usuarios', 'UsuarioController');
 	//Atualizacao do Perfil de Usuario
 	Route::get ('/usuarios/{usuario}/perfil','UsuarioController@perfil');
 	Route::patch ('/usuarios/{usuario}',['as' => 'usuarios.perfil_update', 'uses' =>'UsuarioController@perfil_update']);
@@ -53,12 +54,9 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::patch ('/acolhidas/convivencia/{convivencia}/membro/{membro}','AcolhidaController@update');
 	Route::put ('/acolhidas/convivencia/{convivencia}/membro/{membro}','AcolhidaController@update');
 
-	
-
 	Route::resource('acolhidas', 'AcolhidaController');
-
     Route::get ('/relatorios','ReportController@index');
-    Route::resource('usuarios', 'UsuarioController');
+    
 
 	Route::group([
             //'namespace'  => 'Backpack\PermissionManager\app\Http\Controllers',
