@@ -30,9 +30,27 @@
                             ->pluck('is_ativo')
                             ->first()
                         ): ?>
-                        <font color="red"><b>NÃO</b></font>
+                        <?php if(!$acolhida
+                            ->where('convivencia_id', $convivencia->id)
+                            ->where('membro_id', $casado->id)
+                            ->pluck('is_conjuge')
+                            ->first()
+                        ): ?>
+                        <font color="red"><b>NENHUM DOS DOIS</b></font>
+                        <?php else: ?>
+                        <font color="green"><b>APENAS O CONJUGE</b></font>
+                        <?php endif; ?>
                     <?php else: ?>
-                        <font color="green"><b>SIM</b></font>
+                        <?php if($acolhida
+                            ->where('convivencia_id', $convivencia->id)
+                            ->where('membro_id', $casado->id)
+                            ->pluck('is_conjuge')
+                            ->first()
+                        ): ?>
+                        <font color="green"><b>SIM, O CASAL</b></font>
+                        <?php else: ?>
+                        <font color="green"><b>SOMENTE MARIDO</b></font>
+                        <?php endif; ?>
                     <?php endif; ?>
 
                     

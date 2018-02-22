@@ -9,12 +9,31 @@
   <div>
       <div id="step-1" class="form-group col-sm-12">
           <br>
-          <div>
-              {!! Form::label('is_ativo', 'Vai para a convivência?') !!}
+          <div class="form-group col-sm-12">
+            <div class="form-group col-sm-6">
                <label class="checkbox-inline">
-                {!! Form::checkbox('is_ativo', true, $acolhida->is_ativo, ['data-toggle' => 'toggle', 'data-on' => 'Sim',  'data-off' => 'Não',  'data-onstyle' => 'success',  'data-offstyle' => 'danger', 'data-size' => 'small']) !!}
+                {!! Form::checkbox('is_ativo', true, $acolhida->is_ativo, ['data-toggle' => 'toggle', 'data-on' => 'Sim',  'data-off' => 'Não',  'data-onstyle' => 'success',  'data-offstyle' => 'danger', 'data-size' => 'mini']) !!}
               </label>
-          </div> <br>
+
+              {!! Form::label('is_ativo', 'Vai para a convivência?') !!}
+            </div>
+              <div class="form-group col-sm-6">
+              @if (!empty($membro
+                ->where('id', $membro_id)
+                ->pluck('no_conjuge')
+                ->first()
+              ))
+               <label class="checkbox-inline">
+
+                {!! Form::checkbox('is_conjuge', true, $acolhida->is_conjuge, ['data-toggle' => 'toggle', 'data-on' => 'Sim',  'data-off' => 'Não',  'data-onstyle' => 'success',  'data-offstyle' => 'danger', 'data-size' => 'mini']) !!}
+              {!! Form::label('is_conjuge', 'O cônjuge vai?') !!}
+                        
+              </label>
+              @endif 
+
+          </div>
+        </div>
+           <br>
           <div class="form-group col-sm-6">
           {!! Form::label('tipo_translado_id', 'Translado:') !!}
           {!! Form::select('tipo_translado_id', $translado, $acolhida->tipo_translado_id, ['id' => 'tipo_translado_id', 'class' => 'form-control', 'dropdown-menu'])!!}

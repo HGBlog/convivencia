@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('content'); ?>
     <section class="content-header">
         <h1 class="pull-left"><?php echo $convivencia->no_nome; ?> em <?php echo Carbon\Carbon::parse($convivencia->dt_inicio)->format('d/m/Y'); ?></h1>

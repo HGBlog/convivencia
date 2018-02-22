@@ -16,6 +16,7 @@ class CreateAcolhidasTable extends Migration
         Schema::create('acolhidas', function (Blueprint $table) {
             $table->increments('id');
             $table->boolean('is_ativo');
+            $table->boolean('is_conjuge');
             $table->integer('membro_id')->unsigned();
             $table->integer('convivencia_id')->unsigned();
             $table->integer('acolhida_extra_id')->unsigned();

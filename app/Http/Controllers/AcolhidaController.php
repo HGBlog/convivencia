@@ -123,6 +123,9 @@ class AcolhidaController extends AppBaseController
         //$acolhida = Membro::where('owner_id', auth()->user()->id)->get();
         $acolhida = Acolhida::where('convivencia_id', $convivencia_id)->where('membro_id', $membro_id)->first();
         $translado = TipoTranslado::pluck('no_translado', 'id')->all();
+        $convivencia = new Convivencia; //Para a view 
+        $casados = Membro::where('owner_id', auth()->user()->id)->get()->where('no_conjuge','<>', ''); //notnull
+        $membro = new Membro;
 
         //$status_convivencia = ConvivenciaMembro::where('membro_id', $membro_id)->where('convivencia_id', $convivencia_id)->first();
 
@@ -134,7 +137,7 @@ class AcolhidaController extends AppBaseController
             return redirect(route('create_inscricao',[$convivencia_id, $membro_id]));
         }
 
-        return view('acolhidas.edit')->with('acolhida', $acolhida)->with('convivencia_id', $convivencia_id)->with('membro_id', $membro_id)->with('acolhida_extra', $acolhida_extra)->with('translado', $translado);
+        return view('acolhidas.edit')->with('acolhida', $acolhida)->with('convivencia_id', $convivencia_id)->with('membro_id', $membro_id)->with('acolhida_extra', $acolhida_extra)->with('translado', $translado)->with('convivencia', $convivencia)->with('casados', $casados)->with('membro',$membro);
     }
 
     /**
@@ -219,23 +222,5 @@ class AcolhidaController extends AppBaseController
         Flash::success('Acolhida deleted successfully.');
 
         return redirect(route('acolhidas.index'));
-    }
-
-    public function activation(Request $request)
-    {
-
-        $user = User::findOrFail($request->user_id);
-
-        if($user->active == 1){
-            $user->active = 0;
-        } else {
-            $user->active = 1;
-        }
-
-        return response()->json([
-          'data' => [
-            'success' => $user->save(),
-          ]
-        ]);
     }
 }

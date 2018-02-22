@@ -171,12 +171,12 @@ class ConvivenciaController extends AppBaseController
     {
         $convivencia = $this->convivenciaRepository->findWithoutFail($id);
 
-        $lista_casados = Membro::where('owner_id', auth()->user()->id)->get()->where('no_conjuge','<>', '');
+        $casados = Membro::where('owner_id', auth()->user()->id)->get()->where('no_conjuge','<>', '');
 
-        $lista_membros = Membro::where('owner_id', auth()->user()->id)->get()->where('no_conjuge', 'IS NULL', null);
+        $membros = Membro::where('owner_id', auth()->user()->id)->get()->where('no_conjuge', 'IS NULL', null);
             //print_r($lista_membros);
 
-            foreach($lista_membros as $membro) {
+            foreach($membros as $membro) {
                     /* Verifico se existe a entrada do mebro na convivencia */
                     if (!count($convivencia->membros()->where('membro_id', $membro->id)->where('convivencia_id', $id)->first())){
                             $convivencia->membros()->attach($membro->id);
@@ -193,7 +193,7 @@ class ConvivenciaController extends AppBaseController
             return redirect(route('convivencias.index'));
         }
 
-        return view('convivencias.inscricao')->with('convivencia', $convivencia)->with('membros', $lista_membros)->with('acolhida', $acolhida)->with('casados', $lista_casados);
+        return view('convivencias.inscricao')->with('convivencia', $convivencia)->with('membros', $membros)->with('acolhida', $acolhida)->with('casados', $casados);
     }
 
     public function lista_ativas(Request $request)

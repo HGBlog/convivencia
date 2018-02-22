@@ -1,20 +1,7 @@
 <table class="table table-responsive" id="convivenciaMembros-table">
 <thead>
         <th>Membro</th>
-        <!--
-        <th>Pais</th>
-        <th>Email</th>
-        <th>Sexo</th>
-        <th>Cod. Pais</th>
-        <th>Telefone</th>
-        <th>Diocese</th>
-        -->
         <th>Cidade</th>
-        <!--
-        <th>Paroquia</th>
-        <th>Comunidade</th>
-        <th>Início Caminho</th>
-        -->
         <th>Vai à Convivência?</th>
         <th>Dados Acolhimento</th>
     </thead>
@@ -30,9 +17,27 @@
                             ->pluck('is_ativo')
                             ->first()
                         )
-                        <font color="red"><b>NÃO</b></font>
+                        @if (!$acolhida
+                            ->where('convivencia_id', $convivencia->id)
+                            ->where('membro_id', $casado->id)
+                            ->pluck('is_conjuge')
+                            ->first()
+                        )
+                        <font color="red"><b>NENHUM DOS DOIS</b></font>
+                        @else
+                        <font color="green"><b>APENAS O CONJUGE</b></font>
+                        @endif
                     @else
-                        <font color="green"><b>SIM</b></font>
+                        @if ($acolhida
+                            ->where('convivencia_id', $convivencia->id)
+                            ->where('membro_id', $casado->id)
+                            ->pluck('is_conjuge')
+                            ->first()
+                        )
+                        <font color="green"><b>SIM, O CASAL</b></font>
+                        @else
+                        <font color="green"><b>SOMENTE MARIDO</b></font>
+                        @endif
                     @endif
 
                     

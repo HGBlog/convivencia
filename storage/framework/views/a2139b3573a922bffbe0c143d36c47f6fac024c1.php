@@ -1,3 +1,6 @@
+
+
+
 <?php $__env->startSection('content'); ?>
  	<section class="content-header">
         <h1 class="pull-left">Membros da Equipe - <font color="red"><b><?php echo e(Membro::where('owner_id', auth()->user()->id)->count()); ?></b> cadastrados</font></h1>
