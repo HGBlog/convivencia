@@ -1,20 +1,7 @@
 <table class="table table-responsive" id="convivenciaMembros-table">
 <thead>
         <th>Membro</th>
-        <!--
-        <th>Pais</th>
-        <th>Email</th>
-        <th>Sexo</th>
-        <th>Cod. Pais</th>
-        <th>Telefone</th>
-        <th>Diocese</th>
-        -->
         <th>Cidade</th>
-        <!--
-        <th>Paroquia</th>
-        <th>Comunidade</th>
-        <th>Início Caminho</th>
-        -->
         <th>Vai à Convivência?</th>
         <th>Dados Acolhimento</th>
     </thead>

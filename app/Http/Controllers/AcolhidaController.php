@@ -62,8 +62,9 @@ class AcolhidaController extends AppBaseController
         $acolhida_extra = AcolhidaExtra::pluck('no_acolhida_extra', 'id')->all();
         $translado = TipoTranslado::pluck('no_translado', 'id')->all();
         $status_convivencia = ConvivenciaMembro::where('membro_id', $membro_id)->where('convivencia_id', $convivencia_id)->first();
+        $membro = new Membro;
 
-        return view('acolhidas.create')->with('convivencia_id',$convivencia_id)->with('membro_id',$membro_id)->with('acolhida', $acolhida)->with('acolhida_extra', $acolhida_extra)->with('translado', $translado)->with('status_convivencia', $status_convivencia);
+        return view('acolhidas.create')->with('convivencia_id',$convivencia_id)->with('membro_id',$membro_id)->with('acolhida', $acolhida)->with('acolhida_extra', $acolhida_extra)->with('translado', $translado)->with('status_convivencia', $status_convivencia)->with('membro', $membro);
     }
 
     /**
@@ -120,7 +121,6 @@ class AcolhidaController extends AppBaseController
     public function edit($convivencia_id, $membro_id)
     {
         $acolhida_extra = AcolhidaExtra::pluck('no_acolhida_extra', 'id')->all();
-        //$acolhida = Membro::where('owner_id', auth()->user()->id)->get();
         $acolhida = Acolhida::where('convivencia_id', $convivencia_id)->where('membro_id', $membro_id)->first();
         $translado = TipoTranslado::pluck('no_translado', 'id')->all();
         $convivencia = new Convivencia; //Para a view 
