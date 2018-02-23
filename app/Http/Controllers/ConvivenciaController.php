@@ -208,7 +208,6 @@ class ConvivenciaController extends AppBaseController
  
         //Prepend adicionado para colocar a primeira da lista em branco. Retirado a pedido do Fabio
         //$convivencias->prepend('None');
-;
         
         return view('convivencias.lista_ativas',compact('convivencias'));    
     }

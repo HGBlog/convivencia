@@ -55,6 +55,22 @@ class Acolhida extends Model
         'no_observacoes'
     ];
 
+    public $searchable = [
+        'membro_id',
+        'convivencia_id',
+        'tipo_translado_id',
+        'acolhida_extra_id',
+        'dt_chegada',
+        'nu_hora_chegada',
+        'nu_voo_chegada',
+        'dt_saida',
+        'nu_hora_saida',
+        'nu_voo_saida',
+        'no_local_chegada',
+        'no_local_saida',
+        'no_observacoes'
+    ];
+
     /**
      * The attributes that should be casted to native types.
      *

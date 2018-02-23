@@ -515,6 +515,7 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\DataTables\\ConvivenciaDataTable' => __DIR__ . '/../..' . '/app/DataTables/ConvivenciaDataTable.php',
         'App\\DataTables\\DioceseDataTable' => __DIR__ . '/../..' . '/app/DataTables/DioceseDataTable.php',
+        'App\\DataTables\\AcolhidaDataTable' => __DIR__ . '/../..' . '/app/DataTables/AcolhidaDataTable.php',
         'App\\DataTables\\EstadoDataTable' => __DIR__ . '/../..' . '/app/DataTables/EstadoDataTable.php',
         'App\\DataTables\\MembroDataTable' => __DIR__ . '/../..' . '/app/DataTables/_MembroDataTable.php',
         'App\\DataTables\\PerfilUsuarioDataTable' => __DIR__ . '/../..' . '/app/DataTables/PerfilUsuarioDataTable.php',

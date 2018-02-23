@@ -10,6 +10,7 @@ return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\DataTables\\ConvivenciaDataTable' => $baseDir . '/app/DataTables/ConvivenciaDataTable.php',
     'App\\DataTables\\DioceseDataTable' => $baseDir . '/app/DataTables/DioceseDataTable.php',
+    'App\\DataTables\\AcolhidaDataTable' => $baseDir . '/app/DataTables/AcolhidaDataTable.php',
     'App\\DataTables\\EstadoDataTable' => $baseDir . '/app/DataTables/EstadoDataTable.php',
     'App\\DataTables\\MembroDataTable' => $baseDir . '/app/DataTables/_MembroDataTable.php',
     'App\\DataTables\\PerfilUsuarioDataTable' => $baseDir . '/app/DataTables/PerfilUsuarioDataTable.php',

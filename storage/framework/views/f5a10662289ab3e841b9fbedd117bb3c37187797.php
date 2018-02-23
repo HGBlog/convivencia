@@ -12,13 +12,13 @@
             <div class="clearfix"></div>
                 <div class="box box-primary">
                     <div class="box-body">
+                        
                         <?php echo Form::model(null, ['route' => ['seleciona_convivencia', 'convivencia_id'], 'method' => 'post']); ?>
 
-                        
+                        <?php echo $__env->make('convivencias.lista_ativasfields', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                         <?php echo e(Form::hidden('is_ativo', 0)); ?>
 
-
-                        <?php echo $__env->make('convivencias.lista_ativasfields', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                      
 
                         <?php echo Form::close(); ?>
 

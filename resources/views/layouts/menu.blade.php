@@ -19,6 +19,24 @@
     </a>
 </li>
 @endif
+@if(Auth::user()->hasRole('admin')|Auth::user()->hasRole('gestor_convivencias'))
+<li class="treeview">
+  <a href="#">
+    <i class="fa fa-lock"></i> <span>RELATÓRIOS</span>
+    <span class="pull-right-container">
+      <i class="fa fa-angle-left pull-right"></i>
+    </span>
+  </a>
+  <ul class="treeview-menu">
+        <li class="{{ Request::is('acolhidas*') ? 'active' : '' }}">
+            <a href="{!! route('relatorio_acolhidas') !!}"><i class="fa fa-edit"></i><span>Acolhidas</span></a>
+        </li>
+        <li class="{{ Request::is('usuarios*') ? 'active' : '' }}">
+            <a href="{!! url(config('backpack.base.route_prefix', 'admin') . '/user') !!}"><i class="fa fa-users"></i><span>Usuários, Permissões</span></a>
+        </li>
+  </ul>
+</li>
+@endif
 <br>
 @if(Auth::user()->hasRole('admin'))
 <li class="treeview">

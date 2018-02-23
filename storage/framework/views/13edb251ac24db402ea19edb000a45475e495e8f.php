@@ -3,7 +3,7 @@
     <?php echo Form::label('is_ativo', 'Habilitada:'); ?>
 
     <label class="checkbox-inline">
-        <?php echo Form::checkbox('is_ativo', true, $convivencia->is_ativo,  ['data-toggle' => 'toggle', 'data-on' => 'Sim',  'data-off' => 'Não',  'data-onstyle' => 'success',  'data-offstyle' => 'danger', 'data-size' => 'small']); ?>
+        <?php echo Form::checkbox('is_ativo', true, $convivencia->is_ativo,  ['data-toggle' => 'toggle', 'data-on' => 'Sim',  'data-off' => 'Não',  'data-onstyle' => 'success',  'data-offstyle' => 'danger', 'data-size' => 'mini']); ?>
 
     </label>
 </div>

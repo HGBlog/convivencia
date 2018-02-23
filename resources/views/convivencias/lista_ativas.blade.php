@@ -12,11 +12,11 @@
             <div class="clearfix"></div>
                 <div class="box box-primary">
                     <div class="box-body">
-                        {!! Form::model(null, ['route' => ['seleciona_convivencia', 'convivencia_id'], 'method' => 'post']) !!}
                         
-                        {{ Form::hidden('is_ativo', 0) }}
-
+                        {!! Form::model(null, ['route' => ['seleciona_convivencia', 'convivencia_id'], 'method' => 'post']) !!}
                         @include('convivencias.lista_ativasfields')
+                        {{ Form::hidden('is_ativo', 0) }}
+                      
 
                         {!! Form::close() !!}
                     </div>

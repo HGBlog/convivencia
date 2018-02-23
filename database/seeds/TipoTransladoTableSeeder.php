@@ -13,7 +13,7 @@ class TipoTransladoTableSeeder extends Seeder
     public function run()
     {
         $translado = new TipoTranslado();
-	    $translado->no_translado = 'Nenhum translado';
+	    $translado->no_translado = 'Nenhum';
 	    $translado->save();
         $translado = new TipoTranslado();
 	    $translado->no_translado = 'Translado na chegada';

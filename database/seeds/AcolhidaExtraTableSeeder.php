@@ -13,7 +13,7 @@ class AcolhidaExtraTableSeeder extends Seeder
     public function run()
     {
         $acolhida = new AcolhidaExtra();
-        $acolhida->no_acolhida_extra = 'Nenhum acolhimento';
+        $acolhida->no_acolhida_extra = 'Nenhum';
         $acolhida->save();
       	$acolhida = new AcolhidaExtra();
 	    $acolhida->no_acolhida_extra = 'Antes da Convivência';
