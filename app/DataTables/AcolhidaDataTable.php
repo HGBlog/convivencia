@@ -8,6 +8,15 @@ use Yajra\DataTables\EloquentDataTable;
 
 class AcolhidaDataTable extends DataTable
 {
+    
+protected $convivencia;
+
+public function forConvivencia($convivencia_id) {
+    $this->convivencia = $convivencia_id;
+    return $this;
+}
+
+
     /**
      * Build DataTable class.
      *
@@ -29,7 +38,13 @@ class AcolhidaDataTable extends DataTable
      */
     public function query(Acolhida $model)
     {
-        return $model->newQuery();
+        
+        //return $model->newQuery();
+        return $model->where('convivencia_id',$this->convivencia )->select('acolhidas.*');
+
+        //$query = Acolhida::where('convivencia_id',$this->convivencia )->select('acolhidas.*');
+        //return $this->applyScopes($query);
+
     }
 
     /**
@@ -47,7 +62,7 @@ class AcolhidaDataTable extends DataTable
                 'dom'     => 'Bfrtip',
                 'order'   => [[0, 'desc']],
                 'buttons' => [
-                    'create',
+                    //'create',
                     'export',
                     'print',
                     'reset',
@@ -64,21 +79,21 @@ class AcolhidaDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'is_ativo' => ['name' => 'is_ativo', 'data' => 'is_ativo'],
-            'is_conjuge' => ['name' => 'is_conjuge', 'data' => 'is_conjuge'],
-            'membro_id' => ['name' => 'membro_id', 'data' => 'membro_id'],
-            'convivencia_id' => ['name' => 'convivencia_id', 'data' => 'convivencia_id'],
-            'tipo_translado_id' => ['name' => 'tipo_translado_id', 'data' => 'tipo_translado_id'],
-            'acolhida_extra_id' => ['name' => 'acolhida_extra_id', 'data' => 'acolhida_extra_id'],
-            'dt_chegada' => ['name' => 'dt_chegada', 'data' => 'dt_chegada'],
-            'nu_hora_chegada' => ['name' => 'nu_hora_chegada', 'data' => 'nu_hora_chegada'],
-            'nu_voo_chegada' => ['name' => 'nu_voo_chegada', 'data' => 'nu_voo_chegada'],
-            'dt_saida' => ['name' => 'dt_saida', 'data' => 'dt_saida'],
-            'nu_hora_saida' => ['name' => 'nu_hora_saida', 'data' => 'nu_hora_saida'],
-            'nu_voo_saida' => ['name' => 'nu_voo_saida', 'data' => 'nu_voo_saida'],
-            'no_local_chegada' => ['name' => 'no_local_chegada', 'data' => 'no_local_chegada'],
-            'no_local_saida' => ['name' => 'no_local_saida', 'data' => 'no_local_saida'],
-            'no_observacoes' => ['name' => 'no_observacoes', 'data' => 'no_observacoes']
+            'is_ativo' => ['name' => 'is_ativo', 'data' => 'is_ativo', 'title'=>'Ativo'],
+            'is_conjuge' => ['name' => 'is_conjuge', 'data' => 'is_conjuge', 'title'=>'Conjuge'],
+            'membro_id' => ['name' => 'membro_id', 'data' => 'membro_id', 'title'=>'Membro'],
+            'convivencia_id' => ['name' => 'convivencia_id', 'data' => 'convivencia_id', 'title'=>'Convivencia'],
+            'tipo_translado_id' => ['name' => 'tipo_translado_id', 'data' => 'tipo_translado_id', 'title'=>'Translado'],
+            'acolhida_extra_id' => ['name' => 'acolhida_extra_id', 'data' => 'acolhida_extra_id', 'title'=>'Acolhida'],
+            'dt_chegada' => ['name' => 'dt_chegada', 'data' => 'dt_chegada', 'title'=>'Data Chegada'],
+            'nu_hora_chegada' => ['name' => 'nu_hora_chegada', 'data' => 'nu_hora_chegada', 'title'=>'Hora Chegada'],
+            'nu_voo_chegada' => ['name' => 'nu_voo_chegada', 'data' => 'nu_voo_chegada', 'title'=>'Vôo chegada'],
+            'dt_saida' => ['name' => 'dt_saida', 'data' => 'dt_saida', 'title'=>'Data saída'],
+            'nu_hora_saida' => ['name' => 'nu_hora_saida', 'data' => 'nu_hora_saida', 'title'=>'Hora saída'],
+            'nu_voo_saida' => ['name' => 'nu_voo_saida', 'data' => 'nu_voo_saida', 'title'=>'Vôo saída'],
+            'no_local_chegada' => ['name' => 'no_local_chegada', 'data' => 'no_local_chegada', 'title'=>'Local Chegada'],
+            'no_local_saida' => ['name' => 'no_local_saida', 'data' => 'no_local_saida', 'title'=>'Local Saída'],
+            'no_observacoes' => ['name' => 'no_observacoes', 'data' => 'no_observacoes', 'title'=>'Observações']
         ];
     }
 

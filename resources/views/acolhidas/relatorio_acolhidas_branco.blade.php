@@ -15,9 +15,9 @@
         <div class="clearfix"></div>
         <div class="box box-primary">
             <div class="box-body">
-                {!! Form::model(null, ['route' => ['relatorio_acolhidas'], 'method' => 'post']) !!}
+                {!! Form::model(null, ['route' => ['acolhidas.index'], 'method' => 'get']) !!}
                 @include('acolhidas.lista_convivenciasfields')
-                {{ Form::hidden('is_ativo', 0) }}
+                
                 {!! Form::close() !!}                
             </div>
         </div>

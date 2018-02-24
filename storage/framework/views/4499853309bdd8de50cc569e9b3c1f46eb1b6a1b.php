@@ -15,11 +15,10 @@
         <div class="clearfix"></div>
         <div class="box box-primary">
             <div class="box-body">
-                <?php echo Form::model(null, ['route' => ['relatorio_acolhidas'], 'method' => 'post']); ?>
+                <?php echo Form::model(null, ['route' => ['acolhidas.index'], 'method' => 'get']); ?>
 
                 <?php echo $__env->make('acolhidas.lista_convivenciasfields', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-                <?php echo e(Form::hidden('is_ativo', 0)); ?>
-
+                
                 <?php echo Form::close(); ?>                
             </div>
         </div>
