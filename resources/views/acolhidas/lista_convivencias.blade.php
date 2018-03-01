@@ -13,7 +13,7 @@
                 <div class="box box-primary">
                     <div class="box-body">
                         
-                        {!! Form::model(null, ['route' => ['relatorio_acolhidas'], 'method' => 'post']) !!}
+                        {!! Form::model(null, ['route' => ['relatorio_acolhidas', 'convivencia_id'], 'method' => 'post']) !!}
                         @include('acolhidas.lista_convivenciasfields')
                         {{ Form::hidden('is_ativo', 0) }}
                         {!! Form::close() !!}

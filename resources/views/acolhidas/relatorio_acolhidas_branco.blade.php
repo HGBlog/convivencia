@@ -15,7 +15,7 @@
         <div class="clearfix"></div>
         <div class="box box-primary">
             <div class="box-body">
-                {!! Form::model(null, ['route' => ['acolhidas.index'], 'method' => 'get']) !!}
+                {!! Form::model(null, ['route' => ['gera_relatorio_acolhidas', 'convivencia_id'], 'method' => 'get']) !!}
                 @include('acolhidas.lista_convivenciasfields')
                 
                 {!! Form::close() !!}                

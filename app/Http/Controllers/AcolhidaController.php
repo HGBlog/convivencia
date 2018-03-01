@@ -50,7 +50,7 @@ class AcolhidaController extends AppBaseController
         $convivencia_id = $request->convivencia_id;
         //$conv = new Convivencia;
         //dd($convivencia_id);
-        return $acolhidaDataTable->forConvivencia($convivencia_id)->render('acolhidas.index', ['convivencia_id', '$convivencia_id']);
+        return $acolhidaDataTable->forConvivencia($convivencia_id)->with('convivencia', '$convivencia_id')->render('acolhidas.index');
         //, ['convivencia_id' => $convivencia_id]);
         //return $acolhidaDataTable->render('acolhidas.index');
     }
@@ -267,23 +267,10 @@ class AcolhidaController extends AppBaseController
         $membro = new Membro;
         $acolhida_extra = new AcolhidaExtra;
         $tipo_translado = new TipoTranslado;
+        $convivencia_id = $request->convivencia_id;
+        //$conv = new Convivencia;
         //dd($convivencia_id);
-
-        //return $acolhidaDataTable->render('acolhidas.index');
-        
-        //$convivencia = $this->convivenciaRepository->findWithoutFail($id);
-        //$acolhidaDataTable = AcolhidaDataTable::where('convivencia_id', $convivencia_id)->get();
-
-        //$acolhidaDataTable = new AcolhidaDataTable;
-
-        //return $acolhidaDataTable->render('acolhidas.relatorio_acolhidas')->with('acolhidas', $acolhidas)->with('convivencias', $convivencias)->with('membro', $membro)->with('acolhida_extra', $acolhida_extra)->with('tipo_translado', $tipo_translado);
-        //dd($acolhidaDataTable);
-        return $acolhidaDataTable->render('acolhidas.index', ['convivencia_id' => $convivencia_id]);//  Fazer query
-        //return $acolhidaDataTable->queryBuilder(DB::table('acolhidas'))->where('convivencia_id', $convivencia_id)->render('acolhidas.relatorio_acolhidas')->make(true);
-        //->with('convivencias', $convivencias)->with('membro', $membro)->with('acolhida_extra', $acolhida_extra)->with('tipo_translado', $tipo_translado);
-        //dd($acolhidas->id);
-        
-        //return view('acolhidas.relatorio_acolhidas')->with('acolhidas', $acolhidas)->with('convivencias', $convivencias)->with('membro', $membro)->with('acolhida_extra', $acolhida_extra)->with('tipo_translado', $tipo_translado);
+        return $acolhidaDataTable->forConvivencia($convivencia_id)->render('acolhidas.index', ['convivencia', '$convivencia_id']);
     }
 
 

@@ -27,9 +27,17 @@ Route::group(['middleware' => 'auth'], function() {
 
 	Route::get('/convivencias/lista_ativas', ['as' => 'convivencias.lista_ativas', 'uses' => 'ConvivenciaController@lista_ativas']);	
 
+
+
+	
 	Route::get('/acolhidas/relatorio_acolhidas',['as' => 'relatorio_acolhidas', 'uses' => 'AcolhidaController@relatorio_acolhidas']);
-	//Route::post('/acolhidas/relatorio_acolhidas/{convivencia_id}', 'AcolhidaController@gera_relatorio_acolhidas');
-	Route::get('/acolhidas/{convivencia_id}',['as' => 'acolhidas', 'uses' => 'AcolhidaController@gera_relatorio_acolhidas__']);
+
+	//Route::get('/acolhidas/{convivencia}', 'AcolhidaController@gera_relatorio_acolhidas');
+	Route::get('/acolhidas/{convivencia}',['as' => 'acolhidas', 'uses' => 'AcolhidaController@gera_relatorio_acolhidas']);
+
+Route::get('/gera_relatorio_acolhidas',['as' => 'gera_relatorio_acolhidas', 'uses' => 'AcolhidaController@gera_relatorio_acolhidas']);
+
+
 
 
 	Route::resource('usuarios', 'UsuarioController');

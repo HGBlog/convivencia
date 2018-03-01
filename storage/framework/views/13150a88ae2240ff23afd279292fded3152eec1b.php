@@ -15,7 +15,7 @@
         <div class="clearfix"></div>
         <div class="box box-primary">
             <div class="box-body">
-                <?php echo Form::model(null, ['route' => ['relatorio_acolhidas'], 'method' => 'post']); ?>
+                <?php echo Form::model(null, ['route' => ['acolhidas.index', 'convivencia_id'], 'method' => 'post']); ?>
 
 
                 <?php echo e(Form::hidden('is_ativo', 0)); ?>
