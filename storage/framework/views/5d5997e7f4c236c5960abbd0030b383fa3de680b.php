@@ -34,7 +34,7 @@
 <body class="hold-transition register-page">
 <div class="register-box">
     <div class="register-logo">
-        <a href="<?php echo e(url('/home')); ?>"><b>Sistema </b>de Convivências</a>
+        <a href="<?php echo e(url('/home')); ?>">Sistema de <b>Convivências Nacionais</b></a>
     </div>
 
     <div class="register-box-body">
@@ -93,7 +93,9 @@
                 <div class="col-xs-8">
                     <div class="checkbox icheck">
                         <label>
-                            <input type="checkbox"> Eu concordo <a href="#">com os termos</a>
+                            <!--
+				<input type="checkbox"> Eu concordo <a href="#">com os termos</a>
+			    -->
                         </label>
                     </div>
                 </div>
