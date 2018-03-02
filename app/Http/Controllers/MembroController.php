@@ -258,6 +258,11 @@ class MembroController extends AppBaseController
             return redirect(route('membros.index'));
         }
 
+        if ($membro->owner_id != auth()->user()->id) {
+            Flash::error('Este membro não faz parte da sua Equipe. Você não tem permissão para edição de membros de outras Equipes.');
+
+            return redirect(route('membros.index'));
+        }
         
         //$matrimonio = new Membro();
         //$conjuge_id = new Membro();
@@ -346,6 +351,12 @@ class MembroController extends AppBaseController
 
         if (empty($membro)) {
             Flash::error('Membro não encontrado.');
+
+            return redirect(route('membros.index'));
+        }
+
+        if ($membro->owner_id != auth()->user()->id) {
+            Flash::error('Este membro não faz parte da sua Equipe. Você não tem permissão para exclusão de membros de outras Equipes.');
 
             return redirect(route('membros.index'));
         }
