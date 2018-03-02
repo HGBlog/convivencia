@@ -54,15 +54,17 @@
 
 
 
-                                Aqui colocaremos um quadro de avisos gerais e informações sobre as convivências que estão com as inscrições abertas e um link para inscrição em cada uma.
+                                Seja bem vindo ao Sistema de Convivências Nacionais do Caminho Neocatecumenal no Brasil. Por intermédio deste Sistema, receberemos as inscrições de todas as Convivências Nacionais, com a informação de todos os membros da sua Equipe e os detalhes de acolhimento para melhor recebê-los nas Convivências. 
+                                <br><br>
+                                <b align = center>..:: INSTRUÇÕES INICIAIS ::..</b> <br><br>
+                                <b>1o Passo:</b><br> Comece cadastrando todos os membros da sua Equipe no MENU ao lado Esquerdo. Tente preencher todos os campos para melhor identificar cada um. Isso nos ajudará no Acolhimento. <br><br>
+
+                                <b>2o Passo:</b><br> Inscreva os membros da sua Equipe no MENU ao lado, clicando em "CONVIVÊNCIAS". Selecione a Convivência desejada e prossiga com o cadastro. O cadastro de acolhimento é individual e deve ser preenchido para cada membro ou casal da Equipe. 
 
                                 <br><br>
 
-                                Por enquanto, acesse o MENU ao lado para mais opções...<br><br>
-
-                                O responsável começa cadastrando os membros da sua Equipe e depois deve inscrevê-los ou não na Convivência.<br><br>
+                                Qualquer dúvida, entre em contato conosco através no email: carvalho.fabiano@gmail.com ou no telefone 61-991199497 (Whatsapp)
                                 
-                                Os MENUS de ADMINISTRAÇÃO e TABELAS DE APOIO serão acessados somente pelos Administradores do Sistema para criação de NOVAS CONVIVÊNCIAS, MANUTENÇÃO DE USUÁRIOS, PERMISSÕES e inclusão de novos Tipos de Quarto, translados, etc.
 
                                 @endif 
                             </div>
