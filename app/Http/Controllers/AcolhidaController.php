@@ -62,7 +62,13 @@ class AcolhidaController extends AppBaseController
         $acolhida_extra = AcolhidaExtra::pluck('no_acolhida_extra', 'id')->all();
         $translado = TipoTranslado::pluck('no_translado', 'id')->all();
         $status_convivencia = ConvivenciaMembro::where('membro_id', $membro_id)->where('convivencia_id', $convivencia_id)->first();
-        $membro = new Membro;
+        $membro = Membro::where('id', $membro_id)->first();
+
+        if ($membro->owner_id != auth()->user()->id) {
+            Flash::error('Este membro não faz parte da sua Equipe. Você não tem permissão para inscrição de membros de outras Equipes.');
+            //return redirect(route('membros.index'));
+            return redirect(route('convivencia_inscricao',$convivencia_id));
+        }
 
         return view('acolhidas.create')->with('convivencia_id',$convivencia_id)->with('membro_id',$membro_id)->with('acolhida', $acolhida)->with('acolhida_extra', $acolhida_extra)->with('translado', $translado)->with('status_convivencia', $status_convivencia)->with('membro', $membro);
     }
@@ -97,7 +103,7 @@ class AcolhidaController extends AppBaseController
      * @param  int $id
      *
      * @return Response
-     */
+     *
     public function show($id)
     {
         $acolhida = $this->acolhidaRepository->findWithoutFail($id);
@@ -125,16 +131,21 @@ class AcolhidaController extends AppBaseController
         $translado = TipoTranslado::pluck('no_translado', 'id')->all();
         $convivencia = new Convivencia; //Para a view 
         $casados = Membro::where('owner_id', auth()->user()->id)->get()->where('no_conjuge','<>', ''); //notnull
-        $membro = new Membro;
+        //$membro = new Membro;
+        $membro = Membro::where('id', $membro_id)->first();
 
         //$status_convivencia = ConvivenciaMembro::where('membro_id', $membro_id)->where('convivencia_id', $convivencia_id)->first();
 
         if (empty($acolhida)) {
             Flash::error('Nenhum dado de acolhimento encontrado. Criando dados novos...');
-
-
             //return redirect(route('acolhidas.index'));
             return redirect(route('create_inscricao',[$convivencia_id, $membro_id]));
+        }
+
+        if ($membro->owner_id != auth()->user()->id) {
+            Flash::error('Este membro não faz parte da sua Equipe. Você não tem permissão para editar inscrição de membros de outras Equipes.');
+            //return redirect(route('membros.index'));
+            return redirect(route('convivencia_inscricao',$convivencia_id));
         }
 
         return view('acolhidas.edit')->with('acolhida', $acolhida)->with('convivencia_id', $convivencia_id)->with('membro_id', $membro_id)->with('acolhida_extra', $acolhida_extra)->with('translado', $translado)->with('convivencia', $convivencia)->with('casados', $casados)->with('membro',$membro);

@@ -193,6 +193,7 @@ class ConvivenciaController extends AppBaseController
             return redirect(route('convivencias.index'));
         }
 
+
         return view('convivencias.inscricao')->with('convivencia', $convivencia)->with('membros', $membros)->with('acolhida', $acolhida)->with('casados', $casados);
     }
 
