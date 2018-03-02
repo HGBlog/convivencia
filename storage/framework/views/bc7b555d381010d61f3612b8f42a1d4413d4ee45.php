@@ -1,7 +1,6 @@
 <table class="table table-responsive" id="convivenciaMembros-table">
 <thead>
         <th>Membro</th>
-        <th>Cidade</th>
         <th>Vai à Convivência?</th>
         <th>Dados Acolhimento</th>
     </thead>
@@ -9,7 +8,6 @@
     <?php $__currentLoopData = $casados; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $casado): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>   
                <tr>
                 <td><?php echo $casado->no_usuario; ?> e <?php echo $casado->no_conjuge; ?></td>
-                <td><?php echo $casado->no_cidade; ?></td>
                 <td> 
                     <?php if(!$acolhida
                             ->where('convivencia_id', $convivencia->id)
@@ -52,7 +50,6 @@
     <?php $__currentLoopData = $membros; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $membro): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <tr>
                 <td><?php echo $membro->no_usuario; ?></td>
-                <td><?php echo $membro->no_cidade; ?></td>
                 <td> 
                     <?php if(!$acolhida
                             ->where('convivencia_id', $convivencia->id)

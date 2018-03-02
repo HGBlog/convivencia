@@ -1,7 +1,6 @@
 <table class="table table-responsive" id="convivenciaMembros-table">
 <thead>
         <th>Membro</th>
-        <th>Cidade</th>
         <th>Vai à Convivência?</th>
         <th>Dados Acolhimento</th>
     </thead>
@@ -9,7 +8,6 @@
     @foreach($casados as $casado)   
                <tr>
                 <td>{!! $casado->no_usuario !!} e {!! $casado->no_conjuge !!}</td>
-                <td>{!! $casado->no_cidade !!}</td>
                 <td> 
                     @if (!$acolhida
                             ->where('convivencia_id', $convivencia->id)
@@ -52,7 +50,6 @@
     @foreach($membros as $membro)
             <tr>
                 <td>{!! $membro->no_usuario !!}</td>
-                <td>{!! $membro->no_cidade !!}</td>
                 <td> 
                     @if (!$acolhida
                             ->where('convivencia_id', $convivencia->id)

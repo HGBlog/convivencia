@@ -20,21 +20,29 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('/', function () {
     	return redirect('login');
 	});
-    
-    Route::resource('membros', 'MembroController');
 
 	Route::get('/home', 'HomeController@index')->name('home');
 
+	//Protegendo os resources para usuarios com permissão no Sistema
+	Route::group([
+            //'namespace'  => 'Backpack\PermissionManager\app\Http\Controllers',
+            //'prefix'     => config('backpack.base.route_prefix', 'admin'),
+            'middleware' => ['role:admin,responsavel,gestor_convivencia'],
+    ], function () {
+
+    Route::resource('membros', 'MembroController');
+
 	Route::get('/convivencias/lista_ativas', ['as' => 'convivencias.lista_ativas', 'uses' => 'ConvivenciaController@lista_ativas']);	
 
-	Route::resource('usuarios', 'UsuarioController');
 	//Atualizacao do Perfil de Usuario
 	Route::get ('/usuarios/{usuario}/perfil','UsuarioController@perfil');
-	Route::patch ('/usuarios/{usuario}',['as' => 'usuarios.perfil_update', 'uses' =>'UsuarioController@perfil_update']);
-
+	Route::patch ('/usuarios/{usuario}/perfil', ['as' => 'usuarios.perfil_update', 'uses' =>'UsuarioController@perfil_update']);
+	
+	//Troca de senha
 	Route::get('/changePassword','HomeController@showChangePasswordForm');
 	Route::post('/changePassword','HomeController@changePassword')->name('changePassword');
 
+	//Inscrição Convivência
 	Route::patch('/convivencias/{convivencia}/inscricao',['as' => 'convivencia_inscricao', 'uses' => 'ConvivenciaController@inscricao']);
 	Route::get('/convivencias/{convivencia}/inscricao',['as' => 'convivencia_inscricao', 'uses' => 'ConvivenciaController@inscricao']);
 	Route::get('/convivencias/{convivencia}/inscricao','ConvivenciaController@inscricao');
@@ -56,7 +64,10 @@ Route::group(['middleware' => 'auth'], function() {
 
 	Route::resource('acolhidas', 'AcolhidaController');
     Route::get ('/relatorios','ReportController@index');
-    
+
+    });
+
+
 
 	Route::group([
             //'namespace'  => 'Backpack\PermissionManager\app\Http\Controllers',
@@ -74,5 +85,6 @@ Route::group(['middleware' => 'auth'], function() {
 			Route::resource('tipoQuartos', 'TipoQuartoController');
 			Route::resource('acolhidaExtras', 'AcolhidaExtraController');
 			//Route::resource('convivenciaMembros', 'ConvivenciaMembroController');
+			Route::resource('usuarios', 'UsuarioController');
     });
 });
