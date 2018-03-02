@@ -24,7 +24,7 @@
                                               <!-- small box -->
                                               <div class="small-box bg-yellow">
                                                 <div class="inner">
-                                                  <h3>{{Membro::where('owner_id', auth()->user()->id)->count()}}</h3>
+                                                  <h3>{{Membro::where('owner_id', auth()->user()->id)->count() + Membro::where('owner_id', auth()->user()->id)->where('no_conjuge','<>', '')->count()}}</h3>
 
                                                   <p>Membros da Equipe</p>
                                                 </div>
