@@ -51,7 +51,7 @@
         </div>
          <div class="form-group col-sm-6">
         {!! Form::label('nu_hora_chegada', 'Hora de chegada:') !!}
-        {!! Form::text('nu_hora_chegada', null, ['class' => 'form-control']) !!}
+        {!! Form::text('nu_hora_chegada', null, ['class' => 'form-control', 'id' => 'horario', 'maxlength' => '5']) !!}
         </div>
         <div class="form-group col-sm-6">
         {!! Form::label('nu_voo_chegada', 'Número vôo:') !!}
@@ -71,7 +71,7 @@
           </div>
            <div class="form-group col-sm-6">
           {!! Form::label('nu_hora_saida', 'Hora de saída:') !!}
-          {!! Form::text('nu_hora_saida', null, ['class' => 'form-control']) !!}
+          {!! Form::text('nu_hora_saida', null, ['class' => 'form-control', 'id' => 'horario2', 'maxlength' => '5']) !!}
            </div>
            <div class="form-group col-sm-6">
           {!! Form::label('nu_voo_saida', 'Número vôo:') !!}

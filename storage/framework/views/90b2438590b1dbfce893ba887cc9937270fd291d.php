@@ -62,7 +62,7 @@
          <div class="form-group col-sm-6">
         <?php echo Form::label('nu_hora_chegada', 'Hora de chegada:'); ?>
 
-        <?php echo Form::text('nu_hora_chegada', null, ['class' => 'form-control']); ?>
+        <?php echo Form::text('nu_hora_chegada', null, ['class' => 'form-control', 'id' => 'horario', 'maxlength' => '5']); ?>
 
         </div>
         <div class="form-group col-sm-6">
@@ -90,7 +90,7 @@
            <div class="form-group col-sm-6">
           <?php echo Form::label('nu_hora_saida', 'Hora de saída:'); ?>
 
-          <?php echo Form::text('nu_hora_saida', null, ['class' => 'form-control']); ?>
+          <?php echo Form::text('nu_hora_saida', null, ['class' => 'form-control', 'id' => 'horario2', 'maxlength' => '5']); ?>
 
            </div>
            <div class="form-group col-sm-6">

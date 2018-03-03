@@ -42,7 +42,9 @@
     <!-- Bootstrap botão on/off -->
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 
-    
+    <!-- TimePicker -->
+    <link rel="stylesheet" type="text/css" href="{{ URL::to('css/jquery.timepicker.css') }}">
+
 
     @yield('css')
 </head>
@@ -199,8 +201,8 @@
     <!-- Bootstrap botão on-off-->
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
-
-
+    <!-- TimePicker -->
+    <script  src="{{ URL::to('js/jquery.timepicker.js') }}"></script>
     
     
     <!-- Tabs para os forms -->
@@ -352,6 +354,35 @@
             else
                 $("#no_conjuge").hide();
         }
+    </script>
+
+
+    <script >
+      /**
+     *TimePicker
+     **/
+     $('#horario').timepicker({
+        'orientation': 'l',
+        'noneOption': false,
+        'show2400': true,
+        'timeFormat': 'H:i',
+        'step': 30,
+     });
+
+    </script>
+
+    <script >
+      /**
+     *TimePicker
+     **/
+     $('#horario2').timepicker({
+        'orientation': 'l',
+        'noneOption': false,
+        'show2400': true,
+        'timeFormat': 'H:i',
+        'step': 30,
+     });
+
     </script>
     
     @yield('scripts')
