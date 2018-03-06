@@ -60,7 +60,7 @@
             <div class="form-group col-sm-6">
             <?php echo Form::label('nu_telefone', 'Número Telefone:'); ?>
 
-            <?php echo Form::number('nu_telefone', null, ['class' => 'form-control', 'placeholder'=>'Telefone - Apenas números', 'maxlength' => '10']); ?>
+            <?php echo Form::number('nu_telefone', null, ['class' => 'form-control fa fa-plane', 'i class' => 'fa fa-plane', 'placeholder'=>'Telefone - Apenas números', 'maxlength' => '10']); ?>
 
             </div>
       </p>        

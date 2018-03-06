@@ -9,7 +9,7 @@
 <!-- No Nome Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('no_nome', 'Nome:') !!}
-    {!! Form::text('no_nome', null, ['class' => 'form-control']) !!}
+    {!! Form::text('no_nome', null, ['class' => 'form-control', 'maxlength' => '99']) !!}
 </div>
 <!-- Local Convivencia id Field -->
 

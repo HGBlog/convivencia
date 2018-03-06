@@ -17,7 +17,7 @@ class CreateConvivenciasTable extends Migration
             $table->increments('id');
             $table->boolean('is_ativo');
             $table->integer('local_convivencia_id')->unsigned();
-            $table->string('no_nome', 50);
+            $table->string('no_nome', 100);
             $table->text('no_observacoes');
             $table->date('dt_inicio');
             $table->date('dt_fim');

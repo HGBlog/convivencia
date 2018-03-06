@@ -348,7 +348,13 @@ class Builder
         foreach ($columns as $key => $value) {
             if (! is_a($value, Column::class)) {
                 if (is_array($value)) {
-                    $attributes = array_merge(['name' => $key, 'data' => $key], $this->setTitle($key, $value));
+                    $attributes = array_merge(
+                        [
+                            'name' => $value['name'] ?? $value['data'] ?? $key,
+                            'data' => $value['data'] ?? $key,
+                        ],
+                        $this->setTitle($key, $value)
+                    );
                 } else {
                     $attributes = [
                         'name'  => $value,
@@ -658,9 +664,10 @@ class Builder
      * @param string $url
      * @param string $script
      * @param array  $data
+     * @param array  $ajaxParameters
      * @return $this
      */
-    public function minifiedAjax($url = '', $script = null, $data = [])
+    public function minifiedAjax($url = '', $script = null, $data = [], $ajaxParameters = [])
     {
         $this->ajax = [];
         $appendData = $this->makeDataScript($data);
@@ -689,6 +696,8 @@ class Builder
         }
 
         $this->ajax['data'] .= '}';
+
+        $this->ajax = array_merge($this->ajax, $ajaxParameters);
 
         return $this;
     }

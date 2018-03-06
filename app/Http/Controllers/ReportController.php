@@ -20,7 +20,7 @@ class ReportController extends Controller
      */
 public function compilar()
     {
-        $input = public_path() . '/reports/customers2.jrxml';   
+        $input = public_path() . '/reports/acolhidas.jrxml';   
         $jasper = new PHPJasper;
         $jasper->compile($input)->execute();
     }
@@ -28,7 +28,7 @@ public function compilar()
 public function index()
     {
      // coloca na variavel o caminho do novo relatório que será gerado
-        $input = public_path() . '/reports/customers2.jrxml';
+        $input = public_path() . '/reports/acolhidas.jrxml';
         $output = public_path() . '/reports/' . time() . '_Clientes';
         $options = [
             'format' => ['pdf', 'xml', 'html'],
@@ -46,7 +46,7 @@ public function index()
 // instancia um novo objeto JasperPHP
          
         $report = new PHPJasper;
-        $report->compile($input)->execute();
+        dd($report->compile($input)->output());
         // chama o método que irá gerar o relatório
         // passamos por parametro:
         // o arquivo do relatório com seu caminho completo
@@ -58,7 +58,7 @@ public function index()
             $output,
             $options
             //$this->getDatabaseConfig()
-        )->execute();
+        )->output();
 
         $file = $output . '.pdf';
         $path = $file;

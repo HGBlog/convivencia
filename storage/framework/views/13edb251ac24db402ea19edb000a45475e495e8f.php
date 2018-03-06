@@ -3,7 +3,7 @@
     <?php echo Form::label('is_ativo', 'Habilitada:'); ?>
 
     <label class="checkbox-inline">
-        <?php echo Form::checkbox('is_ativo', true, $convivencia->is_ativo,  ['data-toggle' => 'toggle', 'data-on' => 'Sim',  'data-off' => 'Não',  'data-onstyle' => 'success',  'data-offstyle' => 'danger', 'data-size' => 'small']); ?>
+        <?php echo Form::checkbox('is_ativo', true, $convivencia->is_ativo,  ['data-toggle' => 'toggle', 'data-on' => 'Sim',  'data-off' => 'Não',  'data-onstyle' => 'success',  'data-offstyle' => 'danger', 'data-size' => 'mini']); ?>
 
     </label>
 </div>
@@ -12,7 +12,7 @@
 <div class="form-group col-sm-6">
     <?php echo Form::label('no_nome', 'Nome:'); ?>
 
-    <?php echo Form::text('no_nome', null, ['class' => 'form-control']); ?>
+    <?php echo Form::text('no_nome', null, ['class' => 'form-control', 'maxlength' => '99']); ?>
 
 </div>
 <!-- Local Convivencia id Field -->

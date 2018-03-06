@@ -13,7 +13,7 @@
 Route::group(
 [
     'namespace'  => 'Backpack\Base\app\Http\Controllers',
-    'middleware' => ['role:admin'],
+    'middleware' => 'web',
     'prefix'     => config('backpack.base.route_prefix'),
 ],
 function () {
