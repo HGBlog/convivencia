@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="acolhidas2" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="798dff76-a561-4d74-9da5-8215e728cfff">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT id, is_ativo, is_conjuge, membro_id, convivencia_id, acolhida_extra_id,
+       tipo_translado_id, dt_chegada, nu_hora_chegada, nu_voo_chegada,
+       dt_saida, nu_hora_saida, nu_voo_saida, no_local_chegada, no_local_saida,
+       no_observacoes, created_at, updated_at, deleted_at
+  FROM conv.acolhidas;]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="is_ativo" class="java.lang.Boolean"/>
+	<field name="is_conjuge" class="java.lang.Boolean"/>
+	<field name="membro_id" class="java.lang.Integer"/>
+	<field name="convivencia_id" class="java.lang.Integer"/>
+	<field name="acolhida_extra_id" class="java.lang.Integer"/>
+	<field name="tipo_translado_id" class="java.lang.Integer"/>
+	<field name="dt_chegada" class="java.sql.Date"/>
+	<field name="nu_hora_chegada" class="java.lang.String"/>
+	<field name="nu_voo_chegada" class="java.lang.String"/>
+	<field name="dt_saida" class="java.sql.Date"/>
+	<field name="nu_hora_saida" class="java.lang.String"/>
+	<field name="nu_voo_saida" class="java.lang.String"/>
+	<field name="no_local_chegada" class="java.lang.String"/>
+	<field name="no_local_saida" class="java.lang.String"/>
+	<field name="no_observacoes" class="java.lang.String"/>
+	<field name="created_at" class="java.sql.Timestamp"/>
+	<field name="updated_at" class="java.sql.Timestamp"/>
+	<field name="deleted_at" class="java.sql.Timestamp"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="30" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="23" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="2" width="29" height="20" uuid="6892d729-7e28-4b10-85d1-e39d0439a4c3"/>
+				<text><![CDATA[id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="2" width="21" height="20" uuid="b40b3b92-0061-4afb-ae63-400fc5d3fcc1"/>
+				<text><![CDATA[is_ativo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="2" width="26" height="20" uuid="a453feca-6ce5-4ebf-a15c-19476dc220a9"/>
+				<text><![CDATA[convivencia_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="75" y="2" width="100" height="20" uuid="c27c0594-5d23-447a-84cc-46fc57ee5c64"/>
+				<text><![CDATA[dt_chegada]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="175" y="2" width="100" height="20" uuid="898e15dd-f4f7-482a-973f-c07fbb95adf4"/>
+				<text><![CDATA[nu_hora_chegada]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="274" y="2" width="100" height="20" uuid="83b86fdc-1050-42da-bf33-d6712b59c0e8"/>
+				<text><![CDATA[nu_voo_chegada]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="374" y="2" width="100" height="20" uuid="34d0e33b-1da6-4b5a-9e86-a5af9cd90cd8"/>
+				<text><![CDATA[dt_saida]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="473" y="2" width="100" height="20" uuid="d1e53d3f-4485-45ff-82c7-1c5bc044ca9a"/>
+				<text><![CDATA[nu_hora_saida]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="573" y="2" width="100" height="20" uuid="0b32c6fa-f9e4-48e0-b07d-823a9d353a6c"/>
+				<text><![CDATA[nu_voo_saida]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="675" y="2" width="100" height="20" uuid="bee46e45-f268-4251-a5f7-8234798c6c16"/>
+				<text><![CDATA[no_local_chegada]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="0" width="29" height="20" uuid="6198525e-ce38-4f1a-91fa-487eacc939d3"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="0" width="21" height="20" uuid="c37c4e20-91d9-4306-b2d3-2f20fdb82d86"/>
+				<textFieldExpression><![CDATA[$F{is_ativo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="0" width="26" height="20" uuid="ded32188-9780-4b9c-baaa-3d6b0529f094"/>
+				<textFieldExpression><![CDATA[$F{convivencia_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="75" y="0" width="100" height="20" uuid="f620bf1a-2be8-46d5-8221-45f53fc5f7e4"/>
+				<textFieldExpression><![CDATA[$F{dt_chegada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="175" y="0" width="100" height="20" uuid="8f14a3f9-6919-415c-b155-f7c4b59e5a64"/>
+				<textFieldExpression><![CDATA[$F{nu_hora_chegada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="274" y="0" width="100" height="20" uuid="2c51f3e1-0c27-4c5b-ac96-f995b047841b"/>
+				<textFieldExpression><![CDATA[$F{nu_voo_chegada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="374" y="-1" width="100" height="20" uuid="ff8af762-ac9f-469c-ab2c-f29c1eeae6ce"/>
+				<textFieldExpression><![CDATA[$F{dt_saida}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="473" y="0" width="100" height="20" uuid="a4a86c9e-84ff-45dd-92e4-a6d78855e48a"/>
+				<textFieldExpression><![CDATA[$F{nu_hora_saida}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="573" y="0" width="100" height="20" uuid="9fdeacae-6647-451d-979a-2f6a0530ba2b"/>
+				<textFieldExpression><![CDATA[$F{nu_voo_saida}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="675" y="0" width="100" height="20" uuid="8c41ebc1-6c1e-4f78-82e2-d0d3d2efde35"/>
+				<textFieldExpression><![CDATA[$F{no_local_chegada}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

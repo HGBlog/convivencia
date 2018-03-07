@@ -29,13 +29,13 @@ public function index()
     {
      // coloca na variavel o caminho do novo relatório que será gerado
         $input = public_path() . '/reports/acolhidas.jrxml';
-        $output = public_path() . '/reports/' . time() . '_Clientes';
+        $output = public_path() . '/reports/' . time() . '_Acolhidas';
         $options = [
             'format' => ['pdf', 'xml', 'html'],
             'locale' => 'en',
             'params' => [],
             'db_connection' => [
-		'driver'   => env('DB_CONNECTION'),
+		        'driver'   => 'postgres',
             	'host'     => env('DB_HOST'),
             	'port'     => env('DB_PORT'),
             	'username' => env('DB_USERNAME'),
@@ -46,7 +46,7 @@ public function index()
 // instancia um novo objeto JasperPHP
          
         $report = new PHPJasper;
-        dd($report->compile($input)->output());
+        $report->compile($input)->execute();
         // chama o método que irá gerar o relatório
         // passamos por parametro:
         // o arquivo do relatório com seu caminho completo
@@ -58,7 +58,7 @@ public function index()
             $output,
             $options
             //$this->getDatabaseConfig()
-        )->output();
+        )->execute();
 
         $file = $output . '.pdf';
         $path = $file;
@@ -74,6 +74,6 @@ public function index()
 // retornamos o conteudo para o navegador que íra abrir o PDF
         return response($file, 200)
             ->header('Content-Type', 'application/pdf')
-            ->header('Content-Disposition', 'inline; filename="cliente.pdf"');
+            ->header('Content-Disposition', 'inline; filename="acolhida.pdf"');
     }
 }

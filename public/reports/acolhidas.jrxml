@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="acolhidas" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dfe0fdde-8e4c-4b31-8e20-d09abb69608b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString>
+		<![CDATA[ SELECT convivencia_id, ac.is_ativo, ac.is_conjuge, m.no_usuario, m.no_conjuge, tt.no_translado, ae.no_acolhida_extra, ac.dt_chegada, ac.nu_hora_chegada, ac.no_local_chegada, ac.dt_saida, ac.nu_hora_saida, ac.no_local_saida, ac.no_observacoes
+   FROM conv.acolhidas ac
+   LEFT JOIN conv.membros m ON ac.membro_id = m.id
+   --LEFT JOIN conv.convivencias c ON c.id = ac.convivencia_id
+   LEFT JOIN conv.tipo_translados tt ON ac.tipo_translado_id = tt.id
+   LEFT JOIN conv.acolhida_extras ae ON ac.tipo_translado_id = ae.id
+   --LEFT JOIN conv.local_convivencias lc ON c.local_convivencia_id = lc.id
+  WHERE ac.is_ativo = true OR ac.is_conjuge = true;]]>
+	</queryString>
+	<field name="convivencia_id" class="java.lang.Integer"/>
+	<field name="is_ativo" class="java.lang.Boolean"/>
+	<field name="is_conjuge" class="java.lang.Boolean"/>
+	<field name="no_usuario" class="java.lang.String"/>
+	<field name="no_conjuge" class="java.lang.String"/>
+	<field name="no_translado" class="java.lang.String"/>
+	<field name="no_acolhida_extra" class="java.lang.String"/>
+	<field name="dt_chegada" class="java.sql.Date"/>
+	<field name="nu_hora_chegada" class="java.lang.String"/>
+	<field name="no_local_chegada" class="java.lang.String"/>
+	<field name="dt_saida" class="java.sql.Date"/>
+	<field name="nu_hora_saida" class="java.lang.String"/>
+	<field name="no_local_saida" class="java.lang.String"/>
+	<field name="no_observacoes" class="java.lang.String"/>
+	<variable name="convivencia_id_1" class="java.lang.Integer" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{convivencia_id}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="5" width="263" height="33" uuid="23cac960-f9c4-4f43-92f7-51df6eac2b2a"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Wood Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="63" y="39" width="200" height="22" forecolor="#FFFFFF" uuid="6f9f9c41-9377-4b7a-b740-179779e8f122"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Wood SubTitle]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="20" width="555" height="1" uuid="22cdf6b1-12bb-4853-a32c-0490672af4d8"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="54" y="1" width="100" height="20" uuid="80076a7d-a318-4a95-ac46-50b3cb2d8ff9"/>
+				<textFieldExpression><![CDATA[$F{no_usuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="153" y="1" width="100" height="20" uuid="18b6eb9b-2766-4d89-8484-a7be17015979"/>
+				<textFieldExpression><![CDATA[$F{no_conjuge}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="2" width="100" height="20" uuid="5721f6f3-6cf8-4254-bffa-45f1aba99163"/>
+				<textFieldExpression><![CDATA[$F{no_translado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="2" width="100" height="20" uuid="8950071f-72b1-4fe6-8621-c2adaf4adf2e"/>
+				<textFieldExpression><![CDATA[$F{no_acolhida_extra}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="2" width="100" height="20" uuid="24b662c6-4ed5-4407-b1c8-931f81eb52c4"/>
+				<textFieldExpression><![CDATA[$F{dt_chegada}.getDate()]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="5338812f-96c0-4e1e-a7f0-49bc7a047bf6"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="63" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="755cafa1-4d64-4987-a561-cab14edde54c"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="41" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="41e80da8-1d42-424d-9364-847af7ec1719"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="d2b67923-7d67-4e84-907b-03aee8068b96"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="055c1d43-6df3-48ca-92f9-8ef96d90807d"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
