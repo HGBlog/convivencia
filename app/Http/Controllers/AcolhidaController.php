@@ -63,6 +63,7 @@ class AcolhidaController extends AppBaseController
         $translado = TipoTranslado::pluck('no_translado', 'id')->all();
         $status_convivencia = ConvivenciaMembro::where('membro_id', $membro_id)->where('convivencia_id', $convivencia_id)->first();
         $membro = Membro::where('id', $membro_id)->first();
+        $convivencia = Convivencia::where('id', $convivencia_id)->first();
 
         if ($membro->owner_id != auth()->user()->id) {
             Flash::error('Este membro não faz parte da sua Equipe. Você não tem permissão para inscrição de membros de outras Equipes.');
@@ -70,7 +71,7 @@ class AcolhidaController extends AppBaseController
             return redirect(route('convivencia_inscricao',$convivencia_id));
         }
 
-        return view('acolhidas.create')->with('convivencia_id',$convivencia_id)->with('membro_id',$membro_id)->with('acolhida', $acolhida)->with('acolhida_extra', $acolhida_extra)->with('translado', $translado)->with('status_convivencia', $status_convivencia)->with('membro', $membro);
+        return view('acolhidas.create')->with('convivencia_id',$convivencia_id)->with('membro_id',$membro_id)->with('acolhida', $acolhida)->with('acolhida_extra', $acolhida_extra)->with('translado', $translado)->with('status_convivencia', $status_convivencia)->with('membro', $membro)->with('convivencia', $convivencia);
     }
 
     /**

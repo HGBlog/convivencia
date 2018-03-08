@@ -56,9 +56,10 @@
         <div class="form-group col-sm-6">
         <?php echo Form::label('dt_chegada', 'Data de chegada:'); ?>
 
-        <?php echo Form::date('dt_chegada', Carbon\Carbon::parse($acolhida->dt_chegada)->format('Y-m-d'), ['class' => 'form-control', 'placeholder'=>'dd-mm-AAAA']); ?>
+        <?php echo Form::date('dt_chegada', $acolhida->dt_chegada ? Carbon\Carbon::parse($acolhida->dt_chegada) : Carbon\Carbon::parse($convivencia->dt_inicio)->format('Y-m-d'), ['class' => 'form-control', 'placeholder'=>'dd-mm-AAAA']); ?>
 
         </div>
+
          <div class="form-group col-sm-6">
         <?php echo Form::label('nu_hora_chegada', 'Hora de chegada:'); ?>
 
@@ -84,7 +85,7 @@
            <div class="form-group col-sm-6">
           <?php echo Form::label('dt_saida', 'Data de saída:'); ?>
 
-          <?php echo Form::date('dt_saida', Carbon\Carbon::parse($acolhida->dt_saida)->format('Y-m-d'), ['class' => 'form-control','placeholder'=>'Formato dd-mm-AAAA']); ?>
+          <?php echo Form::date('dt_saida', $acolhida->dt_saida ? Carbon\Carbon::parse($acolhida->dt_saida) : Carbon\Carbon::parse($convivencia->dt_fim)->format('Y-m-d'), ['class' => 'form-control','placeholder'=>'Formato dd-mm-AAAA']); ?>
 
           </div>
            <div class="form-group col-sm-6">
