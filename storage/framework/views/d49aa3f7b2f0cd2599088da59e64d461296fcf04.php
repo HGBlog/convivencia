@@ -5,7 +5,7 @@
         <h1>
             Dados de Acolhimento
         </h1>
-   </section>
+    </section>
    <div class="content">
        <?php echo $__env->make('adminlte-templates::common.errors', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
        <div class="box box-primary">

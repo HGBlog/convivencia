@@ -22,8 +22,9 @@
 }
 
 .simple-tab>ul>li.active {
-  background-color: #fafafa;
-  color: black;
+  background-color: #3c8dbc;
+  font-weight: bold;
+  color: white;
 }
 
 .simple-tab>div {

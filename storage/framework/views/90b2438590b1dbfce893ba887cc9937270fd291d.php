@@ -116,7 +116,7 @@
       </div>
 
   </div>
-    <?php echo Form::submit('Salvar', ['class' => 'btn btn-primary']); ?>
+    <?php echo Form::submit('Salvar e concluir', ['class' => 'btn btn-primary']); ?>
 
-    <a href="<?php echo route('membros.index'); ?>" class="btn btn-default" >Cancel</a>
+    <a href="<?php echo route('convivencia_inscricao',$convivencia_id); ?>" class="btn btn-default" >Cancelar</a>
 </div>

@@ -60,7 +60,7 @@
             <div class="form-group col-sm-6">
             <?php echo Form::label('nu_telefone', 'Número Telefone:'); ?>
 
-            <?php echo Form::number('nu_telefone', null, ['class' => 'form-control fa fa-plane', 'i class' => 'fa fa-plane', 'placeholder'=>'Telefone - Apenas números', 'maxlength' => '10']); ?>
+            <?php echo Form::number('nu_telefone', null, ['class' => 'form-control', 'placeholder'=>'Telefone - Apenas números', 'maxlength' => '10']); ?>
 
             </div>
       </p>        
@@ -143,7 +143,7 @@
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
-    <?php echo Form::submit('Salvar', ['class' => 'btn btn-primary']); ?>
+    <?php echo Form::submit('Salvar e concluir', ['class' => 'btn btn-primary']); ?>
 
-    <a href="<?php echo route('membros.index'); ?>" class="btn btn-default">Cancel</a>
+    <a href="<?php echo route('membros.index'); ?>" class="btn btn-default">Cancelar</a>
 </div>

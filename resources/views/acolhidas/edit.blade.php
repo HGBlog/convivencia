@@ -5,7 +5,7 @@
         <h1>
             Dados de Acolhimento
         </h1>
-   </section>
+    </section>
    <div class="content">
        @include('adminlte-templates::common.errors')
        <div class="box box-primary">

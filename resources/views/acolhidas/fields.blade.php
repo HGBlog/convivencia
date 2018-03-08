@@ -90,6 +90,6 @@
       </div>
 
   </div>
-    {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
-    <a href="{!! route('membros.index') !!}" class="btn btn-default" >Cancel</a>
+    {!! Form::submit('Salvar e concluir', ['class' => 'btn btn-primary']) !!}
+    <a href="{!! route('convivencia_inscricao',$convivencia_id) !!}" class="btn btn-default" >Cancelar</a>
 </div>
