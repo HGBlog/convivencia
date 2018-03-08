@@ -11,12 +11,19 @@
             </div>
             <div class="pull-left info">
                 <?php if(Auth::guest()): ?>
-                <p>InfyOm</p>
+                <p>CN</p>
                 <?php else: ?>
                     <p><?php echo e(Auth::user()->name); ?></p>
                 <?php endif; ?>
                 <!-- Status -->
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                <a href="<?php echo url('/logout'); ?>" class="fa fa-sign-out"
+                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> Sair
+                </a>
+                <form id="logout-form" action="<?php echo e(url('/logout')); ?>" method="POST" style="display: none;">
+                    <?php echo e(csrf_field()); ?>
+
+                </form>
             </div>
         </div>
 

@@ -11,12 +11,18 @@
             </div>
             <div class="pull-left info">
                 @if (Auth::guest())
-                <p>InfyOm</p>
+                <p>CN</p>
                 @else
                     <p>{{ Auth::user()->name}}</p>
                 @endif
                 <!-- Status -->
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                <a href="{!! url('/logout') !!}" class="fa fa-sign-out"
+                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> Sair
+                </a>
+                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
             </div>
         </div>
 
