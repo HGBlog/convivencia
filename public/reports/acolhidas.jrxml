@@ -7,8 +7,8 @@
 	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
 	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
 	<style name="Detail" fontName="Arial" fontSize="12"/>
-	<parameter name="convivencia_id" class="java.lang.String">
-		<defaultValueExpression><![CDATA[$P{convivencia_id}.equals( Object )]]></defaultValueExpression>
+	<parameter name="convivencia_id" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
 	<queryString>
 		<![CDATA[SELECT convivencia_id, ac.is_ativo, ac.is_conjuge, m.no_usuario, m.no_conjuge, tt.no_translado, ae.no_acolhida_extra, ac.dt_chegada, ac.nu_hora_chegada, ac.no_local_chegada, ac.dt_saida, ac.nu_hora_saida, ac.no_local_saida, ac.no_observacoes
@@ -18,7 +18,7 @@
    LEFT JOIN conv.tipo_translados tt ON ac.tipo_translado_id = tt.id
    LEFT JOIN conv.acolhida_extras ae ON ac.tipo_translado_id = ae.id
    --LEFT JOIN conv.local_convivencias lc ON c.local_convivencia_id = lc.id
-  WHERE ac.convivencia_id = '$P{convivencia_id}' AND ac.is_ativo = true OR ac.is_conjuge = true]]>
+  WHERE ac.convivencia_id = $P{convivencia_id} AND (ac.is_ativo = true OR ac.is_conjuge = true)]]>
 	</queryString>
 	<field name="convivencia_id" class="java.lang.Integer"/>
 	<field name="is_ativo" class="java.lang.Boolean"/>
@@ -126,7 +126,7 @@
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="63" splitType="Stretch">
+		<band height="61" splitType="Stretch">
 			<line>
 				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="755cafa1-4d64-4987-a561-cab14edde54c"/>
 				<graphicElement>
