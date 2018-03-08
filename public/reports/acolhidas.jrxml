@@ -7,15 +7,18 @@
 	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
 	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
 	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="convivencia_id" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{convivencia_id}.equals( Object )]]></defaultValueExpression>
+	</parameter>
 	<queryString>
-		<![CDATA[ SELECT convivencia_id, ac.is_ativo, ac.is_conjuge, m.no_usuario, m.no_conjuge, tt.no_translado, ae.no_acolhida_extra, ac.dt_chegada, ac.nu_hora_chegada, ac.no_local_chegada, ac.dt_saida, ac.nu_hora_saida, ac.no_local_saida, ac.no_observacoes
+		<![CDATA[SELECT convivencia_id, ac.is_ativo, ac.is_conjuge, m.no_usuario, m.no_conjuge, tt.no_translado, ae.no_acolhida_extra, ac.dt_chegada, ac.nu_hora_chegada, ac.no_local_chegada, ac.dt_saida, ac.nu_hora_saida, ac.no_local_saida, ac.no_observacoes
    FROM conv.acolhidas ac
    LEFT JOIN conv.membros m ON ac.membro_id = m.id
    --LEFT JOIN conv.convivencias c ON c.id = ac.convivencia_id
    LEFT JOIN conv.tipo_translados tt ON ac.tipo_translado_id = tt.id
    LEFT JOIN conv.acolhida_extras ae ON ac.tipo_translado_id = ae.id
    --LEFT JOIN conv.local_convivencias lc ON c.local_convivencia_id = lc.id
-  WHERE ac.is_ativo = true OR ac.is_conjuge = true;]]>
+  WHERE ac.convivencia_id = '$P{convivencia_id}' AND ac.is_ativo = true OR ac.is_conjuge = true]]>
 	</queryString>
 	<field name="convivencia_id" class="java.lang.Integer"/>
 	<field name="is_ativo" class="java.lang.Boolean"/>
@@ -45,7 +48,7 @@
 				<text><![CDATA[Wood Title]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="SubTitle" x="63" y="39" width="200" height="22" forecolor="#FFFFFF" uuid="6f9f9c41-9377-4b7a-b740-179779e8f122"/>
+				<reportElement style="SubTitle" x="64" y="39" width="200" height="22" forecolor="#FFFFFF" uuid="6f9f9c41-9377-4b7a-b740-179779e8f122"/>
 				<textElement textAlignment="Right"/>
 				<text><![CDATA[Wood SubTitle]]></text>
 			</staticText>
@@ -62,26 +65,30 @@
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>
 			</line>
-			<textField>
-				<reportElement x="54" y="1" width="100" height="20" uuid="80076a7d-a318-4a95-ac46-50b3cb2d8ff9"/>
-				<textFieldExpression><![CDATA[$F{no_usuario}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="153" y="1" width="100" height="20" uuid="18b6eb9b-2766-4d89-8484-a7be17015979"/>
-				<textFieldExpression><![CDATA[$F{no_conjuge}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="253" y="2" width="100" height="20" uuid="5721f6f3-6cf8-4254-bffa-45f1aba99163"/>
-				<textFieldExpression><![CDATA[$F{no_translado}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="353" y="2" width="100" height="20" uuid="8950071f-72b1-4fe6-8621-c2adaf4adf2e"/>
-				<textFieldExpression><![CDATA[$F{no_acolhida_extra}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="455" y="2" width="100" height="20" uuid="24b662c6-4ed5-4407-b1c8-931f81eb52c4"/>
-				<textFieldExpression><![CDATA[$F{dt_chegada}.getDate()]]></textFieldExpression>
-			</textField>
+			<staticText>
+				<reportElement x="104" y="2" width="100" height="20" uuid="ab5a10af-1c94-4f39-ac0f-8131bc1405ca"/>
+				<text><![CDATA[no_usuario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="2" width="100" height="20" uuid="23f2318c-7db9-4838-8413-a83360c2de1e"/>
+				<text><![CDATA[convivencia_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="204" y="2" width="100" height="20" uuid="de0039d1-2aa3-45bf-ab88-02ad55a95613"/>
+				<text><![CDATA[no_conjuge]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="304" y="2" width="100" height="20" uuid="3e364736-ac5d-45bb-b29c-fcbc1b8b9a12"/>
+				<text><![CDATA[no_translado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="405" y="2" width="100" height="20" uuid="2474608a-1f85-41d3-a50d-441c337f92a1"/>
+				<text><![CDATA[no_acolhida_extra]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="508" y="2" width="100" height="20" uuid="5ef0259b-4cdb-4064-9482-7c899f076ddb"/>
+				<text><![CDATA[dt_chegada]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
@@ -92,6 +99,30 @@
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>
 			</line>
+			<textField>
+				<reportElement x="104" y="3" width="100" height="20" uuid="1e1bfad3-051e-4afb-b16b-9a5ebacdea61"/>
+				<textFieldExpression><![CDATA[$F{no_usuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="2" width="100" height="20" uuid="03ae75fb-ff1a-4144-a520-0b6ecd91cc2e"/>
+				<textFieldExpression><![CDATA[$F{convivencia_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="204" y="4" width="100" height="20" uuid="5c1e966b-d352-44c6-b416-6beebbc4d08f"/>
+				<textFieldExpression><![CDATA[$F{no_conjuge}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="304" y="3" width="100" height="20" uuid="a9f475cd-7251-411e-8582-c67f853e2924"/>
+				<textFieldExpression><![CDATA[$F{no_translado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="405" y="3" width="100" height="20" uuid="0531655f-57fb-4f49-85db-69ebbb590f33"/>
+				<textFieldExpression><![CDATA[$F{no_acolhida_extra}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="508" y="5" width="100" height="20" uuid="c9e3e6eb-5cdc-4352-ae5e-6a695497fed2"/>
+				<textFieldExpression><![CDATA[$F{dt_chegada}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 	<columnFooter>

@@ -537,7 +537,7 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\LocalConvivenciaController' => __DIR__ . '/../..' . '/app/Http/Controllers/LocalConvivenciaController.php',
         'App\\Http\\Controllers\\MembroController' => __DIR__ . '/../..' . '/app/Http/Controllers/MembroController.php',
-        'App\\Http\\Controllers\\ReportController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReportController.php',
+        'App\\Http\\Controllers\\RelatorioController' => __DIR__ . '/../..' . '/app/Http/Controllers/RelatorioController.php',
         'App\\Http\\Controllers\\TipoCarismaController' => __DIR__ . '/../..' . '/app/Http/Controllers/TipoCarismaController.php',
         'App\\Http\\Controllers\\TipoQuartoController' => __DIR__ . '/../..' . '/app/Http/Controllers/TipoQuartoController.php',
         'App\\Http\\Controllers\\TipoTransladoController' => __DIR__ . '/../..' . '/app/Http/Controllers/TipoTransladoController.php',

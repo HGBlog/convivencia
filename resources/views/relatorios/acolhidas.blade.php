@@ -2,9 +2,8 @@
 
 @section('content')
  	<section class="content-header">
-        <h1 class="pull-left">Dados de Acolhimento</h1>
+        <h1 class="pull-left">Relatório de Acolhimento</h1>
         <h1 class="pull-right">
-           <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('acolhidas.create') !!}">Adicionar Novo</a>
         </h1>
     </section>
     <div class="content">
@@ -15,7 +14,13 @@
         <div class="clearfix"></div>
         <div class="box box-primary">
             <div class="box-body">
-                    @include('acolhidas.table')
+                        {!! Form::model(null, ['route' => ['gera_relatorio', 'convivencia_id'], 'method' => 'post']) !!}
+                        
+                        {{ Form::hidden('is_ativo', 0) }}
+
+                        @include('relatorios.acolhidasfields')
+
+                        {!! Form::close() !!}
             </div>
         </div>
         <div class="text-center">

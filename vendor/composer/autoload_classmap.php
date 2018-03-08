@@ -32,7 +32,7 @@ return array(
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\LocalConvivenciaController' => $baseDir . '/app/Http/Controllers/LocalConvivenciaController.php',
     'App\\Http\\Controllers\\MembroController' => $baseDir . '/app/Http/Controllers/MembroController.php',
-    'App\\Http\\Controllers\\ReportController' => $baseDir . '/app/Http/Controllers/ReportController.php',
+    'App\\Http\\Controllers\\RelatorioController' => $baseDir . '/app/Http/Controllers/RelatorioController.php',
     'App\\Http\\Controllers\\TipoCarismaController' => $baseDir . '/app/Http/Controllers/TipoCarismaController.php',
     'App\\Http\\Controllers\\TipoQuartoController' => $baseDir . '/app/Http/Controllers/TipoQuartoController.php',
     'App\\Http\\Controllers\\TipoTransladoController' => $baseDir . '/app/Http/Controllers/TipoTransladoController.php',

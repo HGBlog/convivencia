@@ -63,7 +63,10 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::put ('/acolhidas/convivencia/{convivencia}/membro/{membro}','AcolhidaController@update');
 
 	Route::resource('acolhidas', 'AcolhidaController');
-    Route::get ('/relatorios','ReportController@index');
+    
+    Route::get ('/relatorios','RelatorioController@index');
+    Route::get ('/relatorios/acolhidas','RelatorioController@acolhidas');
+    Route::post('/relatorios/acolhidas/gera_relatorio',['as' => 'gera_relatorio', 'uses' => 'RelatorioController@gera_relatorio']);
 
     });
 

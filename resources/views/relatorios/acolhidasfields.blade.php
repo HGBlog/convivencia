@@ -8,8 +8,8 @@
 	</div>
 <!-- Submit Field -->
 	<div class="form-group col-sm-12">
-    	{!! Form::submit('Inscrever Equipe' , ['class' => 'btn btn-primary']) !!}
-    	<a href="{!! route('membros.index') !!}" class="btn btn-default">Voltar para lista de Membros</a>
+    	{!! Form::submit('Gerar relatório' , ['class' => 'btn btn-primary']) !!}
+
 	</div>
 	@break
 	@endisset
