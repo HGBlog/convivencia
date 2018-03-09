@@ -36,5 +36,8 @@ class TipoCarismaTableSeeder extends Seeder
 	    $carisma = new TipoCarisma();
 	    $carisma->no_carisma = 'Madalena';
 	    $carisma->save();
+	   	$carisma = new TipoCarisma();
+	    $carisma->no_carisma = 'Equipe de Apoio';
+	    $carisma->save();
     }
 }
