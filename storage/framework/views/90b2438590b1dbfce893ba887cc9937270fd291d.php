@@ -111,7 +111,7 @@
       <br>
           <?php echo Form::label('no_observacoes', 'Observações:'); ?>
 
-          <?php echo Form::textarea('no_observacoes', null, ['class' => 'form-control', 'rows' => '5']); ?>
+          <?php echo Form::textarea('no_observacoes', null, ['class' => 'form-control', 'rows' => '5', 'placeholder'=>'Informações adicionais para acolhimento e hospedagem']); ?>
 
 
       </div>

@@ -1,8 +1,8 @@
 <table class="table table-responsive" id="convivenciaMembros-table">
 <thead>
-        <th>Membro</th>
+        <th>Membros</th>
         <th>Vai à Convivência?</th>
-        <th>Dados Acolhimento</th>
+        <th>Inscrição</th>
     </thead>
     <tbody>
     <?php $__currentLoopData = $casados; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $casado): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>   

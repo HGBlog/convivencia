@@ -2,9 +2,8 @@
 <table class="table table-responsive" id="membros-table">
     <thead>
         <th></th>
-        <th>Nome</th>
+        <th>Nomes</th>
         <th>Equipe</th>
-        <th>Cidade</th>
         <th colspan="3">Ações</th>
     </thead>
     <tbody>
@@ -15,7 +14,6 @@
         @if(!empty($membro->no_conjuge))
             <td>{!! $membro->no_usuario !!} e {!! $membro->no_conjuge !!}</td>
             <td>{!! $equipe->where('id', $membro->equipe_id)->pluck('no_equipe')->first() !!}</td>
-            <td>{!! $membro->no_cidade !!}</td>
             <td>
                 {!! Form::open(['route' => ['membros.destroy', $membro->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
@@ -30,7 +28,6 @@
         @else
             <td>{!! $membro->no_usuario !!}</td>
             <td>{!! $equipe->where('id', $membro->equipe_id)->pluck('no_equipe')->first() !!}</td>
-            <td>{!! $membro->no_cidade !!}</td>
             <td>
                 {!! Form::open(['route' => ['membros.destroy', $membro->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

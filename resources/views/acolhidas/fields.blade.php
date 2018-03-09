@@ -86,7 +86,7 @@
       <div id="step-4" class="form-group col-sm-12">
       <br>
           {!! Form::label('no_observacoes', 'Observações:') !!}
-          {!! Form::textarea('no_observacoes', null, ['class' => 'form-control', 'rows' => '5']) !!}
+          {!! Form::textarea('no_observacoes', null, ['class' => 'form-control', 'rows' => '5', 'placeholder'=>'Informações adicionais para acolhimento e hospedagem']) !!}
 
       </div>
 

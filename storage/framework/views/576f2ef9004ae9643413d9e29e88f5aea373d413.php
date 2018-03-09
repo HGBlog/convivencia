@@ -2,7 +2,7 @@
 <?php $__currentLoopData = $convivencias; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $convivencia): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
 	<?php if(isset($convivencia->is_ativo)): ?>
-	<div class="form-group col-sm-6">
+	<div class="form-group col-sm-5">
 	    <?php echo Form::label('convivencia_id', 'Convivência'); ?>
 
 	    <?php echo Form::select('convivencia_id', $convivencias->pluck('no_nome', 'id'), null, ['id' => 'convivencia_id', 'class' => 'form-control', 'dropdown-menu']); ?>

@@ -2,7 +2,7 @@
 @foreach($convivencias as $convivencia)
 
 	@isset ($convivencia->is_ativo)
-	<div class="form-group col-sm-6">
+	<div class="form-group col-sm-5">
 	    {!! Form::label('convivencia_id', 'Convivência') !!}
 	    {!! Form::select('convivencia_id', $convivencias->pluck('no_nome', 'id'), null, ['id' => 'convivencia_id', 'class' => 'form-control', 'dropdown-menu'])!!}
 	</div>
