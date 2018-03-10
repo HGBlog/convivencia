@@ -52,25 +52,17 @@
                                 <h2><font color="red">Não existem convivências com inscrições abertas</font></h2><br><br>
                                 <?php endif; ?>
 
-
-
                                 Bem vindos ao Sistema de Inscrições de Convivências Nacionais do Caminho Neocatecumenal do Brasil.<br>
-                                Neste Sistema você deverá fazer as inscrições em todas as Convivências com a Equipe Nacional. Todos os membros das Equipes de sua região deverão ser cadastrados <b>uma única vez</b>. As informações de viagem (meios de transporte, vôos, horários de chegada e de retorno) e informações fundamentais para as equipes de hospedagem, acolhimento, traslados e organização, na chegada e no retorno, <b>informados a cada convivência.</b><br>
-                                <b><u>Importante</u>: Todos os participantes de uma região deverão ser inscritos pelo Itinerante Responsável da Macro-região.<br> Exemplo Ceará: Equipes - CE-1, CE-2 e Ce-3 - Responsável da macro-região: Pe. Guerra.</b>
-
+                                Neste Sistema você deverá fazer as inscrições em todas as Convivências com a Equipe Nacional. Todos os membros das Equipes de sua região deverão ser cadastrados <b>uma única vez</b>. As informações de viagem (meios de transporte, vôos, horários de chegada e de retorno) e informações fundamentais para as equipes de hospedagem, acolhimento, traslados e organização, na chegada e no retorno, <b>informados a cada convivência</b>.
                                 <br><br>
-                                <b>..:: INSTRUÇÕES INICIAIS ::..</b> <br><br>
-                                <b>1o Passo:</b><br> Cadastre todos os membros das equipes da região que você é o responsável. No MENU ao lado Esquerdo, clique em <b>"Membros Equipe".</b> Preencha todos os campos possíveis, isto facilitará as equipes de apoio de: hospedagem, traslado, acolhimento e organização.  <br><br>
-
-                                <b>2o Passo:</b><br> Inscreva os membros da sua região no MENU ao lado esquerdo, clique em <b>"Convivências"</b>. Selecione a Convivência desejada e prossiga com as informações de viagem. As informações de viagem é de cada participante ou de cada casal, quando for o caso.
-
-                                <br><br>
-
-<b>Caso tenha alguma dúvida:</b><br>
-1 - Sobre a utilização do Sistema de Inscrições de Convivências Nacionais entre em contato com Osmar - (61) 99837-9414 - cncbrasilia@gmail.com<br>
-2 - Sobre acolhimentos e traslados entre em contato com a Graça: (61) 999976901 - cncbrasilia.graca@gmail.com <br>
-3 - Sobre hospedagem entre em contato com a Odisséia: (61) 99814 -8562 casaconvivencias.sfn@gmail.com
                                 
+                                <b>Dúvidas:</b>
+                                <br>
+                                1 - Sobre a <b>utilização do Sistema de Inscrições de Convivências Nacionais</b> entre em contato com Osmar - (61) 99837-9414 - cncbrasilia@gmail.com<br>
+                                2 - Sobre <b>acolhimentos e traslados</b> entre em contato com a Graça: (61) 99997-6901 - cncbrasilia.graca@gmail.com <br>
+                                3 - Sobre <b>hospedagem</b> entre em contato com a Odisséia: (61) 99814 -8562 casaconvivencias.sfn@gmail.com
+                                <br> <br>
+                                Clique <a href="#">aqui </a> para acesso ao tutorial de utilização do Sistema
 
                                 <?php endif; ?> 
                             </div>
