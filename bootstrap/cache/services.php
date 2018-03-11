@@ -53,10 +53,11 @@
     49 => 'InfyOm\\AdminLTETemplates\\AdminLTETemplatesServiceProvider',
     50 => 'Yajra\\DataTables\\DataTablesServiceProvider',
     51 => 'Yajra\\DataTables\\ButtonsServiceProvider',
-    52 => 'App\\Providers\\AppServiceProvider',
-    53 => 'App\\Providers\\AuthServiceProvider',
-    54 => 'App\\Providers\\EventServiceProvider',
-    55 => 'App\\Providers\\RouteServiceProvider',
+    52 => 'Backpack\\LangFileManager\\LangFileManagerServiceProvider',
+    53 => 'App\\Providers\\AppServiceProvider',
+    54 => 'App\\Providers\\AuthServiceProvider',
+    55 => 'App\\Providers\\EventServiceProvider',
+    56 => 'App\\Providers\\RouteServiceProvider',
   ),
   'eager' => 
   array (
@@ -97,10 +98,11 @@
     34 => 'InfyOm\\AdminLTETemplates\\AdminLTETemplatesServiceProvider',
     35 => 'Yajra\\DataTables\\DataTablesServiceProvider',
     36 => 'Yajra\\DataTables\\ButtonsServiceProvider',
-    37 => 'App\\Providers\\AppServiceProvider',
-    38 => 'App\\Providers\\AuthServiceProvider',
-    39 => 'App\\Providers\\EventServiceProvider',
-    40 => 'App\\Providers\\RouteServiceProvider',
+    37 => 'Backpack\\LangFileManager\\LangFileManagerServiceProvider',
+    38 => 'App\\Providers\\AppServiceProvider',
+    39 => 'App\\Providers\\AuthServiceProvider',
+    40 => 'App\\Providers\\EventServiceProvider',
+    41 => 'App\\Providers\\RouteServiceProvider',
   ),
   'deferred' => 
   array (
