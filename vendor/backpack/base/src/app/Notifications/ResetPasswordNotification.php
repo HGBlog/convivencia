@@ -16,6 +16,7 @@ class ResetPasswordNotification extends ResetPassword
     public function toMail($notifiable)
     {
         return (new MailMessage())
+            ->subject("Sistema de Convivências - Email para troca de senha")
             ->line([
 		'Você está recebendo este email porque nós recebemos um pedido de troca de senha para sua conta no Sistema de Convivências do Caminho Neocatecumenal no Brasil',
                 'Clique no botão abaixo para trocar a sua senha:',
