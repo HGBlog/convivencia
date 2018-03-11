@@ -21,7 +21,7 @@ class ResetPasswordNotification extends ResetPassword
 		'Você está recebendo este email porque nós recebemos um pedido de troca de senha para sua conta no Sistema de Convivências do Caminho Neocatecumenal no Brasil',
                 'Clique no botão abaixo para trocar a sua senha:',
             ])
-            ->action('Reset Password', url(config('backpack.base.route_prefix_reset_password').'/password/reset', $this->token))
+            ->action('Trocar senha', url(config('backpack.base.route_prefix_reset_password').'/password/reset', $this->token))
             ->line('Se você não solicitou a troca de senha ou desconhece este Sistema de Convivências, não se preocupe. Apenas desconsidere esta mensagem.');
     }
 }
