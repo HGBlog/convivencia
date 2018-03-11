@@ -33,4 +33,9 @@ class UsuarioRepository extends BaseRepository
     {
         return Usuario::class;
     }
+
+    public function lista_ordenado()
+    {
+        return $this->model->orderBy('name', 'ASC')->get();
+    }
 }

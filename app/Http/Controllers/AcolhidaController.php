@@ -65,7 +65,7 @@ class AcolhidaController extends AppBaseController
         $membro = Membro::where('id', $membro_id)->first();
         $convivencia = Convivencia::where('id', $convivencia_id)->first();
 
-        if ($membro->owner_id != auth()->user()->id) {
+        if (($membro->owner_id != auth()->user()->id)&($membro->mregiao_id != auth()->user()->mregiao_id)) {
             Flash::error('Este membro não faz parte da sua Equipe. Você não tem permissão para inscrição de membros de outras Equipes.');
             //return redirect(route('membros.index'));
             return redirect(route('convivencia_inscricao',$convivencia_id));
@@ -143,7 +143,7 @@ class AcolhidaController extends AppBaseController
             return redirect(route('create_inscricao',[$convivencia_id, $membro_id]));
         }
 
-        if ($membro->owner_id != auth()->user()->id) {
+        if (($membro->owner_id != auth()->user()->id)&($membro->mregiao_id != auth()->user()->mregiao_id)) {
             Flash::error('Este membro não faz parte da sua Equipe. Você não tem permissão para editar inscrição de membros de outras Equipes.');
             //return redirect(route('membros.index'));
             return redirect(route('convivencia_inscricao',$convivencia_id));

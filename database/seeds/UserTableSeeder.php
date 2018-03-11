@@ -1,8 +1,10 @@
 <?php
 
+use App\Models\MacroRegiao;
 use Illuminate\Database\Seeder;
 use Backpack\PermissionManager\app\Models\Role;
 use App\User;
+
 
 class UserTableSeeder extends Seeder
 {
@@ -16,53 +18,62 @@ class UserTableSeeder extends Seeder
            	$role_admin = Role::where('name', 'admin')->first();
 		    $role_usuario  = Role::where('name', 'usuario')->first();
 		    $role_responsavel  = Role::where('name', 'responsavel')->first();
+		    //$macroregiao  = MacroRegiao::where('no_macro_regiao', 'Brasília')->first();
 		    $admin = new User();
 		    $admin->name = 'Admin';
 		    $admin->email = 'admin@ig.com.br';
 		    $admin->password = bcrypt('123@abc');
 		    $admin->save();
 		    $admin->roles()->attach($role_admin);
+		    //$admin->macroregiao()->attach($macroregiao);
 		   	$fabiano = new User();
 		    $fabiano->name = 'Fabiano Galvao';
 		    $fabiano->email = 'euo@ig.com.br';
 		    $fabiano->password = '$2y$10$YLUdhWGRAnnKhhpdbECkDeTjs./csO0ZvqT.JEnM9pRBwsx7gjrey';
 		    $fabiano->save();
 		    $fabiano->roles()->attach($role_admin);
+		    //$fabiano->macroregiao()->attach($macroregiao);
 		    $usuario = new User();
 		    $usuario->name = 'Usuario';
 		    $usuario->email = 'usuario@ig.com.br';
 		    $usuario->password = bcrypt('123@abc');
 		    $usuario->save();
 		    $usuario->roles()->attach($role_usuario);
+		    //$usuario->macroregiao()->attach($macroregiao);
 		   	$responsavel = new User();
 		    $responsavel->name = 'Responsavel';
 		    $responsavel->email = 'responsavel@ig.com.br';
 		    $responsavel->password = bcrypt('123@abc');
 		    $responsavel->save();
 		    $responsavel->roles()->attach($role_responsavel);
+		    //$responsavel->macroregiao()->attach($macroregiao);
 		   	$responsavel = new User();
 		    $responsavel->name = 'Fabio';
 		    $responsavel->email = 'fabiojacomini@hotmail.com';
 		    $responsavel->password = '$2y$10$tdTLaPKqozKzG.eEgKAN6.8zqFq5JlUwSSFMIvCcr0AsQ6./rgYDa';
 		    $responsavel->save();
 		    $responsavel->roles()->attach($role_admin);
+		    //$responsavel->macroregiao()->attach($macroregiao);
 		   	$responsavel = new User();
 		    $responsavel->name = 'Raul';
 		    $responsavel->email = 'rvianag@gmail.com';
 		    $responsavel->password = '$2y$10$o/V5rmyOx2nz50x.Bi7nfuwoLHXCpTqq3xHPY4dozrlrJfV9dycgy';
 		    $responsavel->save();
 		    $responsavel->roles()->attach($role_admin);
+		    //$responsavel->macroregiao()->attach($macroregiao);
 		    $responsavel = new User();
 		    $responsavel->name = 'Osmar Azevedo Costa';
 		    $responsavel->email = 'cncbrasilia.osmarac@gmail.com';
 		    $responsavel->password = '$2y$10$zM.EycWdcI3SDgCgocCBCeWh9VivnRfrrJS7a6ATIhlpO6t4yK.7.';
 		    $responsavel->save();
 		    $responsavel->roles()->attach($role_admin);
+		    //$responsavel->macroregiao()->attach($macroregiao);
 		    $responsavel = new User();
 		    $responsavel->name = 'Hegberto Nunes da Silva Otávio';
 		    $responsavel->email = 'hgbm88@hotmail.com';
 		    $responsavel->password = '$2y$10$o619uoDEAKlj.CBG/mSzYeD9pNFCg6bZlWU8hcQTfFdJaykG7d6zW';
 		    $responsavel->save();
-		    $responsavel->roles()->attach($role_admin);		    
+		    $responsavel->roles()->attach($role_admin);
+		    //$responsavel->macroregiao()->attach($macroregiao);		    
     }
 }

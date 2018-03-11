@@ -37,14 +37,14 @@ class LocalConvivenciaTableSeeder extends Seeder
 	    $local->no_local = 'Casa de Convivências Arniqueiras';
 	    $local->nu_telefone = '06134567897';
 	    $local->no_cidade = 'Águas Claras';
-	    $local->no_endereco = 'INCRA 09 - Estrada para Brazlândia depois do Fassincra';
+	    $local->no_endereco = 'Arniqueiras';
 	  	$local->no_observacoes = 'Observações sobre o local';
 	    $local->save();
 	    $local = new LocalConvivencia();
 	    $local->no_local = 'Casa de Convivências Sagrada Família - Sérgio Guaraná';
 	    $local->nu_telefone = '06134567897';
 	    $local->no_cidade = 'Lago Oeste';
-	    $local->no_endereco = 'INCRA 09 - Estrada para Brazlândia depois do Fassincra';
+	    $local->no_endereco = 'Lago Oeste Rua 17';
 	  	$local->no_observacoes = 'Observações sobre o local';
 	    $local->save();
 

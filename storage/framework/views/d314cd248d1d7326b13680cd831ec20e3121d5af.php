@@ -6,7 +6,10 @@
 <li class="<?php echo e(Request::is('membros*') ? 'active' : ''); ?>">
     <a href="<?php echo route('membros.index'); ?>"><i class="fa fa-user"></i><span>Membros Equipe</span>
         <span class="pull-right-container">
-          <small class="label pull-right bg-blue"><?php echo e(Membro::where('owner_id', auth()->user()->id)->count() + Membro::where('owner_id', auth()->user()->id)->where('no_conjuge','<>', '')->count()); ?></small>
+          <small class="label pull-right bg-blue"><?php echo e(Membro::where('owner_id', auth()->user()->id)->count() +
+            Membro::where('owner_id', auth()->user()->id)->where('no_conjuge','<>', '')->count() +
+            Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('owner_id','<>', auth()->user()->id)->count() +            
+            Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('owner_id','<>', auth()->user()->id)->where('no_conjuge','<>', '')->count()); ?></small>
         </span>
     </a>
 
@@ -33,6 +36,9 @@
             <a href="<?php echo route('convivencias.index'); ?>"><i class="fa fa-edit"></i><span>Convivências</span></a>
         </li>
         <li class="<?php echo e(Request::is('usuarios*') ? 'active' : ''); ?>">
+            <a href="<?php echo route('usuarios.index'); ?>"><i class="fa fa-users"></i><span>Usuários, Macro-regiões</span></a>
+        </li>
+        <li class="<?php echo e(Request::is('usuarios*') ? 'active' : ''); ?>">
             <a href="<?php echo url(config('backpack.base.route_prefix', 'admin') . '/user'); ?>"><i class="fa fa-users"></i><span>Usuários, Permissões</span></a>
         </li>
   </ul>
@@ -51,6 +57,9 @@
         </li>
         <li class="<?php echo e(Request::is('equipes*') ? 'active' : ''); ?>">
             <a href="<?php echo route('equipes.index'); ?>"><i class="fa fa-users"></i><span>Equipes</span></a>
+        </li>
+        <li class="<?php echo e(Request::is('macroRegiaos*') ? 'active' : ''); ?>">
+            <a href="<?php echo route('macroRegiaos.index'); ?>"><i class="fa fa-edit"></i><span>Macro Regiaos</span></a>
         </li>
         <li class="<?php echo e(Request::is('localConvivencias*') ? 'active' : ''); ?>">
             <a href="<?php echo route('localConvivencias.index'); ?>"><i class="fa fa-home"></i><span>Local Convivência</span></a>
@@ -79,4 +88,6 @@
   </ul>
 </li>
 <?php endif; ?>
+
+
 

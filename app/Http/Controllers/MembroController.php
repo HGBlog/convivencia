@@ -15,6 +15,7 @@ use Illuminate\Contracts\Session;
 use Response;
 use View;
 use App\Models\Membro;
+use App\Models\MacroRegiao;
 use App\Models\Etapa;
 use App\Models\Estado;
 use App\Models\Equipe;
@@ -49,9 +50,10 @@ class MembroController extends AppBaseController
         //return view('membros.index')
         //    ->with('membros', $membros);
 
-        $membros = Membro::where('owner_id', auth()->user()->id)->orderby('no_usuario')->paginate(5);
+        $membros = Membro::where('owner_id', auth()->user()->id)->orWhere('mregiao_id', auth()->user()->mregiao_id)->orderby('no_usuario')->paginate(10);
         $equipe = new Equipe;
-        return view('membros.index',compact('membros'))->with('equipe', $equipe);
+        $macroregiao = MacroRegiao::where('id', auth()->user()->mregiao_id)->first();
+        return view('membros.index',compact('membros'))->with('equipe', $equipe)->with('macroregiao', $macroregiao);
     }
 
     /**
@@ -86,23 +88,7 @@ class MembroController extends AppBaseController
      */
     public function store(Request $request)
     {
-        //$input = $request->all();
 
-        //$membro = $this->membroRepository->create($input);
-
-        //Flash::success('Membro saved successfully.');
-
-        //return redirect(route('membros.index'));
-
-        //$membro = new Membro();
-        //$data = $this->validate($request, [
-        //    'no_usuario'=>'required'
-        //]);
-        
-        //$membro->saveMembro($data);
-        //return redirect('membros.index')->with('success', 'Novo membro da Equipe criado com sucesso!');
-        // validate
-        // read more on validation at http://laravel.com/docs/validation
         $rules = array(
             'no_usuario'       => 'required',
             //'no_email'      => 'required|email'
@@ -120,9 +106,9 @@ class MembroController extends AppBaseController
             $membro->no_usuario = $request->input('no_usuario');
             $membro->no_conjuge = $request->input('no_conjuge');
             $membro->owner_id = auth()->user()->id;
+            $membro->mregiao_id = auth()->user()->mregiao_id;
             $membro->no_email = $request->input('no_email');
-            $membro->no_sexo = $request->input('no_sexo');
-            $membro->no_estado_civil = $request->input('no_estado_civil');
+            $membro->no_tipo_pessoa = $request->input('no_tipo_pessoa');
             $membro->co_telefone_pais = $request->input('co_telefone_pais');
             $membro->nu_telefone = $request->input('nu_telefone');
             $membro->no_cidade = $request->input('no_cidade');
@@ -153,58 +139,9 @@ class MembroController extends AppBaseController
                 } else {
                     $membro->tipo_carisma_id = $request->input('tipo_carisma_id');
             }
-            /**
-            if (!empty($request['no_usuario_conjuge'])) {
-            $membro_conjuge = new Membro;
-            $membro_conjuge->no_usuario = $request->input('no_usuario_conjuge');
-            $membro_conjuge->owner_id = auth()->user()->id;
-            $membro_conjuge->no_email = $request->input('no_email_conjuge');
-            $membro_conjuge->no_sexo = $request->input('no_sexo_conjuge');
-            $membro_conjuge->co_telefone_pais = $request->input('co_telefone_pais_conjuge');
-            $membro_conjuge->nu_telefone = $request->input('nu_telefone_conjuge');
-            $membro_conjuge->no_cidade = $request->input('no_cidade');
-            $membro_conjuge->no_paroquia = $request->input('no_paroquia');
-            $membro_conjuge->nu_comunidade = $request->input('nu_comunidade');
-            if (empty($request['equipe_id'])) {
-                $membro_conjuge->equipe_id = null;
-                } else {
-                    $membro_conjuge->equipe_id = $request->input('equipe_id');
-            }
-            if (empty($request['etapa_id'])) {
-                $membro_conjuge->etapa_id = null;
-                } else {
-                    $membro_conjuge->etapa_id = $request->input('etapa_id');
-            }
-            if (empty($request['estado_id'])) {
-                $membro_conjuge->estado_id = null;
-                } else {
-                    $membro_conjuge->estado_id = $request->input('estado_id');
-            }
-            if (empty($request['diocese_id'])) {
-                $membro_conjuge->diocese_id = null;
-                } else {
-                    $membro_conjuge->diocese_id = $request->input('diocese_id');
-            }
-            if (empty($request['tipo_carisma_id'])) {
-                $membro_conjuge->tipo_carisma_id = null;
-                } else {
-                    $membro_conjuge->tipo_carisma_id = $request->input('tipo_carisma_id');
-            }
-            $membro_conjuge->save();  //Gravo membro e conjuge se ele existir
-            $conjuge_id = $membro_conjuge->id;
-            $membro->conjuge_id = $conjuge_id;
-            $membro->save();
-            
-            //$matrimonio = Membro::find($conjuge1_id);
-            //$matrimonio->matrimonio()->attach($conjuge2_id);
 
-        } else {
-
-        **/
             $membro->save();   //Gravo apenas membro sem conjuge
             
-            //$membro->etapas()->sync($request->get('etapas'));
-            // redirect
             Flash::success('Membro criado com sucesso!');
             return redirect(route('membros.index'));
         };
@@ -258,7 +195,7 @@ class MembroController extends AppBaseController
             return redirect(route('membros.index'));
         }
 
-        if ($membro->owner_id != auth()->user()->id) {
+        if (($membro->owner_id != auth()->user()->id)&($membro->mregiao_id != auth()->user()->mregiao_id)) {
             Flash::error('Este membro não faz parte da sua Equipe. Você não tem permissão para edição de membros de outras Equipes.');
 
             return redirect(route('membros.index'));
@@ -292,11 +229,11 @@ class MembroController extends AppBaseController
         }
         
             $membro->owner_id = auth()->user()->id;
+            $membro->mregiao_id = auth()->user()->mregiao_id;
             $membro->no_usuario = $request['no_usuario'];
             $membro->no_conjuge = $request['no_conjuge'];
             $membro->no_email = $request['no_email'];
-            $membro->no_sexo = $request['no_sexo'];
-            $membro->no_estado_civil = $request['no_estado_civil'];
+            $membro->no_tipo_pessoa = $request['no_tipo_pessoa'];
             $membro->co_telefone_pais = $request['co_telefone_pais'];
             $membro->nu_telefone = $request['nu_telefone'];
             $membro->no_cidade = $request['no_cidade'];
@@ -355,7 +292,7 @@ class MembroController extends AppBaseController
             return redirect(route('membros.index'));
         }
 
-        if ($membro->owner_id != auth()->user()->id) {
+        if (($membro->owner_id != auth()->user()->id)&($membro->mregiao_id != auth()->user()->mregiao_id)) {
             Flash::error('Este membro não faz parte da sua Equipe. Você não tem permissão para exclusão de membros de outras Equipes.');
 
             return redirect(route('membros.index'));

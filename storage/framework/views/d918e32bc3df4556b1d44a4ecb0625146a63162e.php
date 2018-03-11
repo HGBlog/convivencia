@@ -15,15 +15,9 @@
 
             </div>
             <div class="form-group col-sm-6">
-              <?php echo Form::label('no_sexo', 'Sexo:'); ?>
+              <?php echo Form::label('no_tipo_pessoa', 'Tipo de Pessoa:'); ?>
 
-              <?php echo Form::select('no_sexo', ['M' => 'Masculino', 'F' => 'Feminino'], null, ['class' => 'form-control', 'placeholder'=>'Selecione']); ?>
-
-            </div>            
-            <div class="form-group col-sm-6">
-              <?php echo Form::label('no_estado_civil', 'Estado Civil:'); ?>
-
-              <?php echo Form::select('no_estado_civil', ['Solteiro' => 'Solteiro', 'Casado' => 'Casado','Viúvo' => 'Viúvo', 'Separado' => 'Separado'], null, ['class' => 'form-control', 'placeholder'=>'Selecione']); ?>
+              <?php echo Form::select('no_tipo_pessoa', ['Homem' => 'Homem', 'Mulher' => 'Mulher','Casal' => 'Casal'], null, ['class' => 'form-control', 'placeholder'=>'Selecione']); ?>
 
             </div>
 

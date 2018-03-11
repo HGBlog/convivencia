@@ -12,6 +12,7 @@ use Prettus\Repository\Criteria\RequestCriteria;
 use Illuminate\Support\Facades\Redirect;
 use Response;
 use Auth;
+use App\Models\MacroRegiao;
 
 class UsuarioController extends AppBaseController
 {
@@ -32,10 +33,11 @@ class UsuarioController extends AppBaseController
     public function index(Request $request)
     {
         $this->usuarioRepository->pushCriteria(new RequestCriteria($request));
-        $usuarios = $this->usuarioRepository->all();
-
+        $usuarios = $this->usuarioRepository->lista_ordenado();
+        $macroregiao = new MacroRegiao;
         return view('usuarios.index')
-            ->with('usuarios', $usuarios);
+            ->with('usuarios', $usuarios)
+            ->with('macroregiao', $macroregiao);
     }
 
     /**
@@ -99,6 +101,7 @@ class UsuarioController extends AppBaseController
     public function edit($id)
     {
         $usuario = $this->usuarioRepository->findWithoutFail($id);
+        $macroregiaos = MacroRegiao::orderBy('no_macro_regiao')->pluck('no_macro_regiao', 'id');
 
         if (empty($usuario)) {
             Flash::error('Usuario not found');
@@ -106,7 +109,7 @@ class UsuarioController extends AppBaseController
             return redirect(route('usuarios.index'));
         }
 
-        return view('usuarios.edit')->with('usuario', $usuario);
+        return view('usuarios.edit')->with('usuario', $usuario)->with('macroregiaos', $macroregiaos);
     }
 
     /**
@@ -127,9 +130,10 @@ class UsuarioController extends AppBaseController
             return redirect(route('usuarios.index'));
         }
 
-        $usuario->name = $request->input('name');
-        $usuario->email = $request->input('email');
-        $usuario->password = bcrypt($request->input('password'));
+        //$usuario->name = $request->input('name');
+        //$usuario->email = $request->input('email');
+        //$usuario->password = bcrypt($request->input('password'));
+        $usuario->mregiao_id = $request->input('mregiao_id');
         $usuario->save();
         //$usuario = $this->usuarioRepository->update($request->all(), $id);
 

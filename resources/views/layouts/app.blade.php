@@ -342,14 +342,14 @@
         $(document).ready(function () {
             toggleFields(); //call this first so we start out with the correct visibility depending on the selected form values
             //this will call our toggleFields function every time the selection value of our underAge field changes
-            $("#no_estado_civil").change(function () {
+            $("#no_tipo_pessoa").change(function () {
                 toggleFields();
             });
 
         });
         //this toggles the visibility of our parent permission fields depending on the current selected value of the underAge field
         function toggleFields() {
-            if ($("#no_estado_civil").val() == "Casado")
+            if ($("#no_tipo_pessoa").val() == "Casal")
                 $("#no_conjuge").show();
             else
                 $("#no_conjuge").hide();

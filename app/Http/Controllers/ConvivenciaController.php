@@ -171,9 +171,9 @@ class ConvivenciaController extends AppBaseController
     {
         $convivencia = $this->convivenciaRepository->findWithoutFail($id);
 
-        $casados = Membro::where('owner_id', auth()->user()->id)->get()->where('no_conjuge','<>', '');
+        $casados = Membro::where('owner_id', auth()->user()->id)->orWhere('mregiao_id', auth()->user()->mregiao_id)->get()->where('no_conjuge','<>', '');
 
-        $membros = Membro::where('owner_id', auth()->user()->id)->get()->where('no_conjuge', 'IS NULL', null);
+        $membros = Membro::where('owner_id', auth()->user()->id)->orWhere('mregiao_id', auth()->user()->mregiao_id)->get()->where('no_conjuge', 'IS NULL', null);
             //print_r($lista_membros);
 
             foreach($membros as $membro) {

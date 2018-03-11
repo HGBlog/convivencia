@@ -33,6 +33,7 @@ class Usuario extends Model
     public $fillable = [
         'name',
         'email',
+        'mregiao_id',
         'password',
         'remember_token'
     ];
@@ -44,6 +45,7 @@ class Usuario extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'mregiao_id' => 'integer',
         'name' => 'string',
         'email' => 'string',
         'password' => 'string',
@@ -74,5 +76,10 @@ class Usuario extends Model
     public function membros()
     {
         return $this->hasMany(\App\Models\Membro::class);
+    }
+
+    public function macroregiao()
+    {
+        return $this->hasOne(\App\Models\MacroRegiao::class, 'mregiao_id', 'id');
     }
 }

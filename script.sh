@@ -19,3 +19,4 @@ php artisan infyom:scaffold Diocese --fieldsFile=exemplos/tb_diocese --datatable
 php artisan infyom:scaffold LocalConvivencia --fieldsFile=exemplos/tb_local_convivencia --datatables=false
 #php artisan infyom:scaffold PerfilUsuario --fieldsFile=exemplos/tb_perfil_usuario --datatables=false
 #php artisan infyom:scaffold DadosCaminho --fieldsFile=exemplos/tb_dados_caminho --datatables=false
+php artisan infyom:scaffold MacroRegiao --fieldsFile=exemplos/tb_macroregiaos --datatables=true

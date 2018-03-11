@@ -12,7 +12,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-		      // Role comes before User seeder here.
+		      // MacroRegiao seeder will use the roles above created.
+          $this->call(MacroRegiaoTableSeeder::class);
+          // Role comes before User seeder here.
 		      $this->call(RoleTableSeeder::class);
 		      // User seeder will use the roles above created.
 		      $this->call(UserTableSeeder::class);

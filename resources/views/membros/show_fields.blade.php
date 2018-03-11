@@ -28,12 +28,6 @@
     <p>{!! $membro->no_email !!}</p>
 </div>
 
-<!-- No Sexo Field -->
-<div class="form-group">
-    {!! Form::label('no_sexo', 'Sexo') !!}
-    <p>{!! $membro->no_sexo !!}</p>
-</div>
-
 <!-- Co Telefone Pais Field -->
 <div class="form-group">
     {!! Form::label('co_telefone_pais', 'Código Pais') !!}

@@ -39,7 +39,6 @@ class Membro extends Model
         'owner_id',
         'no_usuario',
         'no_email',
-        'no_sexo',
         'co_telefone_pais',
         'nu_telefone',
         'diocese_id',
@@ -51,7 +50,7 @@ class Membro extends Model
         'tipo_carisma_id',
         'estado_id',
         'no_conjuge',
-        'no_estado_civil'
+        'no_tipo_pessoa'
     ];
 
 
@@ -65,7 +64,6 @@ class Membro extends Model
         'no_usuario' => 'string',
         'no_pais' => 'string',
         'no_email' => 'string',
-        'no_sexo' => 'string',
         'co_telefone_pais' => 'string',
         'nu_telefone' => 'string',
         'diocese_id' => 'nullable|integer',
@@ -77,7 +75,7 @@ class Membro extends Model
         'tipo_carisma_id' => 'nullable|integer',
         'estado_id' => 'nullable|integer',
         'no_conjuge' => 'string',
-        'no_estado_civil' => 'string'
+        'no_tipo_pessoa' => 'string'
     ];
 
     /**
@@ -136,6 +134,11 @@ class Membro extends Model
         return $this->hasOne(\App\Models\Diocese::class, 'diocese_id', 'id');
     }
 
+    public function macroregiao()
+    {
+        return $this->hasOne(\App\Models\MacroRegiao::class, 'mregiao_id', 'id');
+    }
+
         public function saveMembro($data)
     {
             print_r($data);
@@ -144,7 +147,6 @@ class Membro extends Model
             $this->owner_id = auth()->user()->id;
             $this->no_usuario = $data['no_usuario'];
             $this->no_email = $data['no_email'];
-            $this->no_sexo = $data['no_sexo'];
             $this->co_telefone_pais = $data['co_telefone_pais'];
             $this->nu_telefone = $data['nu_telefone'];
             $this->no_cidade = $data['no_cidade'];
@@ -165,7 +167,6 @@ class Membro extends Model
             $membro->owner_id = auth()->user()->id;
             $membro->no_usuario = $data['no_usuario'];
             $membro->no_email = $data['no_email'];
-            $membro->no_sexo = $data['no_sexo'];
             $membro->co_telefone_pais = $data['co_telefone_pais'];
             $membro->nu_telefone = $data['nu_telefone'];
             $membro->no_cidade = $data['no_cidade'];
