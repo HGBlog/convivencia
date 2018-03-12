@@ -67,7 +67,7 @@ class MembroController extends AppBaseController
         //$etapas = Etapa::all(['id', 'no_etapa'])->pluck('no_etapa', 'id');
         $membro = new Membro;
         $membros = Membro::where('owner_id', auth()->user()->id)->orderBy('no_usuario')->pluck('no_usuario', 'id')->all();
-        $etapas = Etapa::pluck('no_etapa', 'id')->all();
+        $etapas = Etapa::orderBy('id')->pluck('no_etapa', 'id')->all();
         $estados = Estado::orderBy('no_estado')->pluck('no_estado', 'id')->all();
         $dioceses = Diocese::orderBy('no_diocese')->pluck('no_diocese', 'id')->all();
         $equipes = Equipe::orderBy('no_equipe')->pluck('no_equipe', 'id')->all();
@@ -180,7 +180,7 @@ class MembroController extends AppBaseController
     public function edit($id)
     {
         $membro = $this->membroRepository->findWithoutFail($id);
-        $etapas = Etapa::pluck('no_etapa', 'id');
+        $etapas = Etapa::orderBy('id')->pluck('no_etapa', 'id');
         $estados = Estado::orderBy('no_estado')->pluck('no_estado', 'id');
         $equipes = Equipe::orderBy('no_equipe')->pluck('no_equipe', 'id');
         $dioceses = Diocese::orderBy('no_diocese')->pluck('no_diocese', 'id')->all();

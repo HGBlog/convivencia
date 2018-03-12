@@ -64,7 +64,8 @@ class EstadoDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'no_estado'
+            'no_estado',
+            'no_sigla'
         ];
     }
 

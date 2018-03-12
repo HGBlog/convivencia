@@ -23,7 +23,8 @@ class Estado extends Model
 
 
     public $fillable = [
-        'no_estado'
+        'no_estado',
+        'no_sigla'
     ];
 
     /**
@@ -32,7 +33,8 @@ class Estado extends Model
      * @var array
      */
     protected $casts = [
-        'no_estado' => 'string'
+        'no_estado' => 'string',
+        'no_sigla' => 'string',
     ];
 
     /**
@@ -41,7 +43,9 @@ class Estado extends Model
      * @var array
      */
     public static $rules = [
-        'no_estado' => 'required'
+        'no_estado' => 'required',
+        'no_sigla' => 'required',
+
     ];
 
     

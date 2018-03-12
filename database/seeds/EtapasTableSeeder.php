@@ -52,10 +52,10 @@ class EtapasTableSeeder extends Seeder
 	    $etapa->no_etapa = 'Eleição - 2a parte';
 	    $etapa->save();
   	   	$etapa = new Etapa();
-	    $etapa->no_etapa = 'Renovação das promessas batismais';
+	    $etapa->no_etapa = 'Educação Permanente na fé';
 	    $etapa->save();
   	   	$etapa = new Etapa();
-	    $etapa->no_etapa = 'Educação Permanente na fé';
+	    $etapa->no_etapa = 'Matrimônio Espiritual';
 	    $etapa->save();
     }
 }
