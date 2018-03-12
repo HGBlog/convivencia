@@ -24,7 +24,10 @@
                                               <!-- small box -->
                                               <div class="small-box bg-yellow">
                                                 <div class="inner">
-                                                  <h3><?php echo e(Membro::where('owner_id', auth()->user()->id)->count() + Membro::where('owner_id', auth()->user()->id)->where('no_conjuge','<>', '')->count()); ?></h3>
+                                                  <h3><?php echo e(Membro::where('owner_id', auth()->user()->id)->count() +
+            Membro::where('owner_id', auth()->user()->id)->where('no_conjuge','<>', '')->count() +
+            Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('owner_id','<>', auth()->user()->id)->count() +            
+            Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('owner_id','<>', auth()->user()->id)->where('no_conjuge','<>', '')->count()); ?></h3>
 
                                                   <p>Membros da Equipe</p>
                                                 </div>
@@ -62,7 +65,7 @@
                                 2 - Sobre <b>acolhimentos e traslados</b> entre em contato com a Graça: (61) 99997-6901 - cncbrasilia.graca@gmail.com <br>
                                 3 - Sobre <b>hospedagem</b> entre em contato com a Odisséia: (61) 99814 -8562 casaconvivencias.sfn@gmail.com
                                 <br> <br>
-                                Clique <a href="#">aqui </a> para acesso ao tutorial de utilização do Sistema
+                                Clique <a href="<?php echo e(URL::to('download/Tutorial_Sistema_Convivencia.pdf')); ?>">aqui </a> para acesso ao tutorial de utilização do Sistema
 
                                 <?php endif; ?> 
                             </div>
