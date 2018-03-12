@@ -60,7 +60,7 @@
             <a href="{!! route('equipes.index') !!}"><i class="fa fa-users"></i><span>Equipes</span></a>
         </li>
         <li class="{{ Request::is('macroRegiaos*') ? 'active' : '' }}">
-            <a href="{!! route('macroRegiaos.index') !!}"><i class="fa fa-edit"></i><span>Macro Regiaos</span></a>
+            <a href="{!! route('macroRegiaos.index') !!}"><i class="fa fa-edit"></i><span>Macro- Regiões</span></a>
         </li>
         <li class="{{ Request::is('localConvivencias*') ? 'active' : '' }}">
             <a href="{!! route('localConvivencias.index') !!}"><i class="fa fa-home"></i><span>Local Convivência</span></a>
