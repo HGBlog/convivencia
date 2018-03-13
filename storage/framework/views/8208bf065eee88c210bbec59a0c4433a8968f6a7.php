@@ -16,8 +16,9 @@
                         <div class="content">
                             <div class="panel-body">
                                 <?php if(Auth::user()->hasRole('usuario') | empty(Auth::user()->hasRole('admin')|Auth::user()->hasRole('responsavel'))): ?>
-                                    Você acessou o Sistema como um usuário sem permissão para criação de Equipe e inscrição em Convivência. Aguarde a autorização do Centro Neocatecumenal de Brasília para em breve você receber o privilégio necessário no Sistema para realização das Inscrições em Convivência.
-                                    Qualquer dúvida, mande um email para cncbrasilia@gmail.com informando esta mensagem de erro e solicitando autorização para ingresso ao Sistema de Convivências Nacionais.
+                                    <h4>Você acessou o Sistema como um usuário sem permissão para criação de Equipe e inscrição em Convivência. <br>
+                                    Aguarde a autorização do Centro Neocatecumenal de Brasília para em breve você receber o privilégio necessário no Sistema para realização das Inscrições em Convivência.<br>
+                                    Qualquer dúvida, mande um email para cncbrasilia@gmail.com informando esta mensagem de erro e solicitando autorização para ingresso ao Sistema de Convivências Nacionais.</h4>
                                 <?php endif; ?>
                                 <?php if(Auth::user()->hasRole('admin') | Auth::user()->hasAnyRole('responsavel')): ?>
                                     <div class="col-lg-3 col-xs-6">
@@ -43,14 +44,17 @@
                                             </div>
 
                                 <?php if(!empty ( $convivencia )): ?>
+                                <div>
                                 <font color="red">
                                 <b>* <u>Próxima Convivência:</u> <?php echo $convivencia->no_nome; ?></b><br>
                                 <b>* <u>Data:</u> <?php echo Carbon\Carbon::parse($convivencia->dt_inicio)->format('d/m/Y'); ?> a <?php echo Carbon\Carbon::parse($convivencia->dt_fim)->format('d/m/Y'); ?><br></b>
                                 <b>* <u>Fim das inscrições:</u> <?php echo Carbon\Carbon::parse($convivencia->dt_fim_inscricao)->format('d/m/Y'); ?></b><br>
-                                <b>* <u>Local:</u> <?php echo $local->where('id', $convivencia->local_convivencia_id)->pluck('no_local')->first(); ?></b><br>                    
+                                <b>* <u>Local:</u> <?php echo $local->where('id', $convivencia->local_convivencia_id)->pluck('no_local')->first(); ?></b><br>
+                                <b>*  <?php echo $convivencia->no_observacoes; ?></b><br>                    
                                 <a class="btn btn-primary pull-left" style="margin-top: 25px" href="<?php echo route('convivencias.lista_ativas'); ?>">Inscrições</a>
                                 <br><br><br><br>
                                 </font>
+                                </div>
                                 <?php else: ?>
                                 <h2><font color="red">Não existem convivências com inscrições abertas</font></h2><br><br>
                                 <?php endif; ?>

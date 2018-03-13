@@ -20,3 +20,4 @@ php artisan infyom:scaffold LocalConvivencia --fieldsFile=exemplos/tb_local_conv
 #php artisan infyom:scaffold PerfilUsuario --fieldsFile=exemplos/tb_perfil_usuario --datatables=false
 #php artisan infyom:scaffold DadosCaminho --fieldsFile=exemplos/tb_dados_caminho --datatables=false
 php artisan infyom:scaffold MacroRegiao --fieldsFile=exemplos/tb_macroregiaos --datatables=true
+php artisan infyom:scaffold Acolhedor --fieldsFile=exemplos/tb_acolhedores --datatables=true

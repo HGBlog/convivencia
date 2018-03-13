@@ -2,9 +2,9 @@
 
 <?php $__env->startSection('content'); ?>
     <section class="content-header">
-        <h1 class="pull-left">Macro Regiaos</h1>
+        <h1 class="pull-left">Macro-regiões</h1>
         <h1 class="pull-right">
-           <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="<?php echo route('macroRegiaos.create'); ?>">Add New</a>
+           <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="<?php echo route('macroRegiaos.create'); ?>">Adicionar nova</a>
         </h1>
     </section>
     <div class="content">

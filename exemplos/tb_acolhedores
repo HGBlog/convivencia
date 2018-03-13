@@ -1,0 +1,75 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "no_acolhedor",
+        "dbType": "string,100",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "no_conjuge",
+        "dbType": "string,100",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "no_email",
+        "dbType": "string,100",
+        "htmlType": "email",
+        "searchable": true
+    },
+    {
+        "name": "nu_telefone",
+        "dbType": "string,22",
+        "htmlType": "number",
+        "searchable": true     
+    },
+    {
+        "name": "no_cidade",
+        "dbType": "string,50",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "no_paroquia",
+        "dbType": "string,100",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+       "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

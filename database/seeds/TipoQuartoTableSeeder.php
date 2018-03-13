@@ -13,16 +13,19 @@ class TipoQuartoTableSeeder extends Seeder
     public function run()
     {
         $quarto = new TipoQuarto();
-	    $quarto->no_quarto = 'Solteiro';
+	    $quarto->no_quarto = 'Individual';
 	    $quarto->save();
         $quarto = new TipoQuarto();
 	    $quarto->no_quarto = 'Casal';
 	    $quarto->save();
 	    $quarto = new TipoQuarto();
-	    $quarto->no_quarto = 'Triplo';
+	    $quarto->no_quarto = 'Duplo';
 	    $quarto->save();
 	    $quarto = new TipoQuarto();
-	    $quarto->no_quarto = 'Triplo com cama extra';
+	    $quarto->no_quarto = 'Duplo com cama Extra';
+	    $quarto->save();
+	    $quarto = new TipoQuarto();
+	    $quarto->no_quarto = 'Triplo';
 	    $quarto->save();
     }
 }

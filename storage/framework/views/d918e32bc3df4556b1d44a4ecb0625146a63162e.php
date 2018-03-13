@@ -89,7 +89,7 @@
             <div class="form-group col-sm-6">
             <?php echo Form::label('diocese_id', 'Diocese'); ?>
 
-            <?php echo Form::select('diocese_id', $dioceses, $membro->diocese_id, ['id' => 'diocese_id', 'class' => 'form-control', 'dropdown-menu', 'placeholder'=>'Selecione a Diocese']); ?>
+            <?php echo Form::select('diocese_id', $dioceses, $membro->diocese_id, ['id' => 'diocese_id', 'class' => 'form-control', 'dropdown-menu', 'placeholder'=>'Selecione a Diocese de origem']); ?>
 
             </div>
 
@@ -116,7 +116,7 @@
             <div class="form-group col-sm-6">
             <?php echo Form::label('nu_comunidade', 'Número Comunidade:'); ?>
 
-            <?php echo Form::text('nu_comunidade', null, ['class' => 'form-control', 'maxlength' => '2']); ?>
+            <?php echo Form::text('nu_comunidade', null, ['class' => 'form-control', 'placeholder'=>'Comunidade de origem', 'maxlength' => '2']); ?>
 
             </div>
 
