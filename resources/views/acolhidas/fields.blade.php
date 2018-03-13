@@ -36,11 +36,11 @@
            <br>
           <div class="form-group col-sm-6">
           {!! Form::label('tipo_translado_id', 'Translado:') !!}
-          {!! Form::select('tipo_translado_id', $translado, $acolhida->tipo_translado_id, ['id' => 'tipo_translado_id', 'class' => 'form-control', 'dropdown-menu'])!!}
+          {!! Form::select('tipo_translado_id', $translado, $acolhida->tipo_translado_id, ['id' => 'tipo_translado_id', 'class' => 'form-control', 'dropdown-menu', 'required'])!!}
           </div>
           <div class="form-group col-sm-6">
           {!! Form::label('acolhida_extra_id', 'Acolhimento Extra') !!}
-          {!! Form::select('acolhida_extra_id', $acolhida_extra, $acolhida->acolhida_extra_id, ['id' => 'acolhida_extra_id', 'class' => 'form-control', 'dropdown-menu'])!!}
+          {!! Form::select('acolhida_extra_id', $acolhida_extra, $acolhida->acolhida_extra_id, ['id' => 'acolhida_extra_id', 'class' => 'form-control', 'dropdown-menu', 'required'])!!}
           </div>
       </div>
       <div id="step-2" class="form-group col-sm-12">
