@@ -25,10 +25,8 @@
                                               <!-- small box -->
                                               <div class="small-box bg-yellow">
                                                 <div class="inner">
-                                                  <h3><?php echo e(Membro::where('owner_id', auth()->user()->id)->count() +
-            Membro::where('owner_id', auth()->user()->id)->where('no_conjuge','<>', '')->count() +
-            Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('owner_id','<>', auth()->user()->id)->count() +            
-            Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('owner_id','<>', auth()->user()->id)->where('no_conjuge','<>', '')->count()); ?></h3>
+                                                  <h3><?php echo e(Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('no_conjuge','<>', '')->count() +
+            Membro::where('mregiao_id', auth()->user()->mregiao_id)->count()); ?></h3>
 
                                                   <p>Membros da Equipe</p>
                                                 </div>

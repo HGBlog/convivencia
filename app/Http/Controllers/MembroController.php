@@ -44,16 +44,22 @@ class MembroController extends AppBaseController
      */
     public function index(Request $request)
     {
-        //$this->membroRepository->pushCriteria(new RequestCriteria($request));
-        //$membros = $this->membroRepository->all();
+        // View para Usuarios da Macro-regiao Brasilia (id 1)- Enxergam todos os registros
+        if(auth()->user()->mregiao_id == 1){
+            $equipe = new Equipe;
+            $macroregiao = MacroRegiao::where('id', auth()->user()->mregiao_id)->first();
 
-        //return view('membros.index')
-        //    ->with('membros', $membros);
+            $this->membroRepository->pushCriteria(new RequestCriteria($request));
+            $membros = $this->membroRepository->orderby('equipe_id')->orderby('no_usuario')->paginate(10);
+            return view('membros.index')->with('membros', $membros)->with('equipe', $equipe)->with('macroregiao', $macroregiao);
+        } else {
 
-        $membros = Membro::where('owner_id', auth()->user()->id)->orWhere('mregiao_id', auth()->user()->mregiao_id)->orderby('no_usuario')->paginate(10);
+        //View filtrada para os registros do usuário baseado na macro-região atual dele
+        $membros = Membro::where('mregiao_id', auth()->user()->mregiao_id)->orderby('no_usuario')->paginate(10);
         $equipe = new Equipe;
         $macroregiao = MacroRegiao::where('id', auth()->user()->mregiao_id)->first();
         return view('membros.index',compact('membros'))->with('equipe', $equipe)->with('macroregiao', $macroregiao);
+        };
     }
 
     /**
