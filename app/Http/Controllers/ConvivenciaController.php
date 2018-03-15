@@ -205,7 +205,7 @@ class ConvivenciaController extends AppBaseController
         //return view('convivencias.lista_ativas')
         //    ->with('convivencias', $convivencias);
 
-        $convivencias = Convivencia::where('is_ativo', true)->get();
+        $convivencias = Convivencia::where('is_ativo', true)->orderBy('dt_inicio')->get();
  
         //Prepend adicionado para colocar a primeira da lista em branco. Retirado a pedido do Fabio
         //$convivencias->prepend('None');

@@ -34,6 +34,15 @@ Route::group(['middleware' => 'auth'], function() {
 
 	Route::get('/convivencias/lista_ativas', ['as' => 'convivencias.lista_ativas', 'uses' => 'ConvivenciaController@lista_ativas']);	
 
+	
+	Route::get('/acolhidas/relatorio_acolhidas',['as' => 'relatorio_acolhidas', 'uses' => 'AcolhidaController@relatorio_acolhidas']);
+
+	//Route::get('/acolhidas/{convivencia}', 'AcolhidaController@gera_relatorio_acolhidas');
+	Route::get('/acolhidas/{convivencia}',['as' => 'acolhidas', 'uses' => 'AcolhidaController@gera_relatorio_acolhidas']);
+
+Route::get('/gera_relatorio_acolhidas',['as' => 'gera_relatorio_acolhidas', 'uses' => 'AcolhidaController@gera_relatorio_acolhidas']);
+
+
 	//Atualizacao do Perfil de Usuario
 	Route::get ('/usuarios/{usuario}/perfil','UsuarioController@perfil');
 	Route::patch ('/usuarios/{usuario}/perfil', ['as' => 'usuarios.perfil_update', 'uses' =>'UsuarioController@perfil_update']);

@@ -148,4 +148,41 @@ class RelatorioAcolhidaController extends AppBaseController
 
         return redirect(route('relatorioAcolhidas.index'));
     }
+
+    public function relatorio_acolhidas(Request $request)
+        {
+            //$this->acolhidaRepository->pushCriteria(new RequestCriteria($request));
+            //$acolhidas = $this->acolhidaRepository->all();
+            $convivencias = Convivencia::where('is_ativo', true)->get();
+            //$convivencia_selecionada = $this->convivenciaRepository->findWithoutFail($id);
+            if(empty($request->convivencia_id)) {
+                return view('acolhidas.relatorio_acolhidas_branco')->with('convivencias', $convivencias);
+            } else {
+            //dd($convivencias);
+                return view('acolhidas.relatorio_acolhidas')->with('convivencias', $convivencias)->with('acolhidas', $acolhidas); 
+            }
+        }
+    public function gera_relatorio_acolhidas(AcolhidaDataTable $acolhidaDataTable, Request $request)
+        {
+            $convivencias = Convivencia::where('is_ativo', true)->get();
+            $convivencia_id = $request->convivencia_id;
+            $membro = new Membro;
+            $acolhida_extra = new AcolhidaExtra;
+            $tipo_translado = new TipoTranslado;
+            $convivencia_id = $request->convivencia_id;
+            //$conv = new Convivencia;
+            //dd($convivencia_id);
+            return $acolhidaDataTable->forConvivencia($convivencia_id)->render('acolhidas.index', ['convivencia', '$convivencia_id']);
+        }
+    public function seleciona_convivencia(Request $request)
+        {
+            //$this->convivenciaRepository->pushCriteria(new RequestCriteria($request));
+            //$convivencias = $this->convivenciaRepository->all();
+            //return view('convivencias.lista_ativas')
+            //    ->with('convivencias', $convivencias);
+            //$convivencia_id = $request->input('convivencia_id');
+            $convivencia_id = $request->convivencia_id;
+         
+            return redirect(route('convivencia_inscricao', $convivencia_id));    
+        }
 }
