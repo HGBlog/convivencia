@@ -64,20 +64,21 @@ class RelatorioAcolhidaDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'convivencia_id',
-            'no_usuario',
-            'no_conjuge',
-            'no_acolhida_extra',
-            'tipo_translado',
-            'dt_chegada',
-            'nu_hora_chegada',
-            'nu_voo_chegada',
-            'no_local_chegada',
-            'dt_saida',
-            'nu_hora_saida',
-            'nu_voo_saida',
-            'no_local_saida',
-            'no_observacoes'
+            'convivencia_id' => ['name' => 'convivencia_id', 'data' => 'convivencia_id', 'title'=>'Conv'],
+            'no_usuario' => ['name' => 'no_usuario', 'data' => 'no_usuario', 'title'=>'Nome'],
+            'no_conjuge' => ['name' => 'no_conjuge', 'data' => 'no_conjuge', 'title'=>'Cônjuge'],
+            
+            'no_acolhida_extra' => ['name' => 'no_acolhida_extra', 'data' => 'no_acolhida_extra', 'title'=>'Acolhida'],
+            'tipo_translado' => ['name' => 'tipo_translado', 'data' => 'tipo_translado', 'title'=>'Translado'],
+            'dt_chegada' => ['name' => 'dt_chegada', 'data' => 'dt_chegada', 'title'=>'Chegada'],
+            'nu_hora_chegada' => ['name' => 'nu_hora_chegada', 'data' => 'nu_hora_chegada', 'title'=>'Hora Chegada'],
+            'nu_voo_chegada' => ['name' => 'nu_voo_chegada', 'data' => 'nu_voo_chegada', 'title'=>'Vôo chegada'],
+            'no_local_chegada' => ['name' => 'no_local_chegada', 'data' => 'no_local_chegada', 'title'=>'Local'],
+            'dt_saida' => ['name' => 'dt_saida', 'data' => 'dt_saida', 'title'=>'Saída'],
+            'nu_hora_saida' => ['name' => 'nu_hora_saida', 'data' => 'nu_hora_saida', 'title'=>'Hora saída'],
+            'nu_voo_saida' => ['name' => 'nu_voo_saida', 'data' => 'nu_voo_saida', 'title'=>'Vôo saída'],
+            'no_local_saida' => ['name' => 'no_local_saida', 'data' => 'no_local_saida', 'title'=>'Local Saída'],
+            'no_observacoes' => ['name' => 'no_observacoes', 'data' => 'no_observacoes', 'title'=>'Observações']
         ];
     }
 
