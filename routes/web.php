@@ -90,5 +90,6 @@ Route::group(['middleware' => 'auth'], function() {
 			//Route::resource('convivenciaMembros', 'ConvivenciaMembroController');
 			Route::resource('usuarios', 'UsuarioController');
 			Route::resource('macroRegiaos', 'MacroRegiaoController');
+			Route::resource('relatorioAcolhidas', 'RelatorioAcolhidaController');
     });
 });
