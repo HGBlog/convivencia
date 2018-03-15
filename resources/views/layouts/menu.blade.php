@@ -47,6 +47,26 @@
 
 <li class="treeview">
   <a href="#">
+    <i class="fa fa-lock"></i> <span>RELATÓRIOS</span>
+    <span class="pull-right-container">
+      <i class="fa fa-angle-left pull-right"></i>
+    </span>
+  </a>
+  <ul class="treeview-menu">
+        <li class="{{ Request::is('relatorioAcolhidas*') ? 'active' : '' }}">
+            <a href="{!! route('relatorioAcolhidas.index') !!}"><i class="fa fa-edit"></i><span>Acolhidas</span></a>
+        </li>
+        <li class="{{ Request::is('usuarios*') ? 'active' : '' }}">
+            <a href="{!! route('usuarios.index') !!}"><i class="fa fa-users"></i><span>Usuários, Macro-regiões</span></a>
+        </li>
+        <li class="{{ Request::is('usuarios*') ? 'active' : '' }}">
+            <a href="{!! url(config('backpack.base.route_prefix', 'admin') . '/user') !!}"><i class="fa fa-users"></i><span>Usuários, Permissões</span></a>
+        </li>
+  </ul>
+</li>
+
+<li class="treeview">
+  <a href="#">
     <i class="fa fa-lock"></i> <span>TABELAS APOIO</span>
     <span class="pull-right-container">
       <i class="fa fa-angle-left pull-right"></i>
@@ -89,6 +109,4 @@
   </ul>
 </li>
 @endif
-
-
 
