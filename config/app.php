@@ -173,6 +173,7 @@ return [
     	Yajra\DataTables\ButtonsServiceProvider::class,
         //JasperPHP\JasperPHPServiceProvider::class,
         Backpack\LangFileManager\LangFileManagerServiceProvider::class,
+        Barryvdh\Snappy\ServiceProvider::class,
 
 
 
@@ -243,6 +244,7 @@ return [
     	'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'Membro' => App\Models\Membro::class,
         'Convivencia' => App\Models\Convivencia::class,
+        'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
 
     ],
 
