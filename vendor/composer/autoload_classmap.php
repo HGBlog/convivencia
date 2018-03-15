@@ -4451,7 +4451,6 @@ return array(
     'elFinderVolumeOneDrive' => $vendorDir . '/studio-42/elfinder/php/elFinderVolumeOneDrive.class.php',
     'elFinderVolumeTrash' => $vendorDir . '/studio-42/elfinder/php/elFinderVolumeTrash.class.php',
     'elFinderVolumeTrashMySQL' => $vendorDir . '/studio-42/elfinder/php/elFinderVolumeTrashMySQL.class.php',
-    'h4cc\\WKHTMLToPDF\\WKHTMLToPDF' => $vendorDir . '/h4cc/wkhtmltopdf-amd64/WKHTMLToPDF.php',
     'phpDocumentor\\Reflection\\DocBlock' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
     'phpDocumentor\\Reflection\\DocBlockFactory' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
     'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',

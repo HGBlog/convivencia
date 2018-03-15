@@ -29,10 +29,6 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
-        'h' => 
-        array (
-            'h4cc\\WKHTMLToPDF\\' => 17,
-        ),
         'Y' => 
         array (
             'Yajra\\DataTables\\' => 17,
@@ -169,10 +165,6 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-        ),
-        'h4cc\\WKHTMLToPDF\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/h4cc/wkhtmltopdf-amd64',
         ),
         'Yajra\\DataTables\\' => 
         array (
@@ -4977,7 +4969,6 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'elFinderVolumeOneDrive' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderVolumeOneDrive.class.php',
         'elFinderVolumeTrash' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderVolumeTrash.class.php',
         'elFinderVolumeTrashMySQL' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderVolumeTrashMySQL.class.php',
-        'h4cc\\WKHTMLToPDF\\WKHTMLToPDF' => __DIR__ . '/..' . '/h4cc/wkhtmltopdf-amd64/WKHTMLToPDF.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
         'phpDocumentor\\Reflection\\DocBlockFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
         'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',
