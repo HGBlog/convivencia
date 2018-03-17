@@ -56,6 +56,9 @@
         <li class="{{ Request::is('relatorioAcolhidas*') ? 'active' : '' }}">
             <a href="{!! route('relatorioAcolhidas.index') !!}"><i class="fa fa-edit"></i><span>Acolhidas</span></a>
         </li>
+        <li class="{{ Request::is('relatorioInscricoes*') ? 'active' : '' }}">
+            <a href="{!! route('relatorioInscricoes.index') !!}"><i class="fa fa-edit"></i><span>Inscrições</span></a>
+        </li>
   </ul>
 </li>
 
@@ -103,4 +106,3 @@
   </ul>
 </li>
 @endif
-

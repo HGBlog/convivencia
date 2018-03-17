@@ -59,15 +59,14 @@
                                 @else
                                 <h2><font color="red">Não existem convivências com inscrições abertas</font></h2><br><br>
                                 @endif
-
-                                Bem vindos ao Sistema de Inscrições de Convivências Nacionais do Caminho Neocatecumenal do Brasil.<br>
-                                Neste Sistema você deverá fazer as inscrições em todas as Convivências com a Equipe Nacional. Todos os membros das Equipes de sua região deverão ser cadastrados <b>uma única vez</b>. As informações de viagem (meios de transporte, vôos, horários de chegada e de retorno) e informações fundamentais para as equipes de hospedagem, acolhimento, traslados e organização, na chegada e no retorno, <b>informados a cada convivência</b>.
+                                Bem vindo ao Sistema de Inscrições de Convivências Nacionais do Caminho Neocatecumenal do Brasil. <br>
+                                Neste Sistema você deverá fazer as inscrições em todas as Convivências com a Equipe Nacional. Todos os membros das Equipes itinerantes de sua região deverão ser cadastrados neste Sistema, <b>uma única vez</b>, assim como as informações de viagem (meios de transporte, voos, horários de chegada e de retorno). São informações fundamentais para as equipes de hospedagem, acolhimento, traslados e organização que deverão ser <b>informados a cada convivência</b>.
                                 <br><br>
-                                
+
                                 <b>Dúvidas:</b>
                                 <br>
                                 1 - Sobre a <b>utilização do Sistema de Inscrições de Convivências Nacionais</b> entre em contato com Osmar - (61) 99837-9414 - cncbrasilia@gmail.com<br>
-                                2 - Sobre <b>acolhimentos e traslados</b> entre em contato com a Graça: (61) 99997-6901 - cncbrasilia.graca@gmail.com <br>
+                                2 - Sobre <b>acolhimentos e traslados</b> entre em contato com a Graça: (61) 99996-9633 - cncbrasilia.graca@gmail.com <br>
                                 3 - Sobre <b>hospedagem</b> entre em contato com a Odisséia: (61) 99814 -8562 casaconvivencias.sfn@gmail.com
                                 <br> <br>
                                 Clique <a href="{{ URL::to('download/Tutorial_Sistema_Convivencia.pdf') }}" target="_blank">aqui </a> para acesso ao tutorial de utilização do Sistema

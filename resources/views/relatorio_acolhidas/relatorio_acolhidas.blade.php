@@ -15,12 +15,9 @@
         <div class="clearfix"></div>
         <div class="box box-primary">
             <div class="box-body">
-                {!! Form::model(null, ['route' => ['acolhidas.index', 'convivencia_id'], 'method' => 'post']) !!}
-
-                {{ Form::hidden('is_ativo', 0) }}
+                {!! Form::model(null, ['route' => ['gera_relatorio_acolhidas', 'convivencia_id'], 'method' => 'get']) !!}                
+                @include('relatorio_acolhidas.lista_convivenciasfields')
                 {!! Form::close() !!}
-                @include('acolhidas.relatorio_acolhidastable')
-                
             </div>
         </div>
         <div class="text-center">

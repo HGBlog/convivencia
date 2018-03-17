@@ -7,9 +7,12 @@ use App\Http\Requests;
 use App\Http\Requests\CreateRelatorioAcolhidaRequest;
 use App\Http\Requests\UpdateRelatorioAcolhidaRequest;
 use App\Repositories\RelatorioAcolhidaRepository;
+use Illuminate\Http\Request;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
+use App\Models\Convivencia;
+use Prettus\Repository\Criteria\RequestCriteria;
 
 class RelatorioAcolhidaController extends AppBaseController
 {
@@ -29,7 +32,8 @@ class RelatorioAcolhidaController extends AppBaseController
      */
     public function index(RelatorioAcolhidaDataTable $relatorioAcolhidaDataTable)
     {
-        return $relatorioAcolhidaDataTable->render('relatorio_acolhidas.index');
+            $convivencias = Convivencia::where('is_ativo', true)->orderBy('dt_inicio')->get();
+            return view('relatorio_acolhidas.relatorio_acolhidas')->with('convivencias', $convivencias);
     }
 
     /**
@@ -149,40 +153,9 @@ class RelatorioAcolhidaController extends AppBaseController
         return redirect(route('relatorioAcolhidas.index'));
     }
 
-    public function relatorio_acolhidas(Request $request)
+    public function gera_relatorio_acolhidas(RelatorioAcolhidaDataTable $relatorioAcolhidaDataTable, Request $request)
         {
-            //$this->acolhidaRepository->pushCriteria(new RequestCriteria($request));
-            //$acolhidas = $this->acolhidaRepository->all();
-            $convivencias = Convivencia::where('is_ativo', true)->get();
-            //$convivencia_selecionada = $this->convivenciaRepository->findWithoutFail($id);
-            if(empty($request->convivencia_id)) {
-                return view('acolhidas.relatorio_acolhidas_branco')->with('convivencias', $convivencias);
-            } else {
-            //dd($convivencias);
-                return view('acolhidas.relatorio_acolhidas')->with('convivencias', $convivencias)->with('acolhidas', $acolhidas); 
-            }
-        }
-    public function gera_relatorio_acolhidas(AcolhidaDataTable $acolhidaDataTable, Request $request)
-        {
-            $convivencias = Convivencia::where('is_ativo', true)->get();
             $convivencia_id = $request->convivencia_id;
-            $membro = new Membro;
-            $acolhida_extra = new AcolhidaExtra;
-            $tipo_translado = new TipoTranslado;
-            $convivencia_id = $request->convivencia_id;
-            //$conv = new Convivencia;
-            //dd($convivencia_id);
-            return $acolhidaDataTable->forConvivencia($convivencia_id)->render('acolhidas.index', ['convivencia', '$convivencia_id']);
-        }
-    public function seleciona_convivencia(Request $request)
-        {
-            //$this->convivenciaRepository->pushCriteria(new RequestCriteria($request));
-            //$convivencias = $this->convivenciaRepository->all();
-            //return view('convivencias.lista_ativas')
-            //    ->with('convivencias', $convivencias);
-            //$convivencia_id = $request->input('convivencia_id');
-            $convivencia_id = $request->convivencia_id;
-         
-            return redirect(route('convivencia_inscricao', $convivencia_id));    
+            return $relatorioAcolhidaDataTable->forConvivencia($convivencia_id)->render('relatorio_acolhidas.index');
         }
 }

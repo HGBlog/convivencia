@@ -55,6 +55,9 @@
         <li class="<?php echo e(Request::is('relatorioAcolhidas*') ? 'active' : ''); ?>">
             <a href="<?php echo route('relatorioAcolhidas.index'); ?>"><i class="fa fa-edit"></i><span>Acolhidas</span></a>
         </li>
+        <li class="<?php echo e(Request::is('relatorioInscricoes*') ? 'active' : ''); ?>">
+            <a href="<?php echo route('relatorioInscricoes.index'); ?>"><i class="fa fa-edit"></i><span>Inscrições</span></a>
+        </li>
   </ul>
 </li>
 
@@ -102,4 +105,3 @@
   </ul>
 </li>
 <?php endif; ?>
-

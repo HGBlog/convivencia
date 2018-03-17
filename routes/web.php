@@ -35,12 +35,11 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('/convivencias/lista_ativas', ['as' => 'convivencias.lista_ativas', 'uses' => 'ConvivenciaController@lista_ativas']);	
 
 	
-	Route::get('/acolhidas/relatorio_acolhidas',['as' => 'relatorio_acolhidas', 'uses' => 'AcolhidaController@relatorio_acolhidas']);
+	//Route::get('/relatorioAcolhidas/relatorio_acolhidas',['as' => 'relatorio_acolhidas', 'uses' => 'RelatorioAcolhidaController@relatorio_acolhidas']);
 
 	//Route::get('/acolhidas/{convivencia}', 'AcolhidaController@gera_relatorio_acolhidas');
-	Route::get('/acolhidas/{convivencia}',['as' => 'acolhidas', 'uses' => 'AcolhidaController@gera_relatorio_acolhidas']);
+	//Route::get('/acolhidas/{convivencia}',['as' => 'acolhidas', 'uses' => 'RelatorioAcolhidaController@gera_relatorio_acolhidas']);
 
-Route::get('/gera_relatorio_acolhidas',['as' => 'gera_relatorio_acolhidas', 'uses' => 'AcolhidaController@gera_relatorio_acolhidas']);
 
 
 	//Atualizacao do Perfil de Usuario
@@ -100,5 +99,10 @@ Route::get('/gera_relatorio_acolhidas',['as' => 'gera_relatorio_acolhidas', 'use
 			Route::resource('usuarios', 'UsuarioController');
 			Route::resource('macroRegiaos', 'MacroRegiaoController');
 			Route::resource('relatorioAcolhidas', 'RelatorioAcolhidaController');
+			Route::resource('relatorioInscricoes', 'RelatorioInscricoesController');
+
+			Route::get('/gera_relatorio_acolhidas',['as' => 'gera_relatorio_acolhidas', 'uses' => 'RelatorioAcolhidaController@gera_relatorio_acolhidas']);
+
+			Route::get('/gera_relatorio_inscricoes',['as' => 'gera_relatorio_inscricoes', 'uses' => 'RelatorioInscricoesController@gera_relatorio_inscricoes']);
     });
 });
