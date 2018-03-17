@@ -54,7 +54,13 @@
   </a>
   <ul class="treeview-menu">
         <li class="{{ Request::is('relatorioAcolhidas*') ? 'active' : '' }}">
-            <a href="{!! route('relatorioAcolhidas.index') !!}"><i class="fa fa-edit"></i><span>Acolhidas</span></a>
+            <a href="{!! route('relatorioAcolhidas.index') !!}"><i class="fa fa-edit"></i><span>Acolhidas - Completo</span></a>
+        </li>
+        <li class="{{ Request::is('relatorioAcolhidasChegada*') ? 'active' : '' }}">
+            <a href="{!! route('relatorioAcolhidasChegada.index') !!}"><i class="fa fa-edit"></i><span>Acolhidas - Chegada</span></a>
+        </li>
+        <li class="{{ Request::is('relatorioAcolhidasTermino*') ? 'active' : '' }}">
+            <a href="{!! route('relatorioAcolhidasTermino.index') !!}"><i class="fa fa-edit"></i><span>Acolhidas - Término</span></a>
         </li>
         <li class="{{ Request::is('relatorioInscricoes*') ? 'active' : '' }}">
             <a href="{!! route('relatorioInscricoes.index') !!}"><i class="fa fa-edit"></i><span>Inscrições</span></a>

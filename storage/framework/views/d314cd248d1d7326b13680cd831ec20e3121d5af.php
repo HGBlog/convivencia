@@ -53,7 +53,13 @@
   </a>
   <ul class="treeview-menu">
         <li class="<?php echo e(Request::is('relatorioAcolhidas*') ? 'active' : ''); ?>">
-            <a href="<?php echo route('relatorioAcolhidas.index'); ?>"><i class="fa fa-edit"></i><span>Acolhidas</span></a>
+            <a href="<?php echo route('relatorioAcolhidas.index'); ?>"><i class="fa fa-edit"></i><span>Acolhidas - Completo</span></a>
+        </li>
+        <li class="<?php echo e(Request::is('relatorioAcolhidasChegada*') ? 'active' : ''); ?>">
+            <a href="<?php echo route('relatorioAcolhidasChegada.index'); ?>"><i class="fa fa-edit"></i><span>Acolhidas - Chegada</span></a>
+        </li>
+        <li class="<?php echo e(Request::is('relatorioAcolhidasTermino*') ? 'active' : ''); ?>">
+            <a href="<?php echo route('relatorioAcolhidasTermino.index'); ?>"><i class="fa fa-edit"></i><span>Acolhidas - Término</span></a>
         </li>
         <li class="<?php echo e(Request::is('relatorioInscricoes*') ? 'active' : ''); ?>">
             <a href="<?php echo route('relatorioInscricoes.index'); ?>"><i class="fa fa-edit"></i><span>Inscrições</span></a>

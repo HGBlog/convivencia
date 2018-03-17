@@ -39,7 +39,7 @@ class RelatorioAcolhidaDataTable extends DataTable
 
     public function query(RelatorioAcolhida $model)
     {
-        return $model->where('convivencia_id',$this->convivencia )->select('conv.vw_rel_acolhidas.*');
+        return $model->where('convivencia_id',$this->convivencia )->select('conv.vw_rel_acolhida_completo.*');
     }
 
 

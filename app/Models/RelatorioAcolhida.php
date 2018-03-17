@@ -29,7 +29,7 @@ class RelatorioAcolhida extends Model
 {
     //use SoftDeletes;
 
-    public $table = 'conv.vw_rel_acolhidas';
+    public $table = 'conv.vw_rel_acolhida_completo';
     
 
     protected $dates = ['deleted_at'];
