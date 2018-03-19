@@ -16,7 +16,7 @@
 @endforeach
 
 @empty ($convivencia->is_ativo)
-   	Não existe Convivência com inscrição aberta.
+   	Não existe Convivência com o período de inscrições abertas.
    	<div class="form-group col-sm-12">
 	   	<a href="{!! route('membros.index') !!}" class="btn btn-primary pull-left" style="margin-top: 25px">Voltar para lista de Membros</a>
 	</div>

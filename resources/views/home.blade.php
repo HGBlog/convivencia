@@ -16,9 +16,9 @@
                         <div class="content">
                             <div class="panel-body">
                                 @if(Auth::user()->hasRole('usuario') | empty(Auth::user()->hasRole('admin')|Auth::user()->hasRole('responsavel')))
-                                    <h4>Você acessou o Sistema como um usuário sem permissão para criação de Equipe e inscrição em Convivência. <br>
-                                    Aguarde a autorização do Centro Neocatecumenal de Brasília para em breve você receber o privilégio necessário no Sistema para realização das Inscrições em Convivência.<br>
-                                    Qualquer dúvida, mande um email para cncbrasilia@gmail.com informando esta mensagem de erro e solicitando autorização para ingresso ao Sistema de Convivências Nacionais.</h4>
+                                    <h4>Você acessou o Sistema como um usuário sem permissão para criação de Equipe e inscrição em Convivência com a Equipe Nacional. <br>
+                                    Aguarde a autorização do Centro Neocatecumenal de Brasília para em breve você receber o privilégio necessário no Sistema para realização das Inscrições.<br>
+                                    Qualquer dúvida, mande um email para cncbrasilia@gmail.com informando esta mensagem de falta de permissão e solicitando autorização para ingresso ao Sistema de Convivências Nacionais.</h4>
                                 @endif
                                 @if(Auth::user()->hasRole('admin') | Auth::user()->hasAnyRole('responsavel'))
                                     <div class="col-lg-3 col-xs-6">
@@ -51,7 +51,7 @@
                                 <b>* <u>Data:</u> {!! Carbon\Carbon::parse($convivencia->dt_inicio)->format('d/m/Y') !!} a {!! Carbon\Carbon::parse($convivencia->dt_fim)->format('d/m/Y') !!}<br></b>
                                 <b>* <u>Fim das inscrições:</u> {!! Carbon\Carbon::parse($convivencia->dt_fim_inscricao)->format('d/m/Y') !!}</b><br>
                                 <b>* <u>Local:</u> {!! $local->where('id', $convivencia->local_convivencia_id)->pluck('no_local')->first() !!}</b><br>
-                                <b>*  {!! $convivencia->no_observacoes !!}</b><br>                    
+                                <b> {!! $convivencia->no_observacoes !!}</b><br>                    
                                 <a class="btn btn-primary pull-left" style="margin-top: 25px" href="{!! route('convivencias.lista_ativas') !!}">Inscrições</a>
                                 <br><br><br><br>
                                 </font>

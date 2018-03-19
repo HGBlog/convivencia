@@ -3,7 +3,9 @@
 
 <?php $__env->startSection('content'); ?>
  	<section class="content-header">
-        <h1 class="pull-left">Membros da Macro-região - <?php echo e($macroregiao->no_macro_regiao); ?> - <font color="red"><b><?php echo e(Membro::where('owner_id', auth()->user()->id)->count() +
+        <h1 class="pull-left">Membros da Macro-região - <?php echo e($macroregiao->no_macro_regiao); ?>
+
+        	<br><font color="red"><b><?php echo e(Membro::where('owner_id', auth()->user()->id)->count() +
             Membro::where('owner_id', auth()->user()->id)->where('no_conjuge','<>', '')->count() +
             Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('owner_id','<>', auth()->user()->id)->count() +            
             Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('owner_id','<>', auth()->user()->id)->where('no_conjuge','<>', '')->count()); ?></b> cadastrados</font></h1>
@@ -62,7 +64,7 @@
         <div class="text-center">
         
         </div>
-    </div>
+</div>
          
 <?php $__env->stopSection(); ?>
 

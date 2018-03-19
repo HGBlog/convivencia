@@ -3,7 +3,8 @@
 
 @section('content')
  	<section class="content-header">
-        <h1 class="pull-left">Membros da Macro-região - {{$macroregiao->no_macro_regiao}} - <font color="red"><b>{{
+        <h1 class="pull-left">Membros da Macro-região - {{$macroregiao->no_macro_regiao}}
+        	<br><font color="red"><b>{{
             Membro::where('owner_id', auth()->user()->id)->count() +
             Membro::where('owner_id', auth()->user()->id)->where('no_conjuge','<>', '')->count() +
             Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('owner_id','<>', auth()->user()->id)->count() +            
@@ -63,7 +64,7 @@
         <div class="text-center">
         
         </div>
-    </div>
+</div>
          
 @endsection
 
