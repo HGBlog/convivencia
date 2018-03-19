@@ -200,7 +200,7 @@ class ConvivenciaController extends AppBaseController
     public function lista_ativas(Request $request)
     {
         //Listo as convivências com data de inscrições ativas
-        $convivencias = Convivencia::where('dt_fim_inscricao','>=', now())->orderBy('dt_inicio')->get();
+        $convivencias = Convivencia::where('dt_fim_inscricao','>=', now())->where('is_ativo', true)->orderBy('dt_inicio')->get();
 
         return view('convivencias.lista_ativas',compact('convivencias'));    
     }
