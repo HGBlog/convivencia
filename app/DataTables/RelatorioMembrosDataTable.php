@@ -47,7 +47,7 @@ class RelatorioMembrosDataTable extends DataTable
                 'dom'     => 'Bfrtip',
                 'order'   => [[0, 'asc']],
                 'buttons' => [
-                    'create',
+                    //'create',
                     'export',
                     'print',
                     'reset',
