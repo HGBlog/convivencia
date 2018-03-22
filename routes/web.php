@@ -102,6 +102,7 @@ Route::group(['middleware' => 'auth'], function() {
 			Route::resource('relatorioInscricoes', 'RelatorioInscricoesController');
 			Route::resource('relatorioAcolhidasChegada', 'RelatorioAcolhidaChegadaController');
 			Route::resource('relatorioAcolhidasTermino', 'RelatorioAcolhidaTerminoController');
+			Route::resource('relatorioMembros', 'RelatorioMembrosController');
 
 			Route::get('/gera_relatorio_acolhidas',['as' => 'gera_relatorio_acolhidas', 'uses' => 'RelatorioAcolhidaController@gera_relatorio_acolhidas']);
 			Route::get('/gera_relatorio_acolhidas_chegada',['as' => 'gera_relatorio_acolhidas_chegada', 'uses' => 'RelatorioAcolhidaChegadaController@gera_relatorio_acolhidas_chegada']);

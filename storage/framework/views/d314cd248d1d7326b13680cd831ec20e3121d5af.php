@@ -17,7 +17,7 @@
 <li class="<?php echo e(Request::is('convivencias*') ? 'active' : ''); ?>">
     <a href="<?php echo route('convivencias.lista_ativas'); ?>"><i class="fa fa-edit"></i><span>Convivências</span>
         <span class="pull-right-container">
-                <small class="label pull-right bg-red"><?php echo e(Convivencia::where('is_ativo', true)->count()); ?></small>
+                <small class="label pull-right bg-red"><?php echo e(Convivencia::where('dt_fim_inscricao','>=', now())->where('is_ativo', true)->count()); ?></small>
         </span>
     </a>
 </li>
@@ -62,7 +62,10 @@
             <a href="<?php echo route('relatorioAcolhidasTermino.index'); ?>"><i class="fa fa-edit"></i><span>Acolhidas - Término</span></a>
         </li>
         <li class="<?php echo e(Request::is('relatorioInscricoes*') ? 'active' : ''); ?>">
-            <a href="<?php echo route('relatorioInscricoes.index'); ?>"><i class="fa fa-edit"></i><span>Inscrições</span></a>
+            <a href="<?php echo route('relatorioInscricoes.index'); ?>"><i class="fa fa-edit"></i><span>Inscrições Convivências</span></a>
+        </li>
+        <li class="<?php echo e(Request::is('relatorioMembros*') ? 'active' : ''); ?>">
+            <a href="<?php echo route('relatorioMembros.index'); ?>"><i class="fa fa-edit"></i><span>Membros Cadastrados</span></a>
         </li>
   </ul>
 </li>
@@ -111,3 +114,4 @@
   </ul>
 </li>
 <?php endif; ?>
+

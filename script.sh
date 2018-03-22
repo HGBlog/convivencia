@@ -24,3 +24,4 @@ php artisan infyom:scaffold Acolhedor --fieldsFile=exemplos/tb_acolhedores --dat
 
 
 php artisan infyom:scaffold RelatorioAcolhida --fromTable --tableName=vw_rel_acolhidas --datatables=true
+php artisan infyom:scaffold RelatorioMembros --fromTable --tableName=vw_rel_membros --datatables=true

@@ -63,7 +63,10 @@
             <a href="{!! route('relatorioAcolhidasTermino.index') !!}"><i class="fa fa-edit"></i><span>Acolhidas - Término</span></a>
         </li>
         <li class="{{ Request::is('relatorioInscricoes*') ? 'active' : '' }}">
-            <a href="{!! route('relatorioInscricoes.index') !!}"><i class="fa fa-edit"></i><span>Inscrições</span></a>
+            <a href="{!! route('relatorioInscricoes.index') !!}"><i class="fa fa-edit"></i><span>Inscrições Convivências</span></a>
+        </li>
+        <li class="{{ Request::is('relatorioMembros*') ? 'active' : '' }}">
+            <a href="{!! route('relatorioMembros.index') !!}"><i class="fa fa-edit"></i><span>Membros Cadastrados</span></a>
         </li>
   </ul>
 </li>
@@ -112,3 +115,4 @@
   </ul>
 </li>
 @endif
+
