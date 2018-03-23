@@ -47,8 +47,7 @@ class AcolhidaController extends AppBaseController
         $this->acolhidaRepository->pushCriteria(new RequestCriteria($request));
         $acolhidas = $this->acolhidaRepository->all();
 
-        return view('acolhidas.index')
-            ->with('acolhidas', $acolhidas);
+        return redirect(route('membros.index'));
     }
 
     /**
