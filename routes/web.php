@@ -102,11 +102,15 @@ Route::group(['middleware' => 'auth'], function() {
 			Route::resource('relatorioInscricoes', 'RelatorioInscricoesController');
 			Route::resource('relatorioAcolhidasChegada', 'RelatorioAcolhidaChegadaController');
 			Route::resource('relatorioAcolhidasTermino', 'RelatorioAcolhidaTerminoController');
+			Route::resource('relatorioTransladosChegada', 'RelatorioTransladoChegadaController');
+			Route::resource('relatorioTransladosTermino', 'RelatorioTransladoTerminoController');
 			Route::resource('relatorioMembros', 'RelatorioMembrosController');
 
 			Route::get('/gera_relatorio_acolhidas',['as' => 'gera_relatorio_acolhidas', 'uses' => 'RelatorioAcolhidaController@gera_relatorio_acolhidas']);
 			Route::get('/gera_relatorio_acolhidas_chegada',['as' => 'gera_relatorio_acolhidas_chegada', 'uses' => 'RelatorioAcolhidaChegadaController@gera_relatorio_acolhidas_chegada']);
 			Route::get('/gera_relatorio_acolhida_termino',['as' => 'gera_relatorio_acolhidas_termino', 'uses' => 'RelatorioAcolhidaTerminoController@gera_relatorio_acolhidas_termino']);
+			Route::get('/gera_relatorio_translados_chegada',['as' => 'gera_relatorio_translados_chegada', 'uses' => 'RelatorioTransladoChegadaController@gera_relatorio_translados_chegada']);
+			Route::get('/gera_relatorio_translados_termino',['as' => 'gera_relatorio_translados_termino', 'uses' => 'RelatorioTransladoTerminoController@gera_relatorio_translados_termino']);
 
 			Route::get('/gera_relatorio_inscricoes',['as' => 'gera_relatorio_inscricoes', 'uses' => 'RelatorioInscricoesController@gera_relatorio_inscricoes']);
     });

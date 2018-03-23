@@ -61,6 +61,12 @@
         <li class="<?php echo e(Request::is('relatorioAcolhidasTermino*') ? 'active' : ''); ?>">
             <a href="<?php echo route('relatorioAcolhidasTermino.index'); ?>"><i class="fa fa-edit"></i><span>Acolhidas - Término</span></a>
         </li>
+        <li class="<?php echo e(Request::is('relatorioTransladosChegada*') ? 'active' : ''); ?>">
+            <a href="<?php echo route('relatorioTransladosChegada.index'); ?>"><i class="fa fa-edit"></i><span>Translados - Chegada</span></a>
+        </li>
+        <li class="<?php echo e(Request::is('relatorioTransladosTermino*') ? 'active' : ''); ?>">
+            <a href="<?php echo route('relatorioTransladosTermino.index'); ?>"><i class="fa fa-edit"></i><span>Translados - Término</span></a>
+        </li>
         <li class="<?php echo e(Request::is('relatorioInscricoes*') ? 'active' : ''); ?>">
             <a href="<?php echo route('relatorioInscricoes.index'); ?>"><i class="fa fa-edit"></i><span>Inscrições Convivências</span></a>
         </li>
