@@ -28,7 +28,8 @@ class RelatorioInscricoes extends Model
             'participante',
             'conjuge', 
             'tipo_pessoa',
-            'telefone', 
+            'telefone',
+            'telefone2',
             'carisma',
             'equipe',
             'data_chegada'

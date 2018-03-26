@@ -80,6 +80,7 @@ class RelatorioInscricoesDataTable extends DataTable
             'conjuge' => ['name' => 'conjuge', 'data' => 'conjuge', 'title'=>'Cônjuge'],
             'tipo_pessoa' => ['name' => 'tipo_pessoa', 'data' => 'tipo_pessoa', 'title'=>'Tipo Pessoa'],
             'telefone' => ['name' => 'telefone', 'data' => 'telefone', 'title'=>'Telefone'],
+            'telefone2' => ['name' => 'telefone2', 'data' => 'telefone2', 'title'=>'Telefone2'],
             'carisma' => ['name' => 'carisma', 'data' => 'carisma', 'title'=>'Carisma'],
             'equipe' => ['name' => 'equipe', 'data' => 'equipe', 'title'=>'Equipe'],
             'data_chegada' => ['name' => 'data_chegada', 'data' => 'data_chegada', 'title'=>'Data Chegada'],
