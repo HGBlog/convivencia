@@ -68,6 +68,7 @@ class RelatorioMembrosDataTable extends DataTable
             'no_conjuge' => ['name' => 'no_conjuge', 'data' => 'no_conjuge', 'title'=>'Cônjuge'],
             'no_email' => ['name' => 'no_email', 'data' => 'no_email', 'title'=>'Email'],
             'telefone' => ['name' => 'telefone', 'data' => 'telefone', 'title'=>'Telefone'],
+            'telefone2' => ['name' => 'telefone2', 'data' => 'telefone2', 'title'=>'Telefone2'],
             'regiao' => ['name' => 'regiao', 'data' => 'regiao', 'title'=>'Região'],
             'cidade' => ['name' => 'cidade', 'data' => 'cidade', 'title'=>'Cidade'],
             'no_diocese' => ['name' => 'no_diocese', 'data' => 'no_diocese', 'title'=>'Diocese'],

@@ -28,6 +28,7 @@ class RelatorioMembros extends Model
         'no_conjuge',
         'no_email',
         'telefone',
+        'telefone2',
         'regiao',
         'cidade',
         'no_diocese',
