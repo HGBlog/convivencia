@@ -57,6 +57,20 @@
             <?php echo Form::number('nu_telefone', null, ['class' => 'form-control', 'placeholder'=>'Telefone - Apenas números', 'maxlength' => '10']); ?>
 
             </div>
+        <!-- Co Telefone Pais Field -->
+            <div class="form-group col-sm-6">
+            <?php echo Form::label('co_telefone_pais2', 'Código Telefone(2):'); ?>
+
+            <?php echo Form::text('co_telefone_pais2', null, ['class' => 'form-control',  'placeholder'=>'Código DDD', 'maxlength' => '3']); ?>
+
+            </div>
+        <!-- Nu Telefone Field -->
+            <div class="form-group col-sm-6">
+            <?php echo Form::label('nu_telefone2', 'Número Telefone(2):'); ?>
+
+            <?php echo Form::number('nu_telefone2', null, ['class' => 'form-control', 'placeholder'=>'Telefone - Apenas números', 'maxlength' => '10']); ?>
+
+            </div>
       </p>        
     </div>
     <div id="missao">

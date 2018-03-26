@@ -111,6 +111,8 @@ class MembroController extends AppBaseController
             $membro->no_tipo_pessoa = $request->input('no_tipo_pessoa');
             $membro->co_telefone_pais = $request->input('co_telefone_pais');
             $membro->nu_telefone = $request->input('nu_telefone');
+            $membro->co_telefone_pais2 = $request->input('co_telefone_pais2');
+            $membro->nu_telefone2 = $request->input('nu_telefone2');
             $membro->no_cidade = $request->input('no_cidade');
             $membro->no_paroquia = $request->input('no_paroquia');
             $membro->nu_comunidade = $request->input('nu_comunidade');
@@ -236,6 +238,8 @@ class MembroController extends AppBaseController
             $membro->no_tipo_pessoa = $request['no_tipo_pessoa'];
             $membro->co_telefone_pais = $request['co_telefone_pais'];
             $membro->nu_telefone = $request['nu_telefone'];
+            $membro->co_telefone_pais2 = $request['co_telefone_pais2'];
+            $membro->nu_telefone2 = $request['nu_telefone2'];
             $membro->no_cidade = $request['no_cidade'];
             $membro->no_paroquia = $request['no_paroquia'];
             $membro->nu_comunidade = $request['nu_comunidade'];
