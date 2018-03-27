@@ -44,7 +44,9 @@
         </li>
   </ul>
 </li>
+@endif
 
+@if(Auth::user()->hasRole('admin') | Auth::user()->hasRole('gestor_acolhida'))
 <li class="treeview">
   <a href="#">
     <i class="fa fa-lock"></i> <span>RELATÓRIOS</span>
@@ -76,7 +78,9 @@
         </li>
   </ul>
 </li>
+@endif
 
+@if(Auth::user()->hasRole('admin'))
 <li class="treeview">
   <a href="#">
     <i class="fa fa-lock"></i> <span>TABELAS APOIO</span>
