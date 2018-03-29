@@ -36,6 +36,10 @@
         <li class="{{ Request::is('convivencias*') ? 'active' : '' }}">
             <a href="{!! route('convivencias.index') !!}"><i class="fa fa-edit"></i><span>Convivências</span></a>
         </li>
+        <li class="{{ Request::is('membros*') ? 'active' : '' }}">
+            <a href="{!! route('membros.macroregiao') !!}"><i class="fa fa-users"></i><span>Membros x Macro-regiões</span></a>
+        </li>
+        <li>--</li>
         <li class="{{ Request::is('usuarios*') ? 'active' : '' }}">
             <a href="{!! route('usuarios.index') !!}"><i class="fa fa-users"></i><span>Usuários, Macro-regiões</span></a>
         </li>

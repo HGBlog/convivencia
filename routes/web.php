@@ -25,22 +25,18 @@ Route::group(['middleware' => 'auth'], function() {
 
 	//Protegendo os resources para usuarios com permissão no Sistema
 	Route::group([
-            //'namespace'  => 'Backpack\PermissionManager\app\Http\Controllers',
-            //'prefix'     => config('backpack.base.route_prefix', 'admin'),
             'middleware' => ['role:admin,responsavel,gestor_convivencia'],
     ], function () {
+
+
+	//Edição de Macro-regiões de Membros
+	Route::get ('/membros/macroregiao', ['as' => 'membros.macroregiao', 'uses' => 'MembroController@index_todos']);
+	Route::get ('/membros/{membro}/edit_macroregiao', ['as' => 'membros.edit_macroregiao', 'uses' => 'MembroController@edit_macroregiao']);
+	Route::patch ('/membros/{membro}/update_macroregiao', ['as' => 'membros.update_macroregiao', 'uses' => 'MembroController@update_macroregiao']);
 
     Route::resource('membros', 'MembroController');
 
 	Route::get('/convivencias/lista_ativas', ['as' => 'convivencias.lista_ativas', 'uses' => 'ConvivenciaController@lista_ativas']);	
-
-	
-	//Route::get('/relatorioAcolhidas/relatorio_acolhidas',['as' => 'relatorio_acolhidas', 'uses' => 'RelatorioAcolhidaController@relatorio_acolhidas']);
-
-	//Route::get('/acolhidas/{convivencia}', 'AcolhidaController@gera_relatorio_acolhidas');
-	//Route::get('/acolhidas/{convivencia}',['as' => 'acolhidas', 'uses' => 'RelatorioAcolhidaController@gera_relatorio_acolhidas']);
-
-
 
 	//Atualizacao do Perfil de Usuario
 	Route::get ('/usuarios/{usuario}/perfil','UsuarioController@perfil');
@@ -72,9 +68,6 @@ Route::group(['middleware' => 'auth'], function() {
 
 	Route::resource('acolhidas', 'AcolhidaController');
     
-    Route::get ('/relatorios','RelatorioController@index');
-    Route::get ('/relatorios/acolhidas','RelatorioController@acolhidas');
-    Route::post('/relatorios/acolhidas/gera_relatorio',['as' => 'gera_relatorio', 'uses' => 'RelatorioController@gera_relatorio']);
 
     });
 
@@ -119,5 +112,6 @@ Route::group(['middleware' => 'auth'], function() {
 			//Route::resource('convivenciaMembros', 'ConvivenciaMembroController');
 			Route::resource('usuarios', 'UsuarioController');
 			Route::resource('macroRegiaos', 'MacroRegiaoController');
+
     });
 });

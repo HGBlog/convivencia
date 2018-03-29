@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\MembroDataTable;
+use App\Http\Requests;
 use App\Http\Requests\CreateMembroRequest;
 use App\Http\Requests\UpdateMembroRequest;
 use App\Repositories\MembroRepository;
@@ -308,4 +310,67 @@ class MembroController extends AppBaseController
 
         return redirect(route('membros.index'));
     }
+
+
+    /**
+     * Display a listing of the Membros.
+     *
+     * @param MebroDataTable $membroDataTable
+     * @return Response
+     * Para edição das Macro-regiões dos membros
+     */
+    public function index_todos(MembroDataTable $membroDataTable)
+    {
+
+        return $membroDataTable->render('membros.index_todos');
+    }
+
+    /**
+     * Show the form for editing the specified Usuario.
+     *
+     * @param  int $id
+     *
+     * @return Response
+     */
+    public function edit_macroregiao($id)
+    {
+        $membro = $this->membroRepository->findWithoutFail($id);
+        $macroregiaos = MacroRegiao::orderBy('no_macro_regiao')->pluck('no_macro_regiao', 'id');
+
+        if (empty($membro)) {
+            Flash::error('Membro não encontrado.');
+
+            return redirect(route('membros.index_todos'));
+        }
+
+        return view('membros.edit_macroregiao')->with('membro', $membro)->with('macroregiaos', $macroregiaos);
+    }
+
+    /**
+     * Update the specified Membro Macroregião Id in storage.
+     *
+     * @param  int              $id
+     * @param UpdateMembroRequest $request
+     *
+     * @return Response
+     */
+    public function update_macroregiao($id, UpdateMembroRequest $request)
+    {
+        $membro = $this->membroRepository->findWithoutFail($id);
+
+        if (empty($membro)) {
+            Flash::error('Membro not found');
+
+            return redirect(route('membros.macroregiao'));
+        }
+        
+        $membro->mregiao_id = $request['mregiao_id'];
+
+        $membro->save();
+
+        Flash::success('Macro-região do membro da Equipe atualizado com sucesso!');
+
+        return redirect(route('membros.macroregiao'));
+    }
+
 }

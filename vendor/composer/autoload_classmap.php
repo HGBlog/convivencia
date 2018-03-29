@@ -12,7 +12,7 @@ return array(
     'App\\DataTables\\DioceseDataTable' => $baseDir . '/app/DataTables/DioceseDataTable.php',
     'App\\DataTables\\EstadoDataTable' => $baseDir . '/app/DataTables/EstadoDataTable.php',
     'App\\DataTables\\MacroRegiaoDataTable' => $baseDir . '/app/DataTables/MacroRegiaoDataTable.php',
-    'App\\DataTables\\MembroDataTable' => $baseDir . '/app/DataTables/_MembroDataTable.php',
+    'App\\DataTables\\MembroDataTable' => $baseDir . '/app/DataTables/MembroDataTable.php',
     'App\\DataTables\\PerfilUsuarioDataTable' => $baseDir . '/app/DataTables/PerfilUsuarioDataTable.php',
     'App\\DataTables\\RelatorioAcolhidaChegadaDataTable' => $baseDir . '/app/DataTables/RelatorioAcolhidaChegadaDataTable.php',
     'App\\DataTables\\RelatorioAcolhidaDataTable' => $baseDir . '/app/DataTables/RelatorioAcolhidaDataTable.php',

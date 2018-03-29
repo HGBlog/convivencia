@@ -12,7 +12,7 @@
 
 <div class="form-group col-sm-6">
     {!! Form::label('mregiao_id', 'Macro-região') !!}
-    {!! Form::select('mregiao_id', $macroregiaos, $usuario->mregiao_id, ['id' => 'mregiao_id', 'class' => 'form-control', 'dropdown-menu', 'placeholder'=>'Selecione o Macro-região'])!!}
+    {!! Form::select('mregiao_id', $macroregiaos, $usuario->mregiao_id, ['id' => 'mregiao_id', 'class' => 'form-control', 'dropdown-menu', 'placeholder'=>'Selecione a Macro-região'])!!}
 </div>
 
 <!-- Submit Field -->

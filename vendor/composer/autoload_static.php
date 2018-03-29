@@ -530,7 +530,7 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'App\\DataTables\\DioceseDataTable' => __DIR__ . '/../..' . '/app/DataTables/DioceseDataTable.php',
         'App\\DataTables\\EstadoDataTable' => __DIR__ . '/../..' . '/app/DataTables/EstadoDataTable.php',
         'App\\DataTables\\MacroRegiaoDataTable' => __DIR__ . '/../..' . '/app/DataTables/MacroRegiaoDataTable.php',
-        'App\\DataTables\\MembroDataTable' => __DIR__ . '/../..' . '/app/DataTables/_MembroDataTable.php',
+        'App\\DataTables\\MembroDataTable' => __DIR__ . '/../..' . '/app/DataTables/MembroDataTable.php',
         'App\\DataTables\\PerfilUsuarioDataTable' => __DIR__ . '/../..' . '/app/DataTables/PerfilUsuarioDataTable.php',
         'App\\DataTables\\RelatorioAcolhidaChegadaDataTable' => __DIR__ . '/../..' . '/app/DataTables/RelatorioAcolhidaChegadaDataTable.php',
         'App\\DataTables\\RelatorioAcolhidaDataTable' => __DIR__ . '/../..' . '/app/DataTables/RelatorioAcolhidaDataTable.php',
