@@ -31,7 +31,7 @@ class MembroDataTable extends DataTable
     public function query(Membro $model)
     {
         return $model
-            ->select('membros.*', 'macro_regiaos.no_macro_regiao' )
+            ->select('membros.*', 'macro_regiaos.no_macro_regiao as mregiao_id' )
             ->join('macro_regiaos', 'membros.mregiao_id', '=', 'macro_regiaos.id');
     }
 
@@ -71,7 +71,7 @@ class MembroDataTable extends DataTable
         return [
             'no_usuario' => ['name' => 'no_usuario', 'data' => 'no_usuario', 'title'=>'Nome'],
             'no_conjuge' => ['name' => 'no_conjuge', 'data' => 'no_conjuge', 'title'=>'Cônjuge'],
-            'no_macro_regiao' => ['name' => 'no_macro_regiao', 'data' => 'no_macro_regiao', 'title'=>'Macro-região'],
+            'mregiao_id' => ['name' => 'mregiao_id', 'data' => 'mregiao_id', 'title'=>'Macro-região'],
         ];
     }
 
