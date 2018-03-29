@@ -147,6 +147,10 @@ return [
         'title'                 => 'título',
         'username'              => 'usuário',
         'year'                  => 'ano',
+        'no_usuario'            => '"Nome do Membro"',
+        'tipo_translado_id'     => '"Tipo de Translado"',
+        'acolhida_extra_id'     => '"Acolhimento Extra"',
+
     ],
 
 ];

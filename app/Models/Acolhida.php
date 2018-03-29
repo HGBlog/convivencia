@@ -84,8 +84,8 @@ class Acolhida extends Model
      * @var array
      */
     public static $rules = [
-        //'nu_voo_chegada' => 'required',
-        //'nu_voo_saida' => 'required'
+        'tipo_translado_id' => 'required',
+        'acolhida_extra_id' => 'required',
     ];
 
     /**

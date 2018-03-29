@@ -9,18 +9,18 @@
     <div class="active">
       <p>
             <div class="form-group col-sm-6">
-              {!! Form::label('no_usuario', 'Nome do membro:') !!}
-              {!! Form::text('no_usuario', null, ['class' => 'form-control', 'placeholder'=>'Nome completo']) !!}
+            {!! Form::label('no_usuario', 'Nome do membro:') !!}
+            {!! Form::text('no_usuario', null, ['class' => 'form-control', 'placeholder'=>'Nome completo', 'id' => 'Nome do membro']) !!}
             </div>
             <div class="form-group col-sm-6">
-              {!! Form::label('no_tipo_pessoa', 'Tipo de Pessoa:') !!}
-              {!! Form::select('no_tipo_pessoa', ['Homem' => 'Homem', 'Mulher' => 'Mulher','Casal' => 'Casal'], null, ['class' => 'form-control', 'placeholder'=>'Selecione']) !!}
+            {!! Form::label('no_tipo_pessoa', 'Tipo de Pessoa:') !!}
+            {!! Form::select('no_tipo_pessoa', ['Homem' => 'Homem', 'Mulher' => 'Mulher','Casal' => 'Casal'], null, ['class' => 'form-control', 'placeholder'=>'Selecione']) !!}
             </div>
 
-                <div class="form-group col-sm-12">
-                  {!! Form::label('no_conjuge', ' ') !!}
-                  {!! Form::text('no_conjuge', null, ['class' => 'form-control', 'placeholder'=>'Nome completo do Cônjuge']) !!}
-                </div>
+            <div class="form-group col-sm-12">
+              {!! Form::label('no_conjuge', ' ') !!}
+              {!! Form::text('no_conjuge', null, ['class' => 'form-control', 'placeholder'=>'Nome completo do Cônjuge']) !!}
+            </div>
 
         <!-- Estado Field -->
             <div class="form-group col-sm-6">

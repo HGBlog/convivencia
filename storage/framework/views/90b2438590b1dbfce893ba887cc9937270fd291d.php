@@ -41,13 +41,13 @@
           <div class="form-group col-sm-6">
           <?php echo Form::label('tipo_translado_id', 'Translado:'); ?>
 
-          <?php echo Form::select('tipo_translado_id', $translado, $acolhida->tipo_translado_id, ['id' => 'tipo_translado_id', 'class' => 'form-control', 'dropdown-menu', 'required']); ?>
+          <?php echo Form::select('tipo_translado_id', $translado, $acolhida->tipo_translado_id, ['id' => 'tipo_translado_id', 'class' => 'form-control', 'dropdown-menu']); ?>
 
           </div>
           <div class="form-group col-sm-6">
           <?php echo Form::label('acolhida_extra_id', 'Acolhimento Extra'); ?>
 
-          <?php echo Form::select('acolhida_extra_id', $acolhida_extra, $acolhida->acolhida_extra_id, ['id' => 'acolhida_extra_id', 'class' => 'form-control', 'dropdown-menu', 'required']); ?>
+          <?php echo Form::select('acolhida_extra_id', $acolhida_extra, $acolhida->acolhida_extra_id, ['id' => 'acolhida_extra_id', 'class' => 'form-control', 'dropdown-menu']); ?>
 
           </div>
       </div>
