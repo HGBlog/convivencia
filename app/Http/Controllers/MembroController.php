@@ -52,7 +52,7 @@ class MembroController extends AppBaseController
         //return view('membros.index')
         //    ->with('membros', $membros);
 
-        $membros = Membro::where('owner_id', auth()->user()->id)->orWhere('mregiao_id', auth()->user()->mregiao_id)->orderby('no_usuario')->paginate(10);
+        $membros = Membro::where('mregiao_id', auth()->user()->mregiao_id)->orderby('no_usuario')->paginate(10);
         $equipe = new Equipe;
         $macroregiao = MacroRegiao::where('id', auth()->user()->mregiao_id)->first();
         return view('membros.index',compact('membros'))->with('equipe', $equipe)->with('macroregiao', $macroregiao);
@@ -68,7 +68,7 @@ class MembroController extends AppBaseController
         //$etapas = Etapa::pluck('no_etapa', 'id');
         //$etapas = Etapa::all(['id', 'no_etapa'])->pluck('no_etapa', 'id');
         $membro = new Membro;
-        $membros = Membro::where('owner_id', auth()->user()->id)->orderBy('no_usuario')->pluck('no_usuario', 'id')->all();
+        $membros = Membro::where('mregiao_id', auth()->user()->mregiao_id)->orderby('no_usuario')->pluck('no_usuario', 'id')->all();
         $etapas = Etapa::orderBy('id')->pluck('no_etapa', 'id')->all();
         $estados = Estado::orderBy('no_estado')->pluck('no_estado', 'id')->all();
         $dioceses = Diocese::orderBy('no_diocese')->pluck('no_diocese', 'id')->all();
@@ -189,7 +189,7 @@ class MembroController extends AppBaseController
         $equipes = Equipe::orderBy('no_equipe')->pluck('no_equipe', 'id');
         $dioceses = Diocese::orderBy('no_diocese')->pluck('no_diocese', 'id')->all();
         $carismas = TipoCarisma::orderBy('no_carisma')->pluck('no_carisma', 'id')->all();
-        $membros = Membro::where('owner_id', auth()->user()->id)->orderBy('no_usuario')->pluck('no_usuario', 'id')->all();
+        $membros = Membro::where('mregiao_id', auth()->user()->mregiao_id)->orderby('no_usuario')->pluck('no_usuario', 'id')->all();
 
         //$etapa_marcada = Etapa::where('active', true)->orderBy('name')->lists('name', 'id');
 
@@ -199,7 +199,7 @@ class MembroController extends AppBaseController
             return redirect(route('membros.index'));
         }
 
-        if (($membro->owner_id != auth()->user()->id)&($membro->mregiao_id != auth()->user()->mregiao_id)) {
+        if (($membro->mregiao_id != auth()->user()->mregiao_id)) {
             Flash::error('Este membro não faz parte da sua Equipe. Você não tem permissão para edição de membros de outras Equipes.');
 
             return redirect(route('membros.index'));
@@ -298,7 +298,7 @@ class MembroController extends AppBaseController
             return redirect(route('membros.index'));
         }
 
-        if (($membro->owner_id != auth()->user()->id)&($membro->mregiao_id != auth()->user()->mregiao_id)) {
+        if (($membro->mregiao_id != auth()->user()->mregiao_id)) {
             Flash::error('Este membro não faz parte da sua Equipe. Você não tem permissão para exclusão de membros de outras Equipes.');
 
             return redirect(route('membros.index'));
@@ -365,6 +365,7 @@ class MembroController extends AppBaseController
         }
         
         $membro->mregiao_id = $request['mregiao_id'];
+        $membro->owner_id = auth()->user()->id;
 
         $membro->save();
 

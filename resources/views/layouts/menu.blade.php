@@ -7,10 +7,8 @@
     <a href="{!! route('membros.index') !!}"><i class="fa fa-user"></i><span>Membros Equipe</span>
         <span class="pull-right-container">
           <small class="label pull-right bg-blue">{{
-            Membro::where('owner_id', auth()->user()->id)->count() +
-            Membro::where('owner_id', auth()->user()->id)->where('no_conjuge','<>', '')->count() +
-            Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('owner_id','<>', auth()->user()->id)->count() +            
-            Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('owner_id','<>', auth()->user()->id)->where('no_conjuge','<>', '')->count()}}</small>
+            Membro::where('mregiao_id', auth()->user()->mregiao_id)->count() +            
+            Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('no_conjuge','<>', '')->count()}}</small>
         </span>
     </a>
 

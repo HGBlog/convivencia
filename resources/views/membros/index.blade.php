@@ -5,10 +5,20 @@
  	<section class="content-header">
         <h1 class="pull-left">Membros da Macro-região - {{$macroregiao->no_macro_regiao}}
         	<br><font color="red"><b>{{
-            Membro::where('owner_id', auth()->user()->id)->count() +
-            Membro::where('owner_id', auth()->user()->id)->where('no_conjuge','<>', '')->count() +
-            Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('owner_id','<>', auth()->user()->id)->count() +            
-            Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('owner_id','<>', auth()->user()->id)->where('no_conjuge','<>', '')->count()}}</b> cadastrados</font></h1>
+            Membro::where('mregiao_id', auth()->user()->mregiao_id)->count() +            
+            Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('no_conjuge','<>', '')->count()}}</b> 
+        @if ((
+        Membro::where('mregiao_id', auth()->user()->mregiao_id)->count()+
+        Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('no_conjuge','<>', '')->count()) >1 )
+        {{ 'cadastrados' }}
+        @elseif  ((
+        Membro::where('mregiao_id', auth()->user()->mregiao_id)->count()+
+        Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('no_conjuge','<>', '')->count())==0)
+        {{ '- Nenhum membro cadastrado'}}
+        @else
+        {{ 'cadastrado' }}
+        @endif
+    	</font></h1>
         <h1 class="pull-right">
            <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('membros.create') !!}">Adicionar Novo Membro</a>
         </h1>
