@@ -1,10 +1,10 @@
 <li class="{{ Request::is('home*') ? 'active' : '' }}">
-   <a href="{!! url('/home') !!}"><i class="fa fa-home"></i><span>Home</span></a>
+   <a href="{!! url('/home') !!}"><i class="fa fa-home"></i><span>HOME</span></a>
 </li>
 
 @if(Auth::user()->hasRole('admin') | Auth::user()->hasRole('responsavel'))
 <li class="{{ Request::is('membros*') ? 'active' : '' }}">
-    <a href="{!! route('membros.index') !!}"><i class="fa fa-user"></i><span>Membros Equipe</span>
+    <a href="{!! route('membros.index') !!}"><i class="fa fa-users"></i><span> CADASTRO PESSOAS</span>
         <span class="pull-right-container">
           <small class="label pull-right bg-blue">{{
             Membro::where('mregiao_id', auth()->user()->mregiao_id)->count() +            
@@ -14,7 +14,7 @@
 
 </li>
 <li class="{{ Request::is('convivencias*') ? 'active' : '' }}">
-    <a href="{!! route('convivencias.lista_ativas') !!}"><i class="fa fa-edit"></i><span>Convivências</span>
+    <a href="{!! route('convivencias.lista_ativas') !!}"><i class="fa fa-edit"></i><span> CONVIVÊNCIAS</span>
         <span class="pull-right-container">
                 <small class="label pull-right bg-red">{{Convivencia::where('dt_fim_inscricao','>=', now())->where('is_ativo', true)->count()}}</small>
         </span>

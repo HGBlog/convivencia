@@ -94,7 +94,6 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
             'League\\Flysystem\\Cached\\' => 24,
             'League\\Flysystem\\' => 17,
             'Laravel\\Tinker\\' => 15,
-            'Laracasts\\Generators\\' => 21,
         ),
         'K' => 
         array (
@@ -323,10 +322,6 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'Laravel\\Tinker\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
-        ),
-        'Laracasts\\Generators\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/laracasts/generators/src',
         ),
         'Knp\\Snappy\\' => 
         array (
@@ -2748,14 +2743,6 @@ class ComposerStaticInit6da84524a3e0298a8ce2ed6d693fc3a4
         'Laracasts\\Flash\\Message' => __DIR__ . '/..' . '/laracasts/flash/src/Laracasts/Flash/Message.php',
         'Laracasts\\Flash\\OverlayMessage' => __DIR__ . '/..' . '/laracasts/flash/src/Laracasts/Flash/OverlayMessage.php',
         'Laracasts\\Flash\\SessionStore' => __DIR__ . '/..' . '/laracasts/flash/src/Laracasts/Flash/SessionStore.php',
-        'Laracasts\\Generators\\Commands\\MigrationMakeCommand' => __DIR__ . '/..' . '/laracasts/generators/src/Commands/MigrationMakeCommand.php',
-        'Laracasts\\Generators\\Commands\\PivotMigrationMakeCommand' => __DIR__ . '/..' . '/laracasts/generators/src/Commands/PivotMigrationMakeCommand.php',
-        'Laracasts\\Generators\\Commands\\SeedMakeCommand' => __DIR__ . '/..' . '/laracasts/generators/src/Commands/SeedMakeCommand.php',
-        'Laracasts\\Generators\\GeneratorException' => __DIR__ . '/..' . '/laracasts/generators/src/GeneratorException.php',
-        'Laracasts\\Generators\\GeneratorsServiceProvider' => __DIR__ . '/..' . '/laracasts/generators/src/GeneratorsServiceProvider.php',
-        'Laracasts\\Generators\\Migrations\\NameParser' => __DIR__ . '/..' . '/laracasts/generators/src/Migrations/NameParser.php',
-        'Laracasts\\Generators\\Migrations\\SchemaParser' => __DIR__ . '/..' . '/laracasts/generators/src/Migrations/SchemaParser.php',
-        'Laracasts\\Generators\\Migrations\\SyntaxBuilder' => __DIR__ . '/..' . '/laracasts/generators/src/Migrations/SyntaxBuilder.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',

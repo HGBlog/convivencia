@@ -70,13 +70,6 @@
       0 => 'Backpack\\Settings\\SettingsServiceProvider',
     ),
   ),
-  'laracasts/generators' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Laracasts\\Generators\\GeneratorsServiceProvider',
-    ),
-  ),
   'jenssegers/date' => 
   array (
     'providers' => 
