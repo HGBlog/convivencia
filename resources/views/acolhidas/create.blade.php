@@ -3,7 +3,10 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Dados de Acolhimento
+            Dados de Acolhimento - {!!$membro->no_usuario!!}
+            @if ($membro->no_conjuge)
+               e {!!$membro->no_conjuge!!}                
+            @endif
         </h1>
     </section>
     <div class="content">

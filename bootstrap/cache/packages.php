@@ -198,4 +198,11 @@
       'SnappyImage' => 'Barryvdh\\Snappy\\Facades\\SnappyImage',
     ),
   ),
+  'laracasts/generators' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laracasts\\Generators\\GeneratorsServiceProvider',
+    ),
+  ),
 );

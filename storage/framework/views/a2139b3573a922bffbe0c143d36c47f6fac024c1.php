@@ -1,30 +1,40 @@
-
-
-
 <?php $__env->startSection('content'); ?>
  	<section class="content-header">
-        <h1 class="pull-left">Membros da Macro-região - <?php echo e($macroregiao->no_macro_regiao); ?>
+        <div class="pull-right" style="margin-top: 41px;">
+           <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="<?php echo route('membros.create'); ?>">Adicionar Nova Pessoa</a>
+        </div>
+        <div class="bs-callout bs-callout-info">
+            <h1 class="text-">
+                <small style="font-size: 20px; color: #3c8dbc;">
+                    <span style="color: #ff0000">
+                        <?php echo e(Membro::where('mregiao_id', auth()->user()->mregiao_id)->count() +            
+                            Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('no_conjuge','<>', '')->count()); ?>
 
-        	<br><font color="red"><b><?php echo e(Membro::where('mregiao_id', auth()->user()->mregiao_id)->count() +            
-            Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('no_conjuge','<>', '')->count()); ?></b> 
-        <?php if((
-        Membro::where('mregiao_id', auth()->user()->mregiao_id)->count()+
-        Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('no_conjuge','<>', '')->count()) >1 ): ?>
-        <?php echo e('cadastrados'); ?>
 
-        <?php elseif((
-        Membro::where('mregiao_id', auth()->user()->mregiao_id)->count()+
-        Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('no_conjuge','<>', '')->count())==0): ?>
-        <?php echo e('- Nenhum membro cadastrado'); ?>
+                        <?php if((
+                            Membro::where('mregiao_id', auth()->user()->mregiao_id)->count()+
+                            Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('no_conjuge','<>', '')->count()) >1 ): ?>
+                            <?php echo e('Cadastrados'); ?>
 
-        <?php else: ?>
-        <?php echo e('cadastrado'); ?>
+                        <?php elseif((
+                            Membro::where('mregiao_id', auth()->user()->mregiao_id)->count()+
+                            Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('no_conjuge','<>', '')->count())==0): ?>
+                            <?php echo e('- Nenhum Membro Cadastrado'); ?>
 
-        <?php endif; ?>
-    	</font></h1>
-        <h1 class="pull-right">
-           <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="<?php echo route('membros.create'); ?>">Adicionar Novo Membro</a>
-        </h1>
+                        <?php else: ?>
+                            <?php echo e('Cadastrado'); ?>
+
+                        <?php endif; ?>
+                     </span>
+                     na Macro-região
+                </small><br />
+                <?php echo e($macroregiao->no_macro_regiao); ?>
+
+            </h1>
+            <hr style="border-top: 1px solid #d4d2d2;">                
+        </div>
+
+                
     </section>        
 <div class="content">
         <div class="clearfix"></div>

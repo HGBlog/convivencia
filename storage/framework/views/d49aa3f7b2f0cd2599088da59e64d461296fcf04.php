@@ -1,9 +1,11 @@
-
-
 <?php $__env->startSection('content'); ?>
     <section class="content-header">
         <h1>
-            Dados de Acolhimento
+            Dados de Acolhimento - <?php echo $membro->no_usuario; ?>
+
+            <?php if($membro->no_conjuge): ?>
+               e <?php echo $membro->no_conjuge; ?>                
+            <?php endif; ?>
         </h1>
     </section>
    <div class="content">

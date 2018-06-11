@@ -63,7 +63,7 @@ class AcolhidaController extends AppBaseController
         $status_convivencia = ConvivenciaMembro::where('membro_id', $membro_id)->where('convivencia_id', $convivencia_id)->first();
         $membro = Membro::where('id', $membro_id)->first();
         $convivencia = Convivencia::where('id', $convivencia_id)->first();
-
+        //dd($membro->no_usuario);
         if (($membro->mregiao_id != auth()->user()->mregiao_id)) {
             Flash::error('Este membro não faz parte da sua Equipe. Você não tem permissão para inscrição de membros de outras Equipes.');
             //return redirect(route('membros.index'));

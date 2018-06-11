@@ -1,10 +1,10 @@
 <li class="<?php echo e(Request::is('home*') ? 'active' : ''); ?>">
-   <a href="<?php echo url('/home'); ?>"><i class="fa fa-home"></i><span>Home</span></a>
+   <a href="<?php echo url('/home'); ?>"><i class="fa fa-home"></i><span>HOME</span></a>
 </li>
 
 <?php if(Auth::user()->hasRole('admin') | Auth::user()->hasRole('responsavel')): ?>
 <li class="<?php echo e(Request::is('membros*') ? 'active' : ''); ?>">
-    <a href="<?php echo route('membros.index'); ?>"><i class="fa fa-user"></i><span>Membros Equipe</span>
+    <a href="<?php echo route('membros.index'); ?>"><i class="fa fa-users"></i><span> CADASTRO PESSOAS</span>
         <span class="pull-right-container">
           <small class="label pull-right bg-blue"><?php echo e(Membro::where('mregiao_id', auth()->user()->mregiao_id)->count() +            
             Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('no_conjuge','<>', '')->count()); ?></small>
@@ -13,7 +13,7 @@
 
 </li>
 <li class="<?php echo e(Request::is('convivencias*') ? 'active' : ''); ?>">
-    <a href="<?php echo route('convivencias.lista_ativas'); ?>"><i class="fa fa-edit"></i><span>Convivências</span>
+    <a href="<?php echo route('convivencias.lista_ativas'); ?>"><i class="fa fa-edit"></i><span> CONVIVÊNCIAS</span>
         <span class="pull-right-container">
                 <small class="label pull-right bg-red"><?php echo e(Convivencia::where('dt_fim_inscricao','>=', now())->where('is_ativo', true)->count()); ?></small>
         </span>

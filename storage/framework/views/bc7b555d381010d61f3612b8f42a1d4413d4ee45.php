@@ -2,7 +2,7 @@
 <thead>
         <th>Membros</th>
         <th>Vai à Convivência?</th>
-        <th>Inscrição</th>
+        <th>&nbsp;</th>
     </thead>
     <tbody>
     <?php $__currentLoopData = $casados; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $casado): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>   
@@ -41,7 +41,7 @@
                     
                 </td>
                 <td>
-                    <a href="<?php echo route('acolhidas.edit', ['convivencia/'.$convivencia->id.'/membro/'.$casado->id ]); ?>" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-home"></i> Acolhimento</a>
+                    <a href="<?php echo route('acolhidas.edit', ['convivencia/'.$convivencia->id.'/membro/'.$casado->id ]); ?>" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i>&nbsp; Inscrever</a>
                 </td>
             </tr>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>  
@@ -65,7 +65,7 @@
                     
                 </td>
                 <td>
-                    <a href="<?php echo route('acolhidas.edit', ['convivencia/'.$convivencia->id.'/membro/'.$membro->id ]); ?>" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-home"></i> Acolhimento</a>
+                    <a href="<?php echo route('acolhidas.edit', ['convivencia/'.$convivencia->id.'/membro/'.$membro->id ]); ?>" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i>&nbsp; Inscrever</a>
                 </td>
             </tr>        
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

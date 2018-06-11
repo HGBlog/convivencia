@@ -4,10 +4,9 @@
     <section class="sidebar">
 
         <!-- Sidebar user panel (optional) -->
-        <div class="user-panel">
+        <div class="user-panel" style="white-space: normal;">
             <div class="pull-left image">
-                <img src="http://www.cn.org.br/portal/wp-content/uploads/2014/02/cropped-Virgem2.jpg" class="img-circle"
-                     alt="User Image"/>
+                <img src="http://www.cn.org.br/portal/wp-content/uploads/2014/02/cropped-Virgem2.jpg" class="img-circle" alt="User Image"/>
             </div>
             <div class="pull-left info">
                 <?php if(Auth::guest()): ?>
@@ -39,7 +38,7 @@
         </form> -->
 
         <!-- Sidebar Menu -->
-	<ul class="sidebar-menu" data-widget="tree">
+	<ul class="sidebar-menu MenuProvisorio" data-widget="tree">
             <?php echo $__env->make('layouts.menu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
         </ul>
         <!-- /.sidebar-menu -->
