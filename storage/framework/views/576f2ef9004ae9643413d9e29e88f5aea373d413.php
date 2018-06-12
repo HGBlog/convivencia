@@ -12,7 +12,7 @@
 	<div class="form-group col-sm-12">
     	<?php echo Form::submit('Inscrever Equipe' , ['class' => 'btn btn-primary']); ?>
 
-    	<a href="<?php echo route('membros.index'); ?>" class="btn btn-default">Voltar para lista de Membros</a>
+    	<a href="<?php echo route('membros.index'); ?>" class="btn btn-default">Voltar para lista de Pessoas</a>
 	</div>
 	<?php break; ?>
 	<?php endif; ?>
@@ -21,7 +21,7 @@
 <?php if(empty($convivencia->is_ativo)): ?>
    	Não existe Convivência com o período de inscrições abertas.
    	<div class="form-group col-sm-12">
-	   	<a href="<?php echo route('membros.index'); ?>" class="btn btn-primary pull-left" style="margin-top: 25px">Voltar para lista de Membros</a>
+	   	<a href="<?php echo route('membros.index'); ?>" class="btn btn-primary pull-left" style="margin-top: 25px">Voltar para lista de Pessoas</a>
 	</div>
 <?php endif; ?>
 

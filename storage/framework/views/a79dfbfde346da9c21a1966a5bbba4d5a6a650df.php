@@ -1,8 +1,6 @@
-
-
 <?php $__env->startSection('content'); ?>
     <section class="content-header">
-        <h1 class="pull-left">Membros de Equipes e suas Macro-regiões</h1>
+        <h1 class="pull-left">Pessoas de Equipes e suas Macro-regiões</h1>
         <h1 class="pull-right">
         </h1>
     </section>

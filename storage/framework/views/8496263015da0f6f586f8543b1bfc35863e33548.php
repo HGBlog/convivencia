@@ -2,7 +2,7 @@
     <section class="content-header">
         <h1 class="pull-left"><?php echo $convivencia->no_nome; ?> em <?php echo Carbon\Carbon::parse($convivencia->dt_inicio)->format('d/m/Y'); ?></h1>
         <h1 class="pull-right">
-           <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="<?php echo route('membros.create'); ?>">Novo Membro</a>
+           <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="<?php echo route('membros.create'); ?>">Nova Pessoa</a>
         </h1>
     </section>
     <div class="content">

@@ -1,7 +1,7 @@
 <?php $__env->startSection('content'); ?>
     <section class="content-header">
         <h1>
-            Inserir novo membro
+            Inserir nova Pessoa
         </h1>
     </section>
     <div class="content">

@@ -43,7 +43,7 @@
             Membro::where('mregiao_id', auth()->user()->mregiao_id)->count() +            
             Membro::where('mregiao_id', auth()->user()->mregiao_id)->where('no_conjuge','<>', '')->count()}}</h3>
 
-                                                  <p>Membros da Equipe</p>
+                                                  <p>Pessoas da Equipe</p>
                                                 </div>
                                                 <div class="icon">
                                                   <ul >
@@ -51,7 +51,7 @@
                                                   </ul>
                                                 </div>
                                                 <a href="./membros" class="small-box-footer">
-                                                  Lista de Membros <i class="fa fa-arrow-circle-right"></i>
+                                                  Lista de Pessoas <i class="fa fa-arrow-circle-right"></i>
                                                 </a>
                                               </div>
                                             </div>

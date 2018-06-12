@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Alterar Macro-região de membro de Equipe
+            Alterar Macro-região de Pessoa de Equipe
         </h1>
    </section>
    <div class="content">

@@ -9,7 +9,7 @@
 <!-- Submit Field -->
 	<div class="form-group col-sm-12">
     	{!! Form::submit('Inscrever Equipe' , ['class' => 'btn btn-primary']) !!}
-    	<a href="{!! route('membros.index') !!}" class="btn btn-default">Voltar para lista de Membros</a>
+    	<a href="{!! route('membros.index') !!}" class="btn btn-default">Voltar para lista de Pessoas</a>
 	</div>
 	@break
 	@endisset
@@ -18,7 +18,7 @@
 @empty ($convivencia->is_ativo)
    	Não existe Convivência com o período de inscrições abertas.
    	<div class="form-group col-sm-12">
-	   	<a href="{!! route('membros.index') !!}" class="btn btn-primary pull-left" style="margin-top: 25px">Voltar para lista de Membros</a>
+	   	<a href="{!! route('membros.index') !!}" class="btn btn-primary pull-left" style="margin-top: 25px">Voltar para lista de Pessoas</a>
 	</div>
 @endempty
 

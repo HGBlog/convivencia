@@ -34,7 +34,7 @@
             <a href="<?php echo route('convivencias.index'); ?>"><i class="fa fa-edit"></i><span>Convivências</span></a>
         </li>
         <li class="<?php echo e(Request::is('membros*') ? 'active' : ''); ?>">
-            <a href="<?php echo route('membros.macroregiao'); ?>"><i class="fa fa-users"></i><span>Membros x Macro-regiões</span></a>
+            <a href="<?php echo route('membros.macroregiao'); ?>"><i class="fa fa-users"></i><span>Pessoas x Macro-regiões</span></a>
         </li>
         <li>--</li>
         <li class="<?php echo e(Request::is('usuarios*') ? 'active' : ''); ?>">
@@ -75,7 +75,7 @@
             <a href="<?php echo route('relatorioInscricoes.index'); ?>"><i class="fa fa-edit"></i><span>Inscrições Convivências</span></a>
         </li>
         <li class="<?php echo e(Request::is('relatorioMembros*') ? 'active' : ''); ?>">
-            <a href="<?php echo route('relatorioMembros.index'); ?>"><i class="fa fa-edit"></i><span>Membros Cadastrados</span></a>
+            <a href="<?php echo route('relatorioMembros.index'); ?>"><i class="fa fa-edit"></i><span>Pessoas Cadastradas</span></a>
         </li>
   </ul>
 </li>
