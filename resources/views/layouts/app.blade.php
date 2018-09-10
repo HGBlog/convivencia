@@ -349,10 +349,16 @@
         });
         //this toggles the visibility of our parent permission fields depending on the current selected value of the underAge field
         function toggleFields() {
-            if ($("#no_tipo_pessoa").val() == "Casal")
+            if ($("#no_tipo_pessoa").val() == "Casal"){
                 $("#no_conjuge").show();
-            else
+                $("#nu_cpf_conjuge").show();
+                $("#nu_rg_conjuge").show();
+            } else {
                 $("#no_conjuge").hide();
+                $("#nu_cpf_conjuge").hide();
+                $("#nu_rg_conjuge").hide();
+            }
+            
         }
     </script>
 

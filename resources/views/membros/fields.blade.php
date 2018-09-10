@@ -53,6 +53,25 @@
             {!! Form::label('nu_telefone2', 'Número Telefone(2):') !!}
             {!! Form::number('nu_telefone2', null, ['class' => 'form-control', 'placeholder'=>'Telefone - Apenas números', 'maxlength' => '10']) !!}
             </div>
+            <div class="form-group col-sm-6">
+            {!! Form::label('nu_cpf_membro', 'CPF Membro:') !!}
+            {!! Form::number('nu_cpf_membro', null, ['class' => 'form-control', 'placeholder'=>'CPF - Membro', 'maxlength' => '15']) !!}
+            </div>
+
+            <div class="form-group col-sm-6">
+            {!! Form::label('nu_rg_membro', 'RG Membro:') !!}
+            {!! Form::number('nu_rg_membro', null, ['class' => 'form-control', 'placeholder'=>'RG - Membro', 'maxlength' => '15']) !!}
+            </div>
+
+            <div class="form-group col-sm-6">
+            {!! Form::label('nu_cpf_conjuge', ' ') !!}
+            {!! Form::number('nu_cpf_conjuge', null, ['class' => 'form-control', 'placeholder'=>'CPF - Conjuge', 'maxlength' => '15']) !!}
+            </div>
+
+            <div class="form-group col-sm-6">
+            {!! Form::label('nu_rg_conjuge', ' ') !!}
+            {!! Form::number('nu_rg_conjuge', null, ['class' => 'form-control', 'placeholder'=>'RG - Conjuge', 'maxlength' => '15']) !!}
+            </div>
       </p>        
     </div>
     <div id="missao">

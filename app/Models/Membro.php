@@ -52,7 +52,11 @@ class Membro extends Model
         'tipo_carisma_id',
         'estado_id',
         'no_conjuge',
-        'no_tipo_pessoa'
+        'no_tipo_pessoa',
+        'nu_cpf_membro',
+        'nu_rg_membro',
+        'nu_cpf_conjuge',
+        'nu_rg_conjuge'
     ];
 
 
@@ -79,7 +83,11 @@ class Membro extends Model
         'tipo_carisma_id' => 'nullable|integer',
         'estado_id' => 'nullable|integer',
         'no_conjuge' => 'string',
-        'no_tipo_pessoa' => 'string'
+        'no_tipo_pessoa' => 'string',
+        'nu_cpf_membro' => 'string',
+        'nu_cpf_conjuge' => 'string',
+        'nu_rg_membro' => 'string',
+        'nu_cpf_conjuge' => 'string'
     ];
 
     /**
@@ -161,6 +169,10 @@ class Membro extends Model
             $this->equipe_id = $data['equipe_id'];
             $this->tipo_carisma_id = $data['tipo_carisma_id'];
             $this->estado_id = $data['estado_id'];
+            $this->nu_cpf_membro = $data['nu_cpf_membro'];
+            $this->nu_rg_membro = $data['nu_rg_membro'];
+            $this->nu_cpf_conjuge = $data['nu_cpf_conjuge'];
+            $this->nu_rg_conjuge = $data['nu_rg_conjuge'];
             $this->save();
             return 1;
     }
@@ -181,6 +193,10 @@ class Membro extends Model
             $membro->equipe_id = $data['equipe_id'];
             $membro->tipo_carisma_id = $data['tipo_carisma'];
             $membro->estado_id = $data['estado_id'];
+            $membro->nu_cpf_membro = $data['nu_cpf_membro'];
+            $membro->nu_rg_membro = $data['nu_rg_membro'];
+            $membro->nu_cpf_conjuge = $data['nu_cpf_conjuge'];
+            $membro->nu_rg_conjuge = $data['nu_rg_conjuge'];
             $membro->save();
             return 1;
     }

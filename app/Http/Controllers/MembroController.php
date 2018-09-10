@@ -118,6 +118,10 @@ class MembroController extends AppBaseController
             $membro->no_cidade = $request->input('no_cidade');
             $membro->no_paroquia = $request->input('no_paroquia');
             $membro->nu_comunidade = $request->input('nu_comunidade');
+            $membro->nu_cpf_membro = $request->input('nu_cpf_membro');
+            $membro->nu_cpf_conjuge = $request->input('nu_cpf_conjuge');
+            $membro->nu_rg_membro = $request->input('nu_rg_membro');
+            $membro->nu_rg_conjuge= $request->input('nu_rg_conjuge');
             if (empty($request['equipe_id'])) {
                 $membro->equipe_id = null;
                 } else {
@@ -245,6 +249,10 @@ class MembroController extends AppBaseController
             $membro->no_cidade = $request['no_cidade'];
             $membro->no_paroquia = $request['no_paroquia'];
             $membro->nu_comunidade = $request['nu_comunidade'];
+            $membro->nu_cpf_membro = $request['nu_cpf_membro'];
+            $membro->nu_rg_membro = $request['nu_rg_membro'];
+            $membro->nu_cpf_conjuge = $request['nu_cpf_conjuge'];
+            $membro->nu_rg_conjuge = $request['nu_rg_conjuge'];
             if (empty($membro->etapa_id = $request['etapa_id'])){
                 $membro->etapa_id = null;
             } else {
