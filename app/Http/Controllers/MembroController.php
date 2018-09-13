@@ -52,7 +52,7 @@ class MembroController extends AppBaseController
         //return view('membros.index')
         //    ->with('membros', $membros);
 
-        $membros = Membro::where('mregiao_id', auth()->user()->mregiao_id)->orderby('no_usuario')->paginate(10);
+        $membros = Membro::where('mregiao_id', auth()->user()->mregiao_id)->orderby('no_usuario')->paginate(100);
         $equipe = new Equipe;
         $macroregiao = MacroRegiao::where('id', auth()->user()->mregiao_id)->first();
         return view('membros.index',compact('membros'))->with('equipe', $equipe)->with('macroregiao', $macroregiao);
