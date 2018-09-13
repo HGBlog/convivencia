@@ -38,7 +38,7 @@ class ConvivenciaController extends AppBaseController
     public function index(Request $request)
     {
         $this->convivenciaRepository->pushCriteria(new RequestCriteria($request));
-        $convivencias = $this->convivenciaRepository->all();
+        $convivencias = $this->convivenciaRepository->orderby('dt_inicio','des')->all();
 
         $local = new LocalConvivencia;
 
