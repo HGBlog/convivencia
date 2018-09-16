@@ -32,7 +32,11 @@ class RelatorioInscricoes extends Model
             'telefone2',
             'carisma',
             'equipe',
-            'data_chegada'
+            'data_chegada',
+            'nu_cpf_membro',
+            'nu_rg_membro',
+            'nu_cpf_conjuge',
+            'nu_rg_conjuge'
     ];
 
     /**

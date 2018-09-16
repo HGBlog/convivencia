@@ -77,7 +77,11 @@ class RelatorioInscricoesDataTable extends DataTable
             
             'convivencia_id' => ['name' => 'convivencia_id', 'data' => 'convivencia_id', 'title'=>'Conv'],
             'participante' => ['name' => 'participante', 'data' => 'participante', 'title'=>'Participante'],
+            'nu_cpf_membro' => ['name' => 'nu_cpf_membro', 'data' => 'nu_cpf_membro', 'title'=>'CPF'],
+            'nu_rg_membro' => ['name' => 'nu_rg_membro', 'data' => 'nu_rg_membro', 'title'=>'RG'],
             'conjuge' => ['name' => 'conjuge', 'data' => 'conjuge', 'title'=>'Cônjuge'],
+            'nu_cpf_conjuge' => ['name' => 'nu_cpf_conjuge', 'data' => 'nu_cpf_conjuge', 'title'=>'CPF'],
+            'nu_rg_conjuge' => ['name' => 'nu_rg_conjuge', 'data' => 'nu_rg_conjuge', 'title'=>'RG'],
             'tipo_pessoa' => ['name' => 'tipo_pessoa', 'data' => 'tipo_pessoa', 'title'=>'Tipo Pessoa'],
             'telefone' => ['name' => 'telefone', 'data' => 'telefone', 'title'=>'Telefone'],
             'telefone2' => ['name' => 'telefone2', 'data' => 'telefone2', 'title'=>'Telefone2'],

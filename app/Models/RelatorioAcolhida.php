@@ -49,7 +49,11 @@ class RelatorioAcolhida extends Model
         'nu_hora_saida',
         'nu_voo_saida',
         'no_local_saida',
-        'no_observacoes'
+        'no_observacoes',
+        'nu_cpf_membro',
+        'nu_rg_membro',
+        'nu_cpf_conjuge',
+        'nu_rg_conjuge'
     ];
 
     /**

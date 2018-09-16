@@ -65,7 +65,11 @@ class RelatorioMembrosDataTable extends DataTable
     {
         return [
             'no_usuario' => ['name' => 'no_usuario', 'data' => 'no_usuario', 'title'=>'Nome'],
+            'nu_cpf_membro' => ['name' => 'nu_cpf_membro', 'data' => 'nu_cpf_membro', 'title'=>'CPF'],
+            'nu_rg_membro' => ['name' => 'nu_rg_membro', 'data' => 'nu_rg_membro', 'title'=>'RG'],
             'no_conjuge' => ['name' => 'no_conjuge', 'data' => 'no_conjuge', 'title'=>'Cônjuge'],
+            'nu_cpf_conjuge' => ['name' => 'nu_cpf_conjuge', 'data' => 'nu_cpf_conjuge', 'title'=>'CPF'],
+            'nu_rg_conjuge' => ['name' => 'nu_rg_conjuge', 'data' => 'nu_rg_conjuge', 'title'=>'RG'],
             'no_email' => ['name' => 'no_email', 'data' => 'no_email', 'title'=>'Email'],
             'telefone' => ['name' => 'telefone', 'data' => 'telefone', 'title'=>'Telefone'],
             'telefone2' => ['name' => 'telefone2', 'data' => 'telefone2', 'title'=>'Telefone2'],

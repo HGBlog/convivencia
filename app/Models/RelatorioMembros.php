@@ -37,7 +37,11 @@ class RelatorioMembros extends Model
         'no_etapa',
         'no_equipe',
         'no_responsavel',
-        'no_carisma'
+        'no_carisma',
+        'nu_cpf_membro',
+        'nu_rg_membro',
+        'nu_cpf_conjuge',
+        'nu_rg_conjuge'
     ];
 
     /**
