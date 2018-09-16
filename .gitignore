@@ -35,3 +35,8 @@ storage/framework/*
 storage/*
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/
+.env_mysql
+.env_original
+composer.lock
+storage/logs/laravel.log
+vendor/composer/ClassLoader.php
