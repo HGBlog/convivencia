@@ -88,6 +88,7 @@ class RelatorioInscricoesDataTable extends DataTable
             'carisma' => ['name' => 'carisma', 'data' => 'carisma', 'title'=>'Carisma'],
             'equipe' => ['name' => 'equipe', 'data' => 'equipe', 'title'=>'Equipe'],
             'data_chegada' => ['name' => 'data_chegada', 'data' => 'data_chegada', 'title'=>'Data Chegada'],
+            'no_observacoes' => ['name' => 'no_observacoes', 'data' => 'no_observacoes', 'title'=>'Observações']
         ];
     }
 
