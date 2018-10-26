@@ -37,7 +37,8 @@ class RelatorioInscricoes extends Model
             'nu_rg_membro',
             'nu_cpf_conjuge',
             'nu_rg_conjuge',
-            'no_observacoes'
+            'no_observacoes',
+            'no_paroquia'
     ];
 
     /**

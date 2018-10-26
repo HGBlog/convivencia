@@ -37,6 +37,7 @@ class RelatorioAcolhida extends Model
 
     public $fillable = [
         'no_usuario',
+        'no_paroquia',
         'no_conjuge',
         'convivencia_id',
         'no_acolhida_extra',
