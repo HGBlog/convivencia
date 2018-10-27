@@ -56,7 +56,7 @@ class RelatorioInscricoesDataTable extends DataTable
             //->addAction(['width' => '80px'])
             ->parameters([
                 'dom'     => 'Bfrtip',
-                'order'   => [[1, 'asc']],
+                'order'   => [[1,2, 'asc']],
                 'buttons' => [
                     'export',
                     'print',
