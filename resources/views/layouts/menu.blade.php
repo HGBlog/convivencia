@@ -4,7 +4,7 @@
 
 @if(Auth::user()->hasRole('admin') | Auth::user()->hasRole('responsavel'))
 <li class="{{ Request::is('membros*') ? 'active' : '' }}">
-    <a href="{!! route('membros.index') !!}"><i class="fa fa-users"></i><span> CADASTRO PESSOAS</span>
+    <a href="{!! route('membros.index') !!}"><i class="fa fa-users"></i><span> PESSOAS</span>
         <span class="pull-right-container">
           <small class="label pull-right bg-blue">{{
             Membro::where('mregiao_id', auth()->user()->mregiao_id)->count() +            
