@@ -86,7 +86,7 @@ class RelatorioAcolhidaDataTable extends DataTable
     {
         return [
             'convivencia_id' => ['name' => 'convivencia_id', 'data' => 'convivencia_id', 'title'=>'Conv'],
-            'no_paroquia' => ['name' => 'no_paroquia', 'data' => 'no_paroquia', 'title'=>'Paróquia'],
+            'no_regiao' => ['name' => 'no_regiao', 'data' => 'no_regiao', 'title'=>'Região'],
             'no_usuario' => ['name' => 'no_usuario', 'data' => 'no_usuario', 'title'=>'Nome'],
             'nu_cpf_membro' => ['name' => 'nu_cpf_membro', 'data' => 'nu_cpf_membro', 'title'=>'CPF'],
             'nu_rg_membro' => ['name' => 'nu_rg_membro', 'data' => 'nu_rg_membro', 'title'=>'RG'],
